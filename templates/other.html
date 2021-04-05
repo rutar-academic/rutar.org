@@ -22,7 +22,6 @@
   </ul>
 </div>
 {#
-
 <div>
   <h2>Collaborators</h2>
   {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/publications.json") | map(attribute="with"), data=load_data(path="data/people.json")) }}

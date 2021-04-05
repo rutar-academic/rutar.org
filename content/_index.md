@@ -8,7 +8,7 @@ I did my undergraduate studies at the {{ hidden_link(text="University of Waterlo
 You can [read my CV](/assets/alex_rutar_cv.pdf) for more detail.
 
 I am primarily interested in fractal geometry and dynamical systems, in particular the geometry of self-similar and self-affine sets in Euclidean space and associated invariant measures.
-The [research](/research/) has more information.
+Find more information on my [research page](/research/).
 
 In my spare time I develop [open-source software](https://github.com/alexrutar) and occasionally I take [photos](https://unsplash.com/@rutarphotography).
 I also write about [things that interest me](/writing/).
