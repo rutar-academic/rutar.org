@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% if page %}
+{% set title = page.title | title %}
+{% elif section %}
+{% set title = section.title | title %}
+{% else %}
+{% set title = "404 - Page Not Found" %}
+{% endif %}
+<html lang="en">
+  <head>
+    <title>{{ title }} – {{ config.extra.author }}</title>
+
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <meta name="description" content="{{ config.extra.long_description }}" />
+    <meta name="author" content="{{ config.extra.author }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ config.extra.long_description }}" />
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="wrapper-header">
+        <h1 class="header-name">
+          <a href="/">{{ config.extra.author }}</a>
+        </h1>
+
+        <nav class="header-nav">
+          {% set links = load_data(path="data/links.json") %}
+          {% for obj in links.nav %}<a {% if obj.name == title %}class='active' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>{% endfor %}
+        </nav>
+      </div>
+
+      <article class="contents-main">
+        <h1>{{ title }}</h1>
+        <div class="entry">
+          {% block content %}{% endblock %}
+        </div>
+      </article>
+
+      <div class="wrapper-footer">
+        {% block footer %}{% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

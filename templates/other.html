@@ -1,0 +1,41 @@
+{% import "macros/data_links.html" as linker %}
+{% extends "base.html" %}
+{% block content %}
+{{ section.content | safe }}
+{% endblock %}
+{% block footer %}
+<div>
+  <h2>Internal Links</h2>
+  <ul>
+    {%- for obj in links.internal %}
+    <li><a href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a></li>
+    {%- endfor %}
+  </ul>
+</div>
+
+<div>
+  <h2>External Links</h2>
+  <ul>
+    {%- for obj in links.external %}
+    <li><a href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a></li>
+    {%- endfor %}
+  </ul>
+</div>
+{#
+
+<div>
+  <h2>Collaborators</h2>
+  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/publications.json") | map(attribute="with"), data=load_data(path="data/people.json")) }}
+</div>
+
+<div>
+  <h2>Journals</h2>
+  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/publications.json") | map(attribute="journal"), data=load_data(path="data/journals.json")) }}
+</div>
+
+<div>
+  <h2>Refereeing</h2>
+  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/refereeing.json") | map(attribute="journal"), data=load_data(path="data/journals.json")) }}
+</div>
+#}
+{% endblock %}

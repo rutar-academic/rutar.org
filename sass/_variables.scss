@@ -1,0 +1,27 @@
+// Colors
+// $main_color: #05B592;
+// $darkBlue: #036350;
+$main_color: #f14c00;
+$dark_color: #662000;
+
+// Grays
+$black: #000;
+$darkerGray: #131339;
+$darkGray: #292939;
+$gray: #666;
+$lightishGray: #ddd;
+$lightGray: #f3f3f3;
+$white: #fafafa;
+$minWidth: 260px;
+
+// Font stacks
+$primary: Palatino, Merriweather, Helvetica, Arial, sans-serif;
+$math: Georgia, Times New Roman, serif;
+$mono: Monaco, Consolas, monospace;
+
+// Mobile breakpoints
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}

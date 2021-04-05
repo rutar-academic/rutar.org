@@ -1,0 +1,23 @@
+{
+  "JoTP": {
+    "name": "J. Theoret. Probab.",
+    "long_name": "Journal of Theoretical Probability",
+    "url": "https://www.springer.com/journal/10959"
+  },
+  "ProcAMS": {
+    "name": "Proc. Amer. Math. Soc.",
+    "long_name": "Proceedings of the American Math Society",
+    "url": "https://www.ams.org/publications/journals/journalsframework/procsubmit"
+  },
+  "IsraelJ": {
+    "name": "Israel J. Math.",
+    "long_name": "Israel Journal of Mathematics",
+    "url": "http://www.math.huji.ac.il/~ijmath/"
+  },
+  "preprint": {
+    "name": "Preprint",
+    "long_name": "ArXiV Preprint",
+    "url": "https://arxiv.org"
+  }
+
+}

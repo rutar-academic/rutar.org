@@ -1,0 +1,222 @@
+@import "reset";
+@import "variables";
+
+html {
+    font-size: 100%;
+    font-family: $primary;
+}
+
+
+// main body contents
+body {
+    background: $white;
+    font: 18px/1.4 $primary;
+    color: $darkGray;
+}
+
+// body wrapper, defines grid
+.wrapper {
+    margin: 0 auto;
+    max-width: 780px;
+    padding: 0 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 60px auto auto;
+}
+
+.wrapper-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($minWidth, 1fr));
+  border-bottom: 2px solid $lightGray;
+}
+
+
+.wrapper-footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($minWidth, 1fr));
+}
+
+// header in top left
+.header-name {
+    margin: 0;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 1px;
+    font-style: oblique;
+    justify-self: left;
+    align-self: end;
+}
+
+// nav in top right
+nav {
+    font-size: 18px;
+    a {
+        margin-left: 20px;
+        color: $darkGray;
+        text-align: right;
+        font-weight: 300;
+        letter-spacing: 1px;
+
+        @include mobile {
+            margin: 0 10px;
+            color: $main_color;
+        }
+    }
+}
+
+.header-nav {
+  justify-self: right;
+  align-self: end;
+}
+
+.header-name, .header-nav {
+  @include mobile {
+    justify-self: center;
+  }
+}
+
+span.de-emph {
+    color: $gray;
+    font-style: italic;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    thead tr th {
+        padding: 3px 10px;
+        background-color: $lightGray;
+        text-align: left;
+    }
+    tbody tr td {
+        padding: 3px 10px;
+        word-wrap: normal;
+        max-width: 90%;
+        border-bottom: 1px solid $lightGray;
+        border-top: 1px solid $lightGray;
+    }
+}
+
+.pub {
+    tbody tr td {
+        padding: 1px 5px;
+    }
+    margin: 1px 0 0 25px;
+}
+
+blockquote {
+    margin: 1.8em .8em;
+    border-left: 2px solid $gray;
+    padding: 0 1rem;
+    font-style: italic;
+    p {
+        margin: 2px 0;
+    }
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+
+    line-height: 1.1;
+    margin: 1em 0 15px;
+    padding: 0;
+
+    @include mobile {
+        line-height: 1.2;
+    }
+    a {
+        &:hover {
+            text-decoration: underline
+        }
+    }
+}
+
+h1 {
+    font-size: 26px;
+    a {
+        color: inherit;
+    }
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+    color: $gray;
+}
+
+p {
+    margin: 10px 0;
+}
+
+a {
+    color: $main_color;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover, &:active {
+        color: $main_color;
+    }
+}
+.hidden-link {
+    color: $darkGray;
+}
+.active {
+    color: $main_color;
+}
+
+ul, ol {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style-type: decimal;
+}
+.pubs li {
+    margin-bottom: 5px;
+}
+
+ol ul, ul ol, ul ul, ol ol {
+    margin: 0;
+}
+
+em, i {
+    font-style: italic;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+}
+
+// Specify the color of the selection
+::selection {
+    background: $lightishGray;
+}
+
+sup { 
+    vertical-align: super;
+    font-size: 70%;
+}
+
+var {
+    font-family: $math;
+    font-style: italic;
+}
+

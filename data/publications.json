@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Local Dimensions of Self-similar Measures Satisfying the Finite Neighbour Condition",
+    "with": [
+      "kehare"
+    ],
+    "journal": "preprint",
+    "status": "(submitted)",
+    "links": {
+      "pdf": "papers/fnc_loop_set.pdf",
+      "arxiv": "2101.07400"
+    }
+  },
+  {
+    "title": "Geometric and Combinatorial Properties of Self-similar Multifractal Measures",
+    "journal": "preprint",
+    "status": "(submitted)",
+    "links": {
+      "pdf": "papers/wsc_multi_R.pdf",
+      "arxiv": "2008.00197"
+    }
+  },
+  {
+    "title": "When the Weak Separation Condition implies the Generalized Finite Type Condition",
+    "with": [
+      "kehare",
+      "kghare"
+    ],
+    "journal": "ProcAMS",
+    "status": "(to appear)",
+    "links": {
+      "pdf": "papers/wsc_equals_fnc.pdf",
+      "doi": "10.1090/proc/15307",
+      "arxiv": "2002.04575"
+    }
+  }
+]

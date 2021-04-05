@@ -1,0 +1,26 @@
+{% import "macros/data_links.html" as linker %}
+{% extends "base.html" %}
+{% block content %}
+{{ section.content | safe }}
+<h2>Math</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Links</th>
+    </tr>
+  </thead>
+{%- set notes = load_data(path="data/notes.json") | sort(attribute="title") -%}
+{%- for note in notes -%}
+  <tbody>
+    <tr>
+      <td>{{ note.title | safe }}</td>
+      <td>{{ linker::list_links(hash=note.links) | safe }}</td>
+    </tr>
+  </tbody>
+{%- endfor -%}
+</table>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

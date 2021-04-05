@@ -1,0 +1,62 @@
+{% import "macros/data_links.html" as linker %}
+{% extends "base.html" %}
+{% block content %}
+<h2>Publications</h2>
+<p>Files linked as direct .pdf files are typically the most updated versions with the fewest typos.
+This is sometimes ahead of the arXiv file, though the numbering and content will be identical in the limit.
+</p>
+<ol class="pubs" reversed>
+  {%- for publ in load_data(path="data/publications.json") %}
+  <li><strong>{{ publ.title }}</strong>
+    <table class="pub">
+    {%- if publ.with -%}
+    <tr>
+      <td>With:</td>
+      <td>{{ linker::data_link_arr(data=load_data(path="data/people.json"), key_arr=publ.with, join_str=", ") }}</td>
+    </tr>
+    {%- endif -%}
+    <tr>
+      <td>Journal:</td>
+      <td><em>{% set journal = linker::data_link(data=load_data(path="data/journals.json"), key=publ.journal) %}{{ journal ~ " " ~ publ.status | trim | safe }}</em></td>
+    </tr>
+    <tr>
+      <td>Links:</td>
+      <td>{{ linker::list_links(hash=publ.links) }}</td>
+    </tr>
+    </table>
+  </li>
+  {% endfor %}
+</ol>
+<h2>Software</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Language</th>
+      <th>Links</th>
+    </tr>
+  </thead>
+{%- set software_hash = load_data(path="data/software.json") -%}
+{%- for software in software_hash -%}
+  <tbody>
+    <tr>
+      <td>{{ software.description }}</td>
+      <td>{{ software.lang }}</td>
+      <td>{{ linker::list_links(hash=software.links) }}</td>
+    </tr>
+  </tbody>
+{%- endfor -%}
+</table>
+
+<h2>Talks</h2>
+<ul>
+{%- set sorted_talks = load_data(path="data/talks.json") | sort(attribute="date") | reverse -%}
+{%- for talk in sorted_talks -%}
+
+  {%- if talk.venue_url -%}{% set talk_name = '<a href="{{ talk.venue_url }}" class="hidden-link">' ~ talk.venue ~ '</a>' %}
+  {%- else -%}{% set talk_name = talk.venue %}
+  {%- endif %}
+  <li>{{ talk.date | date(format="%b. %Y") }} - {{ talk.title }} - {{ talk_name | safe }} {{ linker::list_links(hash=talk.links, pre="(", post=")") | safe }}</li>
+  {% endfor -%}
+</ul>
+{% endblock %}

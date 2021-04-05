@@ -1,0 +1,10 @@
+[
+  {
+    "description": "An automatic LaTeX project manager",
+    "lang": "Python",
+    "links": {
+      "pypi": "texproject",
+      "github": "alexrutar/texproject"
+    }
+  }
+]

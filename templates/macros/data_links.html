@@ -1,0 +1,62 @@
+{# 'data[key]' is a dict with attribute "url", and 'attr' is the corresponding attribute to print as the link #}
+{% macro data_link(key, data, attr="name") %}
+  {%- if data is containing(key) -%}
+    {%- set source = data[key]-%}
+    <a class="hidden-link" href="{{ source.url | safe }}">{{ source[attr] | safe }}</a>
+  {%- endif -%}
+{%- endmacro %}
+
+{# as above, except accepts an array of keys 'key_arr' #}
+{% macro data_link_arr(key_arr, data, attr="name", join_str=" / ") %}
+  {%- for key in key_arr -%}
+  {{ self::data_link(key=key, data=data, attr=attr) }}{% if loop.last == false%}{{ join_str }}{% endif %}
+  {%- endfor -%}
+{% endmacro %}
+
+{% macro list_links(hash, join_str=" / ", pre="", post="") %}
+  {%- if hash | length != 0 -%}
+    {{ pre | safe }}
+    {%- for name, url in hash -%}
+
+      {# set prefix #}
+      {%- if name is matching("arxiv") %}{% set prefix = "https://arxiv.org/abs/" %}
+      {%- elif name is matching("doi") %}{% set prefix = "https://doi.org/" %}
+      {%- elif name is matching("pypi") %}{% set prefix = "https://pypi.org/project/" %}
+      {%- elif name is matching("github") %}{% set prefix = "https://github.com/" %}
+      {%- elif name is matching("pdf|slides|code") %}{% set prefix = "/assets/" %}
+      {%- else %}{% set prefix = "" %}{% endif -%}
+
+      {# set options #}
+      {%- if name is matching("code") %}{% set opts = ["download"] %}
+      {%- endif -%}
+
+      <a href="{{ prefix ~ url | safe }}"{% if opts %} {{ opts | join(sep=" ") }}{% endif %}>{{ name }}</a>{% if loop.last == false%}{{ join_str | safe }}{% endif %}
+    {%- endfor -%}
+    {{ post | safe }}
+  {%- endif -%}
+{% endmacro %}
+
+{# key is the element counted, and data is the loop for key
+- e.g. name "kehare", data is load_data("data/people.json")
+#}
+{% macro count_li(key, data, attr="name", ct) %}
+  <li>{{ self::data_link(key=key, data=data, attr=attr) }} <span class="de-emph">({{ ct }})</span></li>
+{% endmacro %}
+
+{# consume an array of array and return a hash with keys the set of unique elements and values their respective counts #}
+{% macro tally_with_flatten(arr_of_arr, data, attr="name") %}
+<ul>
+  {# construct the flattened array #}
+  {% set flat_arr = [] -%}
+  {%- for arr in arr_of_arr %}{% set_global flat_arr = flat_arr | concat(with=arr) %}{% endfor -%}
+  {%- set uniques = flat_arr | unique | sort -%}
+  <!--- {{ flat_arr }} --->
+
+  {# get the counts #}
+  {%- for key in flat_arr | unique | sort -%}
+    {%- set_global ct = 0 -%}
+    {%- for elem in flat_arr -%}{% if key == elem %}{% set_global ct = ct + 1 %}{% endif %}{%- endfor %}
+  {{ self::count_li(key=key, data=data, attr=attr, ct=ct) }}
+  {% endfor -%}
+</ul>
+{% endmacro %}

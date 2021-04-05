@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Assouad dimensions and self-similar sets satisfying the weak separation condition in <var>ℝ</var>",
+    "short_title": "Assouad dichotomy",
+    "links": {
+      "pdf": "notes/assouad_dichotomy_R.pdf"
+    }
+  },
+  {
+    "title": "Convexity and subadditivity techniques in analysis",
+    "short_title": "Convexity and subadditivity",
+    "links": {
+      "pdf": "notes/subadditivity.pdf"
+    }
+  },
+  {
+    "title": "Lecture Notes in Analysis",
+    "short_title": "Analysis notes",
+    "links": {
+      "pdf": "notes/analysis_notes.pdf"
+    }
+  },
+  {
+    "title": "On <var>L<sup>q</sup></var>-Spectra of Self-similar Measures",
+    "short_title": "<var>L<sup>q</sup></var>-Spectra",
+    "links": {
+      "pdf": "notes/lq_spectrum.pdf"
+    }
+  }
+]

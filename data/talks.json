@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Analysis Group Intro Talk",
+    "date": "2021-01-25",
+    "venue": "St Andrews Online Burn Meet",
+    "links": {
+      "slides": "talks/sta_burn_jan_2021.pdf"
+    }
+  },
+  {
+    "title": "Multifractal Analysis for Self-Similar Measures with Exact Overlaps",
+    "date": "2020-10-27",
+    "venue": "St Andrews Analysis Seminar",
+    "venue_url": "http://www.mcs.st-andrews.ac.uk/pg/pure/Analysis/seminars.html",
+    "links": {
+      "slides": "talks/sta_analysis_oct_2020.pdf",
+      "video": "https://www.youtube.com/watch?v=PJa2iJAN2gs"
+    }
+  },
+  {
+    "title": "Geometric and Combinatorial Separation Conditions for IFSs",
+    "date": "2020-02-28",
+    "venue": "University of Waterloo Analysis Seminar",
+    "venue_url": "https://uwaterloo.ca/pure-mathematics-analysis/events/geometric-and-combinatorial-separation-conditions-iterated",
+    "links": {
+      "slides": "talks/uw_analysis_feb_2020.pdf"
+    }
+  },
+  {
+    "title": "An Algebraic Proof of Quadratic Reciprocity",
+    "date": "2019-07-25",
+    "venue": "CUMC 2019",
+    "venue_url": "https://cumc.math.ca/2019/",
+    "links": {}
+  },
+  {
+    "title": "Pisot-Vijayaraghavan numbers",
+    "date": "2018-07-15",
+    "venue": "CUMC 2018",
+    "venue_url": "https://cumc.math.ca/2017/",
+    "links": {}
+  }
+]
