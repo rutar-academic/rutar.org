@@ -11,4 +11,5 @@ I am primarily interested in fractal geometry and dynamical systems, in particul
 Find more information on my [research page](/research/).
 
 In my spare time I develop [open-source software](https://github.com/alexrutar) and occasionally I take [photos](https://unsplash.com/@rutarphotography).
-I also write about [things that interest me](/writing/).
+I also greatly enjoy [cooking](https://rutar.org).
+Sometimes , I also [write about things](/writing) that interest me.
