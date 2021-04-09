@@ -12,18 +12,12 @@ command = "zola build --base-url $DEPLOY_PRIME_URL"
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block; report=https://rutar.report-uri.com/r/d/xss/enforce"
+    X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     X-UA-Compatible = "IE=edge"
     Content-Security-Policy = "default-src 'none'; img-src 'self' https://d33wubrfki0l68.cloudfront.net/; style-src 'self' https://d33wubrfki0l68.cloudfront.net/; object-src https://rutar.org/assets/ https://d33wubrfki0l68.cloudfront.net/; upgrade-insecure-requests; form-action 'none'; base-uri 'none'; frame-ancestors 'none'; manifest-src 'self'"
     Referrer-Policy = "same-origin"
     Strict-Transport-Security = "max-age=31536000; preload; includeSubDomains"
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact/"
-  status = 301
-  force = false
 
 [[redirects]]
   from = "/writing"
