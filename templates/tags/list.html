@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+{%- set tags = get_taxonomy(kind="tags") %}
+{%- for cat in tags.items %}
+<h2>{{ cat.name | safe }}</h2>
+<ul>
+{%- for page in cat.pages %}
+<li><a href="{{ page.path }}">{{ page.title | safe }}</a><span class="fade"> / {{ page.description | safe }}</span></li>
+
+{%- endfor %}
+</ul>
+{%- endfor %}
+{% endblock %}

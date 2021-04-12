@@ -10,6 +10,11 @@ build_search_index = false
 # minify html
 minify_html = true
 
+taxonomies = [
+   # { name: "tags", paginate: 10 },
+   { name = "tags", paginate = 10}
+]
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ section.content | safe }}
+<table>
+  <thead>
+    <tr>
+      <th>recipe</th>
+      <th>category</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for page in section.pages %}
+    <tr>
+      <td><a href="{{ page.permalink | safe }}">{{ page.title }}</a></td>
+      <td>{{ page.taxonomies.tags.0 }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
