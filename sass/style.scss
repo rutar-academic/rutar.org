@@ -1,20 +1,22 @@
 @import "reset";
 @import "variables";
 
+
 html {
   font-size: 100%;
   font-family: $primary;
 }
 
+
 // main body contents
-// defines grid, and general page layout
 body {
   background: $white;
   font: 18px/1.4 $primary;
   color: $darkGray;
 }
 
-// body wrapper, defines grid
+
+// body wrapper, defines main grid
 .wrapper {
   background: $offWhite;
   margin: 0 auto;
@@ -27,38 +29,43 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 60px auto auto;
   grid-template-areas:
-    "header-name header-nav"
-    "content content"
-    "flexgrid flexgrid";
+    "name nav"
+    "ct ct"
+    "fg fg";
   @include mobile {
     grid-template-columns: auto;
     grid-template-rows: 30px 20px auto auto;
     grid-template-areas:
-      "header-name"
-      "header-nav"
-      "content"
-      "flexgrid";
+      "name"
+      "nav"
+      "ct"
+      "fg";
   }
 }
 
+// content for main article
 .content {
-  grid-area: content;
+  grid-area: ct;
   min-width: 0;
   max-width: 100%;
   border-top: 2px solid $lightGray;
-
 }
 
 // flexible grid for displaying things at the bottom of the page
 .flexgrid-display {
-  grid-area: flexgrid;
+  grid-area: fg;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($minWidth, 1fr));
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, auto);
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(auto-fit, auto);
+  }
 }
 
 // header in top left
 .header-name {
-  grid-area: header-name;
+  grid-area: name;
   margin: 0;
   font-weight: 300;
   font-size: 26px;
@@ -68,9 +75,10 @@ body {
   align-self: end;
 }
 
-
 // post footer
 .post-footer {
+  border-top: 2px solid $lightGray;
+  padding: 10px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -108,10 +116,11 @@ nav {
 }
 
 .header-nav {
-  grid-area: header-nav;
+  grid-area: nav;
   justify-self: right;
   align-self: end;
 }
+
 
 // center headers when on mobile
 .header-name, .header-nav {
@@ -119,6 +128,7 @@ nav {
     justify-self: center;
   }
 }
+
 
 table {
   border-collapse: collapse;
@@ -154,14 +164,16 @@ blockquote {
   }
 }
 
+
 code {
   font: 15px/1.4 $mono;
   background: $lightGray;
   padding: 0 3px;
   border-radius: 2px;
 }
-pre {
-}
+
+
+// render code so you can scroll to see really wide lines
 pre code {
   background: $lightGray;
   padding: 10px;
@@ -281,7 +293,8 @@ img {
 
 // Specify the color of the selection
 ::selection {
-  background: $lightGray;
+  // background: $lightGray;
+  background: $highlight_color;
 }
 
 sup { 
