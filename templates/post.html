@@ -5,9 +5,6 @@
 {{ page.content | safe }}
 <div class="post-footer">
     <div class="post-date">last updated: {{ page.date | safe }}</div>
-    <div class="post-tags">{{ page.taxonomies.tags | join(sep=" / ") | safe }}</div>
+    <div class="post-tags">{{ page.taxonomies.tags | sort | join(sep=" / ") | safe }}</div>
 </div>
-{% endblock %}
-
-{% block footer %}
 {% endblock %}

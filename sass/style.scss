@@ -29,7 +29,7 @@ body {
   grid-template-areas:
     "header-name header-nav"
     "content content"
-    "footer footer";
+    "flexgrid flexgrid";
   @include mobile {
     grid-template-columns: auto;
     grid-template-rows: 30px 20px auto auto;
@@ -37,7 +37,7 @@ body {
       "header-name"
       "header-nav"
       "content"
-      "footer";
+      "flexgrid";
   }
 }
 
@@ -49,7 +49,9 @@ body {
 
 }
 
-.flex-col-display {
+// flexible grid for displaying things at the bottom of the page
+.flexgrid-display {
+  grid-area: flexgrid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($minWidth, 1fr));
 }

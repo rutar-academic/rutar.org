@@ -14,11 +14,8 @@ $white: #fafafa;
 $offWhite: #f7f7f1;
 $darkoffWhite: #f2f2e3;
 
-// I don't know why these numbers work, but they are the exact quantities needed to get
-// flawless transitions between the two-sided headers and one-sided headers, with appropriate
-// centering, and exactly 3 columns of minWidth when the page is full width
-$minWidth: 260px;
-$maxWidth: 800px;
+$minWidth: 280px;
+$maxWidth: 760px;
 $mobileWidth: 539px;
 
 // Font stacks
