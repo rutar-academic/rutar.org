@@ -105,7 +105,7 @@ command -nargs=1 SSave Obsess $NVIM_SESSION_DIR/<args>.vim
 somewhere in your `init.vim`, and the function
 ```
 v() {
-    local fname ultllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+    local fname
     if [ -n "$1" ]; then
         fname="$NVIM_SESSION_DIR/$1.vim"
         if [ ! -f "$fname" ]; then

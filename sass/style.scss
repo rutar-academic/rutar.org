@@ -49,7 +49,7 @@ body {
 
 }
 
-.wrapper-footer {
+.flex-col-display {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($minWidth, 1fr));
 }
@@ -67,11 +67,25 @@ body {
 }
 
 
-.fade {
+// post footer
+.post-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "date tags";
+  width: 100%;
+}
+.fade, .post-date, .post-tags {
   font-size: 16px;
   color: $gray;
 }
-
+.post-date {
+  grid-area: date;
+}
+.post-tags {
+  grid-area: tags;
+  justify-self: right;
+}
 
 // nav in top right
 nav {
