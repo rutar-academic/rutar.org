@@ -1,6 +1,7 @@
 +++
 title = "No-JS static webpage with Zola and CSS Grid on Netlify"
 description = "Fill in a description."
+draft = true
 weight = 0
 
 [extra]

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<h1>All Tags</h1>
 {%- set tags = get_taxonomy(kind="tags") %}
 {%- for cat in tags.items %}
 <h2>{{ cat.name | safe }}</h2>
