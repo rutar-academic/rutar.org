@@ -1,4 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<p>None</p>
+<h2>{{ term.name | safe }}</h2>
+<ul>
+{%- for page in term.pages %}
+<li class="term-list"><a href="{{ page.path }}">{{ page.title | safe }}</a><span class="fade"> / {{ page.description | safe }}</span></li>
+{%- endfor %}
+</ul>
 {% endblock %}
