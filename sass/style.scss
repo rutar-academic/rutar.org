@@ -84,6 +84,13 @@ body {
   grid-template-areas:
     "date tags";
   width: 100%;
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "date"
+      "tags";
+  }
 }
 .fade, .post-date, .post-tags {
   font-size: 16px;
@@ -95,6 +102,9 @@ body {
 .post-tags {
   grid-area: tags;
   justify-self: right;
+  @include mobile {
+    justify-self: left;
+  }
 }
 
 // nav in top right

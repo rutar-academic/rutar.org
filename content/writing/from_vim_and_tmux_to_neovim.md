@@ -51,7 +51,7 @@ Many of the problems detailed in previous section can be easily fixed by simply 
 The only catch here is that I would lose two important features: convenient access to new interactive terminals, and session persistence.
 It turns out that both of these issues can be solved using only neovim.
 
-Most of what I will discuss in the next section will work in modern versions of vim as well (at least [vim 8.1](https://www.vim.org/vim-8.1-released.php)).
+Most of what I will discuss in the next section will work in modern versions of vim as well (at least [Vim 8.1](https://www.vim.org/vim-8.1-released.php)).
 For simplicity, I will only discuss my solution using neovim.
 
 ### Running a terminal inside neovim
@@ -127,14 +127,15 @@ Then rejoin where you left off, just run `v project/name` from anywhere, and the
 As a warning, since `:Obsess` will overwrite existing session files, `:SSave` (if called with an existing `project/name`) will happily wipe out the saved state of an existing session!
 You may want to modify the definition of `:SSave` to prevent this from happening.
 
-If you want completion, add the function
+If you want completion, first add the helper function
 ``` 
 v_session_list() {
     cd $NVIM_SESSION_DIR && find . -type f -name "*.vim" \
         | cut -c 3- | cut -d "." -f 1
 }
 ```
-to your `~/.zshrc` and create a file with name `_v` somewhere in your `$fpath` (or wherever completion files are saved in your personal shell) with content
+to your `~/.zshrc`.
+Then, create a file with name `_v` somewhere in your `$fpath` (or wherever completion files are saved in your personal shell) with content
 ```
 #compdef v
 
@@ -154,5 +155,5 @@ This is quite fast, but it would be a lot better to place the neovim instance in
 Currently, I simply suspend my vim instance with `CTRL-z` and then restore with `fg`.
 However, this is not a particularly nice solution and I have not yet spent the time figuring out how to do this properly.
 
-However, so far, I am very happy with the way this setup works.
+So far, I am very happy with the way this setup works.
 It remains to be seen if this setup will last longer than my previous one.
