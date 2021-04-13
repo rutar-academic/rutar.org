@@ -22,21 +22,30 @@ body {
   padding: 0 10px 25px;
   width: 100%;
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 60px auto auto;
   min-width: 0;
+  row-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px auto auto;
+  grid-template-areas:
+    "header-name header-nav"
+    "content content"
+    "footer footer";
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-rows: 30px 20px auto auto;
+    grid-template-areas:
+      "header-name"
+      "header-nav"
+      "content"
+      "footer";
+  }
 }
 
-.wrapper-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($minWidth, 1fr));
-  border-bottom: 2px solid $lightGray;
-  margin-bottom: -2px;
-}
-
-.contents-main {
+.content {
+  grid-area: content;
   min-width: 0;
   max-width: 100%;
+  border-top: 2px solid $lightGray;
 
 }
 
@@ -47,6 +56,7 @@ body {
 
 // header in top left
 .header-name {
+  grid-area: header-name;
   margin: 0;
   font-weight: 300;
   font-size: 26px;
@@ -55,6 +65,7 @@ body {
   justify-self: left;
   align-self: end;
 }
+
 
 .fade {
   font-size: 16px;
@@ -81,6 +92,7 @@ nav {
 }
 
 .header-nav {
+  grid-area: header-nav;
   justify-self: right;
   align-self: end;
 }

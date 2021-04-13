@@ -27,23 +27,21 @@
 
   <body>
     <div class="wrapper">
-      <div class="wrapper-header">
-        <h1 class="header-name">
-          <a href="/">{{ config.extra.author }}</a>
-        </h1>
+      <h1 class="header-name">
+        <a href="/">{{ config.extra.author }}</a>
+      </h1>
 
-        <nav class="header-nav">
-          {% set links = load_data(path="data/links.json") %}
-          {%- for obj in links.nav -%}
-          {%- if not current_path %}{% set active = false %}
-          {%- elif current_path is starting_with(obj.url) %}{% set active = true %}
-          {%- else %}{% set active = false %}{% endif %}
-          <a {% if active %}class='active' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>
-          {%- endfor %}
-        </nav>
-      </div>
+      <nav class="header-nav">
+        {% set links = load_data(path="data/links.json") %}
+        {%- for obj in links.nav -%}
+        {%- if not current_path %}{% set active = false %}
+        {%- elif current_path is starting_with(obj.url) %}{% set active = true %}
+        {%- else %}{% set active = false %}{% endif %}
+        <a {% if active %}class='active' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>
+        {%- endfor %}
+      </nav>
 
-      <article class="contents-main">
+      <article class="content">
         {% block content %}{% endblock %}
       </article>
 
