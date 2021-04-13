@@ -20,7 +20,8 @@ Within each session, have a dedicated window for performing a task (running a te
 - Allow session persistence with [tmux-ressurect](https://github.com/tmux-plugins/tmux-resurrect).
 - Open new file edits in vim splits / buffers / tabs, and new terminals in tmux panes / windows.
 
-Overall, this worked well, and I used this setup for a couple years.
+Overall, this worked well.
+I used this setup for a couple years.
 However, over time, I accumulated some annoyances that were challenging to resolve.
 
 ## Disillusionment
@@ -57,7 +58,7 @@ For simplicity, I will only discuss my solution using neovim.
 ### Running a terminal inside neovim
 Running a terminal inside neovim is very easy: just run `:term` to convert the current split into a terminal.
 Open a terminal in a new vertical split with `:vsp +term` (or any file other editing command).
-When editing a terminal buffer, hit `i` to enter a special terminal edit mode, and return to normal mode with `CTRL-\ CTRL-n` (all other keystrokes are passed through to the interactive shell).
+With focus on a terminal buffer, hit `i` to enter a special terminal edit mode, and return to normal mode with `CTRL-\ CTRL-n` (all other keystrokes are passed through to the interactive shell).
 In order to use your standard login shell, add a line like
 ```
 set shell=zsh\ --login
