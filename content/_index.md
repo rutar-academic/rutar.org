@@ -1,5 +1,5 @@
 +++
-title = "about"
+title = "About"
 template = "index.html"
 +++
 {{ hidden_link(url="/images/alex.jpg", text="I") }} am a maths PhD student at the {{ hidden_link(url="https://www.st-andrews.ac.uk/mathematics-statistics/", text="University of St Andrews, Scotland") }} (supervised by {{ data_link(key="jmfraser", path="data/people.json", attr="short_name") }} and {{ data_link(key="kjfalconer", path="data/people.json", attr="short_name") }}) in the [analysis group](http://www.mcs.st-and.ac.uk/pg/pure/Analysis/index.html).

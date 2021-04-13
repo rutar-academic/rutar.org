@@ -1,4 +1,4 @@
 +++
-title = "research"
+title = "Research"
 template = "research.html"
 +++

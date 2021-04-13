@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1 class="post-title">{{ page.title | safe }}</h1>
 {{ page.content | safe }}
-{% endblock content %}
+{% endblock %}
+{% block footer %}
+<div class="fade">last updated: {{ page.date | safe }}</div>
+<div class="fade">{{ page.taxonomies.tags | join(sep=" / ") | safe }}</div>
+{% endblock %}

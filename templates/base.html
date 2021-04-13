@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 {% if page %}
-{% set title = page.title | title %}
+{% set title = page.title %}
 {% elif section %}
-{% set title = section.title | title %}
+{% set title = section.title %}
 {% else %}
 {% set title = "404 - Page Not Found" %}
 {% endif %}
@@ -34,15 +34,17 @@
 
         <nav class="header-nav">
           {% set links = load_data(path="data/links.json") %}
-          {% for obj in links.nav %}<a {% if obj.name == title %}class='active' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>{% endfor %}
+          {%- for obj in links.nav -%}
+          {%- if not current_path %}{% set active = false %}
+          {%- elif current_path is starting_with(obj.url) %}{% set active = true %}
+          {%- else %}{% set active = false %}{% endif %}
+          <a {% if active %}class='active' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>
+          {%- endfor %}
         </nav>
       </div>
 
       <article class="contents-main">
-        <h1>{{ title }}</h1>
-        <div class="entry">
-          {% block content %}{% endblock %}
-        </div>
+        {% block content %}{% endblock %}
       </article>
 
       <div class="wrapper-footer">

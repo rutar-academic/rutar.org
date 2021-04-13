@@ -24,6 +24,7 @@ body {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 60px auto auto;
+  min-width: 0;
 }
 
 .wrapper-header {
@@ -33,6 +34,11 @@ body {
   margin-bottom: -2px;
 }
 
+.contents-main {
+  min-width: 0;
+  max-width: 100%;
+
+}
 
 .wrapper-footer {
   display: grid;
@@ -49,6 +55,12 @@ body {
   justify-self: left;
   align-self: end;
 }
+
+.fade {
+  font-size: 16px;
+  color: $gray;
+}
+
 
 // nav in top right
 nav {
@@ -114,6 +126,25 @@ blockquote {
   }
 }
 
+code {
+  font: 15px/1.4 $mono;
+  background: $lightGray;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+pre {
+}
+pre code {
+  background: $lightGray;
+  padding: 10px;
+  max-width: 100%;
+  min-width: 0;
+  display: block;
+  overflow-x: scroll;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
@@ -132,11 +163,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
 h1 {
   font-size: 26px;
   a {
     color: inherit;
   }
+}
+.post-title {
+  text-align: center;
 }
 
 h2 {
@@ -186,6 +221,11 @@ ul, ol {
 
 ul {
   list-style-type: circle;
+}
+
+.tag-list {
+  line-height: 1.2;
+  margin: 4px 0;
 }
 
 ol {

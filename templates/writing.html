@@ -1,8 +1,11 @@
 {% import "macros/data_links.html" as linker %}
 {% extends "base.html" %}
 {% block content %}
+<h1>{{ section.title }}</h1>
 {{ section.content | safe }}
 <h2>Math</h2>
+The documents here are in various states of incompletion.
+Peruse at your own risk.
 <table>
   <thead>
     <tr>
@@ -20,7 +23,26 @@
   </tbody>
 {%- endfor -%}
 </table>
-{% endblock %}
 
+{#
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for page in section.pages %}
+    <tr>
+      <td><a href="{{ page.permalink | safe }}">{{ page.title }}</a></td>
+      <td>{{ page.taxonomies.tags }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+#}
+
+{% endblock %}
 {% block footer %}
 {% endblock %}
