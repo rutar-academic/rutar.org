@@ -1,7 +1,7 @@
 +++
 title = "From Vim and Tmux to Neovim"
 description = "How and why I changed my work environment from a combination of vim and tmux to neovim."
-date = 2021-04-15
+date = 2021-04-13
 
 [extra]
 
@@ -73,7 +73,7 @@ We now have a functional terminal running inside neovim.
 
 There is one problem with this setup: if we open a file with `nvim` from inside a neovim terminal, we get a nested neovim instance running inside the terminal.
 One solution is to use [neovim-remote](https://github.com/mhinz/neovim-remote).
-With neovim-remote, we can send keystrokes to a running neovim instance from any terminal instance.
+With neovim-remote installed, we can send keystrokes to a running neovim instance from _any_ terminal instance (including those running within neovim).
 As a consequence of this, from within our neovim terminal, just run `nvr filename` and `filename` will be opened and replace the terminal window, without nesting.
 If you don't want to replace your current window, there are options to open the file in a new tab or split relative to the terminal split.
 You can read about these with `nvr --help`.
@@ -81,7 +81,7 @@ You can read about these with `nvr --help`.
 ### Saved state and session management
 Neovim comes with a built-in utility for saving sessions: the `:mksession` command.
 Called with an optional file argument (which defaults to placing a `Session.vim` file in the current `:pwd`), it generates a neovim source file at that filename which, when sourced, restores the state of the instance when `:mksession` was first called.
-While `:mksession` works very well for can be somewhat awkward to use in practice.
+While `:mksession` works very well at saving the state, it can be quite tedious to use in practice.
 However, with a small amount of work we can use it to robustly save the state of our vim instance, and restore it when needed.
 
 The first trick is the easiest: just install Tim Pope's [vim-obsession](https://github.com/tpope/vim-obsession).
@@ -121,9 +121,9 @@ v() {
 in your `.zshrc` (or similar).
 You will also need to place a line like
 ```
-export $NVIM_SESSION_DIR="/my/session/directory"
+export $NVIM_SESSION_DIR="/my/session/dir"
 ```
-in your `.zshrc`, where `/my/session/path` is a directory in which you want the session files to be saved.
+in your `.zshrc`, where `/my/session/dir` is a directory in which you want the session files to be saved.
 
 Now, when you want to create a new session, simply `:SSave project/name` to initialize the session file with name `project/name`.
 Edit as usual, and `:wqa` to exit.
@@ -156,9 +156,9 @@ Now, typing `v <TAB>` will offer up the acceptable possibilities for your sessio
 ## Concluding remarks and some challenges
 This setup is conspiculously missing convenient instance persistence.
 Every time you want to rejoin a session, you are sourcing a lot of vimscript to restart the neovim instance.
-This is quite fast (certainly faster than tmux-ressurect), but it would be a lot better to place the neovim instance in the background, or temporarily suspend it to rejoin it again later.
-Currently, I simply suspend my vim instance with `CTRL-z` and then restore with `fg`.
-However, this is not a particularly nice solution and I have not yet spent the time figuring out how to do this properly.
+This is quite fast, but it would be a lot better to place the neovim instance in the background, or temporarily suspend it to rejoin it again later.
+Currently, I simply suspend my neovim instances with `CTRL-z` and then restore with `fg`.
+However, this is not a particularly elegant solution and I have not yet spent the time figuring out how to do this properly.
 
 So far, I am very happy with the way this setup works.
 It remains to be seen if this setup will last longer than my previous one.
