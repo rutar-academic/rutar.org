@@ -5,6 +5,11 @@
 {{ page.content | safe }}
 <div class="post-footer">
     <div class="post-date">last updated: {{ page.date | safe }}</div>
-    <div class="post-tags">{{ page.taxonomies.tags | sort | join(sep=" / ") | safe }}</div>
+    <div class="post-tags">
+        {%- for tag in page.taxonomies.tags | sort %}
+        <a class="hidden-link" href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag | safe }}</a>
+        {%- if not loop.last %} / {% endif -%}
+        {% endfor -%}
+    </div>
 </div>
 {% endblock %}

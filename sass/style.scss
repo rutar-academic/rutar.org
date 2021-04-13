@@ -241,14 +241,14 @@ a {
 }
 
 .hidden-link {
-  color: $darkGray;
+  color: inherit;
 }
 
 .active {
   color: $main_color;
 }
 
-span.de-emph {
+span.side-count {
   color: $gray;
   font-style: italic;
 }

@@ -40,7 +40,7 @@
 - e.g. name "kehare", data is load_data("data/people.json")
 #}
 {% macro count_li(key, data, attr="name", ct) %}
-  <li>{{ self::data_link(key=key, data=data, attr=attr) }} <span class="de-emph">({{ ct }})</span></li>
+  <li>{{ self::data_link(key=key, data=data, attr=attr) }} <span class="side-count">({{ ct }})</span></li>
 {% endmacro %}
 
 {# consume an array of array and return a hash with keys the set of unique elements and values their respective counts #}
