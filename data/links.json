@@ -6,10 +6,10 @@
     ],
 
     "internal": [
-        {"url": "/contact/", "name": "Contact"},
         {"url": "/research/#publications", "name": "Publications"},
         {"url": "/research/#software", "name": "Software"},
         {"url": "/research/#talks", "name": "Talks"},
+        {"url": "/tags/", "name":"Non-Math Writing"},
         {"url": "/writing/", "name": "Expository Notes"},
         {"url": "/assets/alex_rutar_cv.pdf", "name": "Curriculum Vitae"}
     ],

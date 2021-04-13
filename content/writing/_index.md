@@ -2,6 +2,7 @@
 title = "Writing"
 template = "writing.html"
 page_template = "article.html"
+description = "Writing, in various forms, on math and non-math topics."
 sort_by = "date"
 weight = 0
 +++
