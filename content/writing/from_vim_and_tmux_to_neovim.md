@@ -72,6 +72,9 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 ```
 We now have a functional terminal running inside neovim.
 
+Another benefit of running a terminal inside neovim is that you get tmux's "copy-mode" essentially for free.
+This is as simple as returning to normal mode and treating the terminal split as just another text file.
+
 There is one problem with this setup: if we open a file with `nvim` from inside a neovim terminal, we get a nested neovim instance running inside the terminal.
 One solution is to use [neovim-remote](https://github.com/mhinz/neovim-remote).
 With neovim-remote installed, we can send keystrokes to a running neovim instance from _any_ terminal instance (including those running within neovim).
@@ -83,7 +86,7 @@ You can read about these with `nvr --help`.
 Neovim comes with a built-in utility for saving sessions: the `:mksession` command.
 Called with an optional file argument (which defaults to placing a `Session.vim` file in the current `:pwd`), it generates a neovim source file at that filename which, when sourced, restores the state of the instance when `:mksession` was first called.
 While `:mksession` works very well at saving the state, it can be quite tedious to use in practice.
-However, with a small amount of work we can use it to robustly save the state of our vim instance, and restore it when needed.
+However, with a small amount of work we can use it to robustly save the state of our neovim instance, and restore it when needed.
 
 The first trick is the easiest: just install Tim Pope's [vim-obsession](https://github.com/tpope/vim-obsession).
 This plugin defines an `:Obsess` command, which is used in the same way as `:mksession`, but with some great quality of life features:
@@ -152,7 +155,7 @@ _v() {
 }
 _v
 ```
-Now, typing `v <TAB>` will offer up the acceptable possibilities for your session name.
+Now, typing `v<SPACE><TAB>` in your terminal will offer up the acceptable possibilities for your session name.
 
 ## Concluding remarks and some challenges
 This setup is conspiculously missing convenient instance persistence.
