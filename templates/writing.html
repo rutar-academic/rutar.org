@@ -6,7 +6,7 @@
 <h2>Math</h2>
 The documents here are in various states of incompletion.
 Peruse at your own risk.
-<table>
+<table class="full-width">
   <thead>
     <tr>
       <th>Title</th>
@@ -23,24 +23,22 @@ Peruse at your own risk.
   </tbody>
 {%- endfor -%}
 </table>
-
-{#
-<table>
+<h2>Articles</h2>
+<table class="full-width">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Tags</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
 {% for page in section.pages %}
     <tr>
       <td><a href="{{ page.permalink | safe }}">{{ page.title }}</a></td>
-      <td>{{ page.taxonomies.tags }}</td>
+      <td>{{ page.date }}</td>
     </tr>
 {% endfor %}
   </tbody>
 </table>
-#}
 
 {% endblock %}
