@@ -224,6 +224,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 26px;
+  counter-reset: section;
   a {
     color: inherit;
   }
@@ -234,10 +235,19 @@ h1 {
 
 h2 {
   font-size: 20px;
+  counter-reset: subsection;
+  &:before {
+    counter-increment: section;
+    content: counter(section) ".\0000a0\0000a0";
+  }
 }
 
 h3 {
   font-size: 18px;
+  &:before {
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) ".\0000a0\0000a0";
+  }
 }
 
 h4 {
