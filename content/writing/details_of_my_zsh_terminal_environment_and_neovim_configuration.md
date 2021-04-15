@@ -3,6 +3,7 @@ title = "Details of my Zsh Terminal Environment and Neovim Configuration"
 description = "A thorough presentation of my neovim and zsh configuration files."
 weight = 0
 date = 2021-04-13
+draft = true
 
 [extra]
 

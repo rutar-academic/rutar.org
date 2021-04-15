@@ -9,9 +9,8 @@ updated = 2021-04-15
 [taxonomies]
 tags = ["vim", "shell"]
 +++
-I recently migrated from a vim and tmux work environment to one using only [neovim](https://neovim.io/).
+I recently migrated from a vim and tmux work environment to one using only [neovim](https://github.com/neovim/neovim).
 In this article, I will discuss some of the issues I had with my old workflow, and why this transition resolved some of these problems.
-I will not to go into much detail about my zsh and neovim setup; you can read about that [here](@/writing/details_of_my_zsh_terminal_environment_and_neovim_configuration.md).
 
 ## My work enrivonment with vim and tmux
 For reference, here is a crude approximation of my old work environment with vim and tmux:

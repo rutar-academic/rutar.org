@@ -7,7 +7,7 @@
 {{ page.content | safe }}
 </div>
 <div class="post-footer">
-    <div class="post-date">last updated: {{ page.date | safe }}</div>
+  <div class="post-date">last updated: {% if page.updated %}{{ page.updated | safe }}{% else %}{{ page.date | safe }}{% endif %}</div>
     <div class="post-tags">
         {%- for tag in page.taxonomies.tags | sort %}
         <a class="hidden-link" href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag | safe }}</a>
