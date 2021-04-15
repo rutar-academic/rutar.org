@@ -1,5 +1,14 @@
 [
   {
+    "title": "A Multifractal Decomposition for Self-similar Measures with Exact Overlaps",
+    "journal": "preprint",
+    "status": "(submitted)",
+    "links": {
+      "pdf": "papers/fnc_loop_multi.pdf",
+      "arxiv": "2104.06997"
+    }
+  },
+  {
     "title": "Local Dimensions of Self-similar Measures Satisfying the Finite Neighbour Condition",
     "with": [
       "kehare"
