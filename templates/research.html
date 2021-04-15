@@ -18,7 +18,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
     {%- endif -%}
     <tr>
       <td>Journal:</td>
-      <td><em>{% set journal = linker::data_link(data=load_data(path="data/journals.json"), key=publ.journal) %}{{ journal ~ " " ~ publ.status | trim | safe }}</em></td>
+      <td><em>{{ linker::data_link(data=load_data(path="data/journals.json"), key=publ.journal) | safe }}</em> {{ publ.status | trim | safe }}</td>
     </tr>
     <tr>
       <td>Links:</td>
