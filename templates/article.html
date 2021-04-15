@@ -4,17 +4,24 @@
 <h1 class="post-title">{{ page.title | safe }}</h1>
 <span class="fade">{{ page.date | date(format="%B %-d, %Y") }}</span>
 <!--- toc -->
-<h2>Contents</h2>
 {% if page.toc %}
-<div class="toc">
-    <ol class="no-margin">
-    {% for h1 in page.toc %}
-        <li>
-            <a href="{{h1.permalink | safe}}">{{ h1.title }}</a>
-        </li>
-    {% endfor %}
+<h2>Contents</h2>
+<ol class="no-margin toc">
+  {% for h1 in page.toc %}
+  <li>
+    <a href="{{h1.permalink | safe}}">{{ h1.title }}</a>
+    {% if h1.children %}
+    <ol>
+      {% for h2 in h1.children %}
+      <li>
+        <a href="{{h2.permalink | safe}}">{{ h2.title }}</a>
+      </li>
+      {% endfor %}
     </ol>
-</div>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>
 {% endif %}
 <div class="article-contents">
 {{ page.content | safe }}
