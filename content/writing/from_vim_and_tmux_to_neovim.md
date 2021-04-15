@@ -1,7 +1,8 @@
 +++
 title = "From Vim and Tmux to Neovim"
 description = "How and why I changed my work environment from a combination of vim and tmux to neovim."
-date = 2021-04-13
+date = 2021-04-12
+updated = 2021-04-15
 
 [extra]
 

@@ -227,6 +227,7 @@ h1 {
   a {
     color: inherit;
   }
+  counter-reset: section;
 }
 .post-title {
   text-align: center;
@@ -234,10 +235,23 @@ h1 {
 
 h2 {
   font-size: 20px;
+  counter-reset: subsection;
 }
+
 
 h3 {
   font-size: 18px;
+}
+
+.article-contents {
+  h3::before {
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) ".\0000a0\0000a0";
+  }
+  h2::before {
+    counter-increment: section;
+    content: counter(section) ".\0000a0\0000a0";
+  }
 }
 
 h4 {
@@ -295,6 +309,10 @@ ol {
 
 ol ul, ul ol, ul ul, ol ol {
   margin: 0;
+}
+
+li {
+  margin: 2px 0;
 }
 
 em, i {
