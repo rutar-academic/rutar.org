@@ -11,6 +11,7 @@ command = "zola build --base-url $DEPLOY_PRIME_URL"
 [[headers]]
   for = "/*"
   [headers.values]
+    Permissions-Policy = "interest-cohort=()"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
