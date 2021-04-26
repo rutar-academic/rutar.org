@@ -11,7 +11,7 @@
         {"url": "/research/#talks", "name": "Talks"},
         {"url": "/tags/", "name":"Non-Math Writing"},
         {"url": "/writing/", "name": "Expository Notes"},
-        {"url": "/assets/alex_rutar_cv.pdf", "name": "Curriculum Vitae"}
+        {"url": "/alex_rutar_cv.pdf", "name": "Curriculum Vitae"}
     ],
 
     "external": [

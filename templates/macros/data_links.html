@@ -23,7 +23,7 @@
       {%- elif name is matching("doi") %}{% set prefix = "https://doi.org/" %}
       {%- elif name is matching("pypi") %}{% set prefix = "https://pypi.org/project/" %}
       {%- elif name is matching("github") %}{% set prefix = "https://github.com/" %}
-      {%- elif name is matching("pdf|slides|code") %}{% set prefix = "/assets/" %}
+      {%- elif name is matching("pdf|slides|code") %}{% set prefix = "/" %}
       {%- else %}{% set prefix = "" %}{% endif -%}
 
       {# set options #}

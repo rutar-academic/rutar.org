@@ -26,7 +26,7 @@ description = "Personal webpage for math and related topics."
 
 [extra.info]
 email = "alex@rutar.org"
-pgp = "/assets/pubkey.asc"
+pgp = "/pubkey.asc"
 uni = "ar339@st-andrews.ac.uk"
 github = "alexrutar"
 orcid = "0000-0001-5173-992X"
