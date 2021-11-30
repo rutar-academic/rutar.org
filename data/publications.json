@@ -1,5 +1,17 @@
 [
   {
+    "title": "Attainable forms of intermediate dimensions",
+    "with": [
+      "abanaji"
+    ],
+    "journal": "preprint",
+    "status": "(submitted)",
+    "links": {
+      "pdf": "papers/attainable_int_dims.pdf",
+      "arxiv": "2111.14678"
+    }
+  },
+  {
     "title": "A Multifractal Decomposition for Self-similar Measures with Exact Overlaps",
     "journal": "preprint",
     "status": "(submitted)",
