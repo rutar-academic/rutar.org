@@ -6,6 +6,7 @@
     ],
     "journal": "preprint",
     "status": "(submitted)",
+    "database": "alexrutar/attainable_int_dims",
     "links": {
       "pdf": "papers/attainable_int_dims.pdf",
       "arxiv": "2111.14678"
@@ -15,6 +16,7 @@
     "title": "A Multifractal Decomposition for Self-similar Measures with Exact Overlaps",
     "journal": "preprint",
     "status": "(submitted)",
+    "database": "alexrutar/fnc_loop_multi",
     "links": {
       "pdf": "papers/fnc_loop_multi.pdf",
       "arxiv": "2104.06997"
@@ -27,6 +29,7 @@
     ],
     "journal": "preprint",
     "status": "(submitted)",
+    "database": "alexrutar/fnc_loop_set",
     "links": {
       "pdf": "papers/fnc_loop_set.pdf",
       "arxiv": "2101.07400"
@@ -36,6 +39,7 @@
     "title": "Geometric and Combinatorial Properties of Self-similar Multifractal Measures",
     "journal": "preprint",
     "status": "(submitted)",
+    "database": "alexrutar/wsc_multi_R",
     "links": {
       "pdf": "papers/wsc_multi_R.pdf",
       "arxiv": "2008.00197"
@@ -49,6 +53,7 @@
     ],
     "journal": "ProcAMS",
     "status": "<b>149</b> (2021), 1555-1568 ",
+    "database": "alexrutar/wsc_equals_fnc",
     "links": {
       "pdf": "papers/wsc_equals_fnc.pdf",
       "doi": "10.1090/proc/15307",
