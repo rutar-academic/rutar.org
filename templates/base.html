@@ -14,7 +14,6 @@
     <title>{{ title }} – {{ config.extra.author }}</title>
 
     <meta charset="utf-8" />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
     <meta name="description" content="{{ description }}" />
     <meta name="author" content="{{ config.extra.author }}" />
@@ -30,9 +29,9 @@
 
   <body>
     <div class="wrapper">
-      <h1 class="header-name">
+      <header class="header-name">
         <a href="/">{{ config.extra.author }}</a>
-      </h1>
+      </header>
 
       <nav class="header-nav">
         {% set links = load_data(path="data/links.json") %}
