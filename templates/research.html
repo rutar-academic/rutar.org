@@ -54,7 +54,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
 {%- set sorted_talks = load_data(path="data/talks.json") | sort(attribute="date") | reverse -%}
 {%- for talk in sorted_talks -%}
 
-  {%- if talk.venue_url -%}{% set talk_name = '<a href="{{ talk.venue_url }}" class="hidden-link">' ~ talk.venue ~ '</a>' %}
+{%- if talk.venue_url -%}{% set talk_name = '<a href="' ~ talk.venue_url ~ '" class="hidden-link">' ~ talk.venue ~ '</a>' %}
   {%- else -%}{% set talk_name = talk.venue %}
   {%- endif %}
   <li>{{ talk.date | date(format="%b. %Y") }} - {{ talk.title }} - {{ talk_name | safe }} {{ linker::list_links(hash=talk.links, pre="(", post=")") | safe }}</li>
