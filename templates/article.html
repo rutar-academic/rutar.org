@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-
+{% block title %}{{ page.title | safe }}{% endblock %}
+{% block description %}{{ page.description | safe }}{% endblock %}
 {% block content %}
-<h1 class="post-title">{{ page.title | safe }}</h1>
 <span class="fade">{{ page.date | date(format="%B %-d, %Y") }}</span>
 <div class="article-contents">
 {{ page.content | safe }}

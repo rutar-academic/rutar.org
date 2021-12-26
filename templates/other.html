@@ -1,7 +1,8 @@
 {% import "macros/data_links.html" as linker %}
 {% extends "base.html" %}
+{% block title %}{{ section.title | safe }}{% endblock %}
+{% block description %}{{ section.description | safe }}{% endblock %}
 {% block content %}
-<h1>{{ section.title | safe }}</h1>
 {{ section.content | safe }}
 {% endblock %}
 {% block flexgrid %}

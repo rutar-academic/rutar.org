@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% block title %}Tag: {{ term.name | safe }}{% endblock %}
+{% block description %}All pages with tags {{ term.name | safe }}{% endblock %}
 {% block content %}
-<h2>{{ term.name | safe }}</h2>
 <ul>
 {%- for page in term.pages %}
 <li class="term-list"><a href="{{ page.path }}">{{ page.title | safe }}</a><span class="fade"> / {{ page.description | safe }}</span></li>

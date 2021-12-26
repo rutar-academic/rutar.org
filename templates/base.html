@@ -5,10 +5,21 @@
 {% elif section %}
 {% set title = section.title %}
 {% set description = section.description %}
+{% elif current_path %}
+  {% if current_path == "/tags/" %}
+  {% set title = "All Tags" %}
+  {% set description = "All posts and tags." %}
+  {% elif current_path is starting_with("/tags/") %}
+  {% set title = "Tag: " ~ term.name %}
+  {% set description = "All pages with tag " ~ term.name %}
+  {% endif %}
 {% else %}
 {% set title = "404 - Page Not Found" %}
-{% set description = "Page Not Found" %}
+{% set description = "Error: page not found" %}
 {% endif %}
+{# note: once https://github.com/Keats/tera/issues/265 is implemented, can reuse block - for now, this is a workaround #}
+{# todo: set title for the tag pages as well #}
+{# once done, replace {{ description }} with {% block description %}{% endblock %} etc. #}
 <html lang="en">
   <head>
     <title>{{ title }} – {{ config.extra.author }}</title>
@@ -18,7 +29,7 @@
     <meta name="description" content="{{ description }}" />
     <meta name="author" content="{{ config.extra.author }}" />
     <meta property="og:title" content="{{ title }} -- {{ config.extra.author | safe }}" />
-    <meta property="og:description" content="{{ description | safe }}" />
+    <meta property="og:description" content="{{ description }}" />
 
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -44,6 +55,7 @@
       </nav>
 
       <article class="content">
+        <h1 {% if page %}class="post-title"{% endif %}>{{ title }}</h1>
         {% block content %}{% endblock %}
       </article>
 
