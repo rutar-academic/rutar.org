@@ -92,7 +92,7 @@ One method to share public keys with other users is to use a _key server_.
 This is essentially an online database containing a large list of public keys.
 A note of caution: keyservers are typically write-only so it is not possible to delete a key once you have uploaded it to the server.
 
-For example, to submit your public key to the default keyserver (which is most likely the [OpenPDP keyserver](http://keys.gnupg.net)), run
+For example, to submit your public key to the default keyserver, run
 ```
 $ gpg --send-key user@gmail
 ```
