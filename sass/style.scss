@@ -2,6 +2,18 @@
 @import "variables";
 
 
+:root {
+  --main-color: #f14c00;
+  --dark-color: #662000;
+  --highlight-color: #ffdccc;
+  --dark-gray: #292939;
+  --gray: #666;
+  --light-gray: #ddd;
+  --white: #fafafa;
+  --off-white: #f7f7f1;
+  --dark-off-white: #f2f2e3;
+}
+
 html {
   font-size: 100%;
   font-family: $primary;
@@ -10,15 +22,15 @@ html {
 
 // main body contents
 body {
-  background: $white;
+  background: var(--white);
   font: 18px/1.4 $primary;
-  color: $darkGray;
+  color: var(--dark-gray);
 }
 
 
 // body wrapper, defines main grid
 .wrapper {
-  background: $offWhite;
+  background: var(--offwhite);
   margin: 0 auto;
   max-width: $maxWidth;
   padding: 0 10px 25px;
@@ -48,7 +60,7 @@ body {
   grid-area: ct;
   min-width: 0;
   max-width: 100%;
-  border-top: 2px solid $lightGray;
+  border-top: 2px solid var(--light-gray);
 }
 
 // flexible grid for displaying things at the bottom of the page
@@ -77,7 +89,7 @@ body {
 
 // post footer
 .post-footer {
-  border-top: 2px solid $lightGray;
+  border-top: 2px solid var(--light-gray);
   padding: 10px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -94,7 +106,7 @@ body {
 }
 .fade, .post-date, .post-tags {
   font-size: 16px;
-  color: $gray;
+  color: var(--gray);
 }
 .post-date {
   grid-area: date;
@@ -112,7 +124,7 @@ nav {
   font-size: 18px;
   a {
     margin-left: 20px;
-    color: $darkGray;
+    color: var(--dark-gray);
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -120,7 +132,7 @@ nav {
     // colour links on mobile
     @include mobile {
       margin: 0 10px;
-      color: $main_color;
+      color: var(--main-color);
     }
   }
 }
@@ -145,15 +157,15 @@ table {
   margin: 25px 0;
   thead tr th {
     padding: 3px 10px;
-    background-color: $darkoffWhite;
+    background-color: var(--dark-off-white);
     text-align: left;
-    border-bottom: 1px solid $lightGray;
+    border-bottom: 1px solid var(--light-gray);
   }
   tbody tr td {
     padding: 3px 10px;
     word-wrap: normal;
     max-width: 90%;
-    border-bottom: 1px solid $lightGray;
+    border-bottom: 1px solid var(--light-gray);
   }
 }
 
@@ -170,7 +182,7 @@ table {
 
 address {
   margin: 1.8em .8em;
-  border-left: 2px solid $gray;
+  border-left: 2px solid var(--gray);
   padding: 0 1rem;
   font-style: italic;
   p {
@@ -181,7 +193,7 @@ address {
 
 code {
   font: 15px/1.4 $mono;
-  background: $lightGray;
+  background: var(--light-gray);
   padding: 0 3px;
   border-radius: 2px;
 }
@@ -189,7 +201,7 @@ code {
 
 // render code so you can scroll to see really wide lines
 pre code {
-  background: $lightGray;
+  background: var(--light-gray);
   padding: 10px;
   max-width: 100%;
   min-width: 0;
@@ -256,7 +268,7 @@ h3 {
 
 h4 {
   font-size: 16px;
-  color: $gray;
+  color: var(--gray);
 }
 
 p {
@@ -264,11 +276,11 @@ p {
 }
 
 a {
-  color: $main_color;
+  color: var(--main-color);
   text-decoration: none;
   cursor: pointer;
   &:hover, &:active {
-    color: $main_color;
+    color: var(--main-color);
   }
 }
 
@@ -277,11 +289,11 @@ a {
 }
 
 .active {
-  color: $main_color;
+  color: var(--main-color);
 }
 
 span.side-count {
-  color: $gray;
+  color: var(--gray);
   font-style: italic;
 }
 
@@ -330,8 +342,7 @@ img {
 
 // Specify the color of the selection
 ::selection {
-  // background: $lightGray;
-  background: $highlight_color;
+  background: var(--highlight-color);
 }
 
 sup { 
@@ -343,3 +354,36 @@ var {
   font-family: $math;
   font-style: italic;
 }
+
+// Inline footnotes
+label {
+  cursor: pointer;
+  vertical-align: super;
+  line-height: 1;
+  font-size: .75em;
+  padding-left: .1em;
+}
+
+label:hover {
+  color: var(--main-color);
+}
+label:before {content:"[";}
+label:after {content:"]";}
+
+label + input,
+label + input + small {
+  display: none;
+}
+
+input:checked + small {
+  display: block;
+  color: var(--gray);
+  padding: .8em 0 1em 2.5vw;;
+}
+
+// Dark mode
+// @include darkmode {
+//   --textcolor: #dadada;
+//   --bgcolor: #141414;
+//   --highlight: #ffc400;
+// }
