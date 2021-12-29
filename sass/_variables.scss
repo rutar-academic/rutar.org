@@ -30,3 +30,9 @@ $mono: Monaco, Consolas, monospace;
     @content;
   }
 }
+
+@mixin darkmode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
