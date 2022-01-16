@@ -2,6 +2,7 @@
 title = "Sharing Secrets with GnuPG"
 description = "How and why I changed my work environment from a combination of vim and tmux to neovim."
 date = 2021-04-14
+updated = 2022-01-16
 
 [extra]
 
@@ -29,9 +30,9 @@ You will be prompted to answer some questions about the key you are generating, 
 
 Now that you have a keypair, you can export your public key with
 ```
-$ gpg --output my_pubkey.asc --armor --export user@email
+$ gpg --output my_pubkey.asc --armor --export <key-id>
 ```
-where `user@gmail` is the email address that you are chose when generating the keypair.
+where `<key-id>` is the identification string associated with the keypair.
 
 If you want to back up your secret key and save it to a secure location, run
 ```
@@ -81,43 +82,7 @@ In each block:
 The long string of characters in the second line is known the _fingerprint_ of the key.
 The last 8 characters, in this case `39M5KD93` is the _short key id_, and the last 16 characters `210KZMCN39M5KD93` are known as the _long key id_.
 You can also view these more easily by including the option `--keyid-format short` or `--keyid-format long` in `gpg --list-keys`.
-- The `uid` contains identification for the user
+- The `uid` contains identification for the user: for example `'Your Name (local) <user@email>'` is the key ID.
 - The `sub` contains details about the key itself, such as the encryption protocol, creation date, and optional expiry date.
 
-You can also list your private keys with `gpg --list-private-keys`, in the same way as above.
-
-## Keyservers, signing, and revocation certificates
-### Sending and receiving keys from a keyserver
-One method to share public keys with other users is to use a _key server_.
-This is essentially an online database containing a large list of public keys.
-A note of caution: keyservers are typically write-only so it is not possible to delete a key once you have uploaded it to the server.
-
-For example, to submit your public key to the default keyserver, run
-```
-$ gpg --send-key user@gmail
-```
-If you know the key id of a public key on a certain keyserver, you can also import the key with
-```
-$ gpg --recv-key key_id
-```
-For example, you can add my public key to your keychain by replacing `key_id` with `A7B3FED0`.
-
-Despite the convenience, using keyservers introduces new complications surrounding with key management.
-These can be essentially subdivided into two sections:
-
-1. Establishing trust
-2. Removing published keys
-
-I will discuss these two issues in the subsequent sections.
-
-### Establishing trust and key signing
-Note: under construction.
-- [key revocation](http://www.spywarewarrior.com/uiuc/ss/revoke/pgp-revoke.htm)
-- [key signing](https://gist.github.com/F21/b0e8c62c49dfab267ff1d0c6af39ab84)
-- [more key signing](https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages)
-- [key backup](https://www.saminiir.com/paper-storage-and-recovery-of-gpg-keys/)
-- [subkeys?](https://www.saminiir.com/establish-cryptographic-identity-using-gnupg/#creating-the-master-key)
-
-
-<!-- "In general, it's not advisable to post personal public keys to key servers. There is no method of removing a key once it's posted and there is no method of ensuring that the key on the server was placed there by the supposed owner of the key." -->
-
+You can also list your private keys with `gpg --list-secret-keys`, in the same way as above.
