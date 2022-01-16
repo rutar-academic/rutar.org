@@ -2,6 +2,7 @@
 title = "No-JS static webpage with Zola and CSS Grid on Netlify"
 description = "Fill in a description."
 draft = true
+date = 2022-01-16
 weight = 0
 
 [extra]
