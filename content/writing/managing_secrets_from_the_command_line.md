@@ -1,6 +1,6 @@
 +++
-title = "Managing Secrets on MacOS from the Command Line."
-description = "Manage secrets from the command line and scripts on MacOS."
+title = "Managing Secrets from the Command Line."
+description = "Manage secrets from the command line and scripts on UNIX-like systems."
 weight = 0
 date = 2022-01-16
 
@@ -37,16 +37,12 @@ keyring get <secret> <username> | pbcopy
 Since keyring is a python script, it is also useful when programatically accessing secrets from within python scripts.
 
 ### Managing secrets with pass
-Another useful option is [pass](https://www.passwordstore.org/).
-You can install it using [brew](https://brew.sh/):
-```
-brew install pass
-```
+Another useful option is [pass](https://www.passwordstore.org/): visit the page for installation instructions for your device.
 You need to first create a new password store with an existing GPG key:
 ```
 pass init <key-id>
 ```
-You can find a short primer on GPG [here](@/writing/sharing_secrets_with_gnupg.md).
+I've written a short primer on GPG [here](@/writing/sharing_secrets_with_gnupg.md).
 Add secrets with
 ```
 pass insert <secret-name>
