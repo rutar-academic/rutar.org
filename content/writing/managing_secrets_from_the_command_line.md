@@ -1,8 +1,9 @@
 +++
-title = "Managing Secrets from the Command Line."
+title = "Managing Secrets from the Command Line"
 description = "Manage secrets from the command line and scripts on UNIX-like systems."
 weight = 0
 date = 2022-01-16
+updated = 2022-01-17
 
 [extra]
 
@@ -30,7 +31,7 @@ and retrieve them with
 keyring get <secret-name> <username>
 ```
 Note that this prints the secret to stdout.
-To copy the output to the clipboard, simply pipe to pbcopy:
+To copy the output to the clipboard, simply pipe to pbcopy (on Mac OS):
 ```
 keyring get <secret> <username> | pbcopy
 ```
