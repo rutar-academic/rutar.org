@@ -6,5 +6,12 @@
       "pypi": "texproject",
       "github": "alexrutar/texproject"
     }
+  },
+  {
+    "description": "Query adjacency properties of four-letter words",
+    "lang": "C",
+    "links": {
+      "github": "alexrutar/wordpath"
+    }
   }
 ]

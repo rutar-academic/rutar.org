@@ -76,3 +76,8 @@ There are lots of tutorials online; you can find a decent one [here](https://htm
 ### Future steps
 In my opinion, the best way to learn HTML and CSS is to start with a simple webpage (for example, this one!), download the content locally, and understand how everything works.
 ## Deployment with Github and Cloudflare Pages
+## Other miscellaneous topics
+### custom domain setup
+### site security
+mozilla observatory, adding headers on cloud flare
+### https
