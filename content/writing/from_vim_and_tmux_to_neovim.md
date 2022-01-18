@@ -2,7 +2,7 @@
 title = "From Vim and Tmux to Neovim"
 description = "How and why I changed my work environment from a combination of vim and tmux to neovim."
 date = 2021-04-12
-updated = 2021-04-15
+updated = 2022-01-18
 
 [extra]
 
@@ -12,7 +12,7 @@ tags = ["vim", "shell"]
 I recently migrated from a vim and tmux work environment to one using only [neovim](https://github.com/neovim/neovim).
 In this article, I will discuss some of the issues I had with my old workflow, and why this transition resolved some of these problems.
 
-## My work enrivonment with vim and tmux
+## My work environment with vim and tmux
 For reference, here is a crude approximation of my old work environment with vim and tmux:
 
 - Each project gets its own tmux session.
@@ -127,7 +127,7 @@ You will also need to place a line like
 ```
 export $NVIM_SESSION_DIR="/my/session/dir"
 ```
-in your `.zshrc`, where `/my/session/dir` is a directory in which you want the session files to be saved.
+in your `.zshrc`, where `/my/session/dir` is the directory in which you want the session files to be saved.
 
 Now, when you want to create a new session, simply `:SSave project/name` to initialize the session file with name `project/name`.
 Edit as usual, and `:wqa` to exit.
@@ -164,5 +164,5 @@ This is quite fast, but it would be a lot better to place the neovim instance in
 Currently, I simply suspend my neovim instances with `CTRL-z` and then restore with `fg`.
 However, this is not a particularly elegant solution and I have not yet spent the time figuring out how to do this properly.
 
-So far, I am very happy with the way this setup works.
-It remains to be seen if this setup will last longer than my previous one.
+So far, I am very happy with this setup.
+It remains to be seen if it will last longer than my previous one.

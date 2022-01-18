@@ -34,13 +34,13 @@ and, when you double-click on the file, it should open in your browser and show 
 
 However, webpages often have a large amount of repetition: for example, each [article](/tags/) on this webpage has different content but the many shared layout features.
 In order to make it easier to create new pages, a common technique is to use a [template processor](https://en.wikipedia.org/wiki/Template_processor).
-This is a program which takes files written in a templating language (such as [Jinja](https://jinja.palletsprojects.com/en/3.0.x/templates/)) and converts them into HTML, CSS, and JavaScript files.
+This is a program which takes files written in a templating language (such as [Jinja](https://jinja.palletsprojects.com/en/3.0.x/templates/) or [Tera](https://tera.netlify.app/)) and converts them into HTML, CSS, and JavaScript files.
 One writes the templates and content files, and then uses the template processor to generate the webpage files.
 
 Dynamic webpages are built in a similar way, except rather than generating the pages in advance, the files sent to the visitor are generated as they are requested.
 A dynamic webpage will typically have a [database](https://en.wikipedia.org/wiki/Database) used to store the site information, which is then used to generate the content.
 This allows substantially more flexibility in content delivery (e.g. website state, customization for the viewer, etc.) since the content delivered to the webpage can depend on arbitrary variables whose values are unknown when creating the site.
-However, since the pages need to be generated for each visitor, dynamic websites are typically slower and more resource intensive.
+The main downside is that, since the pages need to be generated for each visitor, dynamic websites are typically more resource intensive.
 
 The most commonly visited web pages on the internet are dynamic webpages.
 However, for a personal blog or site, dynamic content generation is not necessary!
@@ -58,8 +58,6 @@ There are three main components to static website generation
   While it is possible (and not too difficult) to host your own static site server, it is typically easiest to use static site hosting.
   I use [Cloudflare Pages](https://pages.cloudflare.com/).
   You might also be interested in [GitHub Pages](https://pages.github.com/) or [Netlify](https://www.netlify.com/).
-
-In this article, I will present the maing
 
 ## Website Templating with Zola
 The Zola webpage has a nice [article](https://www.getzola.org/documentation/getting-started/overview/) on getting started with Zola.
