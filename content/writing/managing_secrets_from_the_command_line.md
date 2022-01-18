@@ -3,7 +3,7 @@ title = "Managing Secrets from the Command Line"
 description = "Manage secrets from the command line and scripts on UNIX-like systems."
 weight = 0
 date = 2022-01-16
-updated = 2022-01-17
+updated = 2022-01-18
 
 [extra]
 
@@ -16,7 +16,7 @@ However, it is often useful to be able to save and inject secrets directly into 
 
 Here are two convenient options which I personally use.
 
-### Managing secrets with keyring
+### Keyring
 Perhaps the easiest option is to use the [keyring](https://pypi.org/project/keyring/) utility, which integrates nicely with the MacOS keychain.
 Install it with
 ```
@@ -35,9 +35,9 @@ To copy the output to the clipboard, simply pipe to pbcopy (on Mac OS):
 ```
 keyring get <secret> <username> | pbcopy
 ```
-Since keyring is a python script, it is also useful when programatically accessing secrets from within python scripts.
+Since keyring is also a python module, it is useful when programatically accessing secrets from within python scripts.
 
-### Managing secrets with pass
+### Pass
 Another useful option is [pass](https://www.passwordstore.org/): visit the page for installation instructions for your device.
 You need to first create a new password store with an existing GPG key:
 ```
