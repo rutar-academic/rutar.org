@@ -1,0 +1,33 @@
+# The URL the site will be built for
+base_url = "development.rutar.pages.dev"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# minify html
+minify_html = false
+
+taxonomies = [
+   { name = "tags", paginate = 10}
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = false
+
+[extra]
+# Put all your custom variables here
+author = "Alex Rutar"
+description = "Personal webpage for math and related topics."
+
+[extra.info]
+email = "alex@rutar.org"
+pgp = "/pubkey.asc"
+uni = "ar339@st-andrews.ac.uk"
+github = "alexrutar"
+orcid = "0000-0001-5173-992X"
+mrid = "1432308"
