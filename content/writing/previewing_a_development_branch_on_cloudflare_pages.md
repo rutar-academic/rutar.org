@@ -8,7 +8,6 @@ date = 2022-01-19
 [taxonomies]
 tags = ["vim", "shell"]
 +++
-# Creating a Development Branch on Cloudflare Pages
 In this article, I assume that your repository is hosted on [GitHub](https://github.com), and the site is hosted on [Cloudflare pages](https://pages.cloudflare.com/).
 I'm sure other providers will work, with similar instructions.
 
