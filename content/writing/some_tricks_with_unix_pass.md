@@ -23,7 +23,7 @@ copies the second line of the secret `password/name`.
 Here is a short fish shell function which first copies the login information to the clipboard, and then the password (after confirming the prompt):
 ```
 function psc --wraps='pass show'
-    set -l username (pass show $argv | string match -r ".+:\ (.+)" | head -n 2 | tail -n 1)
+    set -l username (pass show $argv | string match -r "\S+:\ (.+)" | head -n 2 | tail -n 1)
     if test -n "$username"
         echo -n "$username" | pbcopy
         echo "Copied $argv login to clipboard."
@@ -34,12 +34,11 @@ function psc --wraps='pass show'
     pass show -c $argv
 end
 ```
-This script pulls the username from the first matching line of the form
+The username is extracted from the first matching line of the form
 ```
 username: <username>
 ```
-You don't need to use `username`: any string is fine.
-The split happens at the delimeter `: `, so spaces are fine (but not recommended in general).
+You don't need to use `username`: any string not containing whitespace is fine.
 
 To use this function, call it like
 ```
