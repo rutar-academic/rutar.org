@@ -2,7 +2,7 @@
 title = "Sharing Secrets with GnuPG"
 description = "Some basics on how to use GPG for decryption and encryption."
 date = 2021-04-14
-updated = 2022-01-16
+updated = 2022-01-19
 
 [extra]
 
@@ -36,7 +36,7 @@ where `<key-id>` is the identification string associated with the keypair.
 
 If you want to back up your secret key and save it to a secure location, run
 ```
-$ gpg --output backupkeys.asc --armor --export-secret-keys --export-options export-backup user@email
+$ gpg --output backupkeys.asc --armor --export-secret-keys --export-options export-backup <key-id>
 ```
 Make sure to save this file in a secure location.
 
