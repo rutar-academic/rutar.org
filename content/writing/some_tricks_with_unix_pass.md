@@ -36,9 +36,10 @@ end
 ```
 The username is extracted from the first matching line of the form
 ```
-username: <username>
+username: <value>
 ```
 You don't need to use `username`: any string not containing whitespace is fine.
+If there is no matching line, the password will be immediately copied to the clipboard.
 
 To use this function, call it like
 ```
