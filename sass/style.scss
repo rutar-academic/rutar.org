@@ -381,9 +381,23 @@ input:checked + small {
   padding: .8em 0 1em 2.5vw;;
 }
 
-// Dark mode
-// @include darkmode {
-//   --textcolor: #dadada;
-//   --bgcolor: #141414;
-//   --highlight: #ffc400;
-// }
+// table of contents
+.toc {
+  border-left: 2px solid var(--light-gray);
+
+  li {
+    margin: 0;
+  }
+
+  // nested numbering
+  ol {
+    counter-reset: toc-item
+  }
+  li {
+    display: block
+  }
+  li:before {
+    content: counters(toc-item, ".") ". ";
+    counter-increment: toc-item
+  }
+}

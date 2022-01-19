@@ -6,6 +6,7 @@ date = 2022-01-17
 draft = true
 
 [extra]
+toc = true
 
 [taxonomies]
 tags = ["web", "css", "templating"]
@@ -66,6 +67,49 @@ The Zola webpage has a nice [article](https://www.getzola.org/documentation/gett
 ### Custom functions and shortcodes
 ### Including data files
 ### Creating tag pages
+### Adding a table of contents
+```
+{% if page.extra.hastoc %}
+<h2>Contents</h2>
+<div class="toc">
+<ol>
+  {% for h1 in page.toc %}
+  <li><a href="{{h1.permalink | safe}}">{{ h1.title }}</a>
+    {% if h1.children %}
+    <ol>
+      {% for h2 in h1.children %}
+      <li><a href="{{h2.permalink | safe}}">{{ h2.title }}</a></li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>
+</div>
+```
+In the CSS file, we add the corresponding contents:
+```
+.toc {
+  ol {
+    counter-reset: toc-item
+  }
+  li {
+    display: block
+  }
+  li:before {
+    content: counters(toc-item, ".") ". ";
+    counter-increment: toc-item
+  }
+}
+```
+This ensures that the numbering aligns with our numbering style for the headers.
+Now, whenever we want a table of contents, we simply include the tag
+```
+[extra]
+toc = true
+```
+at the beginning of our article.
+
 
 ## Crash Course in HTML and CSS (with examples)
 I'm going to assume you know some basics of HTML and CSS.
