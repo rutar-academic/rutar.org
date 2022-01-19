@@ -22,35 +22,30 @@ copies the second line of the secret `password/name`.
 ### Copy login and password to clipboard
 Here is a short fish shell function which first copies the login information to the clipboard, and then the password (after confirming the prompt):
 ```
-function psc
-    echo -n (pass show $argv | head -n 2 | tail -n 1 | string split ': ' -m 1 -f 2) | pbcopy
-    echo "Copied $argv login to clipboard."
-    read -p 'echo "Press ENTER to continue "'
+function psc --wraps='pass show'
+    set -l username (pass show $argv | string match -r ".+:\ (.+)" | head -n 2 | tail -n 1)
+    if test -n "$username"
+        echo -n "$username" | pbcopy
+        echo "Copied $argv login to clipboard."
+        read -p 'echo "Press ENTER to continue "'
+    else
+        echo "$argv has no login"
+    end
     pass show -c $argv
 end
 ```
-This script assumes that the first two lines of your password file are in the following format:
+This script pulls the username from the first matching line of the form
 ```
-<password>
 username: <username>
 ```
 You don't need to use `username`: any string is fine.
-The split happens at the delimeter `: `.
+The split happens at the delimeter `: `, so spaces are fine (but not recommended in general).
 
 To use this function, call it like
 ```
 psc password/name
 ```
-
-We can add completion with the following script, which simply delegates the completion to the original `pass show` command.
-```
-complete -c 'psc' -f -a '(begin
-    set -l cmd (commandline -opc) (commandline -ct)
-    set -e cmd[1 2]
-    complete -C"pass show $cmd"
-end)'
-```
-As usual, copy the contents to `completions/psc.fish`.
+Autocompletions are provided from `pass show` by the `--wraps` option.
 
 ## Configuration options
 Define a custom character set:
