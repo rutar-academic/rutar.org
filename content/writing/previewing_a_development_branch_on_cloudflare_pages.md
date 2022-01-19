@@ -49,9 +49,9 @@ This works for the main branch, but our development branch has a different repos
 Conveniently, Cloudflare Pages defines an environment variable `$CF_PAGES_BRANCH`, which is the name of the branch currently being built.
 We can use this variable to write a new build command with better behaviour.
 ```
-if [ "$CF_PAGES_BRANCH" = "master" ]; then zola build; else zola build -u "https://$CF_PAGES_BRANCH.<project-name>.pages.dev" --drafts; fi
+if [ "$CF_PAGES_BRANCH" = "main" ]; then zola build; else zola build -u "https://$CF_PAGES_BRANCH.<project-name>.pages.dev" --drafts; fi
 ```
-If the branch is your master branch, then just run `zola build`.
+If the branch is your main branch, then just run `zola build`.
 Otherwise, the preview URL will be `https://$CF_PAGES_BRANCH.<project-name>.pages.dev`, which we manually specify with the `-u` option.
 And we would also like to include draft articles in the preview as well.
 
