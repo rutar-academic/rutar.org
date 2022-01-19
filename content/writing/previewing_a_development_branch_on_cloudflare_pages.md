@@ -54,6 +54,6 @@ if [ "$CF_PAGES_BRANCH" = "main" ]; then zola build; else zola build -u "https:/
 If the branch is your main branch, then just run `zola build`.
 Otherwise, the preview URL will be `https://development.<project-name>.pages.dev`, which we manually specify with the `-u` option.
 And we would also like to include draft articles in the preview as well.
-If we decide to add more branches, the same non-master build command will work for any branch we add.
+If we decide to add more branches, the same non-main build command will work for any branch we add.
 
 Now, whenever you push commits on your development branch to GitHub, you can visit a preview of the build at `https://development.<project-name>.pages.dev`.
