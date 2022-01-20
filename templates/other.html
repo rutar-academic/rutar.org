@@ -23,7 +23,6 @@
     {%- endfor %}
   </ul>
 </div>
-{#
 <div>
   <h2>Collaborators</h2>
   {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/publications.json") | map(attribute="with"), data=load_data(path="data/people.json")) }}
@@ -33,7 +32,7 @@
   <h2>Journals</h2>
   {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/publications.json") | map(attribute="journal"), data=load_data(path="data/journals.json")) }}
 </div>
-
+{#
 <div>
   <h2>Refereeing</h2>
   {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/refereeing.json") | map(attribute="journal"), data=load_data(path="data/journals.json")) }}
