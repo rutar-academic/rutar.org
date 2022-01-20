@@ -12,13 +12,13 @@ tags = ["cli", "pgp"]
 ## Pass Unix
 I mainly use [pass](https://www.passwordstore.org/) as the password manager on my device.
 In this article, I've collected some convenient tips for using the program.
-## Showing and copying secrets
+## Showing and copying passwords
 ### Copy additional lines
 You can copy lines other than the first: for example
 ```
 pass -c2 password/name
 ```
-copies the second line of the secret `password/name`.
+copies the second line of the password stored in `password/name`.
 
 ### Copy login and password to clipboard
 Here is a short fish shell function which first copies the login information to the clipboard, and then the password (after confirming the prompt):
@@ -49,11 +49,11 @@ psc password/name
 Autocompletions are provided from `pass show` by the `--wraps` option.
 
 ### Updating existing passwords
-You can run
+The command
 ```
 pass generate -i password/name
 ```
-to generate a new password into `password/name`, which only replaces the first line (preserving the other information).
+generates a new password in `password/name`, which only replaces the first line (preserving the other information).
 With this, we can write a utility function to update existing passwords:
 ```
 function psu --wraps='pass show'
@@ -86,7 +86,7 @@ set -x PASSWORD_STORE_GENERATED_LENGTH 50
 ```
 
 ## Managing GnuPG with pass
-### Create secrets which do not require authentication
+### Create passwords which do not require authentication
 First, create a `gpg` key with no passphrase:
 ```
 gpg --batch --passphrase '' --quick-gen-key <no-auth-key-id> default default
@@ -95,7 +95,8 @@ Now, choose a subfolder to encrypt using the new key:
 ```
 pass init -p <no-auth-foldername> <no-auth-key-id>
 ```
-Any secrets stored in this subfolder will not prompt you for a password!
+Any password stored in this subfolder will not prompt you for authentication!
+This is useful for passwords which you may want to use in scripts, etc.
 
 ### Change the default timeout
 When you enter your password to unlock your gpg key associated with the password store, there is a delay before you are required to provide your password again.
