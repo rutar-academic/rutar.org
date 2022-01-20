@@ -39,7 +39,7 @@ The username is extracted from the first matching line of the form
 ```
 username: <value>
 ```
-You don't need to use `username`: any string not containing the string `: ` is fine.
+You don't need to use `username`: any string not containing the substring `: ` is fine.
 If there is no matching line, the password will be immediately copied to the clipboard.
 
 To use this function, call it like
@@ -66,7 +66,12 @@ end
 Invoke with `psu password/to/update`.
 
 ## Configuration options
-The variables `PASSWORD_STORE_CHARACTER_SET` and `PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS` control the characters which are used when `pass` (resp. `pass -n`) is used to generate a new password.
+The variables
+```
+PASSWORD_STORE_CHARACTER_SET
+PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS
+```
+control the characters which are used when `pass` (resp. `pass -n`) is used to generate a new password.
 [Under the hood](https://git.zx2c4.com/password-store/tree/src/password-store.sh), `pass` generates the password by piping from `/dev/urandom` and using `tr -dc` to remove characters which do not pass the allowed characters list:
 ```
 tr -dc "$characters" < /dev/urandom
