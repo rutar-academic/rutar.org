@@ -155,5 +155,9 @@ In my opinion, the best way to learn HTML and CSS is to start with a simple webp
 ## Other miscellaneous topics
 ### custom domain setup
 ### site security
-mozilla observatory, adding headers on cloud flare
+- [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org)
+- Cloudflare `_headers` file
+- [HSTS Preload](https://hstspreload.org)
+- [GTMetrix](https://gtmetrix.com/analyze.html)
+
 ### https

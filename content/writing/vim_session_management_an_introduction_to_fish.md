@@ -2,12 +2,10 @@
 title = "Vim Session Management: An Introduction to Fish"
 description = "An introduction to writing functions in fish, by example"
 weight = 0
-date = 2022-01-22
-draft = true
+date = 2022-01-26
 
 [extra]
 toc = true
-syntax = true
 
 [taxonomies]
 tags = ["cli", "fish"]
