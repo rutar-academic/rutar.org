@@ -23,7 +23,7 @@ The intention of this tool is to be a wrapper around Tim Pope's [obsession.vim](
 2. [Active session management](#active-session-management) - we only want to allow a single instance of vim to be using a session file
 3. [Autocompletions](#autocompletions) - get relevant results when you hit `TAB`
 
-Perhaps you simply find the session management tool useful: you can jump to the [function](#the-complete-function) or the [completion script] and install those in the correct location.
+Perhaps you simply find the session management tool useful: you can jump to the [function](#the-complete-function) or the [completion script](#autocompletions) and install those in the correct location.
 
 ### Pre-requisites
 I will assume that you have the tools [fd](https://github.com/sharkdp/fd) and [fzf](https://github.com/junegunn/fzf) installed and accessible in your shell.
@@ -315,6 +315,8 @@ Here are some other feature ideas:
 I'll leave those to you to implement!
 ### Autocompletions
 Finally, it would be nice to have some autocompletions for our script.
+Completion files are stored in a file with the same name as the function file, except in the `~/.config/fish/completions` directory.
+
 We want basic descriptions for the commands when we hit `TAB`, and we also want autocompletion for the session name when we call `v open`.
 Fish completion files are also just regular lists of functions, except they are loaded when autocompletion for a certain function is requested.
 You can read the fish [docs about completions](https://fishshell.com/docs/current/completions.html) if you would like.
@@ -336,8 +338,22 @@ In order to fix this, we first introduce a list of all our valid command names w
 set -l v_subcommands open list
 ```
 and then use the `-n` flag for `complete` to only complete in the case that we have not yet seen any subcommands.
-We can also invlude an option for `v list`.
+We can also include an option for `v list`.
 ```fish
 complete -f -c v -n "not __fish_seen_subcommand_from $v_subcommands" -a open -d 'Open the session file'
 complete -f -c v -n "not __fish_seen_subcommand_from $v_subcommands" -a list -d 'List available session files'
+```
+Finally, when we have seen the subcommand `v open`, we want to provide the valid list of options.
+Here, the `v list` command comes in handy:
+```fish
+complete -f -c v -n "__fish_seen_subcommand_from open" -a "(v list)"
+```
+As a whole, the completion file `~/.config/fish/completions/v.fish` looks like
+```fish
+set -l v_subcommands open rename rm list
+complete -f -c v
+complete -f -c v -n "not __fish_seen_subcommand_from $v_subcommands" -a open -d 'Open the session file'
+complete -f -c v -n "not __fish_seen_subcommand_from $v_subcommands" -a list -d 'List available session files'
+
+complete -f -c v -n "__fish_seen_subcommand_from open" -a "(v list)"
 ```

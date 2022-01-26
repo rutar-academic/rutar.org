@@ -10,3 +10,5 @@
 
 https://development.rutar.pages.dev/*
   X-Robots-Tag: noindex
+  X-UA-Compatible: IE=edge
+  X-Content-Type-Options: nosniff
