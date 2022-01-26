@@ -254,7 +254,7 @@ To debug issues with handlers persisting longer than you expect, you can get a l
 ```fish
 functions --handlers
 ```
-## Finishing Up
+## Finishing up
 ### The complete function
 It remains to add a case where an invalid command is given, and to print out a short error message.
 After doing this, our file `v.fish` now has the following contents:
@@ -279,7 +279,8 @@ function v --argument command session_name new_session_name
             set -l lockfile $VIM_SESSION_DIR/$session_name.lock
 
             if test -f "$sessionfile"
-                function __v_cleanup --inherit-variable lockfile --on-signal INT --on-signal HUP --on-event fish_exit
+                function __v_cleanup --inherit-variable lockfile \
+                    --on-signal INT --on-signal HUP --on-event fish_exit
                     functions -e __v_cleanup
                     rmdir $lockfile
                 end
@@ -319,7 +320,7 @@ We want basic descriptions for the commands when we hit `TAB`, and we also want 
 Fish completion files are also just regular lists of functions, except they are loaded when autocompletion for a certain function is requested.
 You can read the fish [docs about completions](https://fishshell.com/docs/current/completions.html) if you would like.
 
-We begin by disabling file completion, which is enabled by default.
+We begin by disabling file completion on the base command, which is enabled by default.
 This is done with the command
 ```fish
 complete -f -c v
@@ -328,7 +329,7 @@ This way, when we hit tab, we are not suggested offered files in the current dir
 Now, we need to add our subcommands.
 This is done as follows: to add the completion option `open`, we use
 ```fish
-complete -f -c v -a open -d 'Open the session file'
+complete -c v -a open -d 'Open the session file'
 ```
 However, this has a problem since now fish will suggest `open` as a valid argument at any time, when it should only be valid at the beginning.
 In order to fix this, we first introduce a list of all our valid command names with
@@ -338,20 +339,30 @@ set -l v_subcommands open list
 and then use the `-n` flag for `complete` to only complete in the case that we have not yet seen any subcommands.
 We can also include an option for `v list`.
 ```fish
-complete -f -c v -n "not __fish_seen_subcommand_from $v_subcommands" -a open -d 'Open the session file'
-complete -f -c v -n "not __fish_seen_subcommand_from $v_subcommands" -a list -d 'List available session files'
+complete -c v -a open \
+    -n "not __fish_seen_subcommand_from $v_subcommands" \
+    -d 'Open the session file'
+complete -c v -a list \
+    -n "not __fish_seen_subcommand_from $v_subcommands" \
+    -d 'List available session files'
 ```
 Finally, when we have seen the subcommand `v open`, we want to provide the valid list of options.
 Here, the `v list` command comes in handy:
 ```fish
-complete -f -c v -n "__fish_seen_subcommand_from open" -a "(v list)"
+complete -f -c v -a "(v list)" \
+    -n "__fish_seen_subcommand_from open" -a "(v list)"
 ```
 As a whole, the completion file `~/.config/fish/completions/v.fish` looks like
 ```fish
 set -l v_subcommands open rename rm list
 complete -f -c v
-complete -f -c v -n "not __fish_seen_subcommand_from $v_subcommands" -a open -d 'Open the session file'
-complete -f -c v -n "not __fish_seen_subcommand_from $v_subcommands" -a list -d 'List available session files'
-
-complete -f -c v -n "__fish_seen_subcommand_from open" -a "(v list)"
+complete -c v -a open \
+    -n "not __fish_seen_subcommand_from $v_subcommands" \
+    -d 'Open the session file'
+complete -c v -a list \
+    -n "not __fish_seen_subcommand_from $v_subcommands" \
+    -d 'List available session files'
+complete -c v -a "(v list)" \
+    -n "__fish_seen_subcommand_from open" -a "(v list)"
 ```
+Now hitting `v <TAB>` prompts with two options: `open`, or `list`, and hitting `v open <TAB>` prompts to complete on the files
