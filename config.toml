@@ -1,13 +1,7 @@
-# The URL the site will be built for
 base_url = "https://rutar.org"
-
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
-# minify html
 minify_html = true
 
 taxonomies = [
@@ -15,14 +9,7 @@ taxonomies = [
 ]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
-# highlight_theme = "solarized-light"
-highlight_theme = "css"
-highlight_themes_css = [
-    { theme = "solarized-light", filename = "syntax.css" },
-]
+highlight_code = false
 
 [extra]
 # Put all your custom variables here
