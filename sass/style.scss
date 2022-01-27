@@ -119,7 +119,7 @@ nav {
     // colour links on mobile
     @include mobile {
       margin: 0 10px;
-      color: $highlightColor;
+      color: $themeColor;
     }
   }
 }
@@ -263,11 +263,11 @@ p {
 }
 
 a {
-  color: $highlightColor;
+  color: $themeColor;
   text-decoration: none;
   cursor: pointer;
   &:hover, &:active {
-    color: $highlightColor;
+    color: $themeColor;
   }
 }
 
@@ -276,7 +276,7 @@ a {
 }
 
 .active {
-  color: $highlightColor;
+  color: $themeColor;
 }
 
 span.side-count {
@@ -352,7 +352,7 @@ label {
 }
 
 label:hover {
-  color: $highlightColor;
+  color: $themeColor;
 }
 label:before {content:"[";}
 label:after {content:"]";}
