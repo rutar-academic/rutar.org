@@ -32,14 +32,14 @@ I will also assume you know a bit about vim, including plugin installation.
 In this section, we will write the core functionality of our program: save and open session files.
 
 First, let's create a global variable to represent where we want to save the session files.
-```fish
+```
 set -x VIM_SESSION_DIR "~/.local/share/vim/sessions"
 ```
 in your `config.fish`, or wherever you prefer to define environment variables.
 You can set the folder to be anything you want.
 Now `exec fish` to load this variable.
 To ensure that this variable is loaded, you can run
-```fish
+```
 env | grep ^VIM_SESSION_DIR
 ```
 and check that there is a match.
@@ -49,7 +49,7 @@ The command `env` prints out all currently defined environment variables - we ju
 [Obsession.vim](https://github.com/tpope/vim-obsession) is itself a wrapper around the vim command `:mksession`, which creates a session file and saves the current state of vim (e.g. tabs, windows, layout, etc.) to that file.
 If you have a session file `session.vim`, you can restart it with `vim -S session.vim`.
 Install this plugin in your `vimrc` and also add the function definition
-```fish
+```
 command -nargs=1 SSave Obsess $VIM_SESSION_DIR/<args>.vim
 ```
 This defines a command `:SSave`, which takes exactly one argument which is the name of the session file (with no extension).
@@ -61,7 +61,7 @@ Fish functions are defined in the folder `~/.config/fish/functions` and correspo
 Let's write the command to start up new sessions, which we will invoke with `v`.
 We want to accept the session name as an argument, and then check if the session file exists: if it does, open it; if not, terminate with a nice error message.
 In the file `~/.config/fish/functions/v.fish`, we define a function as follows:
-```fish
+```
 function v --argument session_name
     set -l sessionfile $VIM_SESSION_DIR/session_name.vim
     if test -f $sessionfile
@@ -97,7 +97,7 @@ This utility will also be necessary later, when we provide autocompletion.
 Now, since we want multiple behaviours, we will invoke the desired behaviour with two subcommands: we will invoke the previous function with `open`, and the new listing function with `list`.
 First, we define a helper function to list sessions.
 Using `fd`, we can quickly get a list of candidate files:
-```fish
+```
 fd -e vim --base-directory $VIM_SESSION_DIR
 ```
 However, we only want the name of the session and not the extension `.vim`.
@@ -106,13 +106,13 @@ This also handles the case where the filename has multiple periods, unlike somet
 We also want to sort the output, since `fd` is multithreaded by default when called with `--exec` and the order can change each time (which could be confusing).
 
 Wrapping this in a function, we get
-```fish
+```
 function __v_list_sessions
     fd -e vim --base-directory $NIM_SESSION_DIR --exec echo {.} | sort
 end
 ```
 We can add this as a subcommand to our original function:
-```fish
+```
 function v --argument command session_name
     switch $command
         case open
@@ -138,7 +138,7 @@ This variable is captured using fish parameter expansion `(...)` and saved in th
 Note that if `fzf` is terminated early using `CTRL-C`, the variable `$fzf_session` will not be saved, so we also need to check that it is non-empty.
 
 Add the following at the beginning of the indentation block directly below `case open`:
-```fish
+```
 if not test -n "$session_name"
     set -l fzf_session (__v_list_sessions | fzf --height 40% --border --tac)
     if test -n "$fzf_session"
@@ -166,7 +166,7 @@ We care about three events: when the function receives the signal `SIGINT` or `S
 
 ### Basic event handler example
 Consider the following function:
-```fish
+```
 function example
     function __example_cleanup --on-signal INT --on-signal HUP --on-event fish_exit
         functions -e __example_cleanup
@@ -203,7 +203,7 @@ Our idea is now the following: when we first start up our session, we check for 
 If one does not exist, create it, and start up the session; otherwise, terminate with an error,
 For convenience, since the session files are saved as `<session name>.vim`, let's save the lock files as `<session name>.lock`.
 In order to avoid race conditions, we can create the lock file and test its existence simultaneously using `mkdir`:
-```fish
+```
 if mkdir <session name>.lock &> /dev/null
     echo "Normal execution..."
     return 0
@@ -217,7 +217,7 @@ We also supress the `mkdir` error message, since we want to send a more meaningf
 
 We also need to clean up the lockfile on exist using the event handler from the previous section.
 All together, our code now looks like this
-```fish
+```
 if test -f "$sessionfile"
     function __v_cleanup \
             --inherit-variable lockfile \
@@ -243,25 +243,25 @@ However, as of the time of writing this article, fish [does not support backgrou
 Fish comes with a function `trap`, which is just a wrapper around the event handler method explained above.
 At its core, the [implementation of trap](https://github.com/fish-shell/fish-shell/blob/master/share/functions/trap.fish) converts `EXIT` into `--on-event fish_exit` and all other signals into `--on-signal <signal name>`.
 You can call `trap` directly with the cleanup function (with no handlers attached), like
-```fish
+```
 trap __example_cleanup INT HUP EXIT
 ```
 Note that, in this situation, the event handlers are not automatically deleted.
 To do this, you need to run
-```fish
+```
 trap - INT HUP EXIT
 ```
 to reset the traps.
 
 To debug issues with handlers persisting longer than you expect, you can get a list of all active handlers with
-```fish
+```
 functions --handlers
 ```
 ## Finishing up
 ### The complete function
 It remains to add a case where an invalid command is given, and to print out a short error message.
 After doing this, our file `v.fish` now has the following contents:
-```fish
+```
 function __v_list_sessions
     fd -e vim --base-directory $VIM_SESSION_DIR --exec echo {.} | sort
 end
@@ -325,23 +325,23 @@ You can read the fish [docs about completions](https://fishshell.com/docs/curren
 
 We begin by disabling file completion on the base command, which is enabled by default.
 This is done with the command
-```fish
+```
 complete -f -c v
 ```
 This way, when we hit tab, we are not suggested offered files in the current directory in the completion list.
 Now, we need to add our subcommands.
 This is done as follows: to add the completion option `open`, we use
-```fish
+```
 complete -c v -a open -d 'Open the session file'
 ```
 However, this has a problem since now fish will suggest `open` as a valid argument at any time, when it should only be valid at the beginning.
 In order to fix this, we first introduce a list of all our valid command names with
-```fish
+```
 set -l v_subcommands open list
 ```
 and then use the `-n` flag for `complete` to only complete in the case that we have not yet seen any subcommands.
 We can also include an option for `v list`.
-```fish
+```
 complete -c v -a open \
     -n "not __fish_seen_subcommand_from $v_subcommands" \
     -d 'Open the session file'
@@ -351,12 +351,12 @@ complete -c v -a list \
 ```
 Finally, when we have seen the subcommand `v open`, we want to provide the valid list of options.
 Here, the `v list` command comes in handy:
-```fish
+```
 complete -f -c v -a "(v list)" \
     -n "__fish_seen_subcommand_from open" -a "(v list)"
 ```
 As a whole, the completion file `~/.config/fish/completions/v.fish` looks like
-```fish
+```
 set -l v_subcommands open rename rm list
 complete -f -c v
 complete -c v -a open \
