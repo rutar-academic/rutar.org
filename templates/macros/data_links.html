@@ -47,16 +47,15 @@
 {% macro tally_with_flatten(arr_of_arr, data, attr="name") %}
 <ul>
   {# construct the flattened array #}
-  {% set flat_arr = [] -%}
+  {%- set flat_arr = [] -%}
   {%- for arr in arr_of_arr %}{% set_global flat_arr = flat_arr | concat(with=arr) %}{% endfor -%}
   {%- set uniques = flat_arr | unique | sort -%}
-  <!--- {{ flat_arr }} --->
 
   {# get the counts #}
   {%- for key in flat_arr | unique | sort -%}
     {%- set_global ct = 0 -%}
     {%- for elem in flat_arr -%}{% if key == elem %}{% set_global ct = ct + 1 %}{% endif %}{%- endfor %}
   {{ self::count_li(key=key, data=data, attr=attr, ct=ct) }}
-  {% endfor -%}
+  {%- endfor -%}
 </ul>
 {% endmacro %}

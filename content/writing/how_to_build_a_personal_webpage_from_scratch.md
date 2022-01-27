@@ -82,7 +82,7 @@ In order to start up Git in a project folder, you can right-click in the folder 
 
 TODO: write this section.
 
-<!--- TODO: https://www.pluralsight.com/guides/using-git-and-github-on-windows --->
+see: https://www.pluralsight.com/guides/using-git-and-github-on-windows
 
 #### UNIX Shell
 If you are on a unix-like device, check that Git is installed by running

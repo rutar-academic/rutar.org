@@ -85,7 +85,8 @@ Note that you can define multiple functions in a single file `myfunc.fish`, but 
 You should only define helper functions for the main function in the file, since they will not be loaded until the main function is called.
 
 You can also edit functions in the current interactive shell with `funced <function name>`, and save the functions to the directory with `funcsave <function name>`.
-This is also an easy way to introspect fish functions which you may have not defined yourself!
+However, doing this will remove any helper functions you have defined in the file!
+This is also an easy way to introspect fish functions which you may have not defined yourself.
 
 If you edit a function file, sometimes you need to reload your shell for proper execution.
 The easiest way to do this is to `exec fish`.
@@ -101,7 +102,7 @@ fd -e vim --base-directory $VIM_SESSION_DIR
 ```
 However, we only want the name of the session and not the extension `.vim`.
 The easiest way to do this is to use `--exec echo {.}`: `{.}` is replaced with the filename with no extension.
-This also handles the case where the filename has multiple periods), unlike something more direct such as `cut -d "." -f 1`.
+This also handles the case where the filename has multiple periods, unlike something more direct such as `cut -d "." -f 1`.
 We also want to sort the output, since `fd` is multithreaded by default when called with `--exec` and the order can change each time (which could be confusing).
 
 Wrapping this in a function, we get
@@ -218,7 +219,9 @@ We also need to clean up the lockfile on exist using the event handler from the 
 All together, our code now looks like this
 ```fish
 if test -f "$sessionfile"
-    function __v_cleanup --inherit-variable lockfile --on-signal INT --on-signal HUP --on-event fish_exit
+    function __v_cleanup \
+            --inherit-variable lockfile \
+            --on-signal INT --on-signal HUP --on-event fish_exit
         functions -e __v_cleanup
         rmdir $lockfile
     end
@@ -308,8 +311,8 @@ end
 ```
 Here are some other feature ideas:
 
-- nicer file listing with `tree`
 - custom `rm` and `mv` commands
+- nicer file listing with `tree` (hint: use `tree --fromfile .`, and `isatty` to verify that we are only formatting when the output is a terminal)
 
 I'll leave those to you to implement!
 ### Autocompletions
@@ -365,4 +368,4 @@ complete -c v -a list \
 complete -c v -a "(v list)" \
     -n "__fish_seen_subcommand_from open" -a "(v list)"
 ```
-Now hitting `v <TAB>` prompts with two options: `open`, or `list`, and hitting `v open <TAB>` prompts to complete on the files
+Now hitting `v <TAB>` prompts with two options: `open`, or `list`, and hitting `v open <TAB>` prompts with the possible session names.
