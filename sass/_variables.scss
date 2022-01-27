@@ -1,28 +1,22 @@
 // Colors
-// $main_color: #05B592;
-// $darkBlue: #036350;
-$main_color: #f14c00;
-$dark_color: #662000;
-$highlight_color: #ffdccc;
+$highlightColor: #f14c00;
+$selectionColor: #ffdccc;
+$textColor: #292939;
+$fadeColor: #666;
+$borderColor: #ddd;
+$tableBackgroundColor: #f2f2e3;
+$mainBackgroundColor: #fafafa;
+$contentBackgroundColor: #f7f7f1;
 
-// Grays
-$black: #000;
-$darkGray: #292939;
-$gray: #666;
-$lightGray: #ddd;
-
-$white: #fafafa;
-$offWhite: #f7f7f1;
-$darkoffWhite: #f2f2e3;
-
+// Dimensions
 $minWidth: 240px;
 $maxWidth: 760px;
 $mobileWidth: 539px;
 
 // Font stacks
-$primary: Palatino, Merriweather, Helvetica, Arial, sans-serif;
-$math: Georgia, "Times New Roman", serif;
-$mono: Monaco, Consolas, monospace;
+$primaryFonts: Palatino, Merriweather, Helvetica, Arial, sans-serif;
+$mathFonts: Georgia, "Times New Roman", serif;
+$monoFonts: Monaco, Consolas, monospace;
 
 // Mobile breakpoints
 @mixin mobile {

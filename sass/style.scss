@@ -1,36 +1,23 @@
 @import "reset";
 @import "variables";
 
-
-:root {
-  --main-color: #f14c00;
-  --dark-color: #662000;
-  --highlight-color: #ffdccc;
-  --dark-gray: #292939;
-  --gray: #666;
-  --light-gray: #ddd;
-  --white: #fafafa;
-  --off-white: #f7f7f1;
-  --dark-off-white: #f2f2e3;
-}
-
 html {
   font-size: 100%;
-  font-family: $primary;
+  font-family: $primaryFonts;
 }
 
 
 // main body contents
 body {
-  background: var(--white);
-  font: 18px/1.4 $primary;
-  color: var(--dark-gray);
+  background: $mainBackgroundColor;
+  font: 18px/1.4 $primaryFonts;
+  color: $textColor;
 }
 
 
 // body wrapper, defines main grid
 .wrapper {
-  background: var(--offwhite);
+  background: $contentBackgroundColor;
   margin: 0 auto;
   max-width: $maxWidth;
   padding: 0 10px 25px;
@@ -60,7 +47,7 @@ body {
   grid-area: ct;
   min-width: 0;
   max-width: 100%;
-  border-top: 2px solid var(--light-gray);
+  border-top: 2px solid $borderColor;
 }
 
 // flexible grid for displaying things at the bottom of the page
@@ -89,7 +76,7 @@ body {
 
 // post footer
 .post-footer {
-  border-top: 2px solid var(--light-gray);
+  border-top: 2px solid $borderColor;
   padding: 10px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -106,7 +93,7 @@ body {
 }
 .fade, .post-date, .post-tags {
   font-size: 16px;
-  color: var(--gray);
+  color: $fadeColor;
 }
 .post-date {
   grid-area: date;
@@ -124,7 +111,7 @@ nav {
   font-size: 18px;
   a {
     margin-left: 20px;
-    color: var(--dark-gray);
+    color: $textColor;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -132,7 +119,7 @@ nav {
     // colour links on mobile
     @include mobile {
       margin: 0 10px;
-      color: var(--main-color);
+      color: $highlightColor;
     }
   }
 }
@@ -157,15 +144,15 @@ table {
   margin: 25px 0;
   thead tr th {
     padding: 3px 10px;
-    background-color: var(--dark-off-white);
+    background-color: $tableBackgroundColor;
     text-align: left;
-    border-bottom: 1px solid var(--light-gray);
+    border-bottom: 1px solid $borderColor;
   }
   tbody tr td {
     padding: 3px 10px;
     word-wrap: normal;
     max-width: 90%;
-    border-bottom: 1px solid var(--light-gray);
+    border-bottom: 1px solid $borderColor;
   }
 }
 
@@ -182,7 +169,7 @@ table {
 
 address {
   margin: 1.8em .8em;
-  border-left: 2px solid var(--gray);
+  border-left: 2px solid $fadeColor;
   padding: 0 1rem;
   font-style: italic;
   p {
@@ -192,8 +179,8 @@ address {
 
 
 code {
-  font: 15px/1.4 $mono;
-  background: var(--light-gray);
+  font: 15px/1.4 $monoFonts;
+  background: $borderColor;
   padding: 0 3px;
   border-radius: 2px;
 }
@@ -201,7 +188,7 @@ code {
 
 // render code so you can scroll to see really wide lines
 pre code {
-  background: var(--light-gray);
+  background: $borderColor;
   padding: 10px;
   max-width: 100%;
   min-width: 0;
@@ -268,7 +255,7 @@ h3 {
 
 h4 {
   font-size: 16px;
-  color: var(--gray);
+  color: $fadeColor;
 }
 
 p {
@@ -276,11 +263,11 @@ p {
 }
 
 a {
-  color: var(--main-color);
+  color: $highlightColor;
   text-decoration: none;
   cursor: pointer;
   &:hover, &:active {
-    color: var(--main-color);
+    color: $highlightColor;
   }
 }
 
@@ -289,11 +276,11 @@ a {
 }
 
 .active {
-  color: var(--main-color);
+  color: $highlightColor;
 }
 
 span.side-count {
-  color: var(--gray);
+  color: $fadeColor;
   font-style: italic;
 }
 
@@ -342,7 +329,7 @@ img {
 
 // Specify the color of the selection
 ::selection {
-  background: var(--highlight-color);
+  background: $selectionColor;
 }
 
 sup { 
@@ -351,7 +338,7 @@ sup {
 }
 
 var {
-  font-family: $math;
+  font-family: $mathFonts;
   font-style: italic;
 }
 
@@ -365,7 +352,7 @@ label {
 }
 
 label:hover {
-  color: var(--main-color);
+  color: $highlightColor;
 }
 label:before {content:"[";}
 label:after {content:"]";}
@@ -377,13 +364,13 @@ label + input + small {
 
 input:checked + small {
   display: block;
-  color: var(--gray);
+  color: $fadeColor;
   padding: .8em 0 1em 2.5vw;;
 }
 
 // table of contents
 .toc {
-  border-left: 2px solid var(--light-gray);
+  border-left: 2px solid $borderColor;
 
   li {
     margin: 0;
