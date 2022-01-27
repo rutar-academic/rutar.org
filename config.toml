@@ -1,7 +1,6 @@
 base_url = "https://rutar.org"
 compile_sass = true
 build_search_index = false
-minify_html = false
 
 taxonomies = [
    { name = "tags", paginate = 10}
