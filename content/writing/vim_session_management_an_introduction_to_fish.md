@@ -1,6 +1,6 @@
 +++
 title = "Vim Session Management: An Introduction to Fish"
-description = "An introduction to writing functions in fish, by example"
+description = "An introduction to writing functions in fish, by example."
 weight = 0
 date = 2022-01-26
 
