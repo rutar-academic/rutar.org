@@ -2,7 +2,7 @@
 title = "How to Build a Personal Webpage from Scratch"
 description = "An opinionated guide on how to build and deploy a modern static webpage."
 weight = 0
-date = 2022-01-17
+date = 2022-01-28
 draft = true
 
 [extra]
@@ -68,23 +68,36 @@ There are three main components to static website generation
 
 I'll discuss these three components in the following sections, along with some additional topics in the [final section](#future-steps).
 
-### A quick note on git
+## A quick note on git
 A standard tool used in software development is [git](https://git-scm.com).
 Essentially, git is a tool used for [distributed revision control](https://en.wikipedia.org/wiki/Version_control#Distributed_revision_control): in other words, it has functionality to save snapshots of your current projects, distribute your projects or import other projects, and collaborate with others effectively.
 My preferred resource to learn about git is the [git webpage](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
 
-Here's a quick tutorial on getting started with git.
+Here's a quick tutorial on getting started with git through the command-line interface.
+Another option would be to  use one of the [GUI Options](https://git-scm.com/downloads/guis).
 First, download the installer for your preferred device from the [official site](https://git-scm.com/downloads).
+### Installation
 #### Windows
-Run the installer with the default options.
-On the next page, it's probably best to choose the option __Use Git Bash only__.
+1. Run the installer with the default options.
+2. Select an editor.
+  The simplest option is probably to use Notepad++ since it is likely already included on your machine, but you can easily install some of the other graphical and select them instead.
+3. Choose the default options for the remaining choices.
+
 In order to start up Git in a project folder, you can right-click in the folder and select __Git Bash Here__.
+This will open an interactive terminal.
+
+#### macOS or UNIX
+The simplest way is to install Git on your command line with your system package manager.
+On MacOS, I typically use the [brew package manager](https://brew.sh); if you're on some other device, your system likely has a default.
+
+#### Other options
+If you want, there is also a nice list of
 
 TODO: write this section.
 
 see: https://www.pluralsight.com/guides/using-git-and-github-on-windows
 
-#### UNIX Shell
+### UNIX Shell
 If you are on a unix-like device, check that Git is installed by running
 ```
 git --version
@@ -147,10 +160,11 @@ at the beginning of our article.
 
 ## Crash Course in HTML and CSS (with examples)
 I'm going to assume you know some basics of HTML and CSS.
-There are lots of tutorials online; you can find a decent one [here](https://html.com).
+There are lots of tutorials online; here is a [decent one](https://html.com).
+
+In my opinion, the best way to learn HTML and CSS is to start with a simple webpage (for example, this one!), download the content locally, and understand how everything works.
 
 ### Future steps
-In my opinion, the best way to learn HTML and CSS is to start with a simple webpage (for example, this one!), download the content locally, and understand how everything works.
 ## Deployment with Github and Cloudflare Pages
 ## Other miscellaneous topics
 ### custom domain setup
