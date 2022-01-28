@@ -44,7 +44,7 @@ whereas you might build the development branch with
 zola build --drafts
 ```
 Moreover, when using Zola, the site url is automatically set based on the key `base_url` in your `config.toml`.
-This works for the main branch, but our development branch has a different repository name, which will cause our internal links to be broken.
+This works for the main branch, but our development branch has a different URL, which will cause non-relative internal links to be broken.
 
 Conveniently, Cloudflare Pages defines an environment variable `$CF_PAGES_BRANCH`, which is the name of the branch currently being built.
 We can use this variable to write a new build command with better behaviour:
