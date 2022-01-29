@@ -29,3 +29,4 @@ Now, we can use this tool, along with the `fd` command, to validate all the `htm
 fd --base-directory public -e html --exec fish -c 'validate_html $argv' {}
 ```
 This command is valid sh as well as fish, so you can incorporate into your pre-commit hook to check that the site builds correctly on each commit.
+You can find [pre-commit script](scripts/pre-commit.sh) and the [HTML validation script](scripts/validate_html.fish) in the [scrpts](scripts) directory.
