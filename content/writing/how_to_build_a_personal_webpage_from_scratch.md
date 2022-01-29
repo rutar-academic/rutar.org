@@ -51,6 +51,26 @@ In order to simplify this process, a common technique is to use a [template proc
 This is a program which takes files written in a templating language (such as [Jinja](https://jinja.palletsprojects.com/en/3.0.x/templates/) or [Tera](https://tera.netlify.app/)), combined with content files written in a markup language (such as [Markdown](https://en.wikipedia.org/wiki/Markdown)) and converts them into HTML, CSS, and JavaScript files.
 You first prepare the templates, then write the content files, and then use the template processor to generate the webpage files.
 
+### Why static webpages?
+Here is a short list of reasons why you should prefer simple static webpages (if you do not already know that you require a dynamic webpage):
+
+- __Longevity.___
+  A static webpage is just a collection of files, which you should also have saved on your computer.
+  So even in the worst case scenario - say your template manager suddenly ceases to exist, and your website is simultaneously taken online - you still have the files for your webpage and you can just put them up somewhere else.
+  If you maintain a dyanmic webpage, you need to keep the required tools up to date otherwise everything will cease to work.
+- __Portability.__
+  If you decide that you want to host your webpage somewhere else, this is relatively straightforward to do.
+- __Security.__
+  Since static webpages are substantially simpler, they have a smaller attack surface and are more secure.
+  There is no underlying server serving requests, or processing user input.
+  Even in hosted situations, there can be problems with the underlying content management system.
+  For example, many Wordpress sites [were compromised](https://www.bleepingcomputer.com/news/security/over-90-wordpress-themes-plugins-backdoored-in-supply-chain-attack/) through an exploit which targeted the plugin system.
+
+Here are some other opinions on static web development:
+
+- [https://motherfuckingwebsite.com](https://motherfuckingwebsite.com)
+- [https://giuliomagnifico.blog/misc/2022/01/22/I-left-Medium.html](https://giuliomagnifico.blog/misc/2022/01/22/I-left-Medium.html)
+
 ### Static website components
 There are three main components to static website generation
 
@@ -68,7 +88,7 @@ There are three main components to static website generation
 
 I'll discuss these three components in the following sections, along with some additional topics in the [final section](#future-steps).
 
-## A quick note on git
+## A short introduction to Git
 A standard tool used in software development is [git](https://git-scm.com).
 Essentially, git is a tool used for [distributed revision control](https://en.wikipedia.org/wiki/Version_control#Distributed_revision_control): in other words, it has functionality to save snapshots of your current projects, distribute your projects or import other projects, and collaborate with others effectively.
 My preferred resource to learn about git is the [git webpage](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
@@ -105,6 +125,12 @@ git --version
 in an interactive shell.
 If not, you either need to install it and ensure that it is accessible (i.e. on your `PATH`).
 
+
+## Crash Course in HTML and CSS (with examples)
+I'm going to assume you know some basics of HTML and CSS.
+There are lots of tutorials online; here is a [decent one](https://html.com).
+
+In my opinion, the best way to learn HTML and CSS is to start with a simple webpage (for example, this one!), download the content locally, and understand how everything works.
 
 
 ## Website Templating with Zola
@@ -158,16 +184,60 @@ toc = true
 at the beginning of our article.
 
 
-## Crash Course in HTML and CSS (with examples)
-I'm going to assume you know some basics of HTML and CSS.
-There are lots of tutorials online; here is a [decent one](https://html.com).
-
-In my opinion, the best way to learn HTML and CSS is to start with a simple webpage (for example, this one!), download the content locally, and understand how everything works.
-
 ### Future steps
 ## Deployment with Github and Cloudflare Pages
 ## Other miscellaneous topics
-### custom domain setup
+### Custom Domain Setup
+There are a few parts to setting up a custom domain.
+First, you need to register a domain name, and then you need to set up [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) to associate your domain name with the address where your webpage is hosted.
+
+#### Domain Name Registration
+[ICANN](https://www.icann.org/registrants) is the main body responsible for regulating domain name registration.
+In terms of domain registrars, I would recommend one of the following:
+
+- [Cloudflare Registrar](https://www.cloudflare.com/en-ca/products/registrar/)
+- [AWS Route 53](https://aws.amazon.com/route53/)
+- [Namecheap](https://www.namecheap.com)
+
+I would definitely be careful with other hosts - certain popular domain registrars engage in [shady practices](https://news.ycombinator.com/item?id=24506303) such as registering domains that you look up on their site so that they can make you pay more money for them!
+
+#### Setting up DNS on Cloudflare
+For convenience, since our site is already hosted on Cloudflare, let's use Cloudflare for DNS as well.
+
+### Creating Favicons
+A [favicon](https://en.wikipedia.org/wiki/Favicon) is a small image loaded by the browser and displayed on the website tab.
+There is a lot of different advice on how to appropriately set favicons, and unfortunately a lot of it is very outdated.
+The advise here is based on [this article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs).
+
+These days, modern browsers support .svg favicons and this format is easiest way to add a favicon to your webpage: it is lightweight and scales properly.
+There are lots of tools available to create these images - I used [this site](https://formito.com/tools/favicon).
+You can also just download an icon from a place like [font awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) - there are a lot of options.
+There's a [web-hosted implementation](https://jakearchibald.github.io/svgomg/) of the [svgo tool](https://github.com/svg/svgo) which is useful for compressing your .svg file.
+
+To add the favicon to our webpage, first copy the icon file, say `icon.svg`, to the `static/` folder.
+Then add the following line to the `<head>` of your base template.
+```
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+```
+This tells the browser that there's an icon located at `icon.sv`, and that it's an .svg file.
+
+If you also want to support older browsers, you need to create a `favicon.ico` file.
+You can probably find a converter online, or use [inkscape](https://inkscape.org) and [imagemagick](https://imagemagick.org/index.php) (inkscape has high-quality .svg to .png conversion, and then you can use imagemagick to convert the .png to the .ico file).
+If you have the `imagemagick` and `inkscape` tools installed on your command line, you can run
+```
+inkscape ./icon.svg --export-width=32 --export-filename="./tmp.png"
+convert ./tmp.png ./favicon.ico
+rm ./tmp.png
+```
+to convert `icon.svg` into the `favicon.ico` file.
+Now tell the browser that this file exists with
+```
+<link rel="icon" href="/favicon.ico" sizes="any">
+```
+in the `<head>` of your base template.
+
+If you wish to support more devices, I'd recommend that you read the [favicon article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs) that I also mentioned earlier.
+
 ### site security
 - [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org)
 - Cloudflare `_headers` file
