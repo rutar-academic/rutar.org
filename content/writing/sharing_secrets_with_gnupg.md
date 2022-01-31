@@ -2,7 +2,6 @@
 title = "Sharing Secrets with GnuPG"
 description = "Some basics on how to use GPG for decryption and encryption."
 date = 2021-04-14
-updated = 2022-01-19
 
 [extra]
 

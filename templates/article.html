@@ -25,12 +25,13 @@
 {{ page.content | safe }}
 </div>
 <div class="post-footer">
-  <div class="post-date">last updated: {% if page.updated %}{{ page.updated | safe }}{% else %}{{ page.date | safe }}{% endif %}</div>
-    <div class="post-tags">
-        {%- for tag in page.taxonomies.tags | sort %}
-        <a class="hidden-link" href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag | safe }}</a>
-        {%- if not loop.last %} / {% endif -%}
-        {% endfor -%}
-    </div>
+  <div class="post-date"><a class="hidden-link" href="mailto:{{ config.extra.info.email | urlencode_strict }}">Alex Rutar</a> - <a class="hidden-link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+  </div>
+  <div class="post-tags">
+      {%- for tag in page.taxonomies.tags | sort %}
+      <a class="hidden-link" href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag | safe }}</a>
+      {%- if not loop.last %} / {% endif -%}
+      {% endfor -%}
+  </div>
 </div>
 {% endblock %}

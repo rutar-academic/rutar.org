@@ -79,7 +79,7 @@ body {
   border-top: 2px solid $borderColor;
   padding: 10px 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   grid-template-areas:
     "date tags";
   width: 100%;

@@ -3,7 +3,6 @@ title = "Managing Secrets from the Command Line"
 description = "Manage secrets from the command line and scripts on UNIX-like systems."
 weight = 0
 date = 2022-01-16
-updated = 2022-01-18
 
 [extra]
 
