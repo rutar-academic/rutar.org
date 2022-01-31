@@ -21,7 +21,8 @@ The intention of this tool is to be a wrapper around Tim Pope's [obsession.vim](
 2. [Active session management](#active-session-management) - we only want to allow a single instance of vim to be using a session file
 3. [Autocompletions](#autocompletions) - get relevant results when you hit `TAB`
 
-Perhaps you simply find the session management tool useful: you can jump to the [function](#the-complete-function) or the [completion script](#autocompletions) and install those in the correct location.
+Perhaps you simply find the session management tool useful: you can get the files [in the Git repository](https://github.com/alexrutar/v-session-manager).
+This implements all the features below, along with a couple extra useful commands and completions.
 
 ### Pre-requisites
 I will assume that you have the tools [fd](https://github.com/sharkdp/fd) and [fzf](https://github.com/junegunn/fzf) installed and accessible in your shell.
@@ -33,27 +34,27 @@ In this section, we will write the core functionality of our program: save and o
 
 First, let's create a global variable to represent where we want to save the session files.
 ```
-set -x VIM_SESSION_DIR "~/.local/share/vim/sessions"
+set -x V_SESSION_DIR "~/.local/share/vim/sessions"
 ```
 in your `config.fish`, or wherever you prefer to define environment variables.
 You can set the folder to be anything you want.
 Now `exec fish` to load this variable.
 To ensure that this variable is loaded, you can run
 ```
-env | grep ^VIM_SESSION_DIR
+env | grep ^V_SESSION_DIR
 ```
 and check that there is a match.
-The command `env` prints out all currently defined environment variables - we just search for the line that starts with `VIM_SESSION_DIR`.
+The command `env` prints out all currently defined environment variables - we just search for the line that starts with `V_SESSION_DIR`.
 
 ### A wrapper for Obsession.vim
 [Obsession.vim](https://github.com/tpope/vim-obsession) is itself a wrapper around the vim command `:mksession`, which creates a session file and saves the current state of vim (e.g. tabs, windows, layout, etc.) to that file.
 If you have a session file `session.vim`, you can restart it with `vim -S session.vim`.
 Install this plugin in your `vimrc` and also add the function definition
 ```
-command -nargs=1 SSave Obsess $VIM_SESSION_DIR/<args>.vim
+command -nargs=1 VSave Obsess $V_SESSION_DIR/<args>.vim
 ```
-This defines a command `:SSave`, which takes exactly one argument which is the name of the session file (with no extension).
-To begin a new saved session, run `:SSave my/session` from an active vim instance.
+This defines a command `:VSave`, which takes exactly one argument which is the name of the session file (with no extension).
+To begin a new saved session, run `:VSave my/session` from an active vim instance.
 To terminate, run `qa`: note that closing files individually will modify the session file so those files will remain closed on restart.
 
 ### Starting up existing sessions
@@ -63,7 +64,7 @@ We want to accept the session name as an argument, and then check if the session
 In the file `~/.config/fish/functions/v.fish`, we define a function as follows:
 ```
 function v --argument session_name
-    set -l sessionfile $VIM_SESSION_DIR/session_name.vim
+    set -l sessionfile $V_SESSION_DIR/session_name.vim
     if test -f $sessionfile
         vim -S $sessionfile
     else
@@ -98,7 +99,7 @@ Now, since we want multiple behaviours, we will invoke the desired behaviour wit
 First, we define a helper function to list sessions.
 Using `fd`, we can quickly get a list of candidate files:
 ```
-fd -e vim --base-directory $VIM_SESSION_DIR
+fd -e vim --base-directory $V_SESSION_DIR
 ```
 However, we only want the name of the session and not the extension `.vim`.
 The easiest way to do this is to use `--exec echo {.}`: `{.}` is replaced with the filename with no extension.
@@ -108,7 +109,7 @@ We also want to sort the output, since `fd` is multithreaded by default when cal
 Wrapping this in a function, we get
 ```
 function __v_list_sessions
-    fd -e vim --base-directory $VIM_SESSION_DIR --exec echo {.} | sort
+    fd -e vim --base-directory $V_SESSION_DIR --exec echo {.} | sort
 end
 ```
 We can add this as a subcommand to our original function:
@@ -116,7 +117,7 @@ We can add this as a subcommand to our original function:
 function v --argument command session_name
     switch $command
         case open
-            set -l sessionfile $VIM_SESSION_DIR/session_name.vim
+            set -l sessionfile $V_SESSION_DIR/session_name.vim
             if test -f $sessionfile
                 vim -S $sessionfile
             else
@@ -266,19 +267,20 @@ For example, if you run
 vim +term
 ```
 you will get a vim terminal pane in the current directory.
-Since we already wrote a function `SSave` earlier, it's a simple matter to call this function as well:
+Since we already wrote a function `VSave` earlier, it's a simple matter to call this function as well:
 ```
-vim "+silent SSave <session_name>" +term
+vim "+silent VSave <session_name>" +term
 ```
 The `silent` command executes the next command without printing anything into the vim pane.
 Now let's wrap this in a command `init`, and do a quick check that there is not an existing session with the provided name.
 ```
 case init
-    if test -f "$NVIM_SESSION_DIR/$session_name.vim"
+    set -l sessionfile $NV_SESSION_DIR/$session_name.vim
+    if test -f $sessionfile
         echo "Cannot overwrite existing session '$session_name'" >&2
         return 1
     else
-        vim "+silent SSave $session_name" +term
+        (mkdir -p (dirname $sessionfile)) && vim "+silent VSave $session_name" +term
     end
 ```
 Now, running `v init <session_name>` will create a new session with name `<session_name>` and start out with a terminal in the directory where the command was called.
@@ -289,9 +291,9 @@ After doing this, our file `v.fish` now has the following contents:
 ```
 function v --argument command session_name new_session_name
     function __v_list_sessions
-        fd -e vim --base-directory $VIM_SESSION_DIR --exec echo {.} | sort
+        fd -e vim --base-directory $V_SESSION_DIR --exec echo {.} | sort
     end
-    set -q VIM_SESSION_DIR; or set -l VIM_SESSION_DIR "~/.local/share/nvim/sessions"
+    set -q V_SESSION_DIR; or set -l V_SESSION_DIR "~/.local/share/nvim/sessions"
     switch $command
         case open
             if not test -n "$session_name"
@@ -303,8 +305,8 @@ function v --argument command session_name new_session_name
                 end
             end
 
-            set -l sessionfile $VIM_SESSION_DIR/$session_name.vim
-            set -l lockfile $VIM_SESSION_DIR/$session_name.lock
+            set -l sessionfile $V_SESSION_DIR/$session_name.vim
+            set -l lockfile $V_SESSION_DIR/$session_name.lock
 
             if test -f "$sessionfile"
                 function __v_cleanup --inherit-variable lockfile \
@@ -329,11 +331,12 @@ function v --argument command session_name new_session_name
             __v_list_sessions
 
         case init
-            if test -f "$NVIM_SESSION_DIR/$session_name.vim"
+            set -l sessionfile $NV_SESSION_DIR/$session_name.vim
+            if test -f $sessionfile
                 echo "Cannot overwrite existing session '$session_name'" >&2
                 return 1
             else
-                vim "+silent SSave $session_name" +term
+                mkdir -p (dirname $sessionfile) && vim "+silent VSave $session_name" +term
             end
 
         case '*'
@@ -391,9 +394,10 @@ Here, the `v list` command comes in handy:
 complete -f -c v -a "(v list)" \
     -n "__fish_seen_subcommand_from open" -a "(v list)"
 ```
+As a whole, the contents of the completion file can be found [in the Git repository](https://github.com/alexrutar/v-session-manager/blob/main/completions/v.fish).
 As a whole, the completion file `~/.config/fish/completions/v.fish` looks like
 ```
-set -l v_subcommands open rename rm list
+set -l v_subcommands init list open
 complete -f -c v
 complete -c v -a open \
     -n "not __fish_seen_subcommand_from $v_subcommands" \
