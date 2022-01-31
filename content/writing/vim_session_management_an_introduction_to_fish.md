@@ -108,7 +108,7 @@ We also want to sort the output, since `fd` is multithreaded by default when cal
 Wrapping this in a function, we get
 ```
 function __v_list_sessions
-    fd -e vim --base-directory $NIM_SESSION_DIR --exec echo {.} | sort
+    fd -e vim --base-directory $VIM_SESSION_DIR --exec echo {.} | sort
 end
 ```
 We can add this as a subcommand to our original function:
@@ -258,15 +258,40 @@ To debug issues with handlers persisting longer than you expect, you can get a l
 functions --handlers
 ```
 ## Finishing up
+### Starting new sessions
+It would also be nice to start new sessions with a terminal in the given directory.
+We can tell vim to execute some commands using the `+<command>` syntax: such arguments passed to vim will be executed in order as the vim session is started.
+For example, if you run
+```
+vim +term
+```
+you will get a vim terminal pane in the current directory.
+Since we already wrote a function `SSave` earlier, it's a simple matter to call this function as well:
+```
+vim "+silent SSave <session_name>" +term
+```
+The `silent` command executes the next command without printing anything into the vim pane.
+Now let's wrap this in a command `init`, and do a quick check that there is not an existing session with the provided name.
+```
+case init
+    if test -f "$NVIM_SESSION_DIR/$session_name.vim"
+        echo "Cannot overwrite existing session '$session_name'" >&2
+        return 1
+    else
+        vim "+silent SSave $session_name" +term
+    end
+```
+Now, running `v init <session_name>` will create a new session with name `<session_name>` and start out with a terminal in the directory where the command was called.
+
 ### The complete function
 It remains to add a case where an invalid command is given, and to print out a short error message.
 After doing this, our file `v.fish` now has the following contents:
 ```
-function __v_list_sessions
-    fd -e vim --base-directory $VIM_SESSION_DIR --exec echo {.} | sort
-end
 function v --argument command session_name new_session_name
-    set -q NIM_SESSION_DIR; or set -l VIM_SESSION_DIR "~/.local/share/nvim/sessions"
+    function __v_list_sessions
+        fd -e vim --base-directory $VIM_SESSION_DIR --exec echo {.} | sort
+    end
+    set -q VIM_SESSION_DIR; or set -l VIM_SESSION_DIR "~/.local/share/nvim/sessions"
     switch $command
         case open
             if not test -n "$session_name"
@@ -302,6 +327,14 @@ function v --argument command session_name new_session_name
 
         case list
             __v_list_sessions
+
+        case init
+            if test -f "$NVIM_SESSION_DIR/$session_name.vim"
+                echo "Cannot overwrite existing session '$session_name'" >&2
+                return 1
+            else
+                vim "+silent SSave $session_name" +term
+            end
 
         case '*'
             echo "Invalid command option '$argv[1]'" >&2
@@ -348,6 +381,9 @@ complete -c v -a open \
 complete -c v -a list \
     -n "not __fish_seen_subcommand_from $v_subcommands" \
     -d 'List available session files'
+complete -c v -a init \
+    -n "not __fish_seen_subcommand_from $v_subcommands" \
+    -d 'Start up a new session'
 ```
 Finally, when we have seen the subcommand `v open`, we want to provide the valid list of options.
 Here, the `v list` command comes in handy:
@@ -365,6 +401,9 @@ complete -c v -a open \
 complete -c v -a list \
     -n "not __fish_seen_subcommand_from $v_subcommands" \
     -d 'List available session files'
+complete -c v -a init \
+    -n "not __fish_seen_subcommand_from $v_subcommands" \
+    -d 'Start up a new session'
 complete -c v -a "(v list)" \
     -n "__fish_seen_subcommand_from open" -a "(v list)"
 ```

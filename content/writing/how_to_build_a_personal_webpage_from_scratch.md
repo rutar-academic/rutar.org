@@ -88,7 +88,19 @@ There are three main components to static website generation
 
 I'll discuss these three components in the following sections, along with some additional topics in the [final section](#future-steps).
 
-## A short introduction to Git
+## Prerequisites
+### Text Editors
+When writing code, it is important to use an editor which accurately represents the contents of the file you are editing.
+This is in constrast to software such as Microsoft Word, in which the content that you enter on the page is different than the underlying representation.
+Some common graphical text editors include [Atom](https://atom.io), [Sublime Text](https://www.sublimetext.com), and [Notepad++](https://notepad-plus-plus.org/downloads/).
+For command-line editors, you could consider [NeoVim](https://neovim.io) or [Emacs](https://www.gnu.org/software/emacs/).
+
+### Command Line Interface
+If you have a Linux machine, you are probably already familiar with the command line and have a built-in Terminal.
+On macOS, the command line behaves similarly - the default application is [Terminal](https://en.wikipedia.org/wiki/Terminal_(macOS)), which is built-in on every Mac.
+On Windows, if you want a full UNIX command-line interface, you can use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
+
+### Git
 A standard tool used in software development is [git](https://git-scm.com).
 Essentially, git is a tool used for [distributed revision control](https://en.wikipedia.org/wiki/Version_control#Distributed_revision_control): in other words, it has functionality to save snapshots of your current projects, distribute your projects or import other projects, and collaborate with others effectively.
 My preferred resource to learn about git is the [git webpage](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
@@ -245,3 +257,4 @@ If you wish to support more devices, I'd recommend that you read the [favicon ar
 - [GTMetrix](https://gtmetrix.com/analyze.html)
 
 ### https
+- [read about why https](https://doesmysiteneedhttps.com/)
