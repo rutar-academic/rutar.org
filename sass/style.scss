@@ -203,7 +203,7 @@ header, h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 
   line-height: 1.0;
-  margin: 0.7em 0 12px;
+  margin: 0.8em 0 12px;
   padding: 0;
 
   @include mobile {
@@ -222,7 +222,7 @@ header, h1, h2, h3, h4, h5, h6 {
 
 
 header, h1 {
-  font-size: 26px;
+  font-size: 28px;
   a {
     color: inherit;
   }
@@ -233,13 +233,13 @@ header, h1 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 22px;
   counter-reset: subsection;
 }
 
 
 h3 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .article-contents {
@@ -254,7 +254,7 @@ h3 {
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 18px;
   color: $fadeColor;
 }
 

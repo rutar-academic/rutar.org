@@ -2,7 +2,7 @@
 title = "Vim Session Management: An Introduction to Fish"
 description = "An introduction to writing functions in fish, by example."
 weight = 0
-date = 2022-01-26
+date = 2022-02-01
 
 [extra]
 toc = true
@@ -27,7 +27,7 @@ This implements all the features below, along with a couple extra useful command
 ### Pre-requisites
 I will assume that you have the tools [fd](https://github.com/sharkdp/fd) and [fzf](https://github.com/junegunn/fzf) installed and accessible in your shell.
 If you don't, you can simply omit the components that use `fzf`, and rewrite the parts using `fd` to use `find` instead.
-I will also assume you know a bit about vim, including plugin installation.
+I will also assume you know a bit about (Neo)Vim, including plugin installation.
 
 ## Session initialization and management
 In this section, we will write the core functionality of our program: save and open session files.
@@ -285,7 +285,7 @@ case init
 ```
 Now, running `v init <session_name>` will create a new session with name `<session_name>` and start out with a terminal in the directory where the command was called.
 
-### The complete function
+### The entire function
 It remains to add a case where an invalid command is given, and to print out a short error message.
 After doing this, our file `v.fish` now has the following contents:
 ```
