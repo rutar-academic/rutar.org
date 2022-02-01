@@ -14,15 +14,15 @@ tags = ["cli", "fish"]
 However, the project is relatively new, so it can be somewhat challenging to find concise information on how to use the scripting language.
 
 ## Objectives
-In this article, we will develop a basic session management tool for (neo)vim.
+In this article, we will develop a basic session management tool for (Neo)Vim.
 The intention of this tool is to be a wrapper around Tim Pope's [obsession.vim](https://github.com/tpope/vim-obsession) plugin, with the following features:
 
 1. [Easy session initialization](#session-initialization-and-management) - list sessions and open them
 2. [Active session management](#active-session-management) - we only want to allow a single instance of vim to be using a session file
 3. [Autocompletions](#autocompletions) - get relevant results when you hit `TAB`
 
-Perhaps you simply find the session management tool useful: you can get the files [in the Git repository](https://github.com/alexrutar/v-session-manager).
-This implements all the features below, along with a couple extra useful commands and completions.
+Perhaps you simply find the session management tool useful: you can find the program in the [Git repository](https://github.com/alexrutar/v-session-manager).
+This implements all the features below, along with a couple extra useful commands, completions, and help messages.
 
 ### Pre-requisites
 I will assume that you have the tools [fd](https://github.com/sharkdp/fd) and [fzf](https://github.com/junegunn/fzf) installed and accessible in your shell.
@@ -347,10 +347,10 @@ end
 ```
 Here are some other feature ideas:
 
-- custom `rm` and `mv` commands
-- nicer file listing with `tree` (hint: use `tree --fromfile .`, and `isatty` to verify that we are only formatting when the output is a terminal)
+- custom `rename` and `delete` commands
+- nicer file listing with `tree` (hint: use `tree --fromfile .` to format input from STDIN, and `isatty` to only format when the output is a terminal)
+- add some nice help messages
 
-I'll leave those to you to implement!
 ### Autocompletions
 Finally, it would be nice to have some autocompletions for our script.
 Completion files are stored in a file with the same name as the function file, except in the `~/.config/fish/completions` directory.
