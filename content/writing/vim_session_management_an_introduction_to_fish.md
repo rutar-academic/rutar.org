@@ -21,7 +21,7 @@ The intention of this tool is to be a wrapper around Tim Pope's [obsession.vim](
 2. [Active session management](#active-session-management) - we only want to allow a single instance of vim to be using a session file
 3. [Autocompletions](#autocompletions) - get relevant results when you hit `TAB`
 
-Perhaps you simply find the session management tool useful: you can find the program in the [Git repository](https://github.com/alexrutar/v-session-manager).
+Perhaps you simply find the session management tool useful: you can find the program in the [Git repository](https://github.com/alexrutar/vs).
 This implements all the features below, along with a couple extra useful commands, completions, and help messages.
 
 ### Pre-requisites
@@ -34,24 +34,24 @@ In this section, we will write the core functionality of our program: save and o
 
 First, let's create a global variable to represent where we want to save the session files.
 ```
-set -x V_SESSION_DIR "~/.local/share/vim/sessions"
+set -x VS_SESSION_DIR "~/.local/share/vim/sessions"
 ```
 in your `config.fish`, or wherever you prefer to define environment variables.
 You can set the folder to be anything you want.
 Now `exec fish` to load this variable.
 To ensure that this variable is loaded, you can run
 ```
-env | grep ^V_SESSION_DIR
+envs | grep ^VS_SESSION_DIR
 ```
 and check that there is a match.
-The command `env` prints out all currently defined environment variables - we just search for the line that starts with `V_SESSION_DIR`.
+The command `env` prints out all currently defined environment variables - we just search for the line that starts with `VS_SESSION_DIR`.
 
 ### A wrapper for Obsession.vim
 [Obsession.vim](https://github.com/tpope/vim-obsession) is itself a wrapper around the vim command `:mksession`, which creates a session file and saves the current state of vim (e.g. tabs, windows, layout, etc.) to that file.
 If you have a session file `session.vim`, you can restart it with `vim -S session.vim`.
 Install this plugin in your `vimrc` and also add the function definition
 ```
-command -nargs=1 VSave Obsess $V_SESSION_DIR/<args>.vim
+command -nargs=1 VSave Obsess $VS_SESSION_DIR/<args>.vim
 ```
 This defines a command `:VSave`, which takes exactly one argument which is the name of the session file (with no extension).
 To begin a new saved session, run `:VSave my/session` from an active vim instance.
@@ -59,12 +59,12 @@ To terminate, run `qa`: note that closing files individually will modify the ses
 
 ### Starting up existing sessions
 Fish functions are defined in the folder `~/.config/fish/functions` and corresponding completions in `~/.config/fish/completions`.
-Let's write the command to start up new sessions, which we will invoke with `v`.
+Let's write the command to start up new sessions, which we will invoke with `vs`.
 We want to accept the session name as an argument, and then check if the session file exists: if it does, open it; if not, terminate with a nice error message.
-In the file `~/.config/fish/functions/v.fish`, we define a function as follows:
+In the file `~/.config/fish/functions/vs.fish`, we define a function as follows:
 ```
-function v --argument session_name
-    set -l sessionfile $V_SESSION_DIR/session_name.vim
+function vs --argument session_name
+    set -l sessionfile $VS_SESSION_DIR/session_name.vim
     if test -f $sessionfile
         vim -S $sessionfile
     else
@@ -73,10 +73,10 @@ function v --argument session_name
     end
 end
 ```
-To invoke, just run `v <session name>`, and the corresponding session will be started!
+To invoke, just run `vs <session name>`, and the corresponding session will be started!
 
-The `--argument session_name` automatically assigns the first argument passed to `v` to the variable `session_name`.
-Note that the variable will be empty if there are no arguments passed to `v`.
+The `--argument session_name` automatically assigns the first argument passed to `vs` to the variable `session_name`.
+Note that the variable will be empty if there are no arguments passed to `vs`.
 Any other arguments are simply ignored.
 In shell scripting languages, conditionals often execute based on the return code of a command.
 In this case, the command `test -f` returns 0 if `$sessionfile` exists, and returns something else otherwise.
@@ -99,7 +99,7 @@ Now, since we want multiple behaviours, we will invoke the desired behaviour wit
 First, we define a helper function to list sessions.
 Using `fd`, we can quickly get a list of candidate files:
 ```
-fd -e vim --base-directory $V_SESSION_DIR
+fd -e vim --base-directory $VS_SESSION_DIR
 ```
 However, we only want the name of the session and not the extension `.vim`.
 The easiest way to do this is to use `--exec echo {.}`: `{.}` is replaced with the filename with no extension.
@@ -108,16 +108,16 @@ We also want to sort the output, since `fd` is multithreaded by default when cal
 
 Wrapping this in a function, we get
 ```
-function __v_list_sessions
-    fd -e vim --base-directory $V_SESSION_DIR --exec echo {.} | sort
+function __vs_list_sessions
+    fd -e vim --base-directory $VS_SESSION_DIR --exec echo {.} | sort
 end
 ```
 We can add this as a subcommand to our original function:
 ```
-function v --argument command session_name
+function vs --argument command session_name
     switch $command
         case open
-            set -l sessionfile $V_SESSION_DIR/session_name.vim
+            set -l sessionfile $VS_SESSION_DIR/session_name.vim
             if test -f $sessionfile
                 vim -S $sessionfile
             else
@@ -125,11 +125,11 @@ function v --argument command session_name
                 return 1
             end
         case list
-            __v_list_sessions
+            __vs_list_sessions
     end
 end
 ```
-Now, open session files with `v open session/name` and list possibilities with `v list`.
+Now, open session files with `vs open session/name` and list possibilities with `vs list`.
 
 ### Fancy session selection with fzf
 For convenience, let's also write an interactive file chooser using [fzf](https://github.com/junegunn/fzf)
@@ -149,7 +149,7 @@ if not test -n "$session_name"
     end
 end
 ```
-Essentially, when `v open` is called with no session name, an interactive prompt opens and allows you to search the available sessions.
+Essentially, when `vs open` is called with no session name, an interactive prompt opens and allows you to search the available sessions.
 
 In fish, quotes are usually not required since variables are passed 'as atoms' rather than being expanded and separated on whitespace (as is the case with bash).
 One of the few exceptions to this rule is `test -n "$var"`, which checks that `var` is defined and non-empty.
@@ -220,24 +220,24 @@ We also need to clean up the lockfile on exist using the event handler from the 
 All together, our code now looks like this
 ```
 if test -f "$sessionfile"
-    function __v_cleanup \
+    function __vs_cleanup \
             --inherit-variable lockfile \
             --on-signal INT --on-signal HUP --on-event fish_exit
-        functions -e __v_cleanup
+        functions -e __vs_cleanup
         rmdir $lockfile
     end
 
     if mkdir $lockfile &> /dev/null
         vim -S $sessionfile
-        __v_cleanup
+        __vs_cleanup
     else
-        echo "Session '$v_fname' already running!" >&2
+        echo "Session '$vs_fname' already running!" >&2
         return 1
     end
 else
 ...
 ```
-In principle, we might have to worry about multiple instances of the same event handler `__v_cleanup`.
+In principle, we might have to worry about multiple instances of the same event handler `__vs_cleanup`.
 However, as of the time of writing this article, fish [does not support background functions](https://github.com/fish-shell/fish-shell/issues/238), so we only need to worry about our function running in multiple shells, in which case we do not need have this issue.
 
 ### A note on trap
@@ -275,7 +275,7 @@ The `silent` command executes the next command without printing anything into th
 Now let's wrap this in a command `init`, and do a quick check that there is not an existing session with the provided name.
 ```
 case init
-    set -l sessionfile $NV_SESSION_DIR/$session_name.vim
+    set -l sessionfile $NVS_SESSION_DIR/$session_name.vim
     if test -f $sessionfile
         echo "Cannot overwrite existing session '$session_name'" >&2
         return 1
@@ -283,21 +283,21 @@ case init
         (mkdir -p (dirname $sessionfile)) && vim "+silent VSave $session_name" +term
     end
 ```
-Now, running `v init <session_name>` will create a new session with name `<session_name>` and start out with a terminal in the directory where the command was called.
+Now, running `vs init <session_name>` will create a new session with name `<session_name>` and start out with a terminal in the directory where the command was called.
 
 ### The entire function
 It remains to add a case where an invalid command is given, and to print out a short error message.
 After doing this, our file `v.fish` now has the following contents:
 ```
-function v --argument command session_name new_session_name
+function vs --argument command session_name new_session_name
     function __v_list_sessions
-        fd -e vim --base-directory $V_SESSION_DIR --exec echo {.} | sort
+        fd -e vim --base-directory $VS_SESSION_DIR --exec echo {.} | sort
     end
-    set -q V_SESSION_DIR; or set -l V_SESSION_DIR "~/.local/share/nvim/sessions"
+    set -q VS_SESSION_DIR; or set -l VS_SESSION_DIR "~/.local/share/nvim/sessions"
     switch $command
         case open
             if not test -n "$session_name"
-                set -l fzf_session (__v_list_sessions | fzf --height 40% --border --tac)
+                set -l fzf_session (__vs_list_sessions | fzf --height 40% --border --tac)
                 if test -n "$fzf_session"
                     set session_name $fzf_session
                 else
@@ -305,19 +305,19 @@ function v --argument command session_name new_session_name
                 end
             end
 
-            set -l sessionfile $V_SESSION_DIR/$session_name.vim
-            set -l lockfile $V_SESSION_DIR/$session_name.lock
+            set -l sessionfile $VS_SESSION_DIR/$session_name.vim
+            set -l lockfile $VS_SESSION_DIR/$session_name.lock
 
             if test -f "$sessionfile"
-                function __v_cleanup --inherit-variable lockfile \
+                function __vs_cleanup --inherit-variable lockfile \
                     --on-signal INT --on-signal HUP --on-event fish_exit
-                    functions -e __v_cleanup
+                    functions -e __vs_cleanup
                     rmdir $lockfile
                 end
 
                 if mkdir $lockfile &> /dev/null
                     vim -S $sessionfile
-                    __v_cleanup
+                    __vs_cleanup
                 else
                     echo "Session '$session_name' already running!" >&2
                     return 1
@@ -328,10 +328,10 @@ function v --argument command session_name new_session_name
             end
 
         case list
-            __v_list_sessions
+            __vs_list_sessions
 
         case init
-            set -l sessionfile $NV_SESSION_DIR/$session_name.vim
+            set -l sessionfile $VS_SESSION_DIR/$session_name.vim
             if test -f $sessionfile
                 echo "Cannot overwrite existing session '$session_name'" >&2
                 return 1
@@ -355,60 +355,60 @@ Here are some other feature ideas:
 Finally, it would be nice to have some autocompletions for our script.
 Completion files are stored in a file with the same name as the function file, except in the `~/.config/fish/completions` directory.
 
-We want basic descriptions for the commands when we hit `TAB`, and we also want autocompletion for the session name when we call `v open`.
+We want basic descriptions for the commands when we hit `TAB`, and we also want autocompletion for the session name when we call `vs open`.
 Fish completion files are also just regular lists of functions, except they are loaded when autocompletion for a certain function is requested.
 You can read the fish [docs about completions](https://fishshell.com/docs/current/completions.html) if you would like.
 
 We begin by disabling file completion on the base command, which is enabled by default.
 This is done with the command
 ```
-complete -f -c v
+complete -f -c vs
 ```
 This way, when we hit tab, we are not suggested offered files in the current directory in the completion list.
 Now, we need to add our subcommands.
 This is done as follows: to add the completion option `open`, we use
 ```
-complete -c v -a open -d 'Open the session file'
+complete -c vs -a open -d 'Open the session file'
 ```
 However, this has a problem since now fish will suggest `open` as a valid argument at any time, when it should only be valid at the beginning.
 In order to fix this, we first introduce a list of all our valid command names with
 ```
-set -l v_subcommands open list
+set -l vs_subcommands open list
 ```
 and then use the `-n` flag for `complete` to only complete in the case that we have not yet seen any subcommands.
-We can also include an option for `v list`.
+We can also include an option for `vs list`.
 ```
-complete -c v -a open \
-    -n "not __fish_seen_subcommand_from $v_subcommands" \
+complete -c vs -a open \
+    -n "not __fish_seen_subcommand_from $vs_subcommands" \
     -d 'Open the session file'
-complete -c v -a list \
-    -n "not __fish_seen_subcommand_from $v_subcommands" \
+complete -c vs -a list \
+    -n "not __fish_seen_subcommand_from $vs_subcommands" \
     -d 'List available session files'
-complete -c v -a init \
-    -n "not __fish_seen_subcommand_from $v_subcommands" \
+complete -c vs -a init \
+    -n "not __fish_seen_subcommand_from $vs_subcommands" \
     -d 'Start up a new session'
 ```
-Finally, when we have seen the subcommand `v open`, we want to provide the valid list of options.
-Here, the `v list` command comes in handy:
+Finally, when we have seen the subcommand `vs open`, we want to provide the valid list of options.
+Here, the `vs list` command comes in handy:
 ```
-complete -f -c v -a "(v list)" \
-    -n "__fish_seen_subcommand_from open" -a "(v list)"
+complete -f -c vs -a "(vs list)" \
+    -n "__fish_seen_subcommand_from open" -a "(vs list)"
 ```
-As a whole, the contents of the completion file can be found [in the Git repository](https://github.com/alexrutar/v-session-manager/blob/main/completions/v.fish).
-As a whole, the completion file `~/.config/fish/completions/v.fish` looks like
+As a whole, the contents of the completion file can be found [in the Git repository](https://github.com/alexrutar/vs/blob/master/completions/v.fish).
+As a whole, the completion file `~/.config/fish/completions/vs.fish` looks like
 ```
-set -l v_subcommands init list open
-complete -f -c v
-complete -c v -a open \
-    -n "not __fish_seen_subcommand_from $v_subcommands" \
+set -l vs_subcommands init list open
+complete -f -c vs
+complete -c vs -a open \
+    -n "not __fish_seen_subcommand_from $vs_subcommands" \
     -d 'Open the session file'
-complete -c v -a list \
-    -n "not __fish_seen_subcommand_from $v_subcommands" \
+complete -c vs -a list \
+    -n "not __fish_seen_subcommand_from $vs_subcommands" \
     -d 'List available session files'
-complete -c v -a init \
-    -n "not __fish_seen_subcommand_from $v_subcommands" \
+complete -c vs -a init \
+    -n "not __fish_seen_subcommand_from $vs_subcommands" \
     -d 'Start up a new session'
-complete -c v -a "(v list)" \
-    -n "__fish_seen_subcommand_from open" -a "(v list)"
+complete -c vs -a "(vs list)" \
+    -n "__fish_seen_subcommand_from open" -a "(vs list)"
 ```
-Now hitting `v <TAB>` prompts with two options: `open`, or `list`, and hitting `v open <TAB>` prompts with the possible session names.
+Now hitting `vs <TAB>` prompts with two options: `open`, or `list`, and hitting `vs open <TAB>` prompts with the possible session names.
