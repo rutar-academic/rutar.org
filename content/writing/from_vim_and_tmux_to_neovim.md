@@ -25,9 +25,9 @@ However, over time, I accumulated some annoyances that were challenging to resol
 
 ## Disillusionment
 My main struggle with using vim inside tmux is that there are often multiple ways to do the same thing.
-For example, tmux lets you split the window vertically with `CTRL-b "` and vim lets you do this with `CTRL-w s` or `:vsp`.
+For example, tmux lets you split the window vertically with <kbd>Ctrl+B</kbd> <kbd>"</kbd> and vim lets you do this with <kbd>Ctrl+W</kbd> <kbd>s</kbd> or `:vsp`.
 And these splits are not interoperable.
-Navigation commands are different, and often I found myself trying to `CTRL-w l` into a tmux split, which just doesn't work.
+Navigation commands are different, and often I found myself trying to <kbd>Ctrl+W</kbd> <kbd>L</kbd> into a tmux split, which just doesn't work.
 Moreover, you can't yank / paste between different tmux splits.
 Other standard actions in vim (for example, changing the directory with `:cd` or `:lcd`) have equivalences in tmux, but this requires entering verbose commands, or binding (and memorizing and using) new shortcuts.
 
@@ -57,7 +57,7 @@ For simplicity, I will only discuss my solution using neovim.
 ### Running a terminal inside neovim
 Running a terminal inside neovim is very easy: just run `:term` to convert the current split into a terminal.
 Open a terminal in a new vertical split with `:vsp +term` (or any file other editing command).
-With focus on a terminal buffer, hit `i` to enter a special terminal edit mode, and return to normal mode with `CTRL-\ CTRL-n` (all other keystrokes are passed through to the interactive shell).
+With focus on a terminal buffer, hit `i` to enter a special terminal edit mode, and return to normal mode with <kbd>Ctrl+\\</kbd> <kbd>Ctrl+N</kbd> (all other keystrokes are passed through to the interactive shell).
 In order to use your standard login shell, add a line like
 ```
 set shell=zsh\ --login
@@ -154,13 +154,13 @@ _v() {
 }
 _v
 ```
-Now, typing `v<SPACE><TAB>` in your terminal will offer up the acceptable possibilities for your session name.
+Now, typing `v` <kbd>SPACE</kbd> <kbd>TAB</kbd> in your terminal will offer up the acceptable possibilities for your session name.
 
 ## Concluding remarks and some challenges
 This setup is conspiculously missing convenient instance persistence.
 Every time you want to rejoin a session, you are sourcing a lot of vimscript to restart the neovim instance.
 This is quite fast, but it would be a lot better to place the neovim instance in the background, or temporarily suspend it to rejoin it again later.
-Currently, I simply suspend my neovim instances with `CTRL-z` and then restore with `fg`.
+Currently, I simply suspend my neovim instances with <kbd>Ctrl+Z</kbd> and then restore with `fg`.
 However, this is not a particularly elegant solution and I have not yet spent the time figuring out how to do this properly.
 
 So far, I am very happy with this setup.
