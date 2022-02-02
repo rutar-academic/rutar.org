@@ -68,8 +68,8 @@ Here is a short list of reasons why you should prefer simple static webpages (if
 
 Here are some other opinions on static web development:
 
-- [https://motherfuckingwebsite.com](https://motherfuckingwebsite.com)
-- [https://giuliomagnifico.blog/misc/2022/01/22/I-left-Medium.html](https://giuliomagnifico.blog/misc/2022/01/22/I-left-Medium.html)
+- {{ vurl(url="https://motherfuckingwebsite.com") }}
+- {{ vurl(url="https://giuliomagnifico.blog/misc/2022/01/22/I-left-Medium.html") }}
 
 ### Static website components
 There are three main components to static website generation
@@ -96,7 +96,7 @@ Some common graphical text editors include [Atom](https://atom.io), [Sublime Tex
 For command-line editors, you could consider [NeoVim](https://neovim.io) or [Emacs](https://www.gnu.org/software/emacs/).
 
 ### Command Line Interface
-If you have a Linux machine, you are probably already familiar with the command line and have a built-in Terminal.
+If you have a Linux machine, you are probably already familiar with the command line and have a preferred terminal.
 On macOS, the command line behaves similarly - the default application is [Terminal](https://en.wikipedia.org/wiki/Terminal_(macOS)), which is built-in on every Mac.
 On Windows, if you want a full UNIX command-line interface, you can use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
 
@@ -105,31 +105,7 @@ A standard tool used in software development is [git](https://git-scm.com).
 Essentially, git is a tool used for [distributed revision control](https://en.wikipedia.org/wiki/Version_control#Distributed_revision_control): in other words, it has functionality to save snapshots of your current projects, distribute your projects or import other projects, and collaborate with others effectively.
 My preferred resource to learn about git is the [git webpage](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
 
-Here's a quick tutorial on getting started with git through the command-line interface.
-Another option would be to  use one of the [GUI Options](https://git-scm.com/downloads/guis).
-First, download the installer for your preferred device from the [official site](https://git-scm.com/downloads).
-### Installation
-#### Windows
-1. Run the installer with the default options.
-2. Select an editor.
-  The simplest option is probably to use Notepad++ since it is likely already included on your machine, but you can easily install some of the other graphical and select them instead.
-3. Choose the default options for the remaining choices.
 
-In order to start up Git in a project folder, you can right-click in the folder and select __Git Bash Here__.
-This will open an interactive terminal.
-
-#### macOS or UNIX
-The simplest way is to install Git on your command line with your system package manager.
-On MacOS, I typically use the [brew package manager](https://brew.sh); if you're on some other device, your system likely has a default.
-
-#### Other options
-If you want, there is also a nice list of
-
-TODO: write this section.
-
-see: https://www.pluralsight.com/guides/using-git-and-github-on-windows
-
-### UNIX Shell
 If you are on a unix-like device, check that Git is installed by running
 ```
 git --version
