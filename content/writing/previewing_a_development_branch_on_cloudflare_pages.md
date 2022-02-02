@@ -6,7 +6,7 @@ date = 2022-01-19
 [extra]
 
 [taxonomies]
-tags = ["vim", "shell"]
+tags = ["git", "deployment"]
 +++
 In this article, I assume that your repository is hosted on [GitHub](https://github.com), and the site is hosted on [Cloudflare pages](https://pages.cloudflare.com/).
 I'm sure other providers will work, with similar instructions.
