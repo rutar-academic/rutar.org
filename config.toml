@@ -14,7 +14,7 @@ taxonomies = [
 highlight_code = false
 
 [extra]
-# Put all your custom variables here
+feed_length = 5 # number of elements to show in feed
 author = "Alex Rutar"
 description = "Personal webpage for math and related topics."
 
