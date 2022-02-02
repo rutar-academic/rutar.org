@@ -2,6 +2,9 @@ base_url = "https://rutar.org"
 compile_sass = true
 build_search_index = false
 
+generate_feed = true
+feed_filename = "rss.xml"
+
 taxonomies = [
    { name = "tags", paginate = 10}
 ]
