@@ -42,7 +42,7 @@ You need to first create a new password store with an existing GPG key:
 ```
 pass init <key-id>
 ```
-I've written a short primer on GPG [here](@/writing/sharing_secrets_with_gnupg.md).
+I've written a short primer on GPG [here](@/writing/sharing-secrets-with-gnupg.md).
 Add secrets with
 ```
 pass insert <secret-name>

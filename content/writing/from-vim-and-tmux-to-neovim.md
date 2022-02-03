@@ -136,7 +136,7 @@ As a warning, since `:Obsess` will overwrite existing session files, `:SSave` (i
 You may want to modify the definition of `:SSave` to prevent this from happening.
 
 If you want completion, first add the helper function
-``` 
+```
 v_session_list() {
     cd $NVIM_SESSION_DIR && find . -type f -name "*.vim" \
         | cut -c 3- | cut -d "." -f 1
