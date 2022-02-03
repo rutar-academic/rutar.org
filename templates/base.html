@@ -42,11 +42,11 @@
 
   <body>
     <div class="wrapper">
-      <header class="header-name">
+      <header>
         <a href="/">{{ config.extra.author }}</a>
       </header>
 
-      <nav class="header-nav">
+      <nav>
         {%- set links = load_data(path="data/links.json") %}
         {%- for obj in links.nav -%}
         {%- if not current_path %}{% set active = false %}
@@ -56,7 +56,7 @@
         {%- endfor %}
       </nav>
 
-      <article class="content">
+      <article>
         <h1{% if page %} class="post-title"{% endif %}>{{ title }}</h1>
         {%- block content -%}{%- endblock -%}
       </article>

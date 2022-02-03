@@ -137,11 +137,14 @@ Call it `index.html` in your (currently empty) website folder.
     <meta name="description" content="An example webpage.">
     <meta name="author" content="Alex Rutar">
   </head>
-  <nav>
-    <a href="writing.html">Writing</a>
-    <a href="index.html">About</a>
-  </nav>
   <body>
+    <header>
+      Example Webpage
+    </header>
+    <nav>
+      <a href="writing.html">Writing</a>
+      <a href="index.html">About</a>
+    </nav>
     <article>
       <h1>Welcome to my webpage</h1>
       <p>This is some content!</p>
@@ -177,6 +180,35 @@ Now, if you click on the navigation links, we have two working pages!
 Note that the link attribute `href="writing.html"` specifies a _relative link_, i.e. the file path is taken relative to the directory that the file in which the link sits.
 Later, we will replace this with `href="/writing.html"`, which will give a link to the root of your website.
 However, when browing files on your device, `/writing.html` will (attempt to) link to the root of your filesystem directory, which is not what you want!
+
+
+### Styling the page
+Well, we have a functional webpage, but it would be nice to style some of the elements.
+To do this, we first need to add some `class` attributes to our HTML documents, which we will target with our style.
+Edit the `index.html` document with the following additional content:
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Example Webpage</title>
+    <meta name="description" content="An example webpage.">
+    <meta name="author" content="Alex Rutar">
+  </head>
+  <body>
+    <nav>
+      <a href="writing.html">Writing</a>
+      <a href="index.html">About</a>
+    </nav>
+    <article>
+      <h1>Welcome to my webpage</h1>
+      <p>This is some content!</p>
+    </article>
+  </body>
+</html>
+```
 
 
 

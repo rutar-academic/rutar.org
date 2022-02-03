@@ -51,7 +51,7 @@ kbd {
 }
 
 // content for main article
-.content {
+article {
   grid-area: ct;
   min-width: 0;
   max-width: 100%;
@@ -68,18 +68,6 @@ kbd {
     grid-template-columns: auto;
     grid-template-rows: repeat(auto-fit, auto);
   }
-}
-
-// header in top left
-.header-name {
-  grid-area: name;
-  margin: 0;
-  font-weight: 300;
-  font-size: 26px;
-  letter-spacing: 1px;
-  font-style: oblique;
-  justify-self: left;
-  align-self: end;
 }
 
 // post footer
@@ -132,19 +120,6 @@ nav {
   }
 }
 
-.header-nav {
-  grid-area: nav;
-  justify-self: right;
-  align-self: end;
-}
-
-
-// center headers when on mobile
-.header-name, .header-nav {
-  @include mobile {
-    justify-self: center;
-  }
-}
 
 
 table {
@@ -227,9 +202,39 @@ header, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// header in top left
+header {
+  grid-area: name;
+  margin: 0;
+  font-weight: 300;
+  font-size: 26px;
+  letter-spacing: 1px;
+  font-style: oblique;
+  justify-self: left;
+  align-self: end;
+  a {
+    color: inherit;
+  }
+}
 
 
-header, h1 {
+nav {
+  grid-area: nav;
+  justify-self: right;
+  align-self: end;
+}
+
+
+// center headers when on mobile
+header, nav {
+  @include mobile {
+    justify-self: center;
+  }
+}
+
+
+
+h1 {
   font-size: 28px;
   a {
     color: inherit;
