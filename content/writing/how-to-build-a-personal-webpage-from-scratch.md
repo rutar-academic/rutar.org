@@ -47,7 +47,7 @@ The main downside is that, since the pages need to be generated for each visitor
 However, for a personal blog or site used primarily to _distribute_ information, rather than collect it, dynamic content generation is not necessary!
 Here is a short list of reasons why you should prefer simple static webpages (if you do not already know that you require a dynamic webpage):
 
-- __Longevity.___
+- __Longevity.__
   A static webpage is just a collection of files, which you should also have saved on your computer.
   So even in the worst case scenario - say your template manager suddenly ceases to exist, and your website is simultaneously taken online - you still have the files for your webpage and you can just put them up somewhere else.
   If you maintain a dynamic webpage, you need to keep the required tools up to date otherwise everything will cease to work.
@@ -118,17 +118,66 @@ If your website is also hosted using [GitHub Pages](https://pages.github.com/), 
 
 ## Crash Course in HTML and CSS (with examples)
 I'm going to assume you know some basics of HTML and CSS.
-There are lots of tutorials online; here is a [nice one](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics).
-In general, the [MDN Web Docs](https://developer.mozilla.org/en-US/) are also an execellent reference resource for the majority of standard internet technologies!
+There are lots of tutorials online; here is a [nice one](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/).
+I'd recommend you read the articles on [HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) and [CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics), plus any of the other articles you might require.
 
-In my opinion, the best way to learn HTML and CSS is to start with a simple webpage (for example, this one!), download the content locally, and understand how everything works.
+In this section, I'll give a very streamlined description of setting up a basic functional blog, with a landing page and page to display your posts.
 
-### Basic document structure
-An HTML document is composed of elements, which are expressions of the form `<...> ... </...>`.
-The main features of an HTML element are the start tag `<...>` and the end tag `</...>`.
-Tags in HTML express the _semantics_ meaning of the content enclosed in a tag.
-Tags also have attributes, which are expressed in key-value pairs, typically in the form `key="value"`.
-For example, 
+### Getting started
+Let's start with a rather minimal HTML file.
+Call it `index.html` in your (currently empty) website folder.
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Example Webpage</title>
+    <meta name="description" content="An example webpage.">
+    <meta name="author" content="Alex Rutar">
+  </head>
+  <nav>
+    <a href="writing.html">Writing</a>
+    <a href="index.html">About</a>
+  </nav>
+  <body>
+    <article>
+      <h1>Welcome to my webpage</h1>
+      <p>This is some content!</p>
+    </article>
+  </body>
+</html>
+```
+This isn't the most barebones possible HTML file, but it is a good _modern_ starting point for all HTML content on your site.
+Here's an explanation of some of the tags:
+
+- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which allows us to use unicode when writing content.
+  This is necessary so the content does not get interpreted as something like [ASCII](https://en.wikipedia.org/wiki/ASCII) and cause errors.
+  Hopefully your text editor supports unicode...
+- `<meta name="viewport" content="width=device-width">` ensures that, if this page is opened on a browser with a small screen, it will not be incredibly zoomed out.
+  This is the bare minimum required so your page looks passable on a phone.
+  You can read a bit about this [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag).
+- `<title>`, `<meta name = "description" ...>`, `<meta name="author" ...>`: title, a short page description, and the author
+- `<nav>...</nav>`: website navigation
+- `<article>...</article>`: the 'content' of the page, i.e. your actual article or blog post but without the navigation, header, footer, etc.
+
+Now if you open the file `index.html` you should get a page with two links at the top: "About", and "Writing".
+Currently the "Writing" link does nothing, since we need to create that page.
+Create a file called `writing.html` and populate it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
+```
+<article>
+  <h1>Some things I've written</h1>
+  <p>Nothing here yet...</p>
+</article>
+```
+You can also change the `<title>` in this new page, as well.
+Now, if you click on the navigation links, we have two working pages!
+
+Note that the link attribute `href="writing.html"` specifies a _relative link_, i.e. the file path is taken relative to the directory that the file in which the link sits.
+Later, we will replace this with `href="/writing.html"`, which will give a link to the root of your website.
+However, when browing files on your device, `/writing.html` will (attempt to) link to the root of your filesystem directory, which is not what you want!
+
 
 
 ## Website Templating with Zola
