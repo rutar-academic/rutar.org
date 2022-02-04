@@ -24,7 +24,7 @@ kbd {
 
 
 // body wrapper, defines main grid
-.wrapper {
+.container {
   background: $contentBackgroundColor;
   margin: 0 auto;
   max-width: $maxWidth;
@@ -41,7 +41,7 @@ kbd {
     "fg fg";
   @include mobile {
     grid-template-columns: auto;
-    grid-template-rows: 30px 20px auto auto;
+    grid-template-rows: minmax(30px,auto) minmax(20px,auto) auto auto;
     grid-template-areas:
       "header"
       "nav"
@@ -228,6 +228,7 @@ nav {
 // center headers when on mobile
 header, nav {
   @include mobile {
+    text-align: center;
     justify-self: center;
   }
 }

@@ -1,15 +1,15 @@
 +++
 title = "How to Build a Personal Webpage from Scratch"
-description = "An opinionated guide on how to build and deploy a modern static webpage."
+description = "An opinionated introduction to designing and deploying a modern static webpage."
 weight = 0
-date = 2022-02-03
+date = 2022-02-05
 draft = true
 
 [extra]
 toc = true
 
 [taxonomies]
-tags = ["web", "css", "templating", "deployment"]
+tags = ["web", "css", "deployment"]
 +++
 ## An overview of static webpage deployment
 ### What is a static webpage?
@@ -49,10 +49,11 @@ Here is a short list of reasons why you should prefer simple static webpages (if
 
 - __Longevity.__
   A static webpage is just a collection of files, which you should also have saved on your computer.
-  So even in the worst case scenario - say your template manager suddenly ceases to exist, and your website is simultaneously taken online - you still have the files for your webpage and you can just put them up somewhere else.
-  If you maintain a dynamic webpage, you need to keep the required tools up to date otherwise everything will cease to work.
+  So even in the worst case scenario - say your web server disappears - you still have the files for your webpage and you can just put them up somewhere else.
+  Static webpages are also easier to maintain: if you have a dynamic webpage, you need to keep the required tools up to date otherwise everything will cease to work.
 - __Portability.__
-  If you decide that you want to host your webpage somewhere else, this is relatively straightforward to do.
+  If you decide that you want to host your webpage somewhere else, this is straightforward to do.
+  Static webpages are also simple enough that you can host them yourself on a low-power device!
 - __Security.__
   Since static webpages are substantially simpler, they have a smaller attack surface and are more secure.
   There is no underlying server serving requests, or processing user input.
@@ -68,60 +69,39 @@ You first prepare the templates, then write the content files, and then use the 
 ### Static website components
 There are three main components to static website generation:
 
-1. [__templating__](#website-templating-with-zola):
-  You need to choose a templating engine and then prepare the website template.
+1. __templating__.
+  You should choose a templating engine and then prepare the website template.
   I am personally a fan of [Zola](https://getzola.org); some other common options are [Jekyll](https://jekyllrb.com/) and [Hugo](https://gohugo.io/).
-2. [__content__](#crash-course-in-html-and-css):
+2. __content__.
   A website needs content!
   You need to write base HTML files and CSS style sheets, as well as the webpage content.
-  All the templating engines I mentioned above support Markdown.
-3. [__deployment__](#deployment-with-github-and-cloudflare-pages):
+3. __deployment__.
   While it is possible (and not too difficult) to host your own static site server, it is typically easiest to use static site hosting.
   I use [Cloudflare Pages](https://pages.cloudflare.com/).
   You might also be interested in [GitHub Pages](https://pages.github.com/) or [Netlify](https://www.netlify.com/).
 
-I'll discuss these three components in the following sections, along with some additional topics in the [final section](#future-steps).
+Of course, templating is mainly a convenience feature, and not strictly necessary when making a small website.
+In this article, I will focus on content and deployment.
+<!-- You can read more about templating TODO: add link -->
+I'll discuss these three components in the following sections, along with some additional topics in the [final section](#other-miscellaneous-topics).
 
-## Prerequisites
-### Text editors
+### A note on editing text
 HTML is a [markup language](https://en.wikipedia.org/wiki/Markup_language), which means that the text represents content, rather than being the content visually.
 Other well-known markup languages are [Markdown](https://en.wikipedia.org/wiki/Markdown) and [LaTeX](https://en.wikipedia.org/wiki/LaTeX).
 
 Therefore when writing content for your webpage, it is important to use an editor which accurately represents the contents of the file you are editing.
 This is in contrast to software such as Microsoft Word, in which the content that you enter on the page is different than the underlying representation.
 Some popular graphical text editors include [Atom](https://atom.io) and [Sublime Text](https://www.sublimetext.com).
-If you do not want to install anything, [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3#activetab=pivot:overviewtab) is a built-in text editor on Windows, and [TextEdit](https://support.apple.com/en-ca/guide/textedit/welcome/mac) is built-in on macOS.
+If you do not want to install anything, [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3) is a built-in text editor on Windows.
+Similarly, [TextEdit](https://support.apple.com/en-ca/guide/textedit/welcome/mac) is built-in on macOS.
 For command-line editors, you could consider [Neovim](https://neovim.io) or [Emacs](https://www.gnu.org/software/emacs/).
-
-
-### Command line interface
-If you have a Linux machine, you are probably already familiar with the command line and have a preferred terminal.
-On macOS, the command line behaves similarly - the default application is [Terminal](https://en.wikipedia.org/wiki/Terminal_(macOS)), which is built-in on every Mac.
-On Windows, if you want a full UNIX command-line interface, you can use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
-
-### Git version control
-A standard tool used in software development is [git](https://git-scm.com).
-Essentially, git is a tool used for [distributed revision control](https://en.wikipedia.org/wiki/Version_control#Distributed_revision_control): in other words, it has functionality to save snapshots of your current projects, distribute your projects or import other projects, and collaborate with others effectively.
-My preferred resource to learn about git is the [git webpage](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
-
-If you are on a UNIX-like device, check that Git is installed by running
-```
-git --version
-```
-in an interactive shell.
-If not, you either need to install it and ensure that it is accessible (i.e. on your `PATH`).
-
-### Using GitHub instead
-Note that you can get away with not having any of the above tools by using [GitHub](https://github.com) directly as a text editor as well as a Git interface.
-If your website is also hosted using [GitHub Pages](https://pages.github.com/), then you do not need to install any software to have your repository built automatically into your webpage!
-
 
 ## Crash Course in HTML and CSS
 I'm going to assume you know some basics of HTML and CSS.
 There are lots of tutorials online; here is a [nice one](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/).
-I'd recommend you read the articles on [HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) and [CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics), plus any of the other articles you might require.
+I'd recommend you read the articles on [HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) and [CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics).
 
-In this section, I'll give a very streamlined description of setting up a basic functional blog, with a landing page and page to display your posts.
+In this section, I'll give a streamlined description of setting up a basic functional webpage.
 
 ### Getting started
 Let's start with a rather minimal HTML file.
@@ -177,11 +157,6 @@ Create a file called `writing.html` and populate it with pretty much the same co
 You can also change the `<title>` in this new page, as well.
 Now, if you click on the navigation links, we have two working pages!
 
-Note that the link attribute `href="writing.html"` specifies a _relative link_, i.e. the file path is taken relative to the directory that the file in which the link sits.
-Later, we will replace this with `href="/writing.html"`, which will give a link to the root of your website.
-However, when browing files on your device, `/writing.html` will (attempt to) link to the root of your filesystem directory, which is not what you want!
-
-
 ### Styling the page
 Well, we have a functional webpage, but it would be nice to make everything look a bit better.
 Create a file `style.css`, and add the line
@@ -198,7 +173,7 @@ First, add
 ```
 body {
   margin: 0 auto;
-  max-width: 50em;
+  max-width: 40em;
   min-width: 0;
   padding: 0 10px 25px;
   font-family: "Helvetica", "Arial", sans-serif;
@@ -210,15 +185,14 @@ The `min-width: 0` is useful to prevent large elements from (accidentally) makin
 
 We can also adjust the spacing so that the text is laid out a bit more nicely:
 ```
-body {
-  line-height: 1.5;
-  padding: 4em 1em;
-}
-
 h2 {
   margin-top: 1em;
   padding-top: 1em;
 }
+nav a {
+  margin-left: 20px;
+}
+
 ```
 Or even adjust the colour of the text itself to something a bit more pleasant:
 ```
@@ -229,6 +203,27 @@ h1, h2, strong {
   color: #222;
 }
 ```
+Now let's fix the font sizes:
+```
+header {
+  margin: 0px;
+  font-size: 23px;
+}
+article {
+  font-size: 16px;
+}
+nav {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 23px;
+}
+
+```
 Finally, let's add a bit of character by styling the links:
 ```
 a {
@@ -237,7 +232,7 @@ a {
 ```
 Our webpage looks a bit cleaner now!
 
-### Layout with CSS Grid
+### Grid layout
 However, we need to address some more serious layout problems: currently, the navigation is way too small, and the header does not stand out at all.
 To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid).
 Essentially, grid allows you to specify a layout in a parent element, and then place the child elements inside this layout.
@@ -269,7 +264,6 @@ Now, let's assign our child elements to the areas in this grid, and do a bit of 
 ```
 header {
   grid-area: header;
-  margin: 0;
   justify-self: left;
   align-self: end;
 }
@@ -280,17 +274,18 @@ nav {
 
 }
 nav a {
-  margin-left: 20px;
   text-align: right;
 }
 article {
   grid-area: ct;
+  border-top: 2px solid gray;
 }
 
 ```
-We want the header to be justified to the left, the nav bar to be justified to the right, and links in the nav bar to have a bit of extra space around them
+We want the header to be justified to the left and the nav bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
-This is important since the row has height 60px, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!
+This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!
+Finally, we add a line about the `<article>` element with `border-top: 2px solid gray`.
 
 ### Responsive design
 Our layout is great, but now we might have some problems on small screens!
@@ -309,7 +304,7 @@ This is done with the following CSS code.
 @media screen and (max-width: 430px) {
   body {
     grid-template-columns: auto;
-    grid-template-rows: 30px 20px auto auto;
+    grid-template-rows: minmax(30px, auto) minmax(20px, auto) auto auto;
     grid-template-areas:
     "header"
     "nav"
@@ -317,16 +312,49 @@ This is done with the following CSS code.
   }
 
   header, nav {
+    text-align: center;
     justify-self: center;
   }
+
   nav a {
     margin: 0 10px;
   }
 }
 ```
-Now, our webpage also looks respectable even when viewed on tiny phone screens!
+The `minmax(30px, auto)` means that we want to row to be at least 30 pixels tall, except that we should make it taller if the elements inside require it.
+We also adjust the header and navigation bar to be nicely centered, since they are now placed on top of each other (rather than side by side).
 
-### More resources
+Now, our webpage also looks respectable even when viewed on exceptionally tiny phone screens!
+
+### Dealing with links
+Throughout this article, the links have been written in the form `href="writing.html"`.
+This specifies a _relative link_, i.e. the file path is taken relative to the directory that the file in which the link sits.
+When deploying the webpage to a server, you will want to write this in the form `href="/writing.html"`, which will give a link to the root of your website.
+This tells the browser to take whatever the base URL (for example {% verbose_url() %}https://example.rutar.org{% end %}) and append the link.
+However, when browing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/writing.html` will (attempt to) link to the root of your filesystem directory, which is not what you want!
+
+We will also want to deal with the case where the user tries to browse to a link which does not exist.
+For example, on this site, if you nagivate to a URL like {% verbose_url() %}https://rutar.org/does-not-exist{% end %}, you will be shown a page explaining what happened.
+
+For this to happen automatically, we simply need to create a file `404.html` at the root of our directory, with some content explaining that the page is missing.
+The 404 is a [HTTP response status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), where the server tells the client that the page you are looking for is missing.
+Often, the server will default to showing the contents of the `/404.html` file.
+
+[Here](https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html) is an example of this file.
+This file also has proper naming of links, as discussed above.
+
+### Finishing up
+You can view the complete website at {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
+The the files themselves can be found [on GitHub](https://github.com/alexrutar/webpage-example).
+You can ignore the additional files: those will be explained in later sections.
+
+Here are some direct links to the files which we have prepared above:
+
+- [`index.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html)
+- [`writing.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing.html)
+- [`404.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html)
+- [`style.css`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css)
+
 In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the "Inspect Element" functionality in your browser to view the source code.
 The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
 Whenever I need to look anything up, that's where I start.
@@ -336,63 +364,16 @@ For example, this allows you to emulate different browsers, and enter a "respons
 
 Firefox also has similar functionality built in to the [Firefox developer tools](https://developer.mozilla.org/en-US/docs/Tools), and the Google Chrome browser in [Chrome DevTools](https://developer.chrome.com/docs/devtools/).
 
-
-## Website Templating with Zola
-The Zola webpage has a nice [article](https://www.getzola.org/documentation/getting-started/overview/) on getting started with Zola.
-
-### Template render order and inheritance
-### Custom functions and shortcodes
-### Including data files
-### Creating tag pages
-### Adding a table of contents
-```
-{% if page.extra.hastoc %}
-<h2>Contents</h2>
-<div class="toc">
-<ol>
-  {% for h1 in page.toc %}
-  <li><a href="{{h1.permalink | safe}}">{{ h1.title }}</a>
-    {% if h1.children %}
-    <ol>
-      {% for h2 in h1.children %}
-      <li><a href="{{h2.permalink | safe}}">{{ h2.title }}</a></li>
-      {% endfor %}
-    </ol>
-    {% endif %}
-  </li>
-  {% endfor %}
-</ol>
-</div>
-```
-In the CSS file, we add the corresponding contents:
-```
-.toc {
-  ol {
-    counter-reset: toc-item
-  }
-  li {
-    display: block
-  }
-  li:before {
-    content: counters(toc-item, ".") ". ";
-    counter-increment: toc-item
-  }
-}
-```
-This ensures that the numbering aligns with our numbering style for the headers.
-Now, whenever we want a table of contents, we simply include the tag
-```
-[extra]
-toc = true
-```
-at the beginning of our article.
-
-### Future steps
 ## Deployment with GitHub and Cloudflare Pages
+### Deploying on Cloudflare
+Head to the Pages tabs, and select "Create a project".
+You will now be prompted to link your GitHub accont, along with the repository containing your files that we created before.
+Click "Begin setup", choose a nice name for your webpage, and then select all the defaults and continue to the end.
+Your site will not be automatically deployed once the build finishes!
 ## Other miscellaneous topics
 ### Custom domain setup
 There are a few parts to setting up a custom domain.
-First, you need to register a domain name, and then you need to set up a [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) to associate your domain name with the address where your webpage is hosted.
+First, you need to register a domain name, and then you need to set up [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) to associate your domain name with the address where your webpage is hosted.
 
 #### Domain Name Registration
 [ICANN](https://www.icann.org/registrants) is the main body responsible for regulating domain name registration.
@@ -410,7 +391,6 @@ For convenience, since our site is already hosted on Cloudflare, let's use Cloud
 ### Creating favicons
 A [favicon](https://en.wikipedia.org/wiki/Favicon) is a small image loaded by the browser and displayed on the website tab.
 There is a lot of different advice on how to appropriately set favicons, and unfortunately a lot of it is very outdated.
-The advise here is based on [this article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs).
 
 These days, modern browsers support .svg favicons and this format is easiest way to add a favicon to your webpage: it is lightweight and scales properly.
 There are lots of tools available to create these images - I used [this site](https://formito.com/tools/favicon).
@@ -422,24 +402,10 @@ Then add the following line to the `<head>` of your base template.
 ```
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 ```
-This tells the browser that there's an icon located at `icon.sv`, and that it's an .svg file.
+This tells the browser that there's an icon located at `/icon.svg`, and that it's an .svg file.
 
-If you also want to support older browsers, you need to create a `favicon.ico` file.
-You can probably find a converter online, or use [inkscape](https://inkscape.org) and [imagemagick](https://imagemagick.org/index.php) (inkscape has high-quality .svg to .png conversion, and then you can use imagemagick to convert the .png to the .ico file).
-If you have the `imagemagick` and `inkscape` tools installed on your command line, you can run
-```
-inkscape ./icon.svg --export-width=32 --export-filename="./tmp.png"
-convert ./tmp.png ./favicon.ico
-rm ./tmp.png
-```
-to convert `icon.svg` into the `favicon.ico` file.
-Now tell the browser that this file exists with
-```
-<link rel="icon" href="/favicon.ico" sizes="any">
-```
-in the `<head>` of your base template.
-
-If you wish to support more devices, I'd recommend that you read the [favicon article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs) that I also mentioned earlier.
+If you wish to support more devices, I'd recommend that you read this [favicon article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs).
+The next most important file to create would be a `favicon.ico` file: this will display the favicon even on outdated browsers.
 
 ### site security
 - [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org)

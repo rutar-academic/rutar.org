@@ -2,7 +2,7 @@
 {% block title %}{{ page.title | safe }}{% endblock %}
 {% block description %}{{ page.description | safe }}{% endblock %}
 {% block content %}
-<span class="fade">{{ page.date | date(format="%B %-d, %Y") }}</span>
+<span class="fade">{% if page.draft %}DRAFT{% else %}{{ page.date | date(format="%B %-d, %Y") }}{% endif %}</span>
 {% if page.extra.toc %}
 <h2>Contents</h2>
 <div class="toc">

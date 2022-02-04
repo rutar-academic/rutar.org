@@ -14,7 +14,7 @@
   {%- set description = "All pages with tag " ~ term.name %}
   {%- endif %}
 {%- else %}
-{%- set title = "404 - Page Not Found" %}
+{%- set title = "Page Not Found" %}
 {%- set description = "Error: page not found" %}
 {%- endif %}
 {#- note: once https://github.com/Keats/tera/issues/265 is implemented, can reuse block - for now, this is a workaround #}
@@ -41,7 +41,7 @@
   </head>
 
   <body>
-    <div class="wrapper">
+    <div class="container">
       <header>
         <a href="/">{{ config.extra.author }}</a>
       </header>
