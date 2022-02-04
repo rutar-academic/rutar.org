@@ -93,4 +93,3 @@ Now, whenever we want a table of contents, we simply include the tag
 toc = true
 ```
 at the beginning of our article.
-
