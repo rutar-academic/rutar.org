@@ -71,7 +71,7 @@ There are three main components to static website generation:
 1. [__templating__](#website-templating-with-zola):
   You need to choose a templating engine and then prepare the website template.
   I am personally a fan of [Zola](https://getzola.org); some other common options are [Jekyll](https://jekyllrb.com/) and [Hugo](https://gohugo.io/).
-2. [__content__](#crash-course-in-html-and-css-with-examples):
+2. [__content__](#crash-course-in-html-and-css):
   A website needs content!
   You need to write base HTML files and CSS style sheets, as well as the webpage content.
   All the templating engines I mentioned above support Markdown.
@@ -116,7 +116,7 @@ Note that you can get away with not having any of the above tools by using [GitH
 If your website is also hosted using [GitHub Pages](https://pages.github.com/), then you do not need to install any software to have your repository built automatically into your webpage!
 
 
-## Crash Course in HTML and CSS (with examples)
+## Crash Course in HTML and CSS
 I'm going to assume you know some basics of HTML and CSS.
 There are lots of tutorials online; here is a [nice one](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/).
 I'd recommend you read the articles on [HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) and [CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics), plus any of the other articles you might require.
@@ -183,33 +183,158 @@ However, when browing files on your device, `/writing.html` will (attempt to) li
 
 
 ### Styling the page
-Well, we have a functional webpage, but it would be nice to style some of the elements.
-To do this, we first need to add some `class` attributes to our HTML documents, which we will target with our style.
-Edit the `index.html` document with the following additional content:
+Well, we have a functional webpage, but it would be nice to make everything look a bit better.
+Create a file `style.css`, and add the line
 ```
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-
-    <title>Example Webpage</title>
-    <meta name="description" content="An example webpage.">
-    <meta name="author" content="Alex Rutar">
-  </head>
-  <body>
-    <nav>
-      <a href="writing.html">Writing</a>
-      <a href="index.html">About</a>
-    </nav>
-    <article>
-      <h1>Welcome to my webpage</h1>
-      <p>This is some content!</p>
-    </article>
-  </body>
-</html>
+<link rel="stylesheet" type="text/css" href="style.css">
 ```
+to the `<head>` of both HTML documents.
+This tells the browser to look for a file `style.css` in the same directory as the file, which contains styling information.
+While it is possible to define style inline in the HTML, this is bad practice since it is harder to maintain (HTML is for the semantic content, whereas CSS is for style).
+Also, you should add some more content to the `<article>` section: perhaps a few more headers `<h2>...</h2>` and links `<a href="...some url...">my link</a>`.
 
+Let's begin with some basic styling.
+First, add
+```
+body {
+  margin: 0 auto;
+  max-width: 50em;
+  min-width: 0;
+  padding: 0 10px 25px;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+```
+to the file `style.css`.
+This centres the text body, prevents it from being too wide on large screens, ensures there is a bit of a space on the boundary when the screen is small, and finally sets a new font (rather than the usual default Times New Roman).
+The `min-width: 0` is useful to prevent large elements from (accidentally) making the page very wide on screens narrower than 50em.
+
+We can also adjust the spacing so that the text is laid out a bit more nicely:
+```
+body {
+  line-height: 1.5;
+  padding: 4em 1em;
+}
+
+h2 {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+```
+Or even adjust the colour of the text itself to something a bit more pleasant:
+```
+body {
+  color: #444;
+}
+h1, h2, strong {
+  color: #222;
+}
+```
+Finally, let's add a bit of character by styling the links:
+```
+a {
+  color: #ffa64d;
+}
+```
+Our webpage looks a bit cleaner now!
+
+### Layout with CSS Grid
+However, we need to address some more serious layout problems: currently, the navigation is way too small, and the header does not stand out at all.
+To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid).
+Essentially, grid allows you to specify a layout in a parent element, and then place the child elements inside this layout.
+
+First, let's specify the general layout of our grid.
+We want three sections: a header in the top left (for our title), a navivation bar in the top right, and then a main area containing all the content of the site.
+Let's target the `<body>` tag to set up this grid:
+```
+body {
+  display: grid;
+  row-gap: 5px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 60px auto;
+  grid-template-areas:
+    "header nav"
+    "ct ct"
+}
+```
+Let's break down what this is specifying.
+
+- `display: grid`: this element is specifying a grid layout for its children.
+- `row-gap: 5px`: have some space between the rows
+- `grid-template-columns: auto auto`: determine the width of the columns automatically
+- `grid-template-rows: 60px auto`: set the first row (containing the header and navigation bar) to have height 60 pixels, and the second row to be sized automatically based on the content
+- `grid-template-areas: ...` names the areas: we have `header` in the top left, `nav` in the top right, and `ct` everywhere else (spanning both columns).
+  Note that the names can be whatever you would like (there is no special meaning assigned to using `header` and `nav`).
+
+Now, let's assign our child elements to the areas in this grid, and do a bit of styling.
+```
+header {
+  grid-area: header;
+  margin: 0;
+  justify-self: left;
+  align-self: end;
+}
+nav {
+  grid-area: nav;
+  justify-self: right;
+  align-self: end;
+
+}
+nav a {
+  margin-left: 20px;
+  text-align: right;
+}
+article {
+  grid-area: ct;
+}
+
+```
+We want the header to be justified to the left, the nav bar to be justified to the right, and links in the nav bar to have a bit of extra space around them
+Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
+This is important since the row has height 60px, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!
+
+### Responsive design
+Our layout is great, but now we might have some problems on small screens!
+The main problem is that if the screen is narrow, our header and navigation bar will start folding over itself.
+To fix this, we can use [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries).
+This is CSS which is applied only when the query is satisfied: in this situation, we want these rules when the screen is narrow (less than 430 pixels wide).
+
+Here, we only change the styling a bit:
+
+- we now place the header on top of the navigation bar by changing the grid layout in the body
+- centre the header and navigation bar
+- remove the assymetric styling on the navigation links
+
+This is done with the following CSS code.
+```
+@media screen and (max-width: 430px) {
+  body {
+    grid-template-columns: auto;
+    grid-template-rows: 30px 20px auto auto;
+    grid-template-areas:
+    "header"
+    "nav"
+    "ct"
+  }
+
+  header, nav {
+    justify-self: center;
+  }
+  nav a {
+    margin: 0 10px;
+  }
+}
+```
+Now, our webpage also looks respectable even when viewed on tiny phone screens!
+
+### More resources
+In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the "Inspect Element" functionality in your browser to view the source code.
+The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
+Whenever I need to look anything up, that's where I start.
+
+If your browser is Safari on macOS, you can enable some nice development features with the [Safari developer tools](https://support.apple.com/en-ca/guide/safari/sfri20948/mac) option.
+For example, this allows you to emulate different browsers, and enter a "responsive design mode" which allows you to manually modify the screen size and view how your webpage will change.
+
+Firefox also has similar functionality built in to the [Firefox developer tools](https://developer.mozilla.org/en-US/docs/Tools), and the Google Chrome browser in [Chrome DevTools](https://developer.chrome.com/docs/devtools/).
 
 
 ## Website Templating with Zola
