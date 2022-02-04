@@ -83,11 +83,11 @@ There are three main components to static website generation:
 Of course, templating is mainly a convenience feature, and not strictly necessary when making a small website.
 In this article, I will focus on content and deployment.
 <!-- You can read more about templating TODO: add link -->
-I'll discuss these three components in the following sections, along with some additional topics in the [final section](#other-miscellaneous-topics).
+<!-- I'll discuss these three components in the following sections, along with some additional topics in the [final section](#other-miscellaneous-topics). -->
 
 ### A note on editing text
 HTML is a [markup language](https://en.wikipedia.org/wiki/Markup_language), which means that the text represents content, rather than being the content visually.
-Other well-known markup languages are [Markdown](https://en.wikipedia.org/wiki/Markdown) and [LaTeX](https://en.wikipedia.org/wiki/LaTeX).
+Other well-known markup languages include [LaTeX](https://en.wikipedia.org/wiki/LaTeX) and [Markdown](https://en.wikipedia.org/wiki/Markdown).
 
 Therefore when writing content for your webpage, it is important to use an editor which accurately represents the contents of the file you are editing.
 This is in contrast to software such as Microsoft Word, in which the content that you enter on the page is different than the underlying representation.
@@ -102,6 +102,15 @@ There are lots of tutorials online; here is a [nice one](https://developer.mozil
 I'd recommend you read the articles on [HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) and [CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics).
 
 In this section, I'll give a streamlined description of setting up a basic functional webpage.
+We are going to create 4 files:
+```
+website_folder/
+├── 404.html
+├── index.html
+├── style.css
+└── writing.html
+```
+Of course you can name your `website_folder` anything you would like.
 
 ### Getting started
 Let's start with a rather minimal HTML file.
@@ -135,6 +144,8 @@ Call it `index.html` in your (currently empty) website folder.
 This isn't the most barebones possible HTML file, but it is a good _modern_ starting point for all HTML content on your site.
 Here's an explanation of some of the tags:
 
+- `<head>...</head>` and `<body>...</body>`: these are the two main sections of your HTML file.
+  `<head>` contains the metadata, and `<body>` contains the content that will show up on your screen when you visit the webpage.
 - `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which allows us to use unicode when writing content.
   This is necessary so the content does not get interpreted as something like [ASCII](https://en.wikipedia.org/wiki/ASCII) and cause errors.
   Hopefully your text editor supports unicode...
@@ -146,19 +157,20 @@ Here's an explanation of some of the tags:
 - `<article>...</article>`: the 'content' of the page, i.e. your actual article or blog post but without the navigation, header, footer, etc.
 
 Now if you open the file `index.html` you should get a page with two links at the top: "About", and "Writing".
-Currently the "Writing" link does nothing, since we need to create that page.
-Create a file called `writing.html` and populate it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
+
+Unfortunately the "Writing" link does nothing: we need to create that page.
+Create a file called `writing.html` in the same directory and populate it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
 ```
 <article>
   <h1>Some things I've written</h1>
   <p>Nothing here yet...</p>
 </article>
 ```
-You can also change the `<title>` in this new page, as well.
+You can also change the title and description in this new page, as well.
 Now, if you click on the navigation links, we have two working pages!
 
 ### Styling the page
-Well, we have a functional webpage, but it would be nice to make everything look a bit better.
+We have a functional webpage, but it would be nice to make everything look a bit better.
 Create a file `style.css`, and add the line
 ```
 <link rel="stylesheet" type="text/css" href="style.css">
