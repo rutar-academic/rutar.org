@@ -36,14 +36,14 @@ kbd {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 60px auto auto;
   grid-template-areas:
-    "name nav"
+    "header nav"
     "ct ct"
     "fg fg";
   @include mobile {
     grid-template-columns: auto;
     grid-template-rows: 30px 20px auto auto;
     grid-template-areas:
-      "name"
+      "header"
       "nav"
       "ct"
       "fg";
@@ -204,7 +204,7 @@ header, h1, h2, h3, h4, h5, h6 {
 
 // header in top left
 header {
-  grid-area: name;
+  grid-area: header;
   margin: 0;
   font-weight: 300;
   font-size: 26px;

@@ -11,7 +11,8 @@ $contentBackgroundColor: #f7f7f1;
 // Dimensions
 $minWidth: 240px;
 $maxWidth: 760px;
-$mobileWidth: 539px;
+$mobileWidth: 555px; // this value is the exact amount of space so
+                     // that the nav bar does not occupy multiple lines
 
 // Font stacks
 $primaryFonts: Palatino, "Book Antiqua", Helvetica, Georgia, Arial, sans-serif;
