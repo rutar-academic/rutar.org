@@ -4,7 +4,6 @@
         {"url": "/research/", "name": "Research"},
         {"url": "/other/", "name": "Other"}
     ],
-
     "internal": [
         {"url": "/research/#publications", "name": "Publications"},
         {"url": "/research/#software", "name": "Software"},
@@ -13,11 +12,9 @@
         {"url": "/writing/", "name": "Expository Notes"},
         {"url": "/alex_rutar_cv.pdf", "name": "Curriculum Vitae"}
     ],
-
     "external": [
         {"url": "https://mathscinet.ams.org/mathscinet/", "name": "MathSciNet"},
         {"url": "https://xkcd.com/1724/", "name": "xkcd"},
-        {"url": "https://www.openstreetmap.org", "name": "OpenStreetMap"},
-        {"url": "https://ipfs.io", "name": "IPFS"}
+        {"url": "https://www.openstreetmap.org", "name": "OpenStreetMap"}
     ]
 }
