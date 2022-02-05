@@ -9,7 +9,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
 </p>
 <ol class="pubs" reversed>
   {%- for publ in load_data(path="data/publications.json") %}
-  <li><strong>{{ publ.title }}</strong>
+  <li><cite>{{ publ.title }}</cite>
     <table class="pub">
     {%- if publ.with -%}
     <tr>

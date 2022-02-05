@@ -1,6 +1,6 @@
 [
   {
-    "description": "An automatic LaTeX project manager",
+    "description": "An automatic LaTeX project templater",
     "lang": "Python",
     "links": {
       "pypi": "texproject",
