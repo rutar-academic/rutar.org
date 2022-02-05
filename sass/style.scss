@@ -182,6 +182,10 @@ p {
   margin: 10px 0;
 }
 
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
 // Specify the color of the selection
 ::selection {
   background: $selectionColor;
