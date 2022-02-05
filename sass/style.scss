@@ -1,29 +1,21 @@
 @import "reset";
 @import "variables";
 
+// -----------
+// Core Layout
+// -----------
 html {
   font-size: 100%;
   font-family: $primaryFonts;
 }
 
-
-// main body contents
 body {
   background: $mainBackgroundColor;
   font: 18px/1.4 $primaryFonts;
   color: $textColor;
 }
 
-kbd {
-  border-radius: 3px;
-  padding: 0px 3px;
-  background: $borderColor;
-  border: 1.5px solid $fadeColor;
-  font: 12px/1.2 $monoFonts;
-}
-
-
-// body wrapper, defines main grid
+// main wrapper for content: defines grid
 .container {
   background: $contentBackgroundColor;
   margin: 0 auto;
@@ -36,74 +28,25 @@ kbd {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 60px auto auto;
   grid-template-areas:
-    "header nav"
+    "hd nav"
     "ct ct"
-    "fg fg";
+    "ds ds";
   @include mobile {
     grid-template-columns: auto;
     grid-template-rows: minmax(30px,auto) minmax(20px,auto) auto auto;
     grid-template-areas:
-      "header"
+      "hd"
       "nav"
       "ct"
-      "fg";
+      "ds";
   }
 }
 
-// content for main article
-article {
-  grid-area: ct;
-  min-width: 0;
-  max-width: 100%;
-  border-top: 2px solid $borderColor;
-}
-
-// flexible grid for displaying things at the bottom of the page
-.flexgrid-display {
-  grid-area: fg;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(auto-fit, auto);
-  @include mobile {
-    grid-template-columns: auto;
-    grid-template-rows: repeat(auto-fit, auto);
-  }
-}
-
-// post footer
-.post-footer {
-  border-top: 2px solid $borderColor;
-  padding: 10px 0;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-areas:
-    "date tags";
-  width: 100%;
-  @include mobile {
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "date"
-      "tags";
-  }
-}
-.fade, .post-date, .post-tags {
-  font-size: 16px;
-  color: $fadeColor;
-}
-.post-date {
-  grid-area: date;
-}
-.post-tags {
-  grid-area: tags;
-  justify-self: right;
-  @include mobile {
-    justify-self: left;
-  }
-}
-
-// nav in top right
+// nav grid element
 nav {
+  grid-area: nav;
+  justify-self: right;
+  align-self: end;
   font-size: 18px;
   a {
     margin-left: 20px;
@@ -120,7 +63,221 @@ nav {
   }
 }
 
+// header grid element
+header {
+  grid-area: hd;
+  margin: 0;
+  font-weight: 300;
+  font-size: 26px;
+  letter-spacing: 1px;
+  font-style: oblique;
+  justify-self: left;
+  align-self: end;
+}
 
+header, h1, h2, h3, h4, h5, h6 {
+  line-height: 1.0;
+  padding: 0;
+
+  @include mobile {
+    line-height: 1.1;
+  }
+  a {
+    &:hover {
+      text-decoration: underline
+    }
+    color: inherit;
+  }
+}
+
+// center headers when on mobile
+header, nav {
+  @include mobile {
+    text-align: center;
+    justify-self: center;
+  }
+}
+
+// article grid element
+article {
+  grid-area: ct;
+  min-width: 0;
+  max-width: 100%;
+  border-top: 2px solid $borderColor;
+
+  // setup counters for article section, subsection, etc.
+  .post-contents {
+    counter-reset: sec;
+    h3::before {
+      counter-increment: subsec;
+      content: counter(sec) "." counter(subsec) ".\0000a0\0000a0";
+    }
+    h2::before {
+      counter-increment: sec;
+      content: counter(sec) ".\0000a0\0000a0";
+    }
+    h2 {
+      counter-reset: subsec;
+    }
+  }
+
+  // post footer
+  .post-footer {
+    border-top: 2px solid $borderColor;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "date tags";
+    width: 100%;
+    @include mobile {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "date"
+        "tags";
+    }
+
+    // info (name + copyright)
+    .post-info {
+      grid-area: date;
+    }
+
+    // tags
+    .post-tags {
+      grid-area: tags;
+      justify-self: right;
+      @include mobile {
+        justify-self: left;
+      }
+    }
+  }
+
+}
+
+// flexible grid element for displaying things at the bottom of the page
+.display {
+  grid-area: ds;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, auto);
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(auto-fit, auto);
+  }
+}
+
+// -----------------------
+// Custom class formatting
+// -----------------------
+.fade, .post-date, .post-tags {
+  font-size: 16px;
+  color: $fadeColor;
+}
+
+// ---------------
+// Text Formatting
+// ---------------
+p {
+  margin: 10px 0;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+// Specify the color of the selection
+::selection {
+  background: $selectionColor;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+a {
+  color: $themeColor;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover, &:active {
+    color: $themeColor;
+  }
+  &.hidden-link {
+    color: inherit;
+  }
+  &.active {
+    color: $themeColor;
+  }
+  &.verbose-url {
+    word-wrap: break-word;
+    font-size: 16px;
+    font-family: $monoFonts;
+    background: $tableBackgroundColor;
+  }
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin: 0.8em 0 12px;
+}
+
+h1 {
+  font-size: 28px;
+  &.post-title {
+    text-align: center;
+  }
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+  color: $fadeColor;
+}
+
+
+// -----------------------------
+// Structural element formatting
+// -----------------------------
+address {
+  margin: 1.8em .8em;
+  border-left: 2px solid $fadeColor;
+  padding: 0 1rem;
+  font-style: italic;
+  p {
+    margin: 2px 0;
+  }
+}
+
+code {
+  font: 15px/1.4 $monoFonts;
+  background: $borderColor;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+// render display-style code so you can scroll to see really wide lines
+pre code {
+  background: $borderColor;
+  padding: 10px;
+  max-width: 100%;
+  min-width: 0;
+  display: block;
+  overflow-x: scroll;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
 
 table {
   border-collapse: collapse;
@@ -137,175 +294,21 @@ table {
     max-width: 90%;
     border-bottom: 1px solid $borderColor;
   }
-}
-
-.full-width {
-  width: 100%;
-}
-
-.pub {
-  tbody tr td {
-    padding: 1px 5px;
+  &.full-width {
+    width: 100%;
   }
-  margin: 1px 0 0 25px;
-}
-
-address {
-  margin: 1.8em .8em;
-  border-left: 2px solid $fadeColor;
-  padding: 0 1rem;
-  font-style: italic;
-  p {
-    margin: 2px 0;
-  }
-}
-
-
-code {
-  font: 15px/1.4 $monoFonts;
-  background: $borderColor;
-  padding: 0 3px;
-  border-radius: 2px;
-}
-
-
-// render code so you can scroll to see really wide lines
-pre code {
-  background: $borderColor;
-  padding: 10px;
-  max-width: 100%;
-  min-width: 0;
-  display: block;
-  overflow-x: scroll;
-  white-space: pre;
-  -webkit-overflow-scrolling: touch;
-}
-
-
-header, h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-
-  line-height: 1.0;
-  margin: 0.8em 0 12px;
-  padding: 0;
-
-  @include mobile {
-    line-height: 1.1;
-  }
-  a {
-    &:hover {
-      text-decoration: underline
+  &.pub {
+    tbody tr td {
+      padding: 1px 5px;
     }
-  }
-  .term-header {
-    color: inherit;
+    margin: 1px 0 0 25px;
   }
 }
-
-// header in top left
-header {
-  grid-area: header;
-  margin: 0;
-  font-weight: 300;
-  font-size: 26px;
-  letter-spacing: 1px;
-  font-style: oblique;
-  justify-self: left;
-  align-self: end;
-  a {
-    color: inherit;
-  }
-}
-
-
-nav {
-  grid-area: nav;
-  justify-self: right;
-  align-self: end;
-}
-
-
-// center headers when on mobile
-header, nav {
-  @include mobile {
-    text-align: center;
-    justify-self: center;
-  }
-}
-
-
-
-h1 {
-  font-size: 28px;
-  a {
-    color: inherit;
-  }
-  counter-reset: section;
-}
-.post-title {
-  text-align: center;
-}
-
-h2 {
-  font-size: 22px;
-  counter-reset: subsection;
-}
-
-
-h3 {
-  font-size: 20px;
-}
-
-.article-contents {
-  h3::before {
-    counter-increment: subsection;
-    content: counter(section) "." counter(subsection) ".\0000a0\0000a0";
-  }
-  h2::before {
-    counter-increment: section;
-    content: counter(section) ".\0000a0\0000a0";
-  }
-}
-
-h4 {
-  font-size: 18px;
-  color: $fadeColor;
-}
-
-p {
-  margin: 10px 0;
-}
-
-a {
-  color: $themeColor;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover, &:active {
-    color: $themeColor;
-  }
-}
-
-.hidden-link {
-  color: inherit;
-}
-
-.active {
-  color: $themeColor;
-}
-
-.verbose-url {
-  word-wrap: break-word;
-  font-size: 16px;
-  font-family: $monoFonts;
-  background: $tableBackgroundColor;
-}
-
 
 span.side-count {
   color: $fadeColor;
   font-style: italic;
 }
-
 
 ul, ol {
   margin: 15px 0;
@@ -316,42 +319,34 @@ ul {
   list-style-type: circle;
 }
 
-.tag-list {
-  line-height: 1.2;
-  margin: 4px 0;
-}
-
 ol {
   list-style-type: decimal;
-}
-.pubs li {
-  margin-bottom: 5px;
+  &.pubs li {
+    margin-bottom: 5px;
+  }
 }
 
 ol ul, ul ol, ul ul, ol ol {
   margin: 0;
 }
 
-
 li {
   margin: 2px 0;
 }
 
-em, i {
-  font-style: italic;
-}
-
-strong, b {
-  font-weight: bold;
+// --------------------
+// Misc. other elements
+// --------------------
+kbd {
+  border-radius: 3px;
+  padding: 0px 3px;
+  background: $borderColor;
+  border: 1.5px solid $fadeColor;
+  font: 12px/1.2 $monoFonts;
 }
 
 img {
   max-width: 100%;
-}
-
-// Specify the color of the selection
-::selection {
-  background: $selectionColor;
 }
 
 sup { 
@@ -364,7 +359,9 @@ var {
   font-style: italic;
 }
 
+
 // Inline footnotes
+// ----------------
 label {
   cursor: pointer;
   vertical-align: super;
@@ -391,13 +388,12 @@ input:checked + small {
 }
 
 // table of contents
+// -----------------
 .toc {
   border-left: 2px solid $borderColor;
-
   li {
     margin: 0;
   }
-
   // nested numbering
   ol {
     counter-reset: toc-item

@@ -29,7 +29,7 @@ Peruse at your own risk.
 {% for page in section.pages %}
     <li>
         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-        <div class="fade">{% if page.draft %}DRAFT{% else %}{{ page.date | date(format="%B %-d, %Y") }}.{% endif %}
+        <div class="fade">{% if page.draft %}DRAFT{% else %}{{ page.date | date(format="%B %-d, %Y") }}{% endif %}
         </div>
     </li>
 {% endfor %}

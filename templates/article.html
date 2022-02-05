@@ -21,11 +21,11 @@
 </ol>
 </div>
 {% endif %}
-<div class="article-contents">
+<div class="post-contents">
 {{ page.content | safe }}
 </div>
 <div class="post-footer">
-  <div class="post-date"><a class="hidden-link" href="mailto:{{ config.extra.info.email | urlencode_strict }}">Alex Rutar</a> – <a class="hidden-link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+  <div class="post-info"><a class="hidden-link" href="mailto:{{ config.extra.info.email | urlencode_strict }}">Alex Rutar</a> – <a class="hidden-link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
   </div>
   <div class="post-tags">
       {%- for tag in page.taxonomies.tags | sort %}
