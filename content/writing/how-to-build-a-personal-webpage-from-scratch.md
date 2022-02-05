@@ -81,9 +81,8 @@ There are three main components to static website generation:
   You might also be interested in [GitHub Pages](https://pages.github.com/) or [Netlify](https://www.netlify.com/).
 
 Of course, templating is mainly a convenience feature, and not strictly necessary when making a small website.
-In this article, I will focus on content and deployment.
+I'll discuss these components in the following sections, along with some additional topics in the [final section](#further-topics).
 <!-- You can read more about templating TODO: add link -->
-<!-- I'll discuss these three components in the following sections, along with some additional topics in the [final section](#other-miscellaneous-topics). -->
 
 ### A note on editing text
 HTML is a [markup language](https://en.wikipedia.org/wiki/Markup_language), which means that the text represents content, rather than being the content visually.
@@ -365,10 +364,10 @@ Here are some direct links to the files which we have prepared above:
 
 - [`index.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html)
 - [`writing.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing.html)
-- [`404.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html)
 - [`style.css`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css)
+- [`404.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html)
 
-In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the "Inspect Element" functionality in your browser to view the source code.
+In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the "View Source" or "Inspect Element" functionality in your browser.
 The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
 Whenever I need to look anything up, that's where I start.
 
@@ -383,7 +382,8 @@ Head to the Pages tabs, and select "Create a project".
 You will now be prompted to link your GitHub accont, along with the repository containing your files that we created before.
 Click "Begin setup", choose a nice name for your webpage, and then select all the defaults and continue to the end.
 Your site will not be automatically deployed once the build finishes!
-## Other miscellaneous topics
+
+## Further topics
 ### Custom domain setup
 There are a few parts to setting up a custom domain.
 First, you need to register a domain name, and then you need to set up [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) to associate your domain name with the address where your webpage is hosted.
