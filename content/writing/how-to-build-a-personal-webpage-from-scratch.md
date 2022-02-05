@@ -95,6 +95,15 @@ If you do not want to install anything, [Notepad](https://www.microsoft.com/en-u
 Similarly, [TextEdit](https://support.apple.com/en-ca/guide/textedit/welcome/mac) is built-in on macOS.
 For command-line editors, you could consider [Neovim](https://neovim.io) or [Emacs](https://www.gnu.org/software/emacs/).
 
+One more subtlety is that not all text is the same.
+Underneath the text is just binary data, so rules are required to convert the binary data into the textual representation: this process is known as [character encoding](https://en.wikipedia.org/wiki/Character_encoding).
+The most common type of encoding used on webpages is [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which is the transfer format for the [Unicode](https://en.wikipedia.org/wiki/Unicode) standard.
+[ASCII](https://en.wikipedia.org/wiki/ASCII) is also a well-known encoding, but only supports a very restricted number of characters.
+
+Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII: for example, to input directional quotation marks “” (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use ```` and `''`.
+or
+But if you specify `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the text file.
+
 ## Crash Course in HTML and CSS
 I'm going to assume you know some basics of HTML and CSS.
 There are lots of tutorials online; here is a [nice one](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/).
@@ -145,9 +154,7 @@ Here's an explanation of some of the tags:
 
 - `<head>...</head>` and `<body>...</body>`: these are the two main sections of your HTML file.
   `<head>` contains the metadata, and `<body>` contains the content that will show up on your screen when you visit the webpage.
-- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which allows you to use unicode when writing content.
-  This is necessary so the content does not get interpreted as something like [ASCII](https://en.wikipedia.org/wiki/ASCII) and cause errors.
-  Hopefully your text editor supports unicode...
+- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8).
 - `<meta name="viewport" content="width=device-width">` ensures that, if this page is opened on a browser with a small screen, it will not be incredibly zoomed out.
   This is the bare minimum required so your page looks passable on a phone.
   You can read a bit about this [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag).
@@ -155,9 +162,9 @@ Here's an explanation of some of the tags:
 - `<nav>...</nav>`: website navigation
 - `<article>...</article>`: the 'content' of the page, i.e. your actual article or blog post but without the navigation, header, footer, etc.
 
-Now if you open the file `index.html` you should get a page with two links at the top: "About", and "Writing".
+Now if you open the file `index.html` you should get a page with two links at the top: <q>About</q>, and <q>Writing</q>.
 
-Unfortunately the "Writing" link does nothing: we need to create that page.
+Unfortunately the <q>Writing</q> link does nothing: we need to create that page.
 Create a file called `writing.html` in the same directory and populate it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
 ```
 <article>
@@ -294,7 +301,7 @@ article {
 }
 
 ```
-We want the header to be justified to the left and the nav bar to be justified to the right.
+We want the header to be justified to the left and the navigation bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
 This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!
 Finally, we add a line about the `<article>` element with `border-top: 2px solid gray`.
@@ -309,7 +316,7 @@ Here, we only change the styling a bit:
 
 - we now place the header on top of the navigation bar by changing the grid layout in the body
 - centre the header and navigation bar
-- remove the assymetric styling on the navigation links
+- remove the asymmetric styling on the navigation links
 
 This is done with the following CSS code.
 ```
@@ -334,19 +341,19 @@ This is done with the following CSS code.
 }
 ```
 The `minmax(30px, auto)` means that we want to row to be at least 30 pixels tall, except that we should make it taller if the elements inside require it.
-We also adjust the header and navigation bar to be nicely centered, since they are now placed on top of each other (rather than side by side).
+We also adjust the header and navigation bar to be nicely centred, since they are now placed on top of each other (rather than side by side).
 
 Now, our webpage also looks respectable even when viewed on exceptionally tiny phone screens!
 
 ### Dealing with links
 Throughout this article, the links have been written in the form `href="writing.html"`.
-This specifies a _relative link_, i.e. the file path is taken relative to the directory that the file in which the link sits.
+This specifies a _relative link_: the file path is taken relative to the directory that the file in which the link sits.
 When deploying the webpage to a server, you will want to write this in the form `href="/writing.html"`, which will give a link to the root of your website.
 This tells the browser to take whatever the base URL (for example {% verbose_url() %}https://example.rutar.org{% end %}) and append the link.
-However, when browing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/writing.html` will (attempt to) link to the root of your filesystem directory, which is not what you want!
+However, when browsing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/writing.html` will (attempt to) link to the root of your filesystem directory, which is not what you want!
 
 We will also want to deal with the case where the user tries to browse to a link which does not exist.
-For example, on this site, if you nagivate to a URL like {% verbose_url() %}https://rutar.org/does-not-exist{% end %}, you will be shown a page explaining what happened.
+For example, on this site, if you navigate to a URL like {% verbose_url() %}https://rutar.org/does-not-exist{% end %}, you will be shown a page explaining what happened.
 
 For this to happen automatically, we simply need to create a file `404.html` at the root of our directory, with some content explaining that the page is missing.
 The 404 is a [HTTP response status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), where the server tells the client that the page you are looking for is missing.
@@ -379,7 +386,7 @@ Firefox also has similar functionality built in to the [Firefox developer tools]
 ## Deployment with GitHub and Cloudflare Pages
 ### Deploying on Cloudflare
 Head to the Pages tabs, and select "Create a project".
-You will now be prompted to link your GitHub accont, along with the repository containing your files that we created before.
+You will now be prompted to link your GitHub account, along with the repository containing your files that we created before.
 Click "Begin setup", choose a nice name for your webpage, and then select all the defaults and continue to the end.
 Your site will not be automatically deployed once the build finishes!
 
