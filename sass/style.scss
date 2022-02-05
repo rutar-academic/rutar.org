@@ -209,11 +209,11 @@ a {
   color: $themeColor;
   text-decoration: none;
   cursor: pointer;
-  &:hover, &:active {
-    color: $themeColor;
-  }
   &.hidden-link {
     color: inherit;
+  }
+  &:hover, &:active {
+    color: $themeColor;
   }
   &.active {
     color: $themeColor;
