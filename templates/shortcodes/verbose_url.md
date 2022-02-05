@@ -1,1 +1,1 @@
-<a class="verbose-url" href="{{ body | safe }}">{{ body | safe }}</a>
+<a class="verbose-url" href="{{ body | safe }}">{% if title %}{{ title | safe }}{% else %}{{ body | safe }}{% endif %}</a>

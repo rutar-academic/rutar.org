@@ -99,9 +99,8 @@ One more subtlety is that not all text is the same.
 Underneath the text is just binary data, so rules are required to convert the binary data into the textual representation: this process is known as [character encoding](https://en.wikipedia.org/wiki/Character_encoding).
 The most common type of encoding used on webpages is [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which is the transfer format for the [Unicode](https://en.wikipedia.org/wiki/Unicode) standard.
 [ASCII](https://en.wikipedia.org/wiki/ASCII) is also a well-known encoding, but only supports a very restricted number of characters.
-
-Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the text file.{% end %}: for example, to input directional quotation marks “” (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>``</code> and `''`.
-
+Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII:{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the text file.{% end %} for example, to input directional quotation marks `“”` (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>``</code> and `''`.
+However, unless you are forced otherwise, you should try to write all your content in Unicode.
 
 ## Crash Course in HTML and CSS
 I'm going to assume you know some basics of HTML and CSS.
@@ -148,7 +147,7 @@ Call it `index.html` in your (currently empty) website folder.
   </body>
 </html>
 ```
-This isn't the most barebones possible HTML file, but it is a good _modern_ starting point for all HTML content on your site.
+This isn't the most bare-bones possible HTML file, but it is a good _modern_ starting point for all HTML content on your site.
 Here's an explanation of some of the tags:
 
 - `<head>...</head>` and `<body>...</body>`: these are the two main sections of your HTML file.
@@ -252,7 +251,7 @@ Our webpage looks a bit cleaner now!
 
 ### Grid layout
 However, we need to address some more serious layout problems: currently, the navigation is way too small, and the header does not stand out at all.
-To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid).
+To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid){% inline_note() %}A nice reference for CSS Grid can be found <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">here</a>.{% end %}.
 Essentially, grid allows you to specify a layout in a parent element, and then place the child elements inside this layout.
 
 First, let's specify the general layout of our grid.
@@ -363,15 +362,15 @@ This file also has proper naming of links, as discussed above.
 
 ### Finishing up
 You can view the complete website at {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
-The the files themselves can be found [on GitHub](https://github.com/alexrutar/webpage-example).
+The files themselves can be found [on GitHub](https://github.com/alexrutar/webpage-example).
 You can ignore the additional files: those will be explained in later sections.
 
 Here are some direct links to the files which we have prepared above:
 
-- [`index.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html)
-- [`writing.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing.html)
-- [`style.css`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css)
-- [`404.html`](https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html)
+- {% verbose_url(title="index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html{% end %}
+- {% verbose_url(title="writing.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing.html{% end %}
+- {% verbose_url(title="style.css") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% end %}
+- {% verbose_url(title="404.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html{% end %}
 
 In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the "View Source" or "Inspect Element" functionality in your browser.
 The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
