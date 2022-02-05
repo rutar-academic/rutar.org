@@ -100,9 +100,8 @@ Underneath the text is just binary data, so rules are required to convert the bi
 The most common type of encoding used on webpages is [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which is the transfer format for the [Unicode](https://en.wikipedia.org/wiki/Unicode) standard.
 [ASCII](https://en.wikipedia.org/wiki/ASCII) is also a well-known encoding, but only supports a very restricted number of characters.
 
-Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII: for example, to input directional quotation marks “” (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use ```` and `''`.
-or
-But if you specify `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the text file.
+Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the text file.{% end %}: for example, to input directional quotation marks “” (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>``</code> and `''`.
+
 
 ## Crash Course in HTML and CSS
 I'm going to assume you know some basics of HTML and CSS.
