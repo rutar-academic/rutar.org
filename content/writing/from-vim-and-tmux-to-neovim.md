@@ -16,7 +16,7 @@ For reference, here is a crude approximation of my old work environment with Vim
 
 - Each project gets its own tmux session.
 Within each session, have a dedicated window for performing a task (running a terminal, or Vim, or some other tool).
-- Allow session persistence with [tmux-ressurect](https://github.com/tmux-plugins/tmux-resurrect).
+- Allow session persistence with [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect).
 - Open new file edits in Vim splits / buffers / tabs, and new terminals in tmux panes / windows.
 
 Overall, this worked well.
@@ -35,8 +35,8 @@ Having to change my mindset from tmux mode to Vim mode was a frequent source of 
 
 I also had some other more minor, but long-running, gripes with tmux.
 
-1. The tmux-ressurect plugin is great, but it occasionally struggles to restart windows running an instance of Vim.
-Moreover, shutting down tmux sessions with Vim instances active has a tendancy to create floating swap files.
+1. The tmux-resurrect plugin is great, but it occasionally struggles to restart windows running an instance of Vim.
+Moreover, shutting down tmux sessions with Vim instances active has a tendency to create floating swap files.
 2. I had many unresolved issues getting colours to show up properly inside a tmux session.
 When colours work, everything is great.
 But when colours don't work, life becomes hell trying to resolve this.
@@ -71,7 +71,7 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 ```
 We now have a functional terminal running inside Neovim.
 
-Another benefit of running a terminal inside Neovim is that you get tmux's "copy-mode" essentially for free.
+Another benefit of running a terminal inside Neovim is that you get tmux's <q>copy-mode</q> essentially for free.
 This is as simple as returning to normal mode and treating the terminal split as just another text file.
 
 There is one problem with this setup: if we open a file with `nvim` from inside a Neovim terminal, we get a nested Neovim instance running inside the terminal.
@@ -157,7 +157,7 @@ _v
 Now, typing `v` <kbd>SPACE</kbd> <kbd>TAB</kbd> in your terminal will offer up the acceptable possibilities for your session name.
 
 ## Concluding remarks and some challenges
-This setup is conspiculously missing convenient instance persistence.
+This setup is conspicuously missing convenient instance persistence.
 Every time you want to rejoin a session, you are sourcing a lot of Vimscript to restart the Neovim instance.
 This is quite fast, but it would be a lot better to place the Neovim instance in the background, or temporarily suspend it to rejoin it again later.
 Currently, I simply suspend my Neovim instances with <kbd>Ctrl+Z</kbd> and then restore with `fg`.

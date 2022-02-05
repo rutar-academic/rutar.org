@@ -40,7 +40,7 @@ The global version is useful for user-wide modules and tools you might want to i
 
 ## Managing virtual environments
 For specific projects, you probably only want to install the packages necessary for that project.
-A virtualenv is essentially a "local" installation of python (and packages) which are specific to the current environment.
+A virtualenv is essentially a <q>local</q> installation of python (and packages) which are specific to the current environment.
 This lets you organize what modules you have installed, as well as the python version.
 
 As an example, let's create a virtualenv named `my-venv`.

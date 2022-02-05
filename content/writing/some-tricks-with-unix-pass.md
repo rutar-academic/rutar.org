@@ -23,7 +23,7 @@ copies the second line of the password stored in `password/name`.
 ### Copy login and password to clipboard
 Here is a short fish shell function which first copies the login information to the clipboard, and then the password (after confirming the prompt):
 ```
-function psc --wraps='pass show'
+function psk --wraps='pass show'
     set -l username (pass show $argv | string match -r ".+:\ (.+)" | head -n 2 | tail -n 1)
     if test -n "$username"
         echo -n "$username" | pbcopy
@@ -44,9 +44,12 @@ If there is no matching line, the password will be immediately copied to the cli
 
 To use this function, call it like
 ```
-psc password/name
+psk password/name
 ```
 Autocompletions are provided from `pass show` by the `--wraps` option.
+
+I've written a [small fish plugin](https://github.com/alexrutar/psk) which implements this (along with a couple extra features).
+
 
 ### Updating existing passwords
 The command
@@ -76,7 +79,7 @@ control the characters which are used when `pass` (resp. `pass -n`) is used to g
 ```
 tr -dc "$characters" < /dev/urandom
 ```
-The default value is `[:punct:][:alnum:]` (all ascii numbers, letters, and punctionation) for the general character set, and `[:alnum:]` (only numbers and letters) for the character set with no symbols.
+The default value is `[:punct:][:alnum:]` (all ASCII numbers, letters, and punctuation) for the general character set, and `[:alnum:]` (only numbers and letters) for the character set with no symbols.
 See `man tr` for a description of other possible options.
 
 It is also possible to change the default password length (which is 25).
@@ -99,7 +102,7 @@ Any password stored in this subfolder will not prompt you for authentication!
 This is useful for passwords which you may want to use in scripts, etc.
 
 ### Change the default timeout
-When you enter your password to unlock your gpg key associated with the password store, there is a delay before you are required to provide your password again.
+When you enter your password to unlock your GPG key associated with the password store, there is a delay before you are required to provide your password again.
 There are two relevant values here:
 
 - `default-cache-ttl`, which defaults to 600 (i.e. 10 minutes), and

@@ -12,7 +12,7 @@ In this article, I assume that your repository is hosted on [GitHub](https://git
 I'm sure other providers will work, with similar instructions.
 
 ## Creating the development branch
-First, create a new branch "development" (or any name you would like):
+First, create a new branch <q>development</q> (or any name you would like):
 ```
 git pull
 git branch development
@@ -27,7 +27,7 @@ git switch main
 git merge development
 git push
 ```
-Now, we just need to push the "development" branch to our GitHub repository.
+Now, we just need to push the <q>development</q> branch to our GitHub repository.
 ```
 git push origin development
 ```

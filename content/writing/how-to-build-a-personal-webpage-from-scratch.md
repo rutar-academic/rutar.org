@@ -35,7 +35,7 @@ In fact, you can make a minimal webpage (using your own device as the server) si
 ```
 <html><body>content</body></html>
 ```
-and, when you double-click on the file, it should open in your browser and show a (rather minimal) page displaying the line "content".
+and, when you double-click on the file, it should open in your browser and show a (rather minimal) page displaying the line <q>content</q>.
 
 Dynamic webpages are built in a similar way, except rather than generating the pages in advance, the files sent to the visitor are generated as they are requested.
 A dynamic webpage will typically have a [database](https://en.wikipedia.org/wiki/Database) used to store the site information, and a web server which uses the database to generate content when requested by the user.
@@ -372,20 +372,20 @@ Here are some direct links to the files which we have prepared above:
 - {% verbose_url(title="style.css") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% end %}
 - {% verbose_url(title="404.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html{% end %}
 
-In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the "View Source" or "Inspect Element" functionality in your browser.
+In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the <q>View Source</q> or <q>Inspect Element</q> functionality in your browser.
 The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
 Whenever I need to look anything up, that's where I start.
 
 If your browser is Safari on macOS, you can enable some nice development features with the [Safari developer tools](https://support.apple.com/en-ca/guide/safari/sfri20948/mac) option.
-For example, this allows you to emulate different browsers, and enter a "responsive design mode" which allows you to manually modify the screen size and view how your webpage will change.
+For example, this allows you to emulate different browsers, and enter a <q>responsive design mode</q> which allows you to manually modify the screen size and view how your webpage will change.
 
 Firefox also has similar functionality built in to the [Firefox developer tools](https://developer.mozilla.org/en-US/docs/Tools), and the Google Chrome browser in [Chrome DevTools](https://developer.chrome.com/docs/devtools/).
 
 ## Deployment with GitHub and Cloudflare Pages
 ### Deploying on Cloudflare
-Head to the Pages tabs, and select "Create a project".
+Head to the Pages tabs, and select <q>Create a project</q>.
 You will now be prompted to link your GitHub account, along with the repository containing your files that we created before.
-Click "Begin setup", choose a nice name for your webpage, and then select all the defaults and continue to the end.
+Click <q>Begin setup</q>, choose a nice name for your webpage, and then select all the defaults and continue to the end.
 Your site will not be automatically deployed once the build finishes!
 
 ## Further topics
