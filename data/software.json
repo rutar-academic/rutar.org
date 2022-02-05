@@ -8,6 +8,14 @@
     }
   },
   {
+    "description": "Manage (Neo)Vim sessions",
+    "lang": "Fish",
+    "links": {
+      "pypi": "texproject",
+      "github": "alexrutar/vs"
+    }
+  },
+  {
     "description": "Query adjacency properties of four-letter words",
     "lang": "C",
     "links": {
