@@ -146,13 +146,13 @@ Here's an explanation of some of the tags:
 
 - `<head>...</head>` and `<body>...</body>`: these are the two main sections of your HTML file.
   `<head>` contains the metadata, and `<body>` contains the content that will show up on your screen when you visit the webpage.
-- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which allows us to use unicode when writing content.
+- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which allows you to use unicode when writing content.
   This is necessary so the content does not get interpreted as something like [ASCII](https://en.wikipedia.org/wiki/ASCII) and cause errors.
   Hopefully your text editor supports unicode...
 - `<meta name="viewport" content="width=device-width">` ensures that, if this page is opened on a browser with a small screen, it will not be incredibly zoomed out.
   This is the bare minimum required so your page looks passable on a phone.
   You can read a bit about this [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag).
-- `<title>`, `<meta name = "description" ...>`, `<meta name="author" ...>`: title, a short page description, and the author
+- `<title>`, `<meta name = "description" ...>`, `<meta name="author" ...>`: title, a short page description, and author.
 - `<nav>...</nav>`: website navigation
 - `<article>...</article>`: the 'content' of the page, i.e. your actual article or blog post but without the navigation, header, footer, etc.
 
@@ -167,7 +167,7 @@ Create a file called `writing.html` in the same directory and populate it with p
 </article>
 ```
 You can also change the title and description in this new page, as well.
-Now, if you click on the navigation links, we have two working pages!
+Now, if you click on the navigation links, you have two working pages!
 
 ### Styling the page
 We have a functional webpage, but it would be nice to make everything look a bit better.
@@ -177,15 +177,16 @@ Create a file `style.css`, and add the line
 ```
 to the `<head>` of both HTML documents.
 This tells the browser to look for a file `style.css` in the same directory as the file, which contains styling information.
-While it is possible to define style inline in the HTML, this is bad practice since it is harder to maintain (HTML is for the semantic content, whereas CSS is for style).
+While it is possible to define style inline in the HTML, this is bad practice since it is harder to maintain (as a general rule, HTML defines semantics, whereas CSS defines style).
 Also, you should add some more content to the `<article>` section: perhaps a few more headers `<h2>...</h2>` and links `<a href="...some url...">my link</a>`.
+This will make the styling changes more clear as you make them.
 
 Let's begin with some basic styling.
 First, add
 ```
 body {
   margin: 0 auto;
-  max-width: 40em;
+  max-width: 700px;
   min-width: 0;
   padding: 0 10px 25px;
   font-family: "Helvetica", "Arial", sans-serif;
