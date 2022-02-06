@@ -110,13 +110,13 @@ I'd recommend you read the articles on [HTML basics](https://developer.mozilla.o
 In this section, I'll give a streamlined description of setting up a basic functional webpage.
 We are going to create 4 files:
 ```
-website_folder/
+.
 ├── 404.html
 ├── index.html
 ├── style.css
-└── writing.html
+└── writing
+    └── index.html
 ```
-Of course you can name your `website_folder` anything you would like.
 
 ### Getting started
 Let's start with a rather minimal HTML file.
@@ -137,7 +137,7 @@ Call it `index.html` in your (currently empty) website folder.
       Example Webpage
     </header>
     <nav>
-      <a href="writing.html">Writing</a>
+      <a href="writing/index.html">Writing</a>
       <a href="index.html">About</a>
     </nav>
     <article>
@@ -163,7 +163,8 @@ Here's an explanation of some of the tags:
 Now if you open the file `index.html` you should get a page with two links at the top: <q>About</q>, and <q>Writing</q>.
 
 Unfortunately the <q>Writing</q> link does nothing: we need to create that page.
-Create a file called `writing.html` in the same directory and populate it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
+Create a new directory called `writing` and in that directory create a file called `index.html`.
+Then, fill it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
 ```
 <article>
   <h1>Some things I've written</h1>
@@ -239,7 +240,6 @@ h1 {
 h2 {
   font-size: 23px;
 }
-
 ```
 Finally, let's add a bit of character by styling the links:
 ```
@@ -251,12 +251,13 @@ Our webpage looks a bit cleaner now!
 
 ### Grid layout
 However, we need to address some more serious layout problems: currently, the navigation is way too small, and the header does not stand out at all.
+
 To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid){% inline_note() %}A nice reference for CSS Grid can be found <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">here</a>.{% end %}.
-Essentially, grid allows you to specify layout in a parent element, and then place the child elements inside this layout.
+Essentially, grid allows us to specify layout in a parent element, and then place the children inside this layout.
 
 First, let's specify the general layout of our grid.
 We want three sections: a header in the top left (for our title), a navigation bar in the top right, and then a main area containing all the content of the site.
-Let's target the `<body>` tag to set up this grid:
+Let's target the `<body>` element to set up this grid:
 ```
 body {
   display: grid;
@@ -268,13 +269,14 @@ body {
     "ct ct"
 }
 ```
-Let's break down what this is specifying.
+Let's break down what this is doing.
 
 - `display: grid`: this element is specifying a grid layout for its children.
 - `row-gap: 5px`: have some space between the rows
 - `grid-template-columns: auto auto`: determine the width of the columns automatically
 - `grid-template-rows: 60px auto`: set the first row (containing the header and navigation bar) to have height 60 pixels, and the second row to be sized automatically based on the content
-- `grid-template-areas: ...` names the areas: we have `header` in the top left, `nav` in the top right, and `ct` everywhere else (spanning both columns).
+- `grid-template-areas: ...`: assign names to the areas.
+  We have `header` in the top left, `nav` in the top right, and `ct` everywhere else (spanning both columns).
   Note that the names can be whatever you would like (there is no special meaning assigned to using `header` and `nav`).
 
 Now, let's assign our child elements to the areas in this grid, and do a bit of styling.
@@ -302,10 +304,11 @@ article {
 We want the header to be justified to the left and the navigation bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
 This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!
-Finally, we add a line about the `<article>` element with `border-top: 2px solid gray`.
+In general, `align` refers to vertical placement and `justify` refers to horizontal placement.
+Finally, we add a line above the `<article>` element with `border-top: 2px solid gray` to separate our header and navigation bar from the rest of the content.
 
 ### Responsive design
-Our layout is great, but now we might have some problems on small screens!
+Now, our layout looks decent on a computer, but now we might have some problems on small screens!
 The main problem is that if the screen is narrow, our header and navigation bar will start folding over itself.
 To fix this, we can use [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries).
 This is CSS which is applied only when the query is satisfied: in this situation, we want these rules when the screen is narrow (less than 430 pixels wide).
@@ -341,16 +344,33 @@ This is done with the following CSS code.
 The `minmax(30px, auto)` means that we want to row to be at least 30 pixels tall, except that we should make it taller if the elements inside require it.
 We also adjust the header and navigation bar to be nicely centred, since they are now placed on top of each other (rather than side by side).
 
-Now, our webpage also looks respectable even when viewed on exceptionally tiny phone screens!
+Now, our webpage also looks respectable even when viewed on exceptionally tiny phone screens.
 
 ### Dealing with links
-Throughout this article, the links have been written in the form `href="writing.html"`.
+Throughout this article, the links have been written in the form `href="style.css"`.
 This specifies a _relative link_: the file path is taken relative to the directory that the file in which the link sits.
-When deploying the webpage to a server, you will want to write this in the form `href="/writing.html"`, which will give a link to the root of your website.
+When deploying the webpage to a server, you will want to write this in the form `href="/style.css"`, which will give a link to the root of your website.
 This tells the browser to take whatever the base URL (for example {% verbose_url() %}https://example.rutar.org{% end %}) and append the link.
-However, when browsing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/writing.html` will (attempt to) link to the root of your filesystem directory, which is not what you want!
+However, when browsing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/style.css` will (attempt to) link to the root of your filesystem directory, which is not what you want!
 
-We will also want to deal with the case where the user tries to browse to a link which does not exist.
+Moreover, there is a convention for linking directly to files HTML files: files with the name `index.html` are given special treatment.
+Suppose your directory structure looks like the following:
+```
+.
+├── index.html
+└── writing
+    └── index.html
+```
+Now, you can reference the file `index.html` with `href="/"` and the file `writing/index.html` with `href="/writing/"`.
+This is the standard way to include files in your project repository.
+To summarize, here are the changes we need to make (in all the HTML files):
+
+- change `href="style.css"` to `href="/style.css"`
+- change `href="index.html"` to `href="/"`
+- change `href="writing.html"` to `href="/writing/"`
+
+Our links will no longer work properly when browsing the files locally, but when we create host our webpage, the links will now work properly.
+We also want to deal with the case where the user tries to browse to a link which does not exist.
 For example, on this site, if you navigate to a URL like {% verbose_url() %}https://rutar.org/does-not-exist{% end %}, you will be shown a page explaining what happened.
 
 For this to happen automatically, we simply need to create a file `404.html` at the root of our directory, with some content explaining that the page is missing.
@@ -361,14 +381,14 @@ Often, the server will default to showing the contents of the `/404.html` file.
 This file also has proper naming of links, as discussed above.
 
 ### Finishing up
-You can view the complete website at {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
+You can view the complete website at {% verbose_url() %}https://example.rutar.org{% end %}.
 The files themselves can be found [on GitHub](https://github.com/alexrutar/webpage-example).
 You can ignore the additional files: those will be explained in later sections.
 
 Here are some direct links to the files which we have prepared above:
 
 - {% verbose_url(title="index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html{% end %}
-- {% verbose_url(title="writing.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing.html{% end %}
+- {% verbose_url(title="writing/index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing/index.html{% end %}
 - {% verbose_url(title="style.css") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% end %}
 - {% verbose_url(title="404.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html{% end %}
 
