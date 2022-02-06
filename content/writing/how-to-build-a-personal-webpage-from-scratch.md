@@ -24,7 +24,7 @@ Webpages also consist of additional resources, such as images or documents.
 When you visit a webpage, your web browser requests the documents from a server.
 
 [Static](https://en.wikipedia.org/wiki/Static_web_page) and [dynamic](https://en.wikipedia.org/wiki/Dynamic_web_page) webpages differ in how the files are prepared before they are sent to the visitor.
-A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a dynamic webpage typically consists of a database as well as code to generate the files _on the fly_ when they are requested by the visitor.
+A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side) dynamic webpage{% inline_note() %}This is in contrast to a client-side dynamic webpage which uses Javascript, but only in your web browser.{% end %} typically consists of a database as well as code to generate the files _on the fly_ when they are requested by the visitor.
 
 For example, this website is a static webpage.
 On the other hand, any webpage which allows you to log-in and have user-specific state is a dynamic webpage.
@@ -41,7 +41,7 @@ Dynamic webpages are built in a similar way, except rather than generating the p
 A dynamic webpage will typically have a [database](https://en.wikipedia.org/wiki/Database) used to store the site information, and a web server which uses the database to generate content when requested by the user.
 This allows substantially more flexibility in content delivery (e.g. webpage state, customization for the viewer, etc.) since the content delivered to the webpage can depend on arbitrary variables whose values are unknown when creating the site.
 This also allows procedural generation of content, which avoids repetitive code.
-The main downside is that, since the pages need to be generated for each visitor, dynamic websites are typically more resource intensive.
+The main downside is that, since the pages need to be generated for each visitor, dynamic websites are typically more resource intensive and slower to render.
 
 ### Why static webpages?
 However, for a personal blog or site used primarily to _distribute_ information, rather than collect it, dynamic content generation is not necessary!
@@ -69,19 +69,19 @@ You first prepare the templates, then write the content files, and then use the 
 ### Static website components
 There are three main components to static website generation:
 
-1. __templating__.
+1. __Templating__.
   You should choose a templating engine and then prepare the website template.
   I am personally a fan of [Zola](https://getzola.org); some other common options are [Jekyll](https://jekyllrb.com/) and [Hugo](https://gohugo.io/).
-2. __content__.
+2. __Content__.
   A website needs content!
   You need to write base HTML files and CSS style sheets, as well as the webpage content.
-3. __deployment__.
+3. __Deployment__.
   While it is possible (and not too difficult) to host your own static site server, it is typically easiest to use static site hosting.
   I use [Cloudflare Pages](https://pages.cloudflare.com/).
   You might also be interested in [GitHub Pages](https://pages.github.com/) or [Netlify](https://www.netlify.com/).
 
 Of course, templating is mainly a convenience feature, and not strictly necessary when making a small website.
-I'll discuss these components in the following sections, along with some additional topics in the [final section](#further-topics).
+I'll discuss the other two components in the following sections, along with some additional topics in the [final section](#further-topics).
 <!-- You can read more about templating TODO: add link -->
 
 ### A note on editing text
@@ -96,10 +96,10 @@ Similarly, [TextEdit](https://support.apple.com/en-ca/guide/textedit/welcome/mac
 For command-line editors, you could consider [Neovim](https://neovim.io) or [Emacs](https://www.gnu.org/software/emacs/).
 
 One more subtlety is that not all text is the same.
-Underneath the text is just binary data, so rules are required to convert the binary data into the textual representation: this process is known as [character encoding](https://en.wikipedia.org/wiki/Character_encoding).
+Underneath, text is just binary data, so rules are required to convert the binary data into the textual representation: this process is known as [character encoding](https://en.wikipedia.org/wiki/Character_encoding).
 The most common type of encoding used on webpages is [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which is the transfer format for the [Unicode](https://en.wikipedia.org/wiki/Unicode) standard.
 [ASCII](https://en.wikipedia.org/wiki/ASCII) is also a well-known encoding, but only supports a very restricted number of characters.
-Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII:{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the text file.{% end %} for example, to input directional quotation marks `“”` (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>``</code> and `''`.
+Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII:{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the .tex file.{% end %} for example, to input directional quotation marks `“”` (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>``</code> and `''`.
 However, unless you are forced otherwise, you should try to write all your content in Unicode.
 
 ## Crash Course in HTML and CSS

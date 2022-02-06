@@ -151,7 +151,7 @@ end
 ```
 Essentially, when `vs open` is called with no session name, an interactive prompt opens and allows you to search the available sessions.
 
-In fish, quotes are usually not required since variables are passed 'as atoms' rather than being expanded and separated on whitespace (as is the case with bash).
+In fish, quotes are usually not required since variables are passed ‘as atoms’ rather than being expanded and separated on whitespace (as is the case with bash).
 One of the few exceptions to this rule is `test -n "$var"`, which checks that `var` is defined and non-empty.
 In this situation, you must always quote the variable since if var is not defined, then `$var` will expand to an argument list of length 0, essentially calling `test -n` instead of the desired `test -n ""`.
 
@@ -271,7 +271,7 @@ Since we already wrote a function `VSave` earlier, it's a simple matter to call 
 ```
 vim "+silent VSave <session_name>" +term
 ```
-The `silent` command executes the next command without printing anything into the vim pane.
+The `silent` command executes the next command without printing anything into the Vim pane.
 Now let's wrap this in a command `init`, and do a quick check that there is not an existing session with the provided name.
 ```
 case init

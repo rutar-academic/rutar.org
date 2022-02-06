@@ -48,8 +48,8 @@ psk password/name
 ```
 Autocompletions are provided from `pass show` by the `--wraps` option.
 
-I've written a [small fish plugin](https://github.com/alexrutar/psk) which implements this (along with a couple extra features).
-
+For this use case, I've also written a [small fish plugin](https://github.com/alexrutar/psk).
+It implements this behaviour in a more well-defined way (using `yq` to parse YAML), along with a couple extra features.
 
 ### Updating existing passwords
 The command

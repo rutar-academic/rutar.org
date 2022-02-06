@@ -37,6 +37,7 @@ pyenv global 2.7.18 3.10.1
 ```
 sets the `python2` version to `2.7.18` and the `python3` version to `3.10.1`.
 The global version is useful for user-wide modules and tools you might want to install with `pip`.
+You can get a list of possible versions with `pyenv install -l`.
 
 ## Managing virtual environments
 For specific projects, you probably only want to install the packages necessary for that project.

@@ -201,7 +201,7 @@ em, i {
   font-style: italic;
 }
 
-cite, b {
+cite, b, strong {
   font-weight: bold;
 }
 
@@ -280,7 +280,7 @@ pre code {
   max-width: 100%;
   min-width: 0;
   display: block;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: pre;
   -webkit-overflow-scrolling: touch;
 }
@@ -355,6 +355,16 @@ img {
   max-width: 100%;
 }
 
+figure {
+  margin: 1em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: small;
+  color: $fadeColor;
+}
+
 sup { 
   vertical-align: super;
   font-size: 70%;
@@ -374,17 +384,14 @@ label {
   line-height: 1;
   font-size: .75em;
   padding-left: .1em;
-}
-
-label:hover {
   color: $themeColor;
-}
-label:before {content:"[";}
-label:after {content:"]";}
+  &:before {content:"[";}
+  &:after {content:"]";}
 
-label + input,
-label + input + small {
-  display: none;
+  & + input,
+  & + input + small {
+    display: none;
+  }
 }
 
 input:checked + small {
