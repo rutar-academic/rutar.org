@@ -33,7 +33,7 @@ body {
     "ds ds";
   @include mobile {
     grid-template-columns: auto;
-    grid-template-rows: minmax(30px,auto) minmax(20px,auto) auto auto;
+    grid-template-rows: minmax(40px,auto) minmax(30px,auto) auto auto;
     grid-template-areas:
       "hd"
       "nav"
