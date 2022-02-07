@@ -264,8 +264,7 @@ For example, if you run
 {{ cli(command="vim +term") }}
 you will get a vim terminal pane in the current directory.
 Since we already wrote a function `VSave` earlier, it's a simple matter to call this function as well:
-<pre><code><kbd>vim "+silent VSave &lt;session_name&gt;" +term</kbd>
-</code></pre>
+{{ cli(command='vim "+silent VSave <session_name>" +term') }}
 The `silent` command executes the next command without printing anything into the Vim pane.
 Now let's wrap this in a command `init`, and do a quick check that there is not an existing session with the provided name.
 ```

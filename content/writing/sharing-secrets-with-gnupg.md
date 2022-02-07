@@ -26,7 +26,7 @@ Do this with the command
 You will be prompted to answer some questions about the key you are generating, and at the end, you will have to enter a passphrase to protect the new key.
 
 Now that you have a keypair, you can export your public key with
-{{ cli(command="gpg --output my_pubkey.asc --armor --export &lt;key-id&gt;") }}
+{{ cli(command="gpg --output my_pubkey.asc --armor --export <key-id>") }}
 where `<key-id>` is the identification string associated with the keypair.
 
 If you want to back up your secret key and save it to a secure location, run

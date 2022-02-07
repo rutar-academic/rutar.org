@@ -45,8 +45,7 @@ First, create it with
 {{ cli(command="pyenv virtualenv 3.10.1 my-venv") }}
 Let's say we are in a project directory where I want to use the `my-venv` virual environment.
 Simply create a file named `.python-version`, which is populated with the name of the desired virtual environment:
-<pre><code><kbd>echo "my-venv" &lt; .python-version</kbd>
-</code></pre>
+{{ cli(command='echo "my-venv" > .python-version') }}
 Now, whenever you enter this directory, `pyenv` will automatically activate the environment, and whenever you leave, the environment will deactivate.
 
 You can also manually activate the virtual environment with

@@ -72,7 +72,7 @@ PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS
 ```
 control the characters which are used when `pass` (resp. `pass -n`) is used to generate a new password.
 [Under the hood](https://git.zx2c4.com/password-store/tree/src/password-store.sh), `pass` generates the password by piping from `/dev/urandom` and using `tr -dc` to remove characters which do not pass the allowed characters list:
-<pre><code><kbd>command="tr -dc "$characters" &lt; /dev/urandom</kbd>
+<pre><code><kbd>tr -dc "$characters" &lt; /dev/urandom</kbd>
 </code></pre>
 The default value is `[:punct:][:alnum:]` (all ASCII numbers, letters, and punctuation) for the general character set, and `[:alnum:]` (only numbers and letters) for the character set with no symbols.
 See `man tr` for a description of other possible options.
@@ -90,7 +90,7 @@ First, create a `gpg` key with no passphrase:
 Now, choose a subfolder to encrypt using the new key:
 {{ cli(command="pass init -p <no-auth-foldername> <no-auth-key-id>") }}
 Any password stored in this subfolder will not prompt you for authentication!
-This is useful for passwords which you may want to use in scripts, etc.
+This is useful for passwords which you may want to use in a non-interactive environment.
 
 ### Change the default timeout
 When you enter your password to unlock your GPG key associated with the password store, there is a delay before you are required to provide your password again.
