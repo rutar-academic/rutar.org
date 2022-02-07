@@ -13,36 +13,26 @@ I'm sure other providers will work, with similar instructions.
 
 ## Creating the development branch
 First, create a new branch <q>development</q> (or any name you would like):
-```
-git pull
-git branch development
-```
+<pre><code><kbd>git pull</kbd>
+<kbd>git branch development</kbd>
+</code></pre>
 Now to add draft changes, first
-```
-git switch development
-```
+{{ cli(command="git switch development") }}
 then perform the changes you want and commit them. To include those changes in your main branch,
-```
-git switch main
-git merge development
-git push
-```
+<pre><code><kbd>git switch main</kbd>
+<kbd>git merge development</kbd>
+<kbd>git push</kbd>
+</code></pre>
 Now, we just need to push the <q>development</q> branch to our GitHub repository.
-```
-git push origin development
-```
+{{ cli(command="git push origin development") }}
 Cloudflare will automatically build changes to your development branch, which you can preview at the url `development.<project-name>.pages.dev`.
 
 ## Customizing the build command
 It is often the case that you want the build command for your development branch to be different than the build command for your main branch.
 For example, if you use [Zola](https://getzola.org) for templating, you might build the main branch with
-```
-zola build
-```
+{{ cli(command="zola build") }}
 whereas you might build the development branch with
-```
-zola build --drafts
-```
+{{ cli(command="zola build --drafts") }}
 Moreover, when using Zola, the site url is automatically set based on the key `base_url` in your `config.toml`.
 This works for the main branch, but our development branch has a different URL, which will cause non-relative internal links to be broken.
 

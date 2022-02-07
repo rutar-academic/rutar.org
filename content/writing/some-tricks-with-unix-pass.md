@@ -15,9 +15,7 @@ In this article, I've collected some convenient tips for using the program.
 ## Showing and copying passwords
 ### Copy additional lines
 You can copy lines other than the first: for example
-```
-pass -c2 password/name
-```
+{{ cli(command="pass -c2 password/name") }}
 copies the second line of the password stored in `password/name`.
 
 ### Copy login and password to clipboard
@@ -53,9 +51,7 @@ It implements this behaviour in a more well-defined way (using `yq` to parse YAM
 
 ### Updating existing passwords
 The command
-```
-pass generate -i password/name
-```
+{{ cli(command="pass generate -i password/name") }}
 generates a new password in `password/name`, which only replaces the first line (preserving the other information).
 With this, we can write a utility function to update existing passwords:
 ```
@@ -76,9 +72,8 @@ PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS
 ```
 control the characters which are used when `pass` (resp. `pass -n`) is used to generate a new password.
 [Under the hood](https://git.zx2c4.com/password-store/tree/src/password-store.sh), `pass` generates the password by piping from `/dev/urandom` and using `tr -dc` to remove characters which do not pass the allowed characters list:
-```
-tr -dc "$characters" < /dev/urandom
-```
+<pre><code><kbd>command="tr -dc "$characters" &lt; /dev/urandom</kbd>
+</code></pre>
 The default value is `[:punct:][:alnum:]` (all ASCII numbers, letters, and punctuation) for the general character set, and `[:alnum:]` (only numbers and letters) for the character set with no symbols.
 See `man tr` for a description of other possible options.
 
@@ -91,13 +86,9 @@ set -x PASSWORD_STORE_GENERATED_LENGTH 50
 ## Managing GnuPG with pass
 ### Create passwords which do not require authentication
 First, create a `gpg` key with no passphrase:
-```
-gpg --batch --passphrase '' --quick-gen-key <no-auth-key-id> default default
-```
+{{ cli(command="gpg --batch --passphrase '' --quick-gen-key <no-auth-key-id> default default") }}
 Now, choose a subfolder to encrypt using the new key:
-```
-pass init -p <no-auth-foldername> <no-auth-key-id>
-```
+{{ cli(command="pass init -p <no-auth-foldername> <no-auth-key-id>") }}
 Any password stored in this subfolder will not prompt you for authentication!
 This is useful for passwords which you may want to use in scripts, etc.
 

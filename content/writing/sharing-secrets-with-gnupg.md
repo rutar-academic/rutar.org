@@ -22,21 +22,15 @@ I will review the usage of the `gpg` command line tool, which is a commonly used
 ### Keypair creation
 To get started, you want to generate a new keypair.
 Do this with the command
-```
-$ gpg --full-generate-key
-```
+{{ cli(command="gpg --full-generate-key") }}
 You will be prompted to answer some questions about the key you are generating, and at the end, you will have to enter a passphrase to protect the new key.
 
 Now that you have a keypair, you can export your public key with
-```
-$ gpg --output my_pubkey.asc --armor --export <key-id>
-```
+{{ cli(command="gpg --output my_pubkey.asc --armor --export &lt;key-id&gt;") }}
 where `<key-id>` is the identification string associated with the keypair.
 
 If you want to back up your secret key and save it to a secure location, run
-```
-$ gpg --output backupkeys.asc --armor --export-secret-keys --export-options export-backup <key-id>
-```
+{{ cli(command="gpg --output backupkeys.asc --armor --export-secret-keys --export-options export-backup <key-id>") }}
 Make sure to save this file in a secure location.
 
 ### Encrypting and decrypting files
@@ -45,35 +39,28 @@ Of course, generating and sharing your own public key only only gives you a one-
 In order to encrypt data to send to someone else, you first need their public key `pubkey.asc`.
 
 Import it to your keyring with
-```
-$ gpg --import pubkey.asc
-```
+{{ cli(command="gpg --import pubkey.asc") }}
 If you run `gpg --list-keys`, you should now see an additional entry containing the details of the new public key you just imported.
 Now, to encrypt the file `filename` to the file `secure.gpg` for recipient `recipient@gmail`, just run
-```
-$ gpg --output secure.gpg --encrypt --recipient recipient@email filename
-```
+{{ cli(command="gpg --output secure.gpg --encrypt --recipient recipient@email filename") }}
 and the file has now been secured with the public key.
 You can also optionally sign the encrypted file with the `--sign` option.
 
 On the other hand, if you have received an encrypted file `secure.gpg` sent to you using your public key, just run
-```
-$ gpg --output filename --decrypt secure.gpg
-```
+{{ cli(command="gpg --output filename --decrypt secure.gpg") }}
 to create the decrypted file `filename`.
 Note that `gpg` automatically worked out the correct key to use to decrypt the file, and this command will fail if the file was not encrypted with any private key in your keyring.
 
 ### Anatomy of a keyring listing
 You can list the public keys available on your device with
-```
-$ gpg --list-keys
+{% cli_output(command="gpg --list-keys") %}
 $USER/.local/share/gnupg/pubring.kbx
 ------------------------------------
 pub   rsa2048 2021-04-13 [SC]
       IU9VN34O2NOI9M3L409U8JS8210KZMCN39M5KD93
 uid           [ultimate] Your Name (local) <user@email>
 sub   rsa2048 2021-04-13 [E]
-```
+{% end %}
 At the top, we can see the filename where the keyring is stored along with a divider, followed by a sequence of text blocks.
 In each block:
 

@@ -324,7 +324,7 @@ This is done with the following CSS code.
 @media screen and (max-width: 430px) {
   body {
     grid-template-columns: auto;
-    grid-template-rows: minmax(30px, auto) minmax(20px, auto) auto auto;
+    grid-template-rows: minmax(40px, auto) minmax(30px, auto) auto auto;
     grid-template-areas:
     "header"
     "nav"
@@ -341,7 +341,7 @@ This is done with the following CSS code.
   }
 }
 ```
-The `minmax(30px, auto)` means that we want to row to be at least 30 pixels tall, except that we should make it taller if the elements inside require it.
+The `minmax(40px, auto)` means that we want to row to be at least 40 pixels tall, except that we should make it taller if the elements inside require it.
 We also adjust the header and navigation bar to be nicely centred, since they are now placed on top of each other (rather than side by side).
 
 Now, our webpage also looks respectable even when viewed on exceptionally tiny phone screens.
@@ -406,7 +406,7 @@ Firefox also has similar functionality built in to the [Firefox developer tools]
 Head to the Pages tabs, and select <q>Create a project</q>.
 You will now be prompted to link your GitHub account, along with the repository containing your files that we created before.
 Click <q>Begin setup</q>, choose a nice name for your webpage, and then select all the defaults and continue to the end.
-Your site will not be automatically deployed once the build finishes!
+Your site will now be automatically deployed once the build finishes!
 
 ## Further topics
 ### Custom domain setup
@@ -430,17 +430,17 @@ For convenience, since our site is already hosted on Cloudflare, let's use Cloud
 A [favicon](https://en.wikipedia.org/wiki/Favicon) is a small image loaded by the browser and displayed on the website tab.
 There is a lot of different advice on how to appropriately set favicons, and unfortunately a lot of it is very outdated.
 
-These days, modern browsers support .svg favicons and this format is easiest way to add a favicon to your webpage: it is lightweight and scales properly.
+These days, modern browsers support [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) favicons and this format is easiest way to add a favicon to your webpage: it is lightweight and scales properly.
 There are lots of tools available to create these images - I used [this site](https://formito.com/tools/favicon).
 You can also just download an icon from a place like [font awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) - there are a lot of options.
-There's a [web-hosted implementation](https://jakearchibald.github.io/svgomg/) of the [svgo tool](https://github.com/svg/svgo) which is useful for compressing your .svg file.
+There's a [web-hosted implementation](https://jakearchibald.github.io/svgomg/) of the [svgo tool](https://github.com/svg/svgo) which is useful for compressing your SVG file.
 
 To add the favicon to our webpage, first copy the icon file, say `icon.svg`, to the `static/` folder.
 Then add the following line to the `<head>` of your base template.
 ```
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 ```
-This tells the browser that there's an icon located at `/icon.svg`, and that it's an .svg file.
+This tells the browser that there's an icon located at `/icon.svg`, and that it's an SVG file.
 
 If you wish to support more devices, I'd recommend that you read this [favicon article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs).
 The next most important file to create would be a `favicon.ico` file: this will display the favicon even on outdated browsers.

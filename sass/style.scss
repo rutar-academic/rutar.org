@@ -182,6 +182,15 @@ p {
   margin: 10px 0;
 }
 
+p kbd {
+  border-radius: 3px;
+  padding: 0px 3px;
+  background: $borderColor;
+  border: 1.5px solid $fadeColor;
+  font: 12px/1.2 $monoFonts;
+}
+
+
 q {
   quotes: "“" "”" "‘" "’";
   &::before {
@@ -273,6 +282,20 @@ code {
   border-radius: 2px;
 }
 
+code kbd {
+  color: $codeKbdColor;
+  user-select: all;
+  -webkit-user-select: all;
+  &::before {
+    color: $textColor;
+    content: "$ ";
+  }
+}
+
+code mark {
+  background-color: $codeMarkColor;
+}
+
 // render display-style code so you can scroll to see really wide lines
 pre code {
   background: $borderColor;
@@ -343,14 +366,6 @@ li {
 // --------------------
 // Misc. other elements
 // --------------------
-kbd {
-  border-radius: 3px;
-  padding: 0px 3px;
-  background: $borderColor;
-  border: 1.5px solid $fadeColor;
-  font: 12px/1.2 $monoFonts;
-}
-
 img {
   max-width: 100%;
 }

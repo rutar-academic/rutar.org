@@ -179,20 +179,18 @@ function example
 end
 ```
 If you run the script normally, following the prompt, the function simply prints
-```
-$ example
+{% cli_output(command="example") %}
 Press ENTER to continue [ENTER]
 Done!
 Cleaning up!
-```
+{% end %}
 to your terminal.
 However, suppose instead of pressing <kbd>ENTER</kbd>, you hit <kbd>Ctrl+C</kbd> to terminate.
 Then the `__example_cleanup` event runs immediately, and the function will print
-```
-$ example
+{% cli_output(command="example") %}
 Press ENTER to continue [Ctrl-C]
 Cleaning up!
-```
+{% end %}
 Even though the function never completed, the cleanup function still fires.
 
 The handler `--on-event fish_exit` also catches the case where you, say, close the entire terminal window while the function is running.
@@ -263,14 +261,11 @@ functions --handlers
 It would also be nice to start new sessions with a terminal in the given directory.
 We can tell vim to execute some commands using the `+<command>` syntax: such arguments passed to vim will be executed in order as the vim session is started.
 For example, if you run
-```
-vim +term
-```
+{{ cli(command="vim +term") }}
 you will get a vim terminal pane in the current directory.
 Since we already wrote a function `VSave` earlier, it's a simple matter to call this function as well:
-```
-vim "+silent VSave <session_name>" +term
-```
+<pre><code><kbd>vim "+silent VSave &lt;session_name&gt;" +term</kbd>
+</code></pre>
 The `silent` command executes the next command without printing anything into the Vim pane.
 Now let's wrap this in a command `init`, and do a quick check that there is not an existing session with the provided name.
 ```
