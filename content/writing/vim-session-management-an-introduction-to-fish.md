@@ -151,7 +151,7 @@ end
 ```
 Essentially, when `vs open` is called with no session name, an interactive prompt opens and allows you to search the available sessions.
 
-In fish, quotes are usually not required since variables are passed 'as atoms' rather than being expanded and separated on whitespace (as is the case with bash).
+In fish, quotes are usually not required since variables are passed ‘as atoms’ rather than being expanded and separated on whitespace (as is the case with bash).
 One of the few exceptions to this rule is `test -n "$var"`, which checks that `var` is defined and non-empty.
 In this situation, you must always quote the variable since if var is not defined, then `$var` will expand to an argument list of length 0, essentially calling `test -n` instead of the desired `test -n ""`.
 
@@ -179,20 +179,18 @@ function example
 end
 ```
 If you run the script normally, following the prompt, the function simply prints
-```
-$ example
+{% cli_output(command="example") %}
 Press ENTER to continue [ENTER]
 Done!
 Cleaning up!
-```
+{% end %}
 to your terminal.
 However, suppose instead of pressing <kbd>ENTER</kbd>, you hit <kbd>Ctrl+C</kbd> to terminate.
 Then the `__example_cleanup` event runs immediately, and the function will print
-```
-$ example
+{% cli_output(command="example") %}
 Press ENTER to continue [Ctrl-C]
 Cleaning up!
-```
+{% end %}
 Even though the function never completed, the cleanup function still fires.
 
 The handler `--on-event fish_exit` also catches the case where you, say, close the entire terminal window while the function is running.
@@ -263,15 +261,11 @@ functions --handlers
 It would also be nice to start new sessions with a terminal in the given directory.
 We can tell vim to execute some commands using the `+<command>` syntax: such arguments passed to vim will be executed in order as the vim session is started.
 For example, if you run
-```
-vim +term
-```
+{{ cli(command="vim +term") }}
 you will get a vim terminal pane in the current directory.
 Since we already wrote a function `VSave` earlier, it's a simple matter to call this function as well:
-```
-vim "+silent VSave <session_name>" +term
-```
-The `silent` command executes the next command without printing anything into the vim pane.
+{{ cli(command='vim "+silent VSave <session_name>" +term') }}
+The `silent` command executes the next command without printing anything into the Vim pane.
 Now let's wrap this in a command `init`, and do a quick check that there is not an existing session with the provided name.
 ```
 case init

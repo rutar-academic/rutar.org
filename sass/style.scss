@@ -33,7 +33,7 @@ body {
     "ds ds";
   @include mobile {
     grid-template-columns: auto;
-    grid-template-rows: minmax(30px,auto) minmax(20px,auto) auto auto;
+    grid-template-rows: minmax(40px,auto) minmax(30px,auto) auto auto;
     grid-template-areas:
       "hd"
       "nav"
@@ -182,6 +182,14 @@ p {
   margin: 10px 0;
 }
 
+p kbd {
+  border-radius: 3px;
+  padding: 0px 3px;
+  background: $borderColor;
+  border: 1.5px solid $fadeColor;
+  font: 12px/1.2 $monoFonts;
+}
+
 q {
   quotes: "“" "”" "‘" "’";
   &::before {
@@ -201,7 +209,7 @@ em, i {
   font-style: italic;
 }
 
-cite, b {
+cite, b, strong {
   font-weight: bold;
 }
 
@@ -273,6 +281,20 @@ code {
   border-radius: 2px;
 }
 
+code kbd {
+  color: $codeKbdColor;
+  user-select: all;
+  -webkit-user-select: all;
+  &::before {
+    color: $textColor;
+    content: "$ ";
+  }
+}
+
+code mark {
+  background-color: $codeMarkColor;
+}
+
 // render display-style code so you can scroll to see really wide lines
 pre code {
   background: $borderColor;
@@ -280,7 +302,7 @@ pre code {
   max-width: 100%;
   min-width: 0;
   display: block;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: pre;
   -webkit-overflow-scrolling: touch;
 }
@@ -343,16 +365,18 @@ li {
 // --------------------
 // Misc. other elements
 // --------------------
-kbd {
-  border-radius: 3px;
-  padding: 0px 3px;
-  background: $borderColor;
-  border: 1.5px solid $fadeColor;
-  font: 12px/1.2 $monoFonts;
-}
-
 img {
   max-width: 100%;
+}
+
+figure {
+  margin: 1em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: small;
+  color: $fadeColor;
 }
 
 sup { 
@@ -374,17 +398,14 @@ label {
   line-height: 1;
   font-size: .75em;
   padding-left: .1em;
-}
-
-label:hover {
   color: $themeColor;
-}
-label:before {content:"[";}
-label:after {content:"]";}
+  &:before {content:"[";}
+  &:after {content:"]";}
 
-label + input,
-label + input + small {
-  display: none;
+  & + input,
+  & + input + small {
+    display: none;
+  }
 }
 
 input:checked + small {
