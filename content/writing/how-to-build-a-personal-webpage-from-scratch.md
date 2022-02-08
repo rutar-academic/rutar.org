@@ -102,7 +102,7 @@ The most common type of encoding used on webpages is [UTF-8](https://en.wikipedi
 Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII:{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the .tex file.{% end %} for example, to input directional quotation marks `“”` (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>``</code> and `''`.
 However, unless you are forced otherwise, you should try to write all your content in Unicode.
 
-## Crash Course in HTML and CSS
+## Crash course in HTML and CSS
 I'm going to assume you know some basics of HTML and CSS.
 There are lots of tutorials online; here is a [nice one](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/).
 I'd recommend you read the articles on [HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) and [CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics).
