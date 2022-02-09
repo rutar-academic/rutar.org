@@ -83,11 +83,11 @@ header, h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
   }
   a {
-    &:hover {
-      text-decoration: underline
-    }
     color: inherit;
   }
+}
+header a:hover {
+  text-decoration: underline;
 }
 
 // center headers when on mobile
@@ -108,17 +108,18 @@ article {
   // setup counters for article section, subsection, etc.
   .post-contents {
     counter-reset: sec;
-    h3::before {
-      counter-increment: subsec;
-      content: counter(sec) "." counter(subsec) ".\0000a0\0000a0";
-    }
-    h2::before {
-      counter-increment: sec;
-      content: counter(sec) ".\0000a0\0000a0";
-    }
     h2 {
       counter-reset: subsec;
     }
+    h2 a:before {
+      counter-increment: sec;
+      content: counter(sec) ".";
+    }
+    h3 a:before {
+      counter-increment: subsec;
+      content: counter(sec) "." counter(subsec) ".";
+    }
+
   }
 
   // post footer
