@@ -33,16 +33,15 @@ I will also assume you know a bit about (Neo)Vim, including plugin installation.
 In this section, we will write the core functionality of our program: save and open session files.
 
 First, let's create a global variable to represent where we want to save the session files.
+Add the line
 ```
 set -x VS_SESSION_DIR "~/.local/share/vim/sessions"
 ```
-in your `config.fish`, or wherever you prefer to define environment variables.
+to your `config.fish`, or wherever you prefer to define environment variables.
 You can set the folder to be anything you want.
 Now `exec fish` to load this variable.
 To ensure that this variable is loaded, you can run
-```
-envs | grep ^VS_SESSION_DIR
-```
+{{ cli(command="envs | grep ^VS_SESSION_DIR") }}
 and check that there is a match.
 The command `env` prints out all currently defined environment variables - we just search for the line that starts with `VS_SESSION_DIR`.
 
