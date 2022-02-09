@@ -98,9 +98,7 @@ This utility will also be necessary later, when we provide autocompletion.
 Now, since we want multiple behaviours, we will invoke the desired behaviour with two subcommands: we will invoke the previous function with `open`, and the new listing function with `list`.
 First, we define a helper function to list sessions.
 Using `fd`, we can quickly get a list of candidate files:
-```
-fd -e vim --base-directory $VS_SESSION_DIR
-```
+{{ cli(command="fd -e vim --base-directory $VS_SESSION_DIR") }}
 However, we only want the name of the session and not the extension `.vim`.
 The easiest way to do this is to use `--exec echo {.}`: `{.}` is replaced with the filename with no extension.
 This also handles the case where the filename has multiple periods, unlike something more direct such as `cut -d "." -f 1`.
