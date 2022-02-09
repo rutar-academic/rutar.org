@@ -71,7 +71,7 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 ```
 We now have a functional terminal running inside Neovim.
 
-Another benefit of running a terminal inside Neovim is that you get tmux's <q>copy-mode</q> essentially for free.
+Another benefit of running a terminal inside Neovim is that you get tmux's **copy-mode** essentially for free.
 This is as simple as returning to normal mode and treating the terminal split as just another text file.
 
 There is one problem with this setup: if we open a file with `nvim` from inside a Neovim terminal, we get a nested Neovim instance running inside the terminal.

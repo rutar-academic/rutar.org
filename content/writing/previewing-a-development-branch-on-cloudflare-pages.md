@@ -12,7 +12,7 @@ In this article, I assume that your repository is hosted on [GitHub](https://git
 I'm sure other providers will work, with similar instructions.
 
 ## Creating the development branch
-First, create a new branch <q>development</q> (or any name you would like):
+First, create a new branch **development** (or any name you would like):
 <pre><code><kbd>git pull</kbd>
 <kbd>git branch development</kbd>
 </code></pre>
@@ -23,9 +23,9 @@ then perform the changes you want and commit them. To include those changes in y
 <kbd>git merge development</kbd>
 <kbd>git push</kbd>
 </code></pre>
-Now, we just need to push the <q>development</q> branch to our GitHub repository.
+Now, we just need to push the **development** branch to our GitHub repository.
 {{ cli(command="git push origin development") }}
-Cloudflare will automatically build changes to your development branch, which you can preview at the url `development.<project-name>.pages.dev`.
+Cloudflare will automatically build changes to your development branch, which you can preview at the URL `development.<project-name>.pages.dev`.
 
 ## Customizing the build command
 It is often the case that you want the build command for your development branch to be different than the build command for your main branch.
@@ -33,7 +33,7 @@ For example, if you use [Zola](https://getzola.org) for templating, you might bu
 {{ cli(command="zola build") }}
 whereas you might build the development branch with
 {{ cli(command="zola build --drafts") }}
-Moreover, when using Zola, the site url is automatically set based on the key `base_url` in your `config.toml`.
+Moreover, when using Zola, the site URL is automatically set based on the key `base_url` in your `config.toml`.
 This works for the main branch, but our development branch has a different URL, which will cause non-relative internal links to be broken.
 
 Conveniently, Cloudflare Pages defines an environment variable `$CF_PAGES_BRANCH`, which is the name of the branch currently being built.
