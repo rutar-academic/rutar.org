@@ -24,7 +24,7 @@ Webpages also consist of additional resources, such as images or documents.
 When you visit a webpage, your web browser requests the documents from a server.
 
 [Static](https://en.wikipedia.org/wiki/Static_web_page) and [dynamic](https://en.wikipedia.org/wiki/Dynamic_web_page) webpages differ in how the files are prepared before they are sent to the visitor.
-A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side) dynamic webpage{% inline_note() %}This is in contrast to a client-side dynamic webpage which uses Javascript, but only in your web browser.{% end %} typically consists of a database as well as code to generate the files _on the fly_ when they are requested by the visitor.
+A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side{% inline_note() %}This is in contrast to a client-side dynamic webpage which uses Javascript, but only in your web browser.{% end %}) dynamic webpage typically consists of a database as well as code to generate the files _on the fly_ when they are requested by the visitor.
 
 For example, this website is a static webpage.
 On the other hand, any webpage which allows you to log-in and have user-specific state is a dynamic webpage.
