@@ -35,7 +35,7 @@ In fact, you can make a minimal webpage (using your own device as the server) si
 ```
 <html><body>content</body></html>
 ```
-and, when you double-click on the file, it should open in your browser and show a (rather minimal) page displaying the line <strong>content</strong>.
+and, when you double-click on the file, it should open in your browser and show a (rather minimal) page displaying the line <q>content</q>.
 
 Dynamic webpages are built in a similar way, except rather than generating the pages in advance, the files sent to the visitor are generated as they are requested.
 A dynamic webpage will typically have a [database](https://en.wikipedia.org/wiki/Database) used to store the site information, and a web server which uses the database to generate content when requested by the user.
@@ -160,9 +160,9 @@ Here's an explanation of some of the tags:
 - `<nav>...</nav>`: website navigation
 - `<article>...</article>`: the 'content' of the page, i.e. your actual article or blog post but without the navigation, header, footer, etc.
 
-Now if you open the file `index.html` you should get a page with two links at the top: <strong>About</strong>, and <strong>Writing</strong>.
+Now if you open the file `index.html` you should get a page with two links at the top: **About**, and **Writing**.
 
-Unfortunately the <strong>Writing</strong> link does nothing: we need to create that page.
+Unfortunately the **Writing** link does nothing: we need to create that page.
 Create a new directory called `writing` and in that directory create a file called `index.html`.
 Then, fill it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
 ```
@@ -390,7 +390,7 @@ Here are some direct links to the files which we have prepared above:
 - {% verbose_url(title="style.css") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% end %}
 - {% verbose_url(title="404.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html{% end %}
 
-In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the <strong>View Source</strong> or <strong>Inspect Element</strong> functionality in your browser.
+In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the **View Source** or **Inspect Element** functionality in your browser.
 The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
 Whenever I need to look anything up, that's where I start.
 
@@ -414,23 +414,23 @@ I would recommend that you follow the instructions [here](https://docs.github.co
 Here are a couple notes:
 
 1. You can name the repository anything you would like (you do not need to choose `hello-world`).
-2. Optionally, you can choose the <strong>Add README</strong> option, which you can later modify to provide information on your webpage.
+2. Optionally, you can choose the **Add README** option, which you can later modify to provide information on your webpage.
    This file will be used to display information on your repository.
 3. You can also choose to either make your webpage public or private.
    A public repository means that anybody can view (but not edit) your GitHub repository, whereas only you – or anybody you give permission – will be able to see the repository if it is private.
 
 Once you've finished creating the new repository, you need to add files that we created earlier!
-To do this, click on the <strong>Add File</strong> option, beside the <strong>Code</strong> drop-down menu in green.
+To do this, click on the **Add File** option, beside the **Code** drop-down menu in green.
 
-1. If you choose the <strong>Upload files</strong> option, the file will be placed directly into the folder.
-   To upload files to a subfolder, you need to click on the subfolder first and then choose the <strong>Add File</strong> option.
+1. If you choose the **Upload files** option, the file will be placed directly into the folder.
+   To upload files to a subfolder, you need to click on the subfolder first and then choose the **Add File** option.
    Somewhat inconveniently, this requires the folder to already exist.
-2. If you choose the <strong>Create new file</strong> option, you can specify the filename directly and copy-paste the contents into the built-in browser.
+2. If you choose the **Create new file** option, you can specify the filename directly and copy-paste the contents into the built-in browser.
    In order to put the file in a subfolder, simply provide a filename containing a backslash.
-   For example, to add the HTML file for the <strong>Writing</strong> tab, enter the name <strong>writing/index.html</strong>.
+   For example, to add the HTML file for the **Writing** tab, enter the name **writing/index.html**.
 
-Once you have added the file(s), click the <strong>Commit new file</strong> option at the bottom.
-It is simplest to choose the default option (<strong>Commit directly to the `...` branch</strong>).
+Once you have added the file(s), click the **Commit new file** option at the bottom.
+It is simplest to choose the default option (**Commit directly to the `...` branch**).
 
 Once you've finished, the repository should look something like [this](https://github.com/alexrutar/webpage-example).
 
@@ -439,11 +439,11 @@ To set up the webpage with Cloudflare Pages, we first need to tell Cloudflare ab
 The best way to do this is to follow the instructions [in the Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
 Here are a couple notes:
 
-1. The <strong>Project name</strong> that you choose will be used to create the default Cloudflare Pages domain: for example, I named my project `webpage-example` and my default Cloudflare-provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
-2. Under the <strong>Build command</strong>, simply write `exit 0`.
-   Leave the <strong>Framework</strong> option and the <strong>Build output directory</strong> as their default values.
+1. The **Project name** that you choose will be used to create the default Cloudflare Pages domain: for example, I named my project `webpage-example` and my default Cloudflare-provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
+2. Under the **Build command**, simply write `exit 0`.
+   Leave the **Framework** option and the **Build output directory** as their default values.
 
-Once you've finished and selected <strong>Save and Deploy</strong>, wait for the build to finish (this will take a few minutes, even though there is nothing to build!) and then your webpage will be publicly available!
+Once you've finished and selected **Save and Deploy**, wait for the build to finish (this will take a few minutes, even though there is nothing to build!) and then your webpage will be publicly available!
 
 ### Going forward
 Now, to make edits to your webpage or add new files, simply edit existing files or add new files to the GitHub repository.
@@ -471,8 +471,8 @@ TODO: write
 Once again, since our site is already hosted on Cloudflare, let's use Cloudflare for DNS as well.
 
 #### Adding a record for our webpage
-Finally, adding the record for our webpage is straightforward: navigate to the project configuration page and select the <strong>Custom domains</strong> tab.
-Input your custom domain name and select <strong>Continue</strong>.
+Finally, adding the record for our webpage is straightforward: navigate to the project configuration page and select the **Custom domains** tab.
+Input your custom domain name and select **Continue**.
 For a bit more detail, see the [documentation](https://developers.cloudflare.com/pages/get-started#adding-a-custom-domain).
 
 Once you've done this, you might have to wait a couple minutes for the DNS to propagate (sometimes, you need to refresh your own WIFI connection) and then your site will be available at your domain!

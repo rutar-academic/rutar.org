@@ -13,7 +13,7 @@ The [pyenv](https://github.com/pyenv/pyenv) command line utility is convenient t
 
 ## Installation
 It's best to follow the above link for general installation instructions.
-Otherwise, I will assume you are using OSX with Fish Shell.
+Otherwise, I will assume you are using macOS with Fish Shell.
 
 First install `pyenv` and `pyenv-virtualenv` with brew:
 {{ cli(command="brew install pyenv pyenv-virtualenv") }}
@@ -43,7 +43,7 @@ This lets you organize what modules you have installed, as well as the python ve
 As an example, let's create a virtualenv named `my-venv`.
 First, create it with
 {{ cli(command="pyenv virtualenv 3.10.1 my-venv") }}
-Let's say we are in a project directory where I want to use the `my-venv` virual environment.
+Let's say we are in a project directory where I want to use the `my-venv` virtual environment.
 Simply create a file named `.python-version`, which is populated with the name of the desired virtual environment:
 {{ cli(command='echo "my-venv" > .python-version') }}
 Now, whenever you enter this directory, `pyenv` will automatically activate the environment, and whenever you leave, the environment will deactivate.
