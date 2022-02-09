@@ -1,0 +1,26 @@
+@import "variables";
+
+@media print {
+  @page {
+    margin: 2cm;
+  }
+  @page :first {
+    margin: 1cm 2cm 2cm;
+  }
+  body {
+    font: 13pt $primaryFonts;
+    background: #fff;
+  }
+  .container {
+    grid-template-rows: 1px auto auto;
+    & header, & nav {
+      display: none;
+    }
+  }
+  article {
+    border-top: none;
+  }
+  code {
+    border: 1px solid $borderColor;
+  }
+}
