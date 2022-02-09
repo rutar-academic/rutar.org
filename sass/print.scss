@@ -15,9 +15,6 @@
     & header, & nav {
       display: none;
     }
-    .post-footer {
-      display: none;
-    }
   }
   article {
     border-top: none;
@@ -25,11 +22,26 @@
   code {
     border: 1px solid $borderColor;
   }
+  pre code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
   .post-author {
     display: block;
     margin: 2px 0px;
   }
   .post-title {
     margin-bottom: 20px;
+  }
+
+  // NOTE: this is workaround for displaying inline notes
+  // when the float: footnote property is valid, implement this instead
+  label {
+    display: none;
+    & + input + small {
+      display: block;
+      color: $fadeColor;
+      padding: .8em 0 1em 2.5vw;;
+    }
   }
 }
