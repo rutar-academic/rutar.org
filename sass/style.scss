@@ -170,9 +170,17 @@ article {
 // -----------------------
 // Custom class formatting
 // -----------------------
-.fade, .post-date, .post-tags {
+.fade, .post-date, .post-tags, .post-author {
   font-size: 16px;
   color: $fadeColor;
+}
+
+// only display in print styles
+.post-author {
+  display: none;
+}
+.post-date, .post-author {
+  font-size: 18px;
 }
 
 // ---------------
