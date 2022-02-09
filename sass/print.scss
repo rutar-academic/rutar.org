@@ -33,6 +33,11 @@
   .post-title {
     margin-bottom: 20px;
   }
+  .post-contents {
+    h2:hover a, h3:hover a {
+      color: inherit;
+    }
+  }
 
   // NOTE: this is workaround for displaying inline notes
   // when the float: footnote property is valid, implement this instead
