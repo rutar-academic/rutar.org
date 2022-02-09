@@ -1,0 +1,48 @@
+\RequirePackage{amsmath,amssymb,amsfonts}
+\RequirePackage{mathtools}
+\RequirePackage{stmaryrd}
+\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n} % fix missing bold font error
+\RequirePackage{soul}
+
+\RequirePackage{graphicx}
+\RequirePackage{IEEEtrantools}
+\RequirePackage{mathtools}
+
+\RequirePackage{bm}
+\RequirePackage{enumitem}
+\RequirePackage{etoolbox}
+\SetEnumitemKey{nl}{nolistsep}
+\SetEnumitemKey{r}{label=(\roman*)}
+\SetEnumitemKey{a}{label=(\alph*)}
+
+\DeclareMathOperator{\N}{{\mathbb{N}}}
+\DeclareMathOperator{\Q}{{\mathbb{Q}}}
+\DeclareMathOperator{\Z}{{\mathbb{Z}}}
+\DeclareMathOperator{\R}{{\mathbb{R}}}
+\DeclareMathOperator{\C}{{\mathbb{C}}}
+\DeclareMathOperator{\F}{{\mathbb{F}}}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Tr}{Tr}
+
+% note and todo
+\newcommand{\todo}[1]{\hl{\textbf{TODO:} #1}}
+% \newcommand{\note}[1]{\colorbox{green}{\textbf{Note:} #1}}
+
+% definition
+\newcommand{\defn}[1]{\emph{#1}}
+
+% proof implications
+\newcommand{\imp}[2]{($#1\Rightarrow#2$)\hspace{0.2cm}}
+\newcommand{\impe}[2]{($#1\Leftrightarrow#2$)\hspace{0.2cm}}
+\newcommand{\impr}{{($\Longrightarrow$)\hspace{0.2cm}}}
+\newcommand{\impl}{{($\Longleftarrow$)\hspace{0.2cm}}}
+
+% convenient brackets
+\newcommand{\brac}[1]{\ensuremath{\left\langle #1 \right\rangle}}
+\newcommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
+\newcommand{\abs}[1]{\ensuremath{\left\lvert#1\right\rvert}}
+
+% arrows
+\newcommand{\lto}[0]{\ensuremath{\longrightarrow}}
+\newcommand{\fto}[1]{\ensuremath{\xrightarrow{\scriptstyle{#1}}}}
+\newcommand{\hto}[0]{\ensuremath{\hookrightarrow}}

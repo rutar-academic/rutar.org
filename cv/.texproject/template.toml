@@ -1,0 +1,14 @@
+bibstyle = 'plain'
+citations = []
+class_options = [ '12pt' ]
+constants = [ 'titlename' ]
+doctype = 'article'
+macros = [ 'general', 'typesetting', 'refs_ams', 'theorem_ams' ]
+style = 'empty'
+styles = [ 'palatino-header' ]
+
+[geometry]
+bottom = '3cm'
+left = '2.5cm'
+right = '2.5cm'
+top = '2.5cm'

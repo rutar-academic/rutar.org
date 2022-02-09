@@ -1,0 +1,25 @@
+% project macros
+\newcommand\filltoend{\leavevmode{\unskip
+          \leaders\hrule height.6ex depth\dimexpr-.5ex+0.8pt\hfill\hbox{}%
+            \parfillskip=0pt\endgraf}}
+
+\newcommand{\rsec}[1]{\section*{{#1}\phantom{o}\filltoend}}
+
+\newenvironment{twocolsec}[1]{
+    \rsec{#1}
+    \begin{tabular}{p{2.9cm}p{12.5cm}}
+}{
+    \end{tabular}
+}
+\newenvironment{threecolsec}[1]{
+    \rsec{#1}
+    \begin{tabular}{p{1cm}p{1.5cm}p{12.5cm}}
+}{
+    \end{tabular}
+}
+\newenvironment{ensec}[1]{
+    \rsec{#1}
+    \begin{enumerate}
+}{
+    \end{enumerate}
+}
