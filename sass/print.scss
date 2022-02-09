@@ -4,16 +4,18 @@
   @page {
     margin: 2cm;
   }
-  @page :first {
-    margin: 1cm 2cm 2cm;
-  }
   body {
     font: 13pt $primaryFonts;
     background: #fff;
   }
   .container {
-    grid-template-rows: 1px auto auto;
+    display: initial;
+    grid-template-rows: 0px auto auto;
+    row-gap: 0px;
     & header, & nav {
+      display: none;
+    }
+    .post-footer {
       display: none;
     }
   }
@@ -22,5 +24,12 @@
   }
   code {
     border: 1px solid $borderColor;
+  }
+  .post-author {
+    display: block;
+    margin: 2px 0px;
+  }
+  .post-title {
+    margin-bottom: 20px;
   }
 }

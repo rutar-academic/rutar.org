@@ -2,7 +2,8 @@
 {% block title %}{{ page.title | safe }}{% endblock %}
 {% block description %}{{ page.description | safe }}{% endblock %}
 {% block content %}
-<span class="fade">{% if page.draft %}DRAFT{% else %}{{ page.date | date(format="%B %-d, %Y") }}{% endif %}</span>
+<div class="post-date">{% if page.draft %}DRAFT{% else %}{{ page.date | date(format="%B %-d, %Y") }}{% endif %}</div>
+<div class="post-author">Written by <a href="{{ config.base_url }}">{{ config.extra.author }}</a></div>
 {% if page.extra.toc %}
 <h2>Contents</h2>
 <div class="toc">
