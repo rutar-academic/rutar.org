@@ -417,7 +417,7 @@ Here are a couple notes:
 2. Optionally, you can choose the **Add README** option, which you can later modify to provide information on your webpage.
    This file will be used to display information on your repository.
 3. You can also choose to either make your webpage public or private.
-   A public repository means that anybody can view (but not edit) your GitHub repository, whereas only you – or anybody you give permission – will be able to see the repository if it is private.
+   A public repository means that anybody can view (but not edit) your GitHub repository, whereas only you - or anybody you give permission - will be able to see the repository if it is private.
 
 Once you've finished creating the new repository, you need to add files that we created earlier!
 To do this, click on the **Add File** option, beside the **Code** drop-down menu in green.
@@ -436,7 +436,7 @@ Once you've finished, the repository should look something like [this](https://g
 
 ### Deploying on Cloudflare
 To set up the webpage with Cloudflare Pages, we first need to tell Cloudflare about the repository hosting our files.
-The best way to do this is to follow the instructions [in the Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
+The best way to do this is to follow the instructions in the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
 Here are a couple notes:
 
 1. The **Project name** that you choose will be used to create the default Cloudflare Pages domain: for example, I named my project `webpage-example` and my default Cloudflare-provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
