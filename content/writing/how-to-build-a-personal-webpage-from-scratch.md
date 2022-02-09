@@ -210,7 +210,6 @@ h2 {
 nav a {
   margin-left: 20px;
 }
-
 ```
 Or even adjust the colour of the text itself to something a bit more pleasant:
 ```
@@ -299,7 +298,6 @@ article {
   grid-area: ct;
   border-top: 2px solid gray;
 }
-
 ```
 We want the header to be justified to the left and the navigation bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
