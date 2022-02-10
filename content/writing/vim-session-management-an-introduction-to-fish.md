@@ -19,7 +19,7 @@ The intention of this tool is to be a wrapper around Tim Pope's [obsession.vim](
 
 1. [Easy session initialization](#session-initialization-and-management) - list sessions and open them
 2. [Active session management](#active-session-management) - we only want to allow a single instance of vim to be using a session file
-3. [Autocompletions](#autocompletions) - get relevant results when you hit <kbd>TAB</kbd>
+3. [Autocompletions](#autocompletions) - get relevant results when you hit {% kbd() %}TAB{% end %}
 
 Perhaps you simply find the session management tool useful: you can find the program in the [Git repository](https://github.com/alexrutar/vs).
 This implements all the features below, along with a couple extra useful commands, completions, and help messages.
@@ -133,7 +133,7 @@ For convenience, let's also write an interactive file chooser using [fzf](https:
 This command reads input from STDIN and opens up an interactive browser which allows selection.
 Upon choosing an option, the corresponding line is sent to STDOUT.
 This variable is captured using fish parameter expansion `(...)` and saved in the variable `fzf_session`.
-Note that if `fzf` is terminated early using <kbd>Ctrl+C</kbd>, the variable `$fzf_session` will not be saved, so we also need to check that it is non-empty.
+Note that if `fzf` is terminated early using {% kbd() %}Ctrl+C{% end %}, the variable `$fzf_session` will not be saved, so we also need to check that it is non-empty.
 
 Add the following at the beginning of the indentation block directly below `case open`:
 ```
@@ -182,7 +182,7 @@ Done!
 Cleaning up!
 {% end %}
 to your terminal.
-However, suppose instead of pressing <kbd>ENTER</kbd>, you hit <kbd>Ctrl+C</kbd> to terminate.
+However, suppose instead of pressing {% kbd() %}ENTER{% end %}, you hit {% kbd() %}Ctrl+C{% end %} to terminate.
 Then the `__example_cleanup` event runs immediately, and the function will print
 {% cli_output(command="example") %}
 Press ENTER to continue [Ctrl-C]
@@ -192,7 +192,7 @@ Even though the function never completed, the cleanup function still fires.
 
 The handler `--on-event fish_exit` also catches the case where you, say, close the entire terminal window while the function is running.
 Note that we must delete the function `__example_cleanup` when we execute it, with `functions -e`.
-Otherwise, `__example_cleanup` will continue to live in our interactive shell and will fire even if we run <kbd>Ctrl+C</kbd> during the execution of a different program.
+Otherwise, `__example_cleanup` will continue to live in our interactive shell and will fire even if we run {% kbd() %}Ctrl+C{% end %} during the execution of a different program.
 
 ### Incorporating this with file locking
 Our idea is now the following: when we first start up our session, we check for the existence of lock files.
@@ -346,7 +346,7 @@ Here are some other feature ideas:
 Finally, it would be nice to have some autocompletions for our script.
 Completion files are stored in a file with the same name as the function file, except in the `~/.config/fish/completions` directory.
 
-We want basic descriptions for the commands when we hit <kbd>TAB</kbd>, and we also want autocompletion for the session name when we call `vs open`.
+We want basic descriptions for the commands when we hit {% kbd() %}TAB{% end %}, and we also want autocompletion for the session name when we call `vs open`.
 Fish completion files are also just regular lists of functions, except they are loaded when autocompletion for a certain function is requested.
 You can read the fish [docs about completions](https://fishshell.com/docs/current/completions.html) if you would like.
 
@@ -402,4 +402,4 @@ complete -c vs -a init \
 complete -c vs -a "(vs list)" \
     -n "__fish_seen_subcommand_from open" -a "(vs list)"
 ```
-Now hitting `vs` <kbd>SPACE</kbd> <kbd>TAB</kbd> prompts with two options: `open`, or `list`, and hitting `vs open` <kbd>SPACE</kbd> <kbd>TAB</kbd> prompts with the possible session names.
+Now hitting `vs` {% kbd() %}SPACE{% end %} {% kbd() %}TAB{% end %} prompts with two options: `open`, or `list`, and hitting `vs open` {% kbd() %}SPACE{% end %} {% kbd() %}TAB{% end %} prompts with the possible session names.

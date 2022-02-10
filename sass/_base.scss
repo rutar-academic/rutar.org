@@ -146,12 +146,11 @@ p {
   margin: 10px 0;
 }
 
-p kbd {
-  border-radius: 3px;
-  padding: 0px 3px;
-  background: $borderColor;
-  border: 1.5px solid $fadeColor;
-  font: 12px/1.2 $monoFonts;
+p, ul, ol {
+  & kbd code {
+    border: 1.5px solid $fadeColor;
+    font: 12px/1.2 $monoFonts;
+  }
 }
 
 q {

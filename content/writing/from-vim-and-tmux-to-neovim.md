@@ -8,7 +8,7 @@ date = 2021-04-12
 [taxonomies]
 tags = ["vim", "shell"]
 +++
-I recently migrated from a Vim and tmux work environment to one using only [Neovim](https://github.com/neovim/neovim).
+I recently migrated from a Vim and tmux work environment to one using only [Neovim](https://github.com/neovim/neovim){% inline_note() %}Using [Vim 8](https://www.vim.org/vim-8.1-released.php) or newer should be fine as well, but I make no guarantees.{% end %}.
 In this article, I will discuss some of the issues I had with my old workflow, and why this transition resolved some of these problems.
 
 ## My work environment with Vim and tmux
@@ -25,9 +25,9 @@ However, over time, I accumulated some annoyances that were challenging to resol
 
 ## Disillusionment
 My main struggle with using Vim inside tmux is that there are often multiple ways to do the same thing.
-For example, tmux lets you split the window vertically with <kbd>Ctrl+B</kbd> <kbd>"</kbd> and Vim lets you do this with <kbd>Ctrl+W</kbd> <kbd>s</kbd> or `:vsp`.
+For example, tmux lets you split the window vertically with {% kbd() %}Ctrl+B{% end %} {% kbd() %}"{% end %} and Vim lets you do this with {% kbd() %}Ctrl+W{% end %} {% kbd() %}s{% end %} or `:vsp`.
 And these splits are not interoperable.
-Navigation commands are different, and often I found myself trying to <kbd>Ctrl+W</kbd> <kbd>L</kbd> into a tmux split, which just doesn't work.
+Navigation commands are different, and often I found myself trying to {% kbd() %}Ctrl+W{% end %} {% kbd() %}L{% end %} into a tmux split, which just doesn't work.
 Moreover, you can't yank / paste between different tmux splits.
 Other standard actions in Vim (for example, changing the directory with `:cd` or `:lcd`) have equivalences in tmux, but this requires entering verbose commands, or binding (and memorizing and using) new shortcuts.
 
@@ -57,7 +57,7 @@ For simplicity, I will only discuss my solution using Neovim.
 ### Running a terminal inside Neovim
 Running a terminal inside Neovim is very easy: just run `:term` to convert the current split into a terminal.
 Open a terminal in a new vertical split with `:vsp +term` (or any file other editing command).
-With focus on a terminal buffer, hit `i` to enter a special terminal edit mode, and return to normal mode with <kbd>Ctrl+\\</kbd> <kbd>Ctrl+N</kbd> (all other keystrokes are passed through to the interactive shell).
+With focus on a terminal buffer, hit `i` to enter a special terminal edit mode, and return to normal mode with {% kbd() %}Ctrl+\\{% end %} {% kbd() %}Ctrl+N{% end %} (all other keystrokes are passed through to the interactive shell).
 In order to use your standard login shell, add a line like
 ```
 set shell=zsh\ --login
@@ -154,13 +154,13 @@ _v() {
 }
 _v
 ```
-Now, typing `v` <kbd>SPACE</kbd> <kbd>TAB</kbd> in your terminal will offer up the acceptable possibilities for your session name.
+Now, typing `v` {% kbd() %}SPACE{% end %} {% kbd() %}TAB{% end %} in your terminal will offer up the acceptable possibilities for your session name.
 
 ## Concluding remarks and some challenges
 This setup is conspicuously missing convenient instance persistence.
 Every time you want to rejoin a session, you are sourcing a lot of Vimscript to restart the Neovim instance.
 This is quite fast, but it would be a lot better to place the Neovim instance in the background, or temporarily suspend it to rejoin it again later.
-Currently, I simply suspend my Neovim instances with <kbd>Ctrl+Z</kbd> and then restore with `fg`.
+Currently, I simply suspend my Neovim instances with {% kbd() %}Ctrl+Z{% end %} and then restore with `fg`.
 However, this is not a particularly elegant solution and I have not yet spent the time figuring out how to do this properly.
 
 So far, I am very happy with this setup.
