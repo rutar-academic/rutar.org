@@ -60,10 +60,11 @@
         <h1{% if page %} class="post-title"{% endif %}>{{ title }}</h1>
         {%- block content -%}{%- endblock -%}
       </article>
-
+      {%- if not page -%}
       <div class="display">
         {% block flexgrid %}{% endblock %}
       </div>
+      {%- endif -%}
     </div>
   </body>
 </html>
