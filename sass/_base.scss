@@ -5,8 +5,10 @@
 // Core Layout
 // -----------
 html {
-  font-size: 100%;
-  font-family: $primaryFonts;
+  font: {
+    size: 100%;
+    family: $primaryFonts;
+  }
 }
 
 body {
@@ -25,20 +27,24 @@ body {
   display: grid;
   min-width: 0;
   row-gap: 5px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 60px auto auto;
-  grid-template-areas:
-    "hd nav"
-    "ct ct"
-    "ds ds";
+  grid-template: {
+    columns: 1fr 1fr;
+    rows: 60px auto auto;
+    areas:
+      "hd nav"
+      "ct ct"
+      "ds ds";
+  }
   @include mobile {
-    grid-template-columns: auto;
-    grid-template-rows: minmax(40px,auto) minmax(30px,auto) auto auto;
-    grid-template-areas:
-      "hd"
-      "nav"
-      "ct"
-      "ds";
+    grid-template: {
+      columns: auto;
+      rows: minmax(40px,auto) minmax(30px,auto) auto auto;
+      areas:
+        "hd"
+        "nav"
+        "ct"
+        "ds";
+    }
   }
 }
 
@@ -67,10 +73,12 @@ nav {
 header {
   grid-area: hd;
   margin: 0;
-  font-weight: 300;
-  font-size: 26px;
+  font: {
+    weight: 300;
+    size: 26px;
+    style: oblique;
+  }
   letter-spacing: 1px;
-  font-style: oblique;
   justify-self: left;
   align-self: end;
 }
@@ -109,10 +117,14 @@ article {
 
 // flexible grid element for displaying things at the bottom of the page
 .display {
-  grid-area: ds;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(auto-fit, auto);
+
+  grid: {
+    area: ds;
+    template-columns: 1fr 1fr;
+    template-rows: repeat(auto-fit, auto);
+  }
+
   @include mobile {
     grid-template-columns: auto;
     grid-template-rows: repeat(auto-fit, auto);
