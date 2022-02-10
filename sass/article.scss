@@ -8,11 +8,11 @@ article {
     h2 {
       counter-reset: subsec;
     }
-    h2 a:before {
+    h2 a::before {
       counter-increment: sec;
       content: counter(sec) ".";
     }
-    h3 a:before {
+    h3 a::before {
       counter-increment: subsec;
       content: counter(sec) "." counter(subsec) ".";
     }
@@ -82,8 +82,8 @@ label {
   font-size: .75em;
   padding-left: .1em;
   color: $themeColor;
-  &:before {content:"[";}
-  &:after {content:"]";}
+  &::before {content:"[";}
+  &::after {content:"]";}
 
   & + input,
   & + input + small {
@@ -111,7 +111,7 @@ input:checked + small {
   li {
     display: block
   }
-  li:before {
+  li::before {
     content: counters(toc-item, ".") ". ";
     counter-increment: toc-item
   }

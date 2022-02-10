@@ -348,6 +348,6 @@ var {
 }
 
 // add forward slash between list elements
-.list span+span:before {
+.list span+span::before {
   content: "\0000a0/\0000a0";
 }

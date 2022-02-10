@@ -1,1 +1,17 @@
 @import "base";
+
+// flexible grid element for displaying things at the bottom of the page
+.display {
+  display: grid;
+
+  grid: {
+    area: ds;
+    template-columns: 1fr 1fr;
+    template-rows: repeat(auto-fit, auto);
+  }
+
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(auto-fit, auto);
+  }
+}
