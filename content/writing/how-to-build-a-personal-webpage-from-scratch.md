@@ -499,6 +499,7 @@ The next most important file to create would be a `favicon.ico` file: this will 
 
 ### site security
 - [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org)
+- https://webbkoll.dataskydd.net/en/
 - Cloudflare `_headers` file
 - [HSTS Preload](https://hstspreload.org)
 - [GTMetrix](https://gtmetrix.com/analyze.html)
