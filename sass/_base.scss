@@ -243,8 +243,6 @@ code {
 
 code kbd {
   color: $codeKbdColor;
-  user-select: all;
-  -webkit-user-select: all;
   &::before {
     color: $textColor;
     content: "$ ";
