@@ -8,7 +8,7 @@ date = 2021-04-14
 [taxonomies]
 tags = ["pgp"]
 +++
-In this article, I will discuss some of basic aspects of creating and using [GnuPG](https://gnupg.org/) to manage [PGP](https://www.openpgp.org/) keys for sharing of information.
+In this article, I will discuss some basic aspects to creating and using [GnuPG](https://gnupg.org/) to manage [PGP](https://www.openpgp.org/) keys for sharing of information.
 
 Public key encryption is essentially a means of enabling one-way communication between two parties.
 You generate a keypair, consisting of a public key and a private key, secure the private key, and share the public key.
@@ -16,7 +16,7 @@ Anybody who has your public key can use it to encrypt data, which then can only 
 
 A useful analogy is that a public key is like an open safe with no key: anybody can put a document inside the safe and shut the door, but once the safe door is closed, only the person with the key can open it.
 
-I will review the usage of the `gpg` command line tool, which is a commonly used implementation of the pgp standard.
+I will review the usage of the `gpg` command line tool, which is a commonly used implementation of the PGP standard.
 ## Creating and using a new keypair
 
 ### Keypair creation
@@ -41,7 +41,7 @@ In order to encrypt data to send to someone else, you first need their public ke
 Import it to your keyring with
 {{ cli(command="gpg --import pubkey.asc") }}
 If you run `gpg --list-keys`, you should now see an additional entry containing the details of the new public key you just imported.
-Now, to encrypt the file `filename` to the file `secure.gpg` for recipient `recipient@gmail`, just run
+Now, to encrypt the file `filename` to the file `secure.gpg` for recipient `recipient@email`, just run
 {{ cli(command="gpg --output secure.gpg --encrypt --recipient recipient@email filename") }}
 and the file has now been secured with the public key.
 You can also optionally sign the encrypted file with the `--sign` option.
@@ -49,7 +49,7 @@ You can also optionally sign the encrypted file with the `--sign` option.
 On the other hand, if you have received an encrypted file `secure.gpg` sent to you using your public key, just run
 {{ cli(command="gpg --output filename --decrypt secure.gpg") }}
 to create the decrypted file `filename`.
-Note that `gpg` automatically worked out the correct key to use to decrypt the file, and this command will fail if the file was not encrypted with any private key in your keyring.
+Note that `gpg` can automatically detect the correct key to use to decrypt the file, and this command will fail if the file was not encrypted with any private key in your keyring.
 
 ### Anatomy of a keyring listing
 You can list the public keys available on your device with

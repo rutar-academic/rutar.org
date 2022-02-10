@@ -24,7 +24,7 @@ Webpages also consist of additional resources, such as images or documents.
 When you visit a webpage, your web browser requests the documents from a server.
 
 [Static](https://en.wikipedia.org/wiki/Static_web_page) and [dynamic](https://en.wikipedia.org/wiki/Dynamic_web_page) webpages differ in how the files are prepared before they are sent to the visitor.
-A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side) dynamic webpage{% inline_note() %}This is in contrast to a client-side dynamic webpage which uses Javascript, but only in your web browser.{% end %} typically consists of a database as well as code to generate the files _on the fly_ when they are requested by the visitor.
+A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side{% inline_note() %}This is in contrast to a client-side dynamic webpage which uses Javascript, but only in your web browser.{% end %}) dynamic webpage typically consists of a database as well as code to generate the files _on the fly_ when they are requested by the visitor.
 
 For example, this website is a static webpage.
 On the other hand, any webpage which allows you to log-in and have user-specific state is a dynamic webpage.
@@ -35,7 +35,7 @@ In fact, you can make a minimal webpage (using your own device as the server) si
 ```
 <html><body>content</body></html>
 ```
-and, when you double-click on the file, it should open in your browser and show a (rather minimal) page displaying the line <strong>content</strong>.
+and, when you double-click on the file, it should open in your browser and show a (rather minimal) page displaying the line "content".
 
 Dynamic webpages are built in a similar way, except rather than generating the pages in advance, the files sent to the visitor are generated as they are requested.
 A dynamic webpage will typically have a [database](https://en.wikipedia.org/wiki/Database) used to store the site information, and a web server which uses the database to generate content when requested by the user.
@@ -95,7 +95,7 @@ If you do not want to install anything, [Notepad](https://www.microsoft.com/en-u
 Similarly, [TextEdit](https://support.apple.com/en-ca/guide/textedit/welcome/mac) is built-in on macOS.
 For command-line editors, you could consider [Neovim](https://neovim.io) or [Emacs](https://www.gnu.org/software/emacs/).
 
-One more subtlety is that not all text is the same.
+One subtlety is that not all text is the same.
 Underneath, text is just binary data, so rules are required to convert the binary data into the textual representation: this process is known as [character encoding](https://en.wikipedia.org/wiki/Character_encoding).
 The most common type of encoding used on webpages is [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which is the transfer format for the [Unicode](https://en.wikipedia.org/wiki/Unicode) standard.
 [ASCII](https://en.wikipedia.org/wiki/ASCII) is also a well-known encoding, but only supports a very restricted number of characters.
@@ -160,9 +160,9 @@ Here's an explanation of some of the tags:
 - `<nav>...</nav>`: website navigation
 - `<article>...</article>`: the 'content' of the page, i.e. your actual article or blog post but without the navigation, header, footer, etc.
 
-Now if you open the file `index.html` you should get a page with two links at the top: <strong>About</strong>, and <strong>Writing</strong>.
+Now if you open the file `index.html` with your web browser (you can probably just double-click it) you should get a page with two links at the top: **About**, and **Writing**.
 
-Unfortunately the <strong>Writing</strong> link does nothing: we need to create that page.
+Unfortunately the **Writing** link does nothing: we need to create that page.
 Create a new directory called `writing` and in that directory create a file called `index.html`.
 Then, fill it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
 ```
@@ -181,7 +181,7 @@ Create a file `style.css`, and add the line
 <link rel="stylesheet" type="text/css" href="style.css">
 ```
 to the `<head>` of both HTML documents.
-This tells the browser to look for a file `style.css` in the same directory as the file, which contains styling information.
+This tells the browser to look for a file named `style.css` in the same directory as the file, which contains styling information.
 While it is possible to define style inline in the HTML, this is bad practice since it is harder to maintain (as a general rule, HTML defines semantics, whereas CSS defines style).
 Also, you should add some more content to the `<article>` section: perhaps a few more headers `<h2>...</h2>` and links `<a href="...some url...">my link</a>`.
 This will make the styling changes more clear as you make them.
@@ -199,7 +199,7 @@ body {
 ```
 to the file `style.css`.
 This centres the text body, prevents it from being too wide on large screens, ensures there is a bit of a space on the boundary when the screen is small, and finally sets a new font (rather than the usual default Times New Roman).
-The `min-width: 0` is useful to prevent large elements from (accidentally) making the page very wide on screens narrower than 50em.
+The `min-width: 0` is useful to prevent large elements from (accidentally) making the page very wide on screens narrower than 700 pixels.
 
 We can also adjust the spacing so that the text is laid out a bit more nicely:
 ```
@@ -210,9 +210,8 @@ h2 {
 nav a {
   margin-left: 20px;
 }
-
 ```
-Or even adjust the colour of the text itself to something a bit more pleasant:
+And adjust the colour of the text itself to something a bit more pleasant:
 ```
 body {
   color: #444;
@@ -221,7 +220,7 @@ h1, h2, strong {
   color: #222;
 }
 ```
-Now let's fix the font sizes:
+Then touch up the font sizes:
 ```
 header {
   margin: 0px;
@@ -252,8 +251,8 @@ Our webpage looks a bit cleaner now!
 ### Grid layout
 However, we need to address some more serious layout problems: currently, the navigation is way too small, and the header does not stand out at all.
 
-To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid){% inline_note() %}A nice reference for CSS Grid can be found <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">here</a>.{% end %}.
-Essentially, grid allows us to specify layout in a parent element, and then place the children inside this layout.
+To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid).{% inline_note() %}A nice reference for CSS Grid can be found <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">here</a>.{% end %}
+Essentially, CSS Grid allows us to specify layout in a parent element, and then place the children inside this layout.
 
 First, let's specify the general layout of our grid.
 We want three sections: a header in the top left (for our title), a navigation bar in the top right, and then a main area containing all the content of the site.
@@ -273,8 +272,8 @@ Let's break down what this is doing.
 
 - `display: grid`: this element is specifying a grid layout for its children.
 - `row-gap: 5px`: have some space between the rows
-- `grid-template-columns: auto auto`: determine the width of the columns automatically
-- `grid-template-rows: 60px auto`: set the first row (containing the header and navigation bar) to have height 60 pixels, and the second row to be sized automatically based on the content
+- `grid-template-columns: auto auto`: we have two columns, and we want to determine their widths automatically
+- `grid-template-rows: 60px auto`: we have two rows, where the first row (containing the header and navigation bar) has a height of 60 pixels, and the second row is sized automatically based on the content
 - `grid-template-areas: ...`: assign names to the areas.
   We have `header` in the top left, `nav` in the top right, and `ct` everywhere else (spanning both columns).
   Note that the names can be whatever you would like (there is no special meaning assigned to using `header` and `nav`).
@@ -299,13 +298,12 @@ article {
   grid-area: ct;
   border-top: 2px solid gray;
 }
-
 ```
 We want the header to be justified to the left and the navigation bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
 This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!
 In general, `align` refers to vertical placement and `justify` refers to horizontal placement.
-Finally, we add a line above the `<article>` element with `border-top: 2px solid gray` to separate our header and navigation bar from the rest of the content.
+Finally, we add a line above the `<article>` element with `border-top: 2px solid gray` to visually separate our header and navigation bar from the rest of the content.
 
 ### Responsive design
 Now, our layout looks decent on a computer, but now we might have some problems on small screens!
@@ -350,8 +348,8 @@ Now, our webpage also looks respectable even when viewed on exceptionally tiny p
 Throughout this article, the links have been written in the form `href="style.css"`.
 This specifies a _relative link_: the file path is taken relative to the directory that the file in which the link sits.
 When deploying the webpage to a server, you will want to write this in the form `href="/style.css"`, which will give a link to the root of your website.
-This tells the browser to take whatever the base URL (for example {% verbose_url() %}https://example.rutar.org{% end %}) and append the link.
-However, when browsing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/style.css` will (attempt to) link to the root of your filesystem directory, which is not what you want!
+This tells the browser to take the base URL (for example {% verbose_url() %}https://example.rutar.org{% end %}) and append the link.
+However, when browsing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/style.css` will (attempt to) link to the root of your filesystem directory, which was not what we wanted!
 
 Moreover, there is a convention for linking directly to files HTML files: files with the name `index.html` are given special treatment.
 Suppose your directory structure looks like the following:
@@ -369,7 +367,7 @@ To summarize, here are the changes we need to make (in all the HTML files):
 - change `href="index.html"` to `href="/"`
 - change `href="writing.html"` to `href="/writing/"`
 
-Our links will no longer work properly when browsing the files locally, but when we create host our webpage, the links will now work properly.
+Our links will no longer work properly when browsing the files locally, but when our webpage is online, the links will now work properly.
 We also want to deal with the case where the user tries to browse to a link which does not exist.
 For example, on this site, if you navigate to a URL like {% verbose_url() %}https://rutar.org/does-not-exist{% end %}, you will be shown a page explaining what happened.
 
@@ -392,7 +390,7 @@ Here are some direct links to the files which we have prepared above:
 - {% verbose_url(title="style.css") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% end %}
 - {% verbose_url(title="404.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html{% end %}
 
-In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the <strong>View Source</strong> or <strong>Inspect Element</strong> functionality in your browser.
+In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the **View Source** or **Inspect Element** functionality in your browser.
 The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
 Whenever I need to look anything up, that's where I start.
 
@@ -416,36 +414,36 @@ I would recommend that you follow the instructions [here](https://docs.github.co
 Here are a couple notes:
 
 1. You can name the repository anything you would like (you do not need to choose `hello-world`).
-2. Optionally, you can choose the <strong>Add README</strong> option, which you can later modify to provide information on your webpage.
+2. Optionally, you can choose the **Add README** option, which you can later modify to provide information on your webpage.
    This file will be used to display information on your repository.
 3. You can also choose to either make your webpage public or private.
-   A public repository means that anybody can view (but not edit) your GitHub repository, whereas only you – or anybody you give permission – will be able to see the repository if it is private.
+   A public repository means that anybody can view (but not edit) your GitHub repository, whereas only you - or anybody you give permission - will be able to see the repository if it is private.
 
 Once you've finished creating the new repository, you need to add files that we created earlier!
-To do this, click on the <strong>Add File</strong> option, beside the <strong>Code</strong> drop-down menu in green.
+To do this, click on the **Add File** option, beside the **Code** drop-down menu in green.
 
-1. If you choose the <strong>Upload files</strong> option, the file will be placed directly into the folder.
-   To upload files to a subfolder, you need to click on the subfolder first and then choose the <strong>Add File</strong> option.
+1. If you choose the **Upload files** option, the file will be placed directly into the folder.
+   To upload files to a subfolder, you need to click on the subfolder first and then choose the **Add File** option.
    Somewhat inconveniently, this requires the folder to already exist.
-2. If you choose the <strong>Create new file</strong> option, you can specify the filename directly and copy-paste the contents into the built-in browser.
+2. If you choose the **Create new file** option, you can specify the filename directly and copy-paste the contents into the built-in browser.
    In order to put the file in a subfolder, simply provide a filename containing a backslash.
-   For example, to add the HTML file for the <strong>Writing</strong> tab, enter the name <strong>writing/index.html</strong>.
+   For example, to add the HTML file for the **Writing** tab, enter the name **writing/index.html**.
 
-Once you have added the file(s), click the <strong>Commit new file</strong> option at the bottom.
-It is simplest to choose the default option (<strong>Commit directly to the `...` branch</strong>).
+Once you have added the file(s), click the **Commit new file** option at the bottom.
+It is simplest to choose the default option (**Commit directly to the `...` branch**).
 
 Once you've finished, the repository should look something like [this](https://github.com/alexrutar/webpage-example).
 
 ### Deploying on Cloudflare
 To set up the webpage with Cloudflare Pages, we first need to tell Cloudflare about the repository hosting our files.
-The best way to do this is to follow the instructions [in the Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
+The best way to do this is to follow the instructions in the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
 Here are a couple notes:
 
-1. The <strong>Project name</strong> that you choose will be used to create the default Cloudflare Pages domain: for example, I named my project `webpage-example` and my default Cloudflare-provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
-2. Under the <strong>Build command</strong>, simply write `exit 0`.
-   Leave the <strong>Framework</strong> option and the <strong>Build output directory</strong> as their default values.
+1. The **Project name** that you choose will be used to create the default Cloudflare Pages domain: for example, I named my project `webpage-example` and my default Cloudflare-provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
+2. Under the **Build command**, simply write `exit 0`.
+   Leave the **Framework** option and the **Build output directory** as their default values.
 
-Once you've finished and selected <strong>Save and Deploy</strong>, wait for the build to finish (this will take a few minutes, even though there is nothing to build!) and then your webpage will be publicly available!
+Once you've finished and selected **Save and Deploy**, wait for the build to finish (this will take a few minutes, even though there is nothing to build!) and then your webpage will be publicly available!
 
 ### Going forward
 Now, to make edits to your webpage or add new files, simply edit existing files or add new files to the GitHub repository.
@@ -473,8 +471,8 @@ TODO: write
 Once again, since our site is already hosted on Cloudflare, let's use Cloudflare for DNS as well.
 
 #### Adding a record for our webpage
-Finally, adding the record for our webpage is straightforward: navigate to the project configuration page and select the <strong>Custom domains</strong> tab.
-Input your custom domain name and select <strong>Continue</strong>.
+Finally, adding the record for our webpage is straightforward: navigate to the project configuration page and select the **Custom domains** tab.
+Input your custom domain name and select **Continue**.
 For a bit more detail, see the [documentation](https://developers.cloudflare.com/pages/get-started#adding-a-custom-domain).
 
 Once you've done this, you might have to wait a couple minutes for the DNS to propagate (sometimes, you need to refresh your own WIFI connection) and then your site will be available at your domain!
@@ -501,6 +499,7 @@ The next most important file to create would be a `favicon.ico` file: this will 
 
 ### site security
 - [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org)
+- https://webbkoll.dataskydd.net/en/
 - Cloudflare `_headers` file
 - [HSTS Preload](https://hstspreload.org)
 - [GTMetrix](https://gtmetrix.com/analyze.html)

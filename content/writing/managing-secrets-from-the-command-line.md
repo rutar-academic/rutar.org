@@ -9,24 +9,26 @@ date = 2022-01-16
 [taxonomies]
 tags = ["cli", "pgp", "shell"]
 +++
-## Managing secrets programatically
+## Managing secrets programmatically
 Generally speaking, it's not a great idea to store password files in plain text on your computer.
 However, it is often useful to be able to save and inject secrets directly into scripts, or otherwise access them from the command line.
+I like [fish shell](https://fishshell.com), so all the examples are written in its scripting language.
+However, they should be sufficiently simple to recreate with something widespread.
 
 Here are two convenient options which I personally use.
 
 ### Keyring
-Perhaps the easiest option is to use the [keyring](https://pypi.org/project/keyring/) utility, which integrates nicely with the MacOS keychain.
+Perhaps the easiest option is to use the [keyring](https://pypi.org/project/keyring/) utility, which integrates nicely with the macOS keychain.
 Install it with
 {{ cli(command="pip install keyring") }}
 Add secrets with
 {{ cli(command="keyring set <secret-name> <username>") }}
 and retrieve them with
 {{ cli(command="keyring get <secret-name> <username>") }}
-Note that this prints the secret to stdout.
-To copy the output to the clipboard, simply pipe to pbcopy (on Mac OS):
+Note that this prints the secret to STDOUT.
+To copy the output to the clipboard instead, simply pipe to pbcopy (on macOS):
 {{ cli(command="keyring get <secret> <username> | pbcopy") }}
-Since keyring is also a python module, it is useful when programatically accessing secrets from within python scripts.
+Since keyring is also a python module, it is useful when programmatically accessing secrets from within python scripts.
 
 ### Pass
 Another useful option is [pass](https://www.passwordstore.org/): visit the page for installation instructions for your device.

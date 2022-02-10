@@ -2,7 +2,7 @@
 {% macro data_link(key, data, attr="name") %}
   {%- if data is containing(key) -%}
     {%- set source = data[key]-%}
-    <a class="hidden-link" href="{{ source.url | safe }}">{{ source[attr] | safe }}</a>
+    <a rel="noopener" target="_blank" class="hidden-link" href="{{ source.url | safe }}">{{ source[attr] | safe }}</a>
   {%- endif -%}
 {%- endmacro %}
 
@@ -30,7 +30,7 @@
       {%- if name is matching("code") %}{% set opts = ["download"] %}
       {%- endif -%}
 
-      <a href="{{ prefix ~ url | safe }}"{% if opts %} {{ opts | join(sep=" ") }}{% endif %}>{{ name }}</a>{% if loop.last == false%}{{ join_str | safe }}{% endif %}
+      <a rel="noopener" target="_blank" href="{{ prefix ~ url | safe }}"{% if opts %} {{ opts | join(sep=" ") }}{% endif %}>{{ name }}</a>{% if loop.last == false%}{{ join_str | safe }}{% endif %}
     {%- endfor -%}
     {{ post | safe }}
   {%- endif -%}
