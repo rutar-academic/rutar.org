@@ -1,0 +1,172 @@
+@import "base";
+@import "variables";
+
+article {
+  // setup counters for article section, subsection, etc.
+  .post-contents {
+    counter-reset: sec;
+    h2 {
+      counter-reset: subsec;
+    }
+    h2 a:before {
+      counter-increment: sec;
+      content: counter(sec) ".";
+    }
+    h3 a:before {
+      counter-increment: subsec;
+      content: counter(sec) "." counter(subsec) ".";
+    }
+
+    // show anchor link when hovering
+    h2:hover a, h3:hover a {
+      color: $themeColor;
+    }
+  }
+
+  // post footer
+  .post-footer {
+    border-top: 2px solid $borderColor;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "date tags";
+    width: 100%;
+    @include mobile {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "date"
+        "tags";
+    }
+
+    // info (name + copyright)
+    .post-info {
+      grid-area: date;
+    }
+
+    // tags
+    .post-tags {
+      grid-area: tags;
+      justify-self: right;
+      @include mobile {
+        justify-self: left;
+      }
+    }
+  }
+}
+
+.post-date, .post-tags, .post-author {
+  font-size: 16px;
+  color: $fadeColor;
+}
+
+// only display in print styles
+.post-author {
+  display: none;
+}
+.post-date, .post-author {
+  font-size: 18px;
+}
+
+h1.post-title {
+  text-align: center;
+}
+
+// Inline notes
+// ------------
+label {
+  cursor: pointer;
+  vertical-align: super;
+  line-height: 1;
+  font-size: .75em;
+  padding-left: .1em;
+  color: $themeColor;
+  &:before {content:"[";}
+  &:after {content:"]";}
+
+  & + input,
+  & + input + small {
+    display: none;
+  }
+}
+
+input:checked + small {
+  display: block;
+  color: $fadeColor;
+  padding: .8em 0 1em 2.5vw;;
+}
+
+// table of contents
+// -----------------
+.toc {
+  border-left: 2px solid $borderColor;
+  li {
+    margin: 0;
+  }
+  // nested numbering
+  ol {
+    counter-reset: toc-item
+  }
+  li {
+    display: block
+  }
+  li:before {
+    content: counters(toc-item, ".") ". ";
+    counter-increment: toc-item
+  }
+}
+
+// ------------
+// Print Styles
+// ------------
+@media print {
+  @page {
+    margin: 2cm;
+  }
+  body {
+    font: 13pt $primaryFonts;
+    background: #fff;
+  }
+  .container {
+    display: initial;
+    grid-template-rows: 0px auto auto;
+    row-gap: 0px;
+    & header, & nav {
+      display: none;
+    }
+  }
+  article {
+    border-top: none;
+  }
+  code {
+    border: 1px solid $borderColor;
+  }
+  pre code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .post-author {
+    display: block;
+    margin: 2px 0px;
+  }
+  .post-title {
+    margin-bottom: 20px;
+  }
+  .post-contents {
+    h2:hover a, h3:hover a {
+      color: inherit;
+    }
+  }
+
+  // NOTE: this is workaround for displaying inline notes
+  // when the float: footnote property is valid, implement this instead
+  label {
+    display: none;
+    & + input + small {
+      display: block;
+      color: $fadeColor;
+      padding: .8em 0 1em 2.5vw;;
+    }
+  }
+}

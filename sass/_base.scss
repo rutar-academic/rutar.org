@@ -1,0 +1,339 @@
+@import "reset";
+@import "variables";
+
+// -----------
+// Core Layout
+// -----------
+html {
+  font-size: 100%;
+  font-family: $primaryFonts;
+}
+
+body {
+  background: $mainBackgroundColor;
+  font: 18px/1.4 $primaryFonts;
+  color: $textColor;
+}
+
+// main wrapper for content: defines grid
+.container {
+  background: $contentBackgroundColor;
+  margin: 0 auto;
+  max-width: $maxWidth;
+  padding: 0 10px 25px;
+  width: 100%;
+  display: grid;
+  min-width: 0;
+  row-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px auto auto;
+  grid-template-areas:
+    "hd nav"
+    "ct ct"
+    "ds ds";
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-rows: minmax(40px,auto) minmax(30px,auto) auto auto;
+    grid-template-areas:
+      "hd"
+      "nav"
+      "ct"
+      "ds";
+  }
+}
+
+// nav grid element
+nav {
+  grid-area: nav;
+  justify-self: right;
+  align-self: end;
+  font-size: 18px;
+  a {
+    margin-left: 20px;
+    color: $textColor;
+    text-align: right;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    // colour links on mobile
+    @include mobile {
+      margin: 0 10px;
+      color: $themeColor;
+    }
+  }
+}
+
+// header grid element
+header {
+  grid-area: hd;
+  margin: 0;
+  font-weight: 300;
+  font-size: 26px;
+  letter-spacing: 1px;
+  font-style: oblique;
+  justify-self: left;
+  align-self: end;
+}
+
+header, h1, h2, h3, h4, h5, h6 {
+  line-height: 1.0;
+  padding: 0;
+  @include mobile {
+    line-height: 1.1;
+  }
+  a {
+    color: inherit;
+  }
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+// center headers when on mobile
+header, nav {
+  @include mobile {
+    text-align: center;
+    justify-self: center;
+  }
+}
+
+// article grid element
+article {
+  grid-area: ct;
+  min-width: 0;
+  max-width: 100%;
+  border-top: 2px solid $borderColor;
+
+}
+
+// flexible grid element for displaying things at the bottom of the page
+.display {
+  grid-area: ds;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, auto);
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(auto-fit, auto);
+  }
+}
+
+// -----------------------
+// Custom class formatting
+// -----------------------
+.fade {
+  font-size: 16px;
+  color: $fadeColor;
+}
+
+// ---------------
+// Text Formatting
+// ---------------
+p {
+  margin: 10px 0;
+}
+
+p kbd {
+  border-radius: 3px;
+  padding: 0px 3px;
+  background: $borderColor;
+  border: 1.5px solid $fadeColor;
+  font: 12px/1.2 $monoFonts;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
+}
+
+// Specify the color of the selection
+::selection {
+  background: $selectionColor;
+}
+
+em, i {
+  font-style: italic;
+}
+
+cite, b, strong {
+  font-weight: bold;
+}
+
+a {
+  color: $themeColor;
+  text-decoration: none;
+  cursor: pointer;
+  &.hidden-link {
+    color: inherit;
+  }
+  &:hover, &:active {
+    color: $themeColor;
+  }
+  &.active {
+    color: $themeColor;
+  }
+  &.verbose-url {
+    word-wrap: break-word;
+    font-size: 16px;
+    font-family: $monoFonts;
+    background: $tableBackgroundColor;
+  }
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin: 0.8em 0 12px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+  color: $fadeColor;
+}
+
+
+// -----------------------------
+// Structural element formatting
+// -----------------------------
+address {
+  margin: 1.8em .8em;
+  border-left: 2px solid $fadeColor;
+  padding: 0 1rem;
+  font-style: italic;
+  p {
+    margin: 2px 0;
+  }
+}
+
+code {
+  font: 15px/1.4 $monoFonts;
+  background: $borderColor;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+code kbd {
+  color: $codeKbdColor;
+  user-select: all;
+  -webkit-user-select: all;
+  &::before {
+    color: $textColor;
+    content: "$ ";
+  }
+}
+
+code mark {
+  background-color: $codeMarkColor;
+}
+
+// render display-style code so you can scroll to see really wide lines
+pre code {
+  background: $borderColor;
+  padding: 10px;
+  max-width: 100%;
+  min-width: 0;
+  display: block;
+  overflow-x: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  thead tr th {
+    padding: 3px 10px;
+    background-color: $tableBackgroundColor;
+    text-align: left;
+    border-bottom: 1px solid $borderColor;
+  }
+  tbody tr td {
+    padding: 3px 10px;
+    word-wrap: normal;
+    max-width: 90%;
+    border-bottom: 1px solid $borderColor;
+  }
+  &.full-width {
+    width: 100%;
+  }
+  &.pub {
+    tbody tr td {
+      padding: 1px 5px;
+    }
+    margin: 1px 0 0 25px;
+  }
+}
+
+span.side-count {
+  color: $fadeColor;
+  font-style: italic;
+}
+
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ol {
+  list-style-type: decimal;
+  &.pubs li {
+    margin-bottom: 5px;
+  }
+}
+
+ol ul, ul ol, ul ul, ol ol {
+  margin: 0;
+}
+
+li {
+  margin: 2px 0;
+}
+
+// --------------------
+// Misc. other elements
+// --------------------
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 1em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: small;
+  color: $fadeColor;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 70%;
+}
+
+var {
+  font-family: $mathFonts;
+  font-style: italic;
+}
