@@ -23,7 +23,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
     </tr>
     <tr>
       <td>Links:</td>
-      <td>{{ linker::list_links(hash=publ.links) }}</td>
+      <td class="list">{{ linker::list_links(hash=publ.links) }}</td>
     </tr>
     </table>
   </li>
@@ -44,7 +44,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
     <tr>
       <td>{{ software.description }}</td>
       <td>{{ software.lang }}</td>
-      <td>{{ linker::list_links(hash=software.links) }}</td>
+      <td class="list">{{ linker::list_links(hash=software.links) }}</td>
     </tr>
   </tbody>
 {%- endfor -%}
@@ -58,7 +58,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
 {%- if talk.venue_url -%}{% set talk_name = '<a href="' ~ talk.venue_url ~ '" class="hidden-link">' ~ talk.venue ~ '</a>' %}
   {%- else -%}{% set talk_name = talk.venue %}
   {%- endif %}
-  <li>{{ talk.date | date(format="%b. %Y") }} - {{ talk.title }} - {{ talk_name | safe }} {{ linker::list_links(hash=talk.links, pre="(", post=")") | safe }}</li>
+  <li class="list">{{ talk.date | date(format="%b. %Y") }} - {{ talk.title }} - {{ talk_name | safe }} {{ linker::list_links(hash=talk.links, pre="(", post=")") | safe }}</li>
   {% endfor -%}
 </ul>
 {% endblock %}

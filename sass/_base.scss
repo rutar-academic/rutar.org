@@ -346,3 +346,8 @@ var {
   font-family: $mathFonts;
   font-style: italic;
 }
+
+// add forward slash between list elements
+.list span+span:before {
+  content: "\0000a0/\0000a0";
+}

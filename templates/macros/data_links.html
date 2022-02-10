@@ -13,7 +13,7 @@
   {%- endfor -%}
 {% endmacro %}
 
-{% macro list_links(hash, join_str=" / ", pre="", post="") %}
+{% macro list_links(hash, pre="", post="") %}
   {%- if hash | length != 0 -%}
     {{ pre | safe }}
     {%- for name, url in hash -%}
@@ -30,7 +30,7 @@
       {%- if name is matching("code") %}{% set opts = ["download"] %}
       {%- endif -%}
 
-      <a rel="noopener" target="_blank" href="{{ prefix ~ url | safe }}"{% if opts %} {{ opts | join(sep=" ") }}{% endif %}>{{ name }}</a>{% if loop.last == false%}{{ join_str | safe }}{% endif %}
+      <span><a rel="noopener" target="_blank" href="{{ prefix ~ url | safe }}"{% if opts %} {{ opts | join(sep=" ") }}{% endif %}>{{ name }}</a></span>
     {%- endfor -%}
     {{ post | safe }}
   {%- endif -%}
