@@ -5,16 +5,16 @@ article {
   // setup counters for article section, subsection, etc.
   .post-contents {
     counter-reset: sec;
-    h2 {
+    // when https://github.com/getzola/zola/issues/1759 is resolved
+    // add another space here
+    h2 span::after {
       counter-reset: subsec;
-    }
-    h2 a::before {
       counter-increment: sec;
-      content: counter(sec) ".";
+      content: counter(sec) ".\0000a0";
     }
-    h3 a::before {
+    h3 span::after {
       counter-increment: subsec;
-      content: counter(sec) "." counter(subsec) ".";
+      content: counter(sec) "." counter(subsec) ".\0000a0";
     }
 
     // show anchor link when hovering
@@ -43,6 +43,9 @@ article {
     // info (name + copyright)
     .post-info {
       grid-area: date;
+      & span+span::before {
+        content: "\0000a0\2013\0000a0";
+      }
     }
 
     // tags
@@ -160,7 +163,7 @@ input:checked + small {
   }
 
   // NOTE: this is workaround for displaying inline notes
-  // when the float: footnote property is valid, implement this instead
+  // when the "float: footnote" property is valid, implement this instead
   label {
     display: none;
     & + input + small {
