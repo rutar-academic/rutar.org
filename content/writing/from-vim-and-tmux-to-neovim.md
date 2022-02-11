@@ -33,7 +33,7 @@ Other standard actions in Vim (for example, changing the directory with `:cd` or
 
 Having to change my mindset from tmux mode to Vim mode was a frequent source of friction in my workflow.
 
-I also had some other more minor, but long-running, gripes with tmux.
+I also had some other more minor, but long--running, gripes with tmux.
 
 1. The tmux-resurrect plugin is great, but it occasionally struggles to restart windows running an instance of Vim.
 Moreover, shutting down tmux sessions with Vim instances active has a tendency to create floating swap files.
@@ -87,15 +87,15 @@ Called with an optional file argument (which defaults to placing a `Session.vim`
 While `:mksession` works very well at saving the state, it can be quite tedious to use in practice.
 However, with a small amount of work we can use it to robustly save the state of our Neovim instance, and restore it when needed.
 
-The first trick is the easiest: just install Tim Pope's [vim-obsession](https://github.com/tpope/vim-obsession).
+The first trick is the easiest: just install Tim Pope's [obsession.vim](https://github.com/tpope/vim-obsession).
 This plugin defines an `:Obsess` command, which is used in the same way as `:mksession`, but with some great quality of life features:
 
 1. It automatically saves the session at every `BufEnter` event.
 2. It maintains its own state within the session file, so any session you restore is automatically saved.
 
-It does some other nice things, which you can read about on the Vim-obsession page linked above.
+It does some other nice things, which you can read about on the obsession.vim page linked above.
 
-In practice, using Vim-obsession looks something like the following.
+In practice, using obsession.vim looks something like the following.
 You open up a new workspace `nvim filename` and run `:Obsess session.vim` (or whatever filename you want).
 Edit as normally, creating new splits or tabs liberally, and when you are finished, just `:wa` `:qa`.
 Next time you are in the same directory and want to edit the files, restart the session with `nvim -S session.vim`.

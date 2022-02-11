@@ -17,9 +17,9 @@ However, the project is relatively new, so it can be somewhat challenging to fin
 In this article, we will develop a basic session management tool for (Neo)Vim.
 The intention of this tool is to be a wrapper around Tim Pope's [obsession.vim](https://github.com/tpope/vim-obsession) plugin, with the following features:
 
-1. [Easy session initialization](#session-initialization-and-management) - list sessions and open them
-2. [Active session management](#active-session-management) - we only want to allow a single instance of vim to be using a session file
-3. [Autocompletions](#autocompletions) - get relevant results when you hit {% kbd() %}TAB{% end %}
+1. [Easy session initialization](#session-initialization-and-management): list sessions and open them
+2. [Active session management](#active-session-management): we only want to allow a single instance of vim to be using a session file
+3. [Autocompletions](#autocompletions): get relevant results when you hit {% kbd() %}TAB{% end %}
 
 Perhaps you simply find the session management tool useful: you can find the program in the [Git repository](https://github.com/alexrutar/vs).
 This implements all the features below, along with a couple extra useful commands, completions, and help messages.
@@ -43,7 +43,7 @@ Now `exec fish` to load this variable.
 To ensure that this variable is loaded, you can run
 {{ cli(command="envs | grep ^VS_SESSION_DIR") }}
 and check that there is a match.
-The command `env` prints out all currently defined environment variables - we just search for the line that starts with `VS_SESSION_DIR`.
+The command `env` prints out all currently defined environment variables---we just search for the line that starts with `VS_SESSION_DIR`.
 
 ### A wrapper for Obsession.vim
 [Obsession.vim](https://github.com/tpope/vim-obsession) is itself a wrapper around the vim command `:mksession`, which creates a session file and saves the current state of vim (e.g. tabs, windows, layout, etc.) to that file.

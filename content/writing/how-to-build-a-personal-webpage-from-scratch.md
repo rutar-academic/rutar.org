@@ -49,7 +49,7 @@ Here is a short list of reasons why you should prefer simple static webpages (if
 
 - __Longevity.__
   A static webpage is just a collection of files, which you should also have saved on your computer.
-  So even in the worst case scenario - say your web server disappears - you still have the files for your webpage and you can just put them up somewhere else.
+  So even in the worst case scenario---say your web server disappears---you still have the files for your webpage and you can just put them up somewhere else.
   Static webpages are also easier to maintain: if you have a dynamic webpage, you need to keep the required tools up to date otherwise everything will cease to work.
 - __Portability.__
   If you decide that you want to host your webpage somewhere else, this is straightforward to do.
@@ -289,7 +289,6 @@ nav {
   grid-area: nav;
   justify-self: right;
   align-self: end;
-
 }
 nav a {
   text-align: right;
@@ -328,12 +327,10 @@ This is done with the following CSS code.
     "nav"
     "ct"
   }
-
   header, nav {
     text-align: center;
     justify-self: center;
   }
-
   nav a {
     margin: 0 10px;
   }
@@ -405,8 +402,8 @@ In order to do this, we will use [GitHub](https://github.com) to host our files,
 
 GitHub is a hosting provider for [git](https://git-scm.com), which is software for tracking and saving changes to a set of files.
 In fact, I would recommend that you learn how to use git locally, and then integrate it with GitHub.
-However, the tutorial for setting this up is much to involved for this article!
-You can find some pointers to get started on the [git webpage](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) and on [GitHub](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources).
+However, the tutorial for setting this up is beyond the scope this article!
+If you are interested in this, you can find some pointers to get started on the [git webpage](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) and on [GitHub](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources).
 
 ### Creating the repository on GitHub
 First, you need to create a new repository.
@@ -417,7 +414,7 @@ Here are a couple notes:
 2. Optionally, you can choose the **Add README** option, which you can later modify to provide information on your webpage.
    This file will be used to display information on your repository.
 3. You can also choose to either make your webpage public or private.
-   A public repository means that anybody can view (but not edit) your GitHub repository, whereas only you - or anybody you give permission - will be able to see the repository if it is private.
+   A public repository means that anybody can view (but not edit) your GitHub repository, whereas only you---or anybody you give permission---will be able to see the repository if it is private.
 
 Once you've finished creating the new repository, you need to add files that we created earlier!
 To do this, click on the **Add File** option, beside the **Code** drop-down menu in green.
@@ -439,7 +436,7 @@ To set up the webpage with Cloudflare Pages, we first need to tell Cloudflare ab
 The best way to do this is to follow the instructions in the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
 Here are a couple notes:
 
-1. The **Project name** that you choose will be used to create the default Cloudflare Pages domain: for example, I named my project `webpage-example` and my default Cloudflare-provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
+1. The **Project name** that you choose will be used to create the default Cloudflare Pages domain: for example, I named my project `webpage-example` and my default Cloudflare--provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
 2. Under the **Build command**, simply write `exit 0`.
    Leave the **Framework** option and the **Build output directory** as their default values.
 
@@ -462,7 +459,7 @@ In terms of domain registrars, I would recommend one of the following:
 - [AWS Route 53](https://aws.amazon.com/route53/)
 - [Namecheap](https://www.namecheap.com)
 
-I would definitely be careful with other hosts - certain popular domain registrars engage in [shady practices](https://news.ycombinator.com/item?id=24506303) such as registering domains that you look up on their site so that they can make you pay more money for them!
+I would definitely be careful with other hosts---certain popular domain registrars engage in [shady practices](https://news.ycombinator.com/item?id=24506303) such as registering domains that you look up on their site so that they can make you pay more money for them!
 For simplicity, in this tutorial we will use Cloudflare.
 
 TODO: write
@@ -483,9 +480,9 @@ A [favicon](https://en.wikipedia.org/wiki/Favicon) is a small image loaded by th
 There is a lot of different advice on how to appropriately set favicons, and unfortunately a lot of it is very outdated.
 
 These days, modern browsers support [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) favicons and this format is easiest way to add a favicon to your webpage: it is lightweight and scales properly.
-There are lots of tools available to create these images - I used [this site](https://formito.com/tools/favicon).
-You can also just download an icon from a place like [font awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) - there are a lot of options.
-There's a [web-hosted implementation](https://jakearchibald.github.io/svgomg/) of the [svgo tool](https://github.com/svg/svgo) which is useful for compressing your SVG file.
+There are lots of tools available to create these images---I used [this site](https://formito.com/tools/favicon).
+You can also just download an icon from a place like [font awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free).
+There is also a [web-hosted implementation](https://jakearchibald.github.io/svgomg/) of the [svgo tool](https://github.com/svg/svgo) which is useful for compressing your SVG file.
 
 To add the favicon to our webpage, first copy the icon file, say `icon.svg`, to the `static/` folder.
 Then add the following line to the `<head>` of your base template.
