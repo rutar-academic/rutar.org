@@ -251,7 +251,7 @@ Our webpage looks a bit cleaner now!
 ### Grid layout
 However, we need to address some more serious layout problems: currently, the navigation is way too small, and the header does not stand out at all.
 
-To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid).{% inline_note() %}A nice reference for CSS Grid can be found <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">here</a>.{% end %}
+To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid).{% inline_note() %}A nice reference for CSS Grid can be found [here](https://css-tricks.com/snippets/css/complete-guide-grid/).{% end %}
 Essentially, CSS Grid allows us to specify layout in a parent element, and then place the children inside this layout.
 
 First, let's specify the general layout of our grid.
