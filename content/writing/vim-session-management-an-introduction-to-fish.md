@@ -24,7 +24,7 @@ The intention of this tool is to be a wrapper around Tim Pope's [obsession.vim](
 Perhaps you simply find the session management tool useful: you can find the program in the [Git repository](https://github.com/alexrutar/vs).
 This implements all the features below, along with a couple extra useful commands, completions, and help messages.
 
-### Pre-requisites
+### Prerequisites
 I will assume that you have the tools [fd](https://github.com/sharkdp/fd) and [fzf](https://github.com/junegunn/fzf) installed and accessible in your shell.
 If you don't, you can simply omit the components that use `fzf`, and rewrite the parts using `fd` to use `find` instead.
 I will also assume you know a bit about (Neo)Vim, including plugin installation.
