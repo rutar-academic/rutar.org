@@ -10,10 +10,10 @@ toc = true
 [taxonomies]
 tags = ["cli", "fish"]
 +++
+## Objectives
 [Fish shell](https://fishshell.com) is a user-friendly command line shell and scripting langauge.
 However, the project is relatively new, so it can be somewhat challenging to find concise information on how to use the scripting language.
 
-## Objectives
 In this article, we will develop a basic session management tool for (Neo)Vim.
 The intention of this tool is to be a wrapper around Tim Pope's [obsession.vim](https://github.com/tpope/vim-obsession) plugin, with the following features:
 
