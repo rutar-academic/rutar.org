@@ -7,13 +7,17 @@ article {
     counter-reset: sec;
     // when https://github.com/getzola/zola/issues/1759 is resolved
     // add another space here
-    h2 span::after {
-      counter-reset: subsec;
+    h2 {
       counter-increment: sec;
+      counter-reset: subsec;
+    }
+    h3 {
+      counter-increment: subsec;
+    }
+    h2 span::after {
       content: counter(sec) ".\0000a0";
     }
     h3 span::after {
-      counter-increment: subsec;
       content: counter(sec) "." counter(subsec) ".\0000a0";
     }
 
