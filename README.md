@@ -4,6 +4,10 @@ The site is built using the [zola](https://www.getzola.org/documentation/getting
 If you want to build this locally, just `git clone`, change into the directory, and `zola serve`.
 My site is hosted on [Cloudflare](https://pages.cloudflare.com/).
 
+## License
+The code for this site is licensed under the [MIT License](/LICENSE).
+The content for this site is [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
 ## Building and Verification
 Running
 ```
