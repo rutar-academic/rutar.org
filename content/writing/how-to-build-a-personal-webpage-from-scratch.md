@@ -24,14 +24,14 @@ Webpages also consist of additional resources, such as images or documents.
 When you visit a webpage, your web browser requests the documents from a server.
 
 [Static](https://en.wikipedia.org/wiki/Static_web_page) and [dynamic](https://en.wikipedia.org/wiki/Dynamic_web_page) webpages differ in how the files are prepared before they are sent to the visitor.
-A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side{% inline_note() %}This is in contrast to a client-side dynamic webpage which uses Javascript, but only in your web browser.{% end %}) dynamic webpage typically consists of a database as well as code to generate the files _on the fly_ when they are requested by the visitor.
+A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side{% inline_note() %}This is in contrast to a client-side dynamic webpage which uses JavaScript, but only in your web browser.{% end %}) dynamic webpage typically consists of a database as well as code to generate the files _on the fly_ when they are requested by the visitor.
 
 For example, this website is a static webpage.
 On the other hand, any webpage which allows you to log-in and have user-specific state is a dynamic webpage.
 The majority of web pages on the internet are dynamic webpages.
 
 When building a static webpage, you can simply prepare the entire webpage as a directory containing files.
-In fact, you can make a minimal webpage (using your own device as the server) simply by writing a bit of HTML with no CSS or JavaScript: create a file named `index.html` with the contents
+In fact, you can make a webpage (using your own device as the server) simply by writing a bit of HTML with no CSS or JavaScript: create a file named `index.html` with the contents
 ```
 <html><body>content</body></html>
 ```
@@ -82,7 +82,6 @@ There are three main components to static website generation:
 
 Of course, templating is mainly a convenience feature, and not strictly necessary when making a small website.
 I'll discuss the other two components in the following sections, along with some additional topics in the [final section](#further-topics).
-<!-- You can read more about templating TODO: add link -->
 
 ### A note on editing text
 HTML is a [markup language](https://en.wikipedia.org/wiki/Markup_language), which means that the text represents content, rather than being the content visually.
@@ -256,7 +255,7 @@ Essentially, CSS Grid allows us to specify layout in a parent element, and then 
 
 First, let's specify the general layout of our grid.
 We want three sections: a header in the top left (for our title), a navigation bar in the top right, and then a main area containing all the content of the site.
-Let's target the `<body>` element to set up this grid:
+We will target the `<body>` element to set up this grid:
 ```
 body {
   display: grid;
@@ -298,11 +297,11 @@ article {
   border-top: 2px solid gray;
 }
 ```
-We want the header to be justified to the left and the navigation bar to be justified to the right.
+Here is a quick explanation of this does.
+First, we want the header to be justified to the left and the navigation bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
-This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!
-In general, `align` refers to vertical placement and `justify` refers to horizontal placement.
-Finally, we add a line above the `<article>` element with `border-top: 2px solid gray` to visually separate our header and navigation bar from the rest of the content.
+This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!{% inline_note() %}In general, `align` refers to vertical placement and `justify` refers to horizontal placement.{% end %}
+Finally, we add a border above the `<article>` element with `border-top: 2px solid gray` to visually separate our header and navigation bar from the rest of the content.
 
 ### Responsive design
 Now, our layout looks decent on a computer, but now we might have some problems on small screens!
@@ -316,7 +315,7 @@ Here, we only change the styling a bit:
 - centre the header and navigation bar
 - remove the asymmetric styling on the navigation links
 
-This is done with the following CSS code.
+This is done with the following CSS.
 ```
 @media screen and (max-width: 430px) {
   body {
@@ -394,9 +393,9 @@ Whenever I need to look anything up, that's where I start.
 If your browser is Safari on macOS, you can enable some nice development features with the [Safari developer tools](https://support.apple.com/en-ca/guide/safari/sfri20948/mac) option.
 For example, this allows you to emulate different browsers, and enter a responsive design mode which allows you to manually modify the screen size and view how your webpage will change.
 
-Firefox also has similar functionality built in to the [Firefox developer tools](https://developer.mozilla.org/en-US/docs/Tools), and the Google Chrome browser in [Chrome DevTools](https://developer.chrome.com/docs/devtools/).
+Firefox also has similar functionality built into the [Firefox developer tools](https://developer.mozilla.org/en-US/docs/Tools), and the Google Chrome browser in [Chrome DevTools](https://developer.chrome.com/docs/devtools/).
 
-## Deployment with GitHub and Cloudflare Pages
+## Deployment with GitHub and Cloudflare (or GitHub) Pages
 Now that we have created our personal webpage, we want to make it publicly available!
 In order to do this, we will use [GitHub](https://github.com) to host our files, and then integrate Cloudflare Pages with our GitHub account to take the hosted files and deploy them to our domain.
 
@@ -405,16 +404,40 @@ In fact, I would recommend that you learn how to use git locally, and then integ
 However, the tutorial for setting this up is beyond the scope this article!
 If you are interested in this, you can find some pointers to get started on the [git webpage](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) and on [GitHub](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources).
 
+For site deployment, I will cover two main options: using [GitHub Pages](https://pages.github.com), or using [Cloudflare Pages](https://pages.cloudflare.com).
+Both options are free.
+General, Cloudflare Pages is a more robust web hosting solution than GitHub Pages, whereas GitHub Pages is specialized for GitHub repositories.
+Here are some benefits of using Cloudflare Pages over GitHub Pages:
+
+1. **Easier custom domain setup.**
+   Since Cloudflare is also a domain registrar and DNS provider, they will manage many of the details for you which makes setup substantially simpler.
+2. **Support for multiple sites.**
+   GitHub Pages restricts you account to 1 site per account, whereas Cloudflare Pages lets you have as many options as you would like.
+3. **Repository privacy.**
+   Unless you pay, GitHub Pages requires your repository [to be public](https://docs.github.com/en/get-started/learning-about-github/githubs-products).
+   It is possible, but somewhat complicated, to work around this requirement.
+   Cloudflare Pages lets you link public or private repositories.
+
+Cloudflare probably also has better server performance, but for a small static webpage, the difference is minimal.
+
+On the other hand, the main reason to prefer GitHub Pages over Cloudflare Pages is **decreased complexity**: as we will see below, GitHub Pages is very easy to set up, especially since we already need to host our webpage code on GitHub.
+The Cloudflare webpage is also rather developer-oriented, so the dashboard can be a bit confusing to use at first.
+
+With GitHub Pages, your default URL will be `your-username.github.io` , where `your-username` is the username you use to sign up for GitHub Pages.
+With Cloudflare Pages, your URL will be `project-name.pages.dev`, where `project-name` is something you can choose individually for each webpage.
+
 ### Creating the repository on GitHub
 First, you need to create a new repository.
 I would recommend that you follow the instructions [here](https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-repository).
 Here are a couple notes:
 
-1. You can name the repository anything you would like (you do not need to choose `hello-world`).
+1. If you are using Cloudflare Pages, you can name the repository anything you would like (you do not need to choose `hello-world`).
+   _If you are using GitHub Pages, you must name the repository `your-username.github.io`._
 2. Optionally, you can choose the **Add README** option, which you can later modify to provide information on your webpage.
-   This file will be used to display information on your repository.
-3. You can also choose to either make your webpage public or private.
+   This file will be used to display information on your repository page.
+3. You can also choose to either make your webpage **public** or **private**.
    A public repository means that anybody can view (but not edit) your GitHub repository, whereas only you---or anybody you give permission---will be able to see the repository if it is private.
+   _If you are using GitHub Pages, your repository must be **public**._
 
 Once you've finished creating the new repository, you need to add files that we created earlier!
 To do this, click on the **Add File** option, beside the **Code** drop-down menu in green.
@@ -427,65 +450,108 @@ To do this, click on the **Add File** option, beside the **Code** drop-down menu
    For example, to add the HTML file for the **Writing** tab, enter the name **writing/index.html**.
 
 Once you have added the file(s), click the **Commit new file** option at the bottom.
-It is simplest to choose the default option (**Commit directly to the `...` branch**).
+It is simplest to choose the default option (**Commit directly to the ------ branch**).
 
 Once you've finished, the repository should look something like [this](https://github.com/alexrutar/webpage-example).
 
+If you have decided to use GitHub Pages, your page should automatically deploy after a few minutes!
+To see the status of the build, go to the **Actions** tab.
+You can also see the current status in the **Environments** section of the sidebar on the right hand side.
+
 ### Deploying on Cloudflare
-To set up the webpage with Cloudflare Pages, we first need to tell Cloudflare about the repository hosting our files.
-The best way to do this is to follow the instructions in the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
+To set up the webpage with Cloudflare Pages, we first need to tell Cloudflare about the repository hosting our files. The best way to do this is to follow the instructions in the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
 Here are a couple notes:
 
-1. The **Project name** that you choose will be used to create the default Cloudflare Pages domain: for example, I named my project `webpage-example` and my default Cloudflare--provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
+1. The **Project name** that you choose will be used to create the default domain.
+   For example, I named my project `webpage-example` and my default Cloudflare--provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
 2. Under the **Build command**, simply write `exit 0`.
    Leave the **Framework** option and the **Build output directory** as their default values.
 
 Once you've finished and selected **Save and Deploy**, wait for the build to finish (this will take a few minutes, even though there is nothing to build!) and then your webpage will be publicly available!
 
-### Going forward
+### Adding and modifying content
 Now, to make edits to your webpage or add new files, simply edit existing files or add new files to the GitHub repository.
-Once the changes are committed to the repository, Cloudflare will automatically update your webpage!
+Once the changes are committed to the repository, Cloudflare Pages (or Github Pages) will automatically update your webpage!
+Note that there will be a delay---approximately two minutes---from when you commit the change, until the changes are available.
+
+### A note on git and commits
+Underlying GitHub is the git version control software.
+Essentially, a commit is a complete copy of the state of all the files that git is tracking, at a given point in time.{% inline_note() %}Internally, git only saves the differences, or this would take a large amount of storage space!{% end %}
+Because of this, git saves your entire history, which makes it relatively straightforward to undo changes and view the state of your site in the past.
+Git is also useful to version control other important files!
+
+It is also possible to have multiple versions of your content using [git branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
+For example, it is even possible to [preview a development branch](https://rutar.org/writing/previewing-a-development-branch-on-cloudflare-pages/) automatically using Cloudflare Pages.
+
+However, doing anything complicated in the GitHub browser is either tedious or impossible.
+Because of this, I would recommend using git locally, modifying files on your computer, and then synchronizing the changes with your GitHub account.
+
+There are also many options to test changes locally before committing them to your GitHub repository.
+For example, you can use the [built-in Python web server](https://docs.python.org/3/library/http.server.html), or a [more robust option](https://caddyserver.com).
+This way, you can test changes to your site without interfering with your webpage, until you are confident the changes are doing what you expect!
 
 ## Further topics
-### Custom domain setup
+### Custom domains
+If you followed the instructions above, your URL looks like `your-username.github.io` or `project-name.pages.dev`.
+However, it is also possible to host your website under a custom URL.
+Beyond the aesthetic benefits of having a distinctive URL, there are a few additional benefits:
+
+- **Domain name perpetuity.**
+  Domain name registration is regulated by [ICANN](https://www.icann.org/registrants), and domain name ownership is protected under [certain rules](https://www.icann.org/resources/pages/benefits-2013-09-16-en).
+  Even if your registrar goes out of business, the domain name is still legally yours.
+  On the other hand, while GitHub and Cloudflare Pages are likely to remain in business for at least a few years, on long timeframes---say multiple decades---there is risk that these sites will cease to exist.
+  Having your own domain guarantees that your site is always available at the same address on the web.
+- **Email routing.**
+  It is also possible to use your domain name to route emails.
+  For example, you can contact me at {% verbose_url(title="alex@rutar.org") %}mailto:alex@rutar.org{% end %}.
+  Again, this is useful since it is a perpetual email address associated with your name, and you do not need to worry about losing your address if your provider goes out of business.
+
 There are a few parts to setting up a custom domain.
 First, you need to register a domain name, and then you need to set up [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) to associate your domain name with the address where your webpage is hosted.
 
-#### Domain Name Registration
-[ICANN](https://www.icann.org/registrants) is the main body responsible for regulating domain name registration.
 In terms of domain registrars, I would recommend one of the following:
 
 - [Cloudflare Registrar](https://www.cloudflare.com/en-ca/products/registrar/)
 - [AWS Route 53](https://aws.amazon.com/route53/)
-- [Namecheap](https://www.namecheap.com)
+- [Gandi](https://gandi.net)
 
 I would definitely be careful with other hosts---certain popular domain registrars engage in [shady practices](https://news.ycombinator.com/item?id=24506303) such as registering domains that you look up on their site so that they can make you pay more money for them!
-For simplicity, in this tutorial we will use Cloudflare.
+Domain name pricing is also problematic, since many registrars will allow you to register a new domain for a low cost but then charge high renewal fees!
 
-TODO: write
+In this tutorial we will use Cloudflare.
+Conveniently, Cloudflare manages DNS and name registration simultaneously, which makes it very easy to set up a new domain.
+Moreover, if your site is already hosted on Cloudflare, adding the correct DNS records to make your site available can be performed semi-automatically.
 
-#### Setting up DNS on Cloudflare
-Once again, since our site is already hosted on Cloudflare, let's use Cloudflare for DNS as well.
+#### Domain name registration
+In order to register a new domain, carefully follow the instructions in the [documentation](https://developers.cloudflare.com/registrar/get-started/register-domain).
+It is important to provide accurate information here, since as discussed before, domain name ownership gives you certain legal rights, and providing correct information is required to maintain this.
+Note that this information will not be displayed online since Cloudflare uses [WHOIS redaction](https://developers.cloudflare.com/registrar/why-choose-cloudflare/whois-redaction){% inline_note() %}[WHOIS](https://en.wikipedia.org/wiki/WHOIS) is a protocol which enables lookup of domain ownership records.
+You can see the records for my domain [here](https://whois.gandi.net/en/results?search=rutar.org).{% end %}.
+
+#### Setting up DNS
+Essentially, [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) provides a standardized way to convert web addresses, e.g. {% verbose_url() %}https://rutar.org{% end %}, into [IP Addresses](https://en.wikipedia.org/wiki/IP_address).
+As a mildly crude analogy, one can think of DNS as a mapping from house addresses to GPS coordinates.
+
+Conveniently, since we are also using Cloudflare for DNS, the domain is automatically linked to the DNS page.
+To see your DNS record page, navigate to the **Websites** tab, select your domain name, then navigate to the **DNS** tab.
 
 #### Adding a record for our webpage
-Finally, adding the record for our webpage is straightforward: navigate to the project configuration page and select the **Custom domains** tab.
+Finally, adding the record for our webpage is straightforward: navigate to the project configuration page (in the **Pages** tab) and select the **Custom domains** tab.
 Input your custom domain name and select **Continue**.
 For a bit more detail, see the [documentation](https://developers.cloudflare.com/pages/get-started#adding-a-custom-domain).
 
 Once you've done this, you might have to wait a couple minutes for the DNS to propagate (sometimes, you need to refresh your own WIFI connection) and then your site will be available at your domain!
 
-
-### Creating favicons
+### Adding a favicon
 A [favicon](https://en.wikipedia.org/wiki/Favicon) is a small image loaded by the browser and displayed on the website tab.
 There is a lot of different advice on how to appropriately set favicons, and unfortunately a lot of it is very outdated.
 
-These days, modern browsers support [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) favicons and this format is easiest way to add a favicon to your webpage: it is lightweight and scales properly.
+These days, modern browsers support [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) favicons and this format is the simplest and most robust way to add a favicon to your webpage: it is lightweight and scales properly.
 There are lots of tools available to create these images---I used [this site](https://formito.com/tools/favicon).
 You can also just download an icon from a place like [font awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free).
-There is also a [web-hosted implementation](https://jakearchibald.github.io/svgomg/) of the [svgo tool](https://github.com/svg/svgo) which is useful for compressing your SVG file.
 
 To add the favicon to our webpage, first copy the icon file, say `icon.svg`, to the `static/` folder.
-Then add the following line to the `<head>` of your base template.
+Then add the following line to the `<head>` of each page on your site:
 ```
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 ```
@@ -494,12 +560,89 @@ This tells the browser that there's an icon located at `/icon.svg`, and that it'
 If you wish to support more devices, I'd recommend that you read this [favicon article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs).
 The next most important file to create would be a `favicon.ico` file: this will display the favicon even on outdated browsers.
 
-### site security
-- [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org)
-- https://webbkoll.dataskydd.net/en/
-- Cloudflare `_headers` file
-- [HSTS Preload](https://hstspreload.org)
-- [GTMetrix](https://gtmetrix.com/analyze.html)
+### Site security
+In order to prevent malicious parties from hijacking your web traffic and impersonating your site, it is important that all HTTP connections are encrypted with [HTTPS](https://en.wikipedia.org/wiki/HTTPS).
+There are [many opinions](https://doesmysiteneedhttps.com/) on why HTTPS is important.
 
-### HTTPS
-- [read about why HTTPS](https://doesmysiteneedhttps.com/)
+With Cloudflare Pages and GitHub Pages, this is automatically managed on your behalf: if you navigate to your site, you should a small lock symbol somewhere near the address bar.
+If you click on this lock symbol, your browser will show some information about the connection.
+
+However, beyond serving your content over HTTPS, there are some other site security features you can implement with a minimal amount of effort.
+
+#### Basic security headers
+[HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) are used to to pass additional (often meta) information with the body of the HTTP request.
+One usage of HTTP headers is to make guarantees about the content and prevent your site from being misused, or the content from being hijacked.
+
+In order to add headers to your site hosted on Cloudflare, you simply need to add a file called `_headers` to your project directory.
+The syntax for the headers document is of the form
+```
+[url]
+  [name]: [value]
+```
+You can read more about the `_headers` file on the [Cloudflare documentation](https://developers.cloudflare.com/pages/platform/headers).
+
+For now, populate the file with the following contents:
+```
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
+```
+This adds the following headers to any HTTP request set to a URL matching the `/*` pattern (that is, every URL on your site):
+
+- [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options): This prevents your site from being embedded on other websites.
+- [X-Content-Type-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options): Don't let the browser guess what type of content you are linking.
+  This requires that you properly label the content type in linked content, e.g. `type="text/css"` from the [CSS link](#styling-the-page).
+- [Referrer-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy): Control what information is passed along when a visitor clicks on links in your site.
+  The value `same-origin` means that, if a visitor to your webpage navigates clicks on a URL that is not on your site, no information is passed along.
+
+#### Content security policy
+A [content security policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is a way for your site to declare what type of content it is serving.
+This can be used to guarantee that the content on your site is sent exactly as you intended, along with some other features.
+
+For our example site, since all the content is served from the same domain (`self`), and the only non-HTML content we are serving are CSS pages and images (for example, the favicon), our CSP can be pretty restrictive.
+Here's what we will use:
+```
+Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'self'; upgrade-insecure-requests; form-action 'none'; base-uri 'none'; frame-ancestors 'none'
+```
+Here is an explanation of the various components.
+
+- `default-src 'none'`: by default, we are serving no content other than HTML.
+- `img-src 'self'` and `style-src 'self'`: include CSS and images, but only from the same domain.
+- `upgrade-insecure-requests`: redirect `http://` to `https://`.
+- `form-action 'none'`: do not send HTTP forms anywhere.
+- `base-uri: none`: the document base URL is just `/`.
+- `frame-ancestors 'none'`: similar to the `X-Frame-Options: DENY` from before, since it prevents your site from being embedded elsewhere.
+
+To see more details on creating a content security policy, the [MDN page](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP#writing_a_policy) has a nice explanation.
+Note that if you want to include JavaScript (or other content), especially content loaded from a different domain, modifying your CSP will require a bit more work.
+
+#### HSTS Preload
+Essentially, [HTTP Strict Transport Security (HSTS)](https://hstspreload.org) provides a list of sites that are hard-coded to be using HTTPS.
+This list is used by your browser to guarantee to prevent connecting to a site on the list without using HTTPS.
+If you are committed to using HTTPS, you can register your site for HSTS Preload.
+
+In order to implement this, you need to register your site at the URL {% verbose_url() %}https://hstspreload.org{% end %}.
+Most of the steps are already done: the only thing that remains to be done is to add the `Strict-Transport-Security` header as follows:
+```
+Strict-Transport-Security: max-age=31536000; preload; includeSubDomains
+```
+You can also view the status of your domain by using the search bar at the top of the page.
+
+Another option is to enable this on Cloudflare directly: follow the instructions [here](https://developers.cloudflare.com/ssl/edge-certificates/additional-options/http-strict-transport-security#enable-hsts).
+You must set the Max Age header to 12 months, and I would also recommend selecting all the other options.
+
+#### Complete header file
+Here are the contents of the `_headers` file, assuming you have implemented all of the recommendations above.
+```
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
+  Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'self'; upgrade-insecure-requests; form-action 'none'; base-uri 'none'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000; preload; includeSubDomains
+```
+You can also see the file [here](https://raw.githubusercontent.com/alexrutar/webpage-example/master/_headers).
+
+There are many ways to verify that the headers are loaded properly on your site.
+The [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org) page is a nice resource, along with {% verbose_url %}https://webbkoll.dataskydd.net/en/{% end %} for giving more detailed information and recommendations.
