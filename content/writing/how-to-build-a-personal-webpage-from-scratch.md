@@ -72,7 +72,8 @@ There are three main components to static website generation:
   You should choose a templating engine and then prepare the website template.
   I am personally a fan of [Zola](https://getzola.org); some other common options are [Jekyll](https://jekyllrb.com/) and [Hugo](https://gohugo.io/).
 2. __Content__.
-  A website needs content!
+  The most important part of a webpage is the content!
+  Beyond that, it's nice if your webpage also looks decent.
   You need to write base HTML files and CSS style sheets, as well as the webpage content.
 3. __Deployment__.
   While it is possible (and not too difficult) to host your own static site server, it is typically easiest to use static site hosting.
@@ -105,7 +106,7 @@ I'm going to assume you know some basics of HTML and CSS.
 There are lots of tutorials online; here is a [nice one](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/).
 I'd recommend you read the articles on [HTML basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) and [CSS basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics).
 
-In this section, I'll give a streamlined description of setting up a basic functional webpage.
+In this section, I'll give a complete (albeit streamlined) description of setting up a basic functional webpage.
 We are going to create 4 files:
 ```
 .
@@ -162,7 +163,14 @@ Now if you open the file `index.html` with your web browser (you can probably ju
 
 Unfortunately the **Writing** link does nothing: we need to create that page.
 Create a new directory called `writing` and in that directory create a file called `index.html`.
-Then, fill it with pretty much the same contents as `index.html`, but replace the `<article>...</article>` with something slightly different, say
+Then, fill it with pretty much the same contents as `index.html`, but replace the `<nav>...</nav>` with the contents
+```
+<nav>
+  <a href="index.html">Writing</a>
+  <a href="../index.html">About</a>
+</nav>
+```
+and replace the `<article>...</article>` with something slightly different, say
 ```
 <article>
   <h1>Some things I've written</h1>
@@ -342,7 +350,9 @@ Now, our webpage also looks respectable even when viewed on exceptionally tiny p
 ### Dealing with links
 Throughout this article, the links have been written in the form `href="style.css"`.
 This specifies a _relative link_: the file path is taken relative to the directory that the file in which the link sits.
-When deploying the webpage to a server, you will want to write this in the form `href="/style.css"`, which will give a link to the root of your website.
+The syntax `href="../"` specifies that we are referring to a file in the directory containing the current file.
+
+However, when deploying the webpage to a server, you will want to write the links in the form `href="/style.css"`, which will give a link to the root of your website.
 This tells the browser to take the base URL (for example {% verbose_url() %}https://example.rutar.org{% end %}) and append the link.
 However, when browsing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/style.css` will (attempt to) link to the root of your filesystem directory, which was not what we wanted!
 
@@ -356,11 +366,11 @@ Suppose your directory structure looks like the following:
 ```
 Now, you can reference the file `index.html` with `href="/"` and the file `writing/index.html` with `href="/writing/"`.
 This is the standard way to include files in your project repository.
-To summarize, here are the changes we need to make (in all the HTML files):
+To summarize, here are the changes we need to make:
 
-- change `href="style.css"` to `href="/style.css"`
-- change `href="index.html"` to `href="/"`
-- change `href="writing.html"` to `href="/writing/"`
+- in both HTML files, change `href="style.css"` to `href="/style.css"`
+- in `writing/index.html`, change `href="index.html"` to `href="/writing/"` and `href="../index.html"` to `href="/"`
+- in `index.html`, change `href="index/writing.html"` to `href="/writing/"` and `href="index.html"` to `href="/"`
 
 Our links will no longer work properly when browsing the files locally, but when our webpage is online, the links will now work properly.
 We also want to deal with the case where the user tries to browse to a link which does not exist.
@@ -380,10 +390,10 @@ You can ignore the additional files: those will be explained in later sections.
 
 Here are some direct links to the files which we have prepared above:
 
-- {% verbose_url(title="index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html{% end %}
-- {% verbose_url(title="writing/index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing/index.html{% end %}
-- {% verbose_url(title="style.css") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% end %}
 - {% verbose_url(title="404.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html{% end %}
+- {% verbose_url(title="index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html{% end %}
+- {% verbose_url(title="style.css") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% end %}
+- {% verbose_url(title="writing/index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing/index.html{% end %}
 
 In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the **View Source** or **Inspect Element** functionality in your browser.
 The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
