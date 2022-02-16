@@ -2,8 +2,7 @@
 title = "How to Build a Personal Webpage from Scratch"
 description = "An opinionated introduction to designing and deploying a modern static webpage."
 weight = 0
-date = 2022-02-05
-draft = true
+date = 2022-02-16
 
 [extra]
 toc = true
