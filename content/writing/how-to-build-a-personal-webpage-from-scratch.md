@@ -644,4 +644,4 @@ Here are the contents of the `_headers` file, assuming you have implemented all 
 You can also see the file [here](https://raw.githubusercontent.com/alexrutar/webpage-example/master/_headers).
 
 There are many ways to verify that the headers are loaded properly on your site.
-The [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org) page is a nice resource, along with {% verbose_url %}https://webbkoll.dataskydd.net/en/{% end %} for giving more detailed information and recommendations.
+The [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org) page is a nice resource, along with {% verbose_url() %}https://webbkoll.dataskydd.net/en/{% end %} for giving more detailed information and recommendations.
