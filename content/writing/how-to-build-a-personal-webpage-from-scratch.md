@@ -558,6 +558,7 @@ There is a lot of different advice on how to appropriately set favicons, and unf
 These days, modern browsers support [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) favicons and this format is the simplest and most robust way to add a favicon to your webpage: it is lightweight and scales properly.
 There are lots of tools available to create these images---I used [this site](https://formito.com/tools/favicon).
 You can also just download an icon from a place like [font awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free).
+If you want to create a custom icon, you can use an [online SVG editor](https://yqnn.github.io/svg-path-editor/).
 
 To add the favicon to our webpage, first copy the icon file, say `icon.svg`, to the `static/` folder.
 Then add the following line to the `<head>` of each page on your site:
