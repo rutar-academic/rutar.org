@@ -643,7 +643,7 @@ Strict-Transport-Security: max-age=31536000; preload; includeSubDomains
 You can also view the status of your domain by using the search bar at the top of the page.
 
 Another option is to enable this on Cloudflare directly: follow the instructions [here](https://developers.cloudflare.com/ssl/edge-certificates/additional-options/http-strict-transport-security#enable-hsts).
-You must set the Max Age header to 12 months, and I would also recommend selecting all the other options.
+You must set the **Max Age** setting to 12 months, and I would also recommend selecting all the other options.
 
 #### Complete header file
 Here are the contents of the `_headers` file, assuming you have implemented all of the recommendations above.
