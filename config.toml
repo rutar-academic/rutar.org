@@ -1,6 +1,4 @@
 base_url = "https://rutar.org"
-title = "Alex Rutar's Blog"
-description = "Personal webpage for math and related topics."
 compile_sass = true
 build_search_index = false
 

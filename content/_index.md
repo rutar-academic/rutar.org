@@ -1,7 +1,7 @@
 +++
 title = "About"
 template = "index.html"
-description = "Personal webpage of Alex Rutar, a mathematics PhD at the University of St Andrews in fractal geometry and ergodic theory."
+description = "Personal webpage for math and related topics."
 +++
 {% hidden_link(url="/images/alex.jpg") %}I{% end %} am a maths PhD student at the {% hidden_link(url="https://www.st-andrews.ac.uk/mathematics-statistics/") %}University of St Andrews, Scotland{% end %} (supervised by {{ data_link(key="jmfraser", path="data/people.json", attr="short_name") }} and {{ data_link(key="kjfalconer", path="data/people.json", attr="short_name") }}) in the [analysis group](http://www.mcs.st-and.ac.uk/pg/pure/Analysis/index.html).
 
