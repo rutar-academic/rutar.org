@@ -190,7 +190,7 @@ a {
     color: $themeColor;
   }
   &.verbose-url {
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     font-size: 16px;
     font-family: $monoFonts;
     background: $tableBackgroundColor;
