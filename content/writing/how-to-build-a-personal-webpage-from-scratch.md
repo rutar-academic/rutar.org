@@ -307,7 +307,7 @@ article {
 Here is a quick explanation of this does.
 First, we want the header to be justified to the left and the navigation bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
-This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!{% inline_note() %}In general, `align` refers to vertical placement and `justify` refers to horizontal placement.{% end %}
+This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!{% inline_note() %}In general, *align* refers to vertical placement and *justify* refers to horizontal placement.{% end %}
 Finally, we add a border above the `<article>` element with `border-top: 2px solid gray` to visually separate our header and navigation bar from the rest of the content.
 
 ### Responsive design
@@ -461,14 +461,17 @@ To do this, click on the **Add File** option, beside the **Code** drop-down menu
 Once you have added the file(s), click the **Commit new file** option at the bottom.
 It is simplest to choose the default option (**Commit directly to the ------ branch**).
 
-Once you've finished, the repository should look something like [this](https://github.com/alexrutar/webpage-example).
+When you've finished, the repository should look something like [this](https://github.com/alexrutar/webpage-example).
 
 If you have decided to use GitHub Pages, your page should automatically deploy after a few minutes!
 To see the status of the build, go to the **Actions** tab.
 You can also see the current status in the **Environments** section of the sidebar on the right hand side.
 
 ### Deploying on Cloudflare
-To set up the webpage with Cloudflare Pages, we first need to tell Cloudflare about the repository hosting our files. The best way to do this is to follow the instructions in the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started#connecting-your-git-provider-to-pages).
+In this section, I will recommend that you follow the instructions in the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/get-started) for complete detail.
+The general idea is to navigate to the **Pages** tab, select **Create a project**, and follow the instructions.
+You need to link your GitHub account so that Cloudflare can automatically read the code and update your webpage whenever the code changes.
+
 Here are a couple notes:
 
 1. The **Project name** that you choose will be used to create the default domain.
@@ -476,7 +479,7 @@ Here are a couple notes:
 2. Under the **Build command**, simply write `exit 0`.
    Leave the **Framework** option and the **Build output directory** as their default values.
 
-Once you've finished and selected **Save and Deploy**, wait for the build to finish (this will take a few minutes, even though there is nothing to build!) and then your webpage will be publicly available!
+Once you've finished, click **Save and Deploy**, wait for the build to finish---this will take a few minutes, even though there is nothing to build---and then your webpage will be publicly available!
 
 ### Adding and modifying content
 Now, to make edits to your webpage or add new files, simply edit existing files or add new files to the GitHub repository.
