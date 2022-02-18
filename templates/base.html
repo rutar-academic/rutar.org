@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-{%- if page %}
-{%- set title = page.title %}
-{%- set description = page.description %}
-{%- elif section %}
-{%- set title = section.title %}
-{%- set description = section.description %}
-{%- elif current_path %}
-  {%- if current_path == "/tags/" %}
-  {%- set title = "All Tags" %}
-  {%- set description = "All posts and tags." %}
-  {%- elif current_path is starting_with("/tags/") %}
-  {%- set title = "Tag: " ~ term.name %}
-  {%- set description = "All pages with tag " ~ term.name %}
-  {%- endif %}
-{%- else %}
-{%- set title = "Page Not Found" %}
-{%- set description = "Error: page not found" %}
-{%- endif %}
-{#- note: once https://github.com/Keats/tera/issues/265 is implemented, can reuse block - for now, this is a workaround #}
+{%- if page -%}
+{%- set title = page.title -%}
+{%- set description = page.description -%}
+{%- elif section -%}
+{%- set title = section.title -%}
+{%- set description = section.description -%}
+{%- elif current_path -%}
+  {%- if current_path == "/tags/" -%}
+  {%- set title = "All Tags" -%}
+  {%- set description = "All posts and tags." -%}
+  {%- elif current_path is starting_with("/tags/") -%}
+  {%- set title = "Tag: " ~ term.name -%}
+  {%- set description = "All pages with tag " ~ term.name -%}
+  {%- endif -%}
+{%- else -%}
+{%- set title = "Page Not Found" -%}
+{%- set description = "Error: page not found" -%}
+{%- endif -%}
+{#- note: once https://github.com/Keats/tera/issues/265 is implemented, can reuse block - for now, this is a workaround -#}
 {#- todo: set title for the tag pages as well #}
-{#- once done, replace {{ description }} with {% block description %}{% endblock %} etc. #}
+{#- once done, replace {{ description }} with {% block description -%}{% endblock -%} etc. -#}
 <html lang="en">
   <head>
     <title>{{ title }} – {{ config.extra.author }}</title>
@@ -42,9 +42,7 @@
 
   <body>
     <div class="container">
-      <header>
-        <a href="/">{{ config.extra.author }}</a>
-      </header>
+      <header><a href="/">{{ config.extra.author }}</a></header>
 
       <nav>
         {%- set links = load_data(path="data/links.json") %}
