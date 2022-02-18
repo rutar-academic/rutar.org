@@ -278,7 +278,7 @@ Now, running `vs init <session_name>` will create a new session with name `<sess
 
 ### The entire function
 It remains to add a case where an invalid command is given, and to print out a short error message.
-After doing this, our file `v.fish` now has the following contents:
+After doing this, our file `vs.fish` now has the following contents:
 ```
 function vs --argument command session_name new_session_name
     function __v_list_sessions
@@ -385,7 +385,7 @@ Here, the `vs list` command comes in handy:
 complete -f -c vs -a "(vs list)" \
     -n "__fish_seen_subcommand_from open" -a "(vs list)"
 ```
-As a whole, the contents of the completion file can be found [in the Git repository](https://github.com/alexrutar/vs/blob/master/completions/v.fish).
+As a whole, the contents of the completion file can be found [in the Git repository](https://github.com/alexrutar/vs/blob/master/completions/vs.fish).
 As a whole, the completion file `~/.config/fish/completions/vs.fish` looks like
 ```
 set -l vs_subcommands init list open
