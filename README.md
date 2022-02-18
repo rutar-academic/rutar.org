@@ -38,8 +38,7 @@ This command is valid sh as well as fish, so you can incorporate into your pre-c
 You can find [pre-commit script](scripts/pre-commit.sh) and the [HTML validation script](scripts/validate_html.fish) in the [scripts](scripts) directory.
 
 ## Repository Structure
-There are three main branches:
+There are two main branches:
 
 - [`master`](https://github.com/rutar-academic/rutar.org/tree/development): the main content deployed to [https://rutar.org](https://rutar.org).
-- [`development`](https://github.com/rutar-academic/rutar.org/tree/development): a preview branch when developing new features (e.g. changing templates, HTML, CSS).
-- [`drafts`](https://github.com/rutar-academic/rutar.org/tree/drafts): a preview branch for new content that I write that is not ready for general viewing.
+- [`draft`](https://github.com/rutar-academic/rutar.org/tree/drafts): a preview branch for new content that I write that is not ready for general viewing.
