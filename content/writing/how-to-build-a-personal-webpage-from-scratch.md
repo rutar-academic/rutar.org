@@ -186,9 +186,13 @@ Create a file `style.css`, and add the line
 ```
 <link rel="stylesheet" type="text/css" href="style.css">
 ```
-to the `<head>` of both HTML documents.
-This tells the browser to look for a file named `style.css` in the same directory as the file, which contains styling information.
-While it is possible to define style inline in the HTML, this is bad practice since it is harder to maintain (as a general rule, HTML defines semantics, whereas CSS defines style).
+to the `<head>` of `index.html` and
+```
+<link rel="stylesheet" type="text/css" href="../style.css">
+```
+to the `<head>` of `writing/index.html`.
+This tells the browser to look for a file named `style.css` in the same directory as `index.html` and in the directory containing the file `writing/index.html`, which contains styling information.
+While it is possible to define styles inline in the HTML, this is bad practice since it is harder to maintain (as a general rule, HTML defines semantics, whereas CSS defines style).
 Also, you should add some more content to the `<article>` section: perhaps a few more headers `<h2>...</h2>` and links `<a href="...some url...">my link</a>`.
 This will make the styling changes more clear as you make them.
 
