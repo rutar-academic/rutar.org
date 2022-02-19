@@ -1,3 +1,7 @@
+# used in templates/atom.xml
+title = "Alex Rutar's Blog"
+description = "Personal webpage for math and related topics."
+
 base_url = "https://rutar.org"
 compile_sass = true
 build_search_index = false
@@ -15,7 +19,7 @@ external_links_target_blank = true
 smart_punctuation = true
 
 [extra]
-feed_length = 5 # number of elements to show in feed
+feed_length = 10 # number of elements to show in feed
 author = "Alex Rutar"
 description = "Personal webpage for math and related topics."
 
