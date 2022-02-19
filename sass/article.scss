@@ -153,6 +153,9 @@ input:checked + small {
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+  a.verbose-url {
+    font-size: 10pt;
+  }
   .post-author {
     display: block;
     margin: 2px 0px;
