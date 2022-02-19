@@ -36,12 +36,12 @@ Having to change my mindset from tmux mode to Vim mode was a frequent source of 
 I also had some other more minor, but long--running, gripes with tmux.
 
 1. The tmux-resurrect plugin is great, but it occasionally struggles to restart windows running an instance of Vim.
-Moreover, shutting down tmux sessions with Vim instances active has a tendency to create floating swap files.
+Moreover, shutting down tmux sessions with active Vim instances has a tendency to create floating swap files{% inline_note() %}You can disable swap files entirely by adding the lines `set noswapfile` and `set directory=` to your `init.vim`.{% end %}.
 2. I had many unresolved issues getting colours to show up properly inside a tmux session.
 When colours work, everything is great.
 But when colours don't work, life becomes hell trying to resolve this.
-3. The additional layer of tmux abstraction eats a _whole extra line_ of your screen real estate.
-4. I had minor situational input latency issues that were hard to diagnose.
+3. I had occasional input latency issues that were hard to diagnose.
+4. The additional layer of tmux abstraction eats a _whole extra line_ of your screen real estate.
 
 There are likely ways to fix many of these problems listed above, and some may be entirely my fault (I suspect 1. is caused by not killing the tmux server gracefully).
 However, I like solutions with minimal complexity, and continually layering fixes above my existing workflow does not appeal to me.
@@ -78,14 +78,14 @@ There is one problem with this setup: if we open a file with `nvim` from inside 
 One solution is to use [neovim-remote](https://github.com/mhinz/neovim-remote).
 With neovim-remote installed, we can send keystrokes to a running Neovim instance from _any_ terminal instance (including those running within Neovim).
 As a consequence of this, from within our Neovim terminal, just run `nvr filename` and `filename` will be opened and replace the terminal window, without nesting.
-If you don't want to replace your current window, there are options to open the file in a new tab or split relative to the terminal split.
+If you don't want to replace your current split, there are options to open the file in a new tab or split relative to the terminal split.
 You can read about these with `nvr --help`.
 
 ### Saved state and session management
 Neovim comes with a built-in utility for saving sessions: the `:mksession` command.
 Called with an optional file argument (which defaults to placing a `Session.vim` file in the current `:pwd`), it generates a Neovim source file at that filename which, when sourced, restores the state of the instance when `:mksession` was first called.
 While `:mksession` works very well at saving the state, it can be quite tedious to use in practice.
-However, with a small amount of work we can use it to robustly save the state of our Neovim instance, and restore it when needed.
+However, with a small amount of work we can use it to robustly save the state of our Neovim instance, and conveniently restore it when needed.
 
 The first trick is the easiest: just install Tim Pope's [obsession.vim](https://github.com/tpope/vim-obsession).
 This plugin defines an `:Obsess` command, which is used in the same way as `:mksession`, but with some great quality of life features:
@@ -129,7 +129,7 @@ export NVIM_SESSION_DIR="/my/session/dir"
 in your `.zshrc`, where `/my/session/dir` is the directory in which you want the session files to be saved.
 
 Now, when you want to create a new session, simply `:SSave project/name` to initialize the session file with name `project/name`.
-Edit as usual, and `:wqa` to exit.
+Edit as usual, and `:qa` to exit.
 To rejoin where you left off, just run `v project/name` from anywhere.
 
 As a warning, since `:Obsess` will overwrite existing session files, `:SSave` (if called with an existing `project/name`) will happily wipe out the saved state of an existing session!
