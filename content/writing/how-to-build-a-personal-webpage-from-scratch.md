@@ -308,7 +308,7 @@ article {
   border-top: 2px solid gray;
 }
 ```
-Here is a quick explanation of this does.
+Here is a quick explanation of what this does.
 First, we want the header to be justified to the left and the navigation bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
 This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!{% inline_note() %}In general, *align* refers to vertical placement and *justify* refers to horizontal placement.{% end %}
