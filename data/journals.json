@@ -9,6 +9,11 @@
     "long_name": "Proceedings of the American Math Society",
     "url": "https://www.ams.org/publications/journals/journalsframework/proc"
   },
+  "ETDS": {
+    "name": "Ergodic Theory Dynam. Systems",
+    "long_name": "Ergodic Theory and Dynamical Systems",
+    "url": "https://www.cambridge.org/core/journals/ergodic-theory-and-dynamical-systems"
+  },
   "IsraelJ": {
     "name": "Israel J. Math.",
     "long_name": "Israel Journal of Mathematics",
