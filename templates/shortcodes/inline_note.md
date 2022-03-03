@@ -1,1 +1,1 @@
-<label for="fn{{ nth }}">{{ nth }}</label><input type="checkbox" id="fn{{ nth }}"><small>{{ body }}</small>
+<label for="in{{ nth }}">{{ nth }}</label><input type="checkbox" id="in{{ nth }}"><small>{{ body }}</small>
