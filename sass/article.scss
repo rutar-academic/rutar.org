@@ -106,8 +106,9 @@ input:checked + small {
 
 // table of contents
 // -----------------
-.toc {
+nav.toc {
   border-left: 2px solid $borderColor;
+  display: block;
   li {
     margin: 0;
   }

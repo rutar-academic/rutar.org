@@ -44,13 +44,13 @@
     <div class="container">
       <header><a href="/">{{ config.extra.author }}</a></header>
 
-      <nav>
+      <nav class="site">
         {%- set links = load_data(path="data/links.json") %}
         {%- for obj in links.nav -%}
-        {%- if not current_path %}{% set active = false %}
-        {%- elif current_path is starting_with(obj.url) %}{% set active = true %}
-        {%- else %}{% set active = false %}{% endif %}
-        <a {% if active %}class='active' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>
+        {%- if not current_path %}{% set cur = false %}
+        {%- elif current_path is starting_with(obj.url) %}{% set cur = true %}
+        {%- else %}{% set cur = false %}{% endif %}
+        <a {% if cur %}class='cur' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>
         {%- endfor %}
       </nav>
 

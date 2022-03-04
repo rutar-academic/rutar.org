@@ -6,7 +6,7 @@
 <div class="post-author">Written by <a href="{{ config.base_url }}">{{ config.extra.author }}</a></div>
 {% if page.extra.toc %}
 <h2>Contents</h2>
-<div class="toc">
+<nav class="toc">
 <ol>
   {% for h1 in page.toc -%}
   <li><a href="{{ h1.permalink | safe}}">{{ h1.title }}</a>
@@ -20,7 +20,7 @@
   </li>
   {%- endfor %}
 </ol>
-</div>
+</nav>
 {% endif %}
 <div class="post-contents">
 {{ page.content | safe }}

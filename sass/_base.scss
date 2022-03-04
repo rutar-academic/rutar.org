@@ -49,7 +49,7 @@ body {
 }
 
 // nav grid element
-nav {
+nav.site {
   grid-area: nav;
   justify-self: right;
   align-self: end;
@@ -186,7 +186,7 @@ a {
   &:hover, &:active {
     color: $themeColor;
   }
-  &.active {
+  nav.site &.cur {
     color: $themeColor;
   }
   &.verbose-url {
