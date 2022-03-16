@@ -563,7 +563,7 @@ A [favicon](https://en.wikipedia.org/wiki/Favicon) is a small image loaded by th
 There is a lot of different advice on how to appropriately set favicons, and unfortunately a lot of it is very outdated.
 
 These days, modern browsers support [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) favicons and this format is the simplest and most robust way to add a favicon to your webpage: it is lightweight and scales properly.
-There are lots of tools available to create these images---I used [this site](https://formito.com/tools/favicon).
+There are lots of tools available to create SVG favicons---I used [this site](https://formito.com/tools/favicon).
 You can also just download an icon from a place like [font awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free).
 If you want to create a custom icon, you can use an [online SVG editor](https://yqnn.github.io/svg-path-editor/).
 
@@ -576,6 +576,8 @@ This tells the browser that there's an icon located at `/icon.svg`, and that it'
 
 If you wish to support more devices, I'd recommend that you read this [favicon article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs).
 The next most important file to create would be a `favicon.ico` file: this will display the favicon even on outdated browsers.
+Image favicons are somewhat more flexible than SVG favicons, since it is easy to convert most visual files to an ICO file.{% inline_note() %}For example, you might consider [this site](https://www.websiteplanet.com/webtools/favicon-generator/) to generate favicon files from existing images.
+Thanks to a reader for this nice suggestion!{% end %}
 
 ### Site security
 In order to prevent malicious parties from hijacking your web traffic and impersonating your site, it is important that all HTTP connections are encrypted with [HTTPS](https://en.wikipedia.org/wiki/HTTPS).
