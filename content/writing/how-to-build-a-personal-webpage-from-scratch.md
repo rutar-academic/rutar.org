@@ -567,7 +567,7 @@ There are lots of tools available to create SVG favicons---I used [this site](ht
 You can also just download an icon from a place like [font awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free).
 If you want to create a custom icon, you can use an [online SVG editor](https://yqnn.github.io/svg-path-editor/).
 
-To add the favicon to our webpage, first copy the icon file, say `icon.svg`, to the `static/` folder.
+To add the favicon to our webpage, first copy the icon file, say `icon.svg`, to the root of your project directory.
 Then add the following line to the `<head>` of each page on your site:
 ```
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
