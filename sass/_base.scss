@@ -259,16 +259,16 @@ pre code {
   padding: 10px;
   max-width: 100%;
   min-width: 0;
+  white-space: pre;
   display: block;
   overflow-x: auto;
-  white-space: pre;
   -webkit-overflow-scrolling: touch;
 }
 
 table {
   border-collapse: collapse;
   margin: 25px 0;
-  thead tr th {
+  thead tr th, tbody tr th {
     padding: 3px 10px;
     background-color: $tableBackgroundColor;
     text-align: left;

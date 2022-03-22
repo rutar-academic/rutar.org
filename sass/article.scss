@@ -125,6 +125,25 @@ nav.toc {
   }
 }
 
+table.large {
+  // max-height: 200px;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  th,td {
+    white-space: nowrap;
+  }
+  thead th, tbody th {
+    font-weight: bold;
+    text-align: center;
+  }
+  tbody tr th {
+    position: sticky;
+    position: -webkit-sticky;
+    left: 0;
+  }
+}
+
 // ------------
 // Print Styles
 // ------------
