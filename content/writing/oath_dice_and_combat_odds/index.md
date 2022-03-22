@@ -15,7 +15,7 @@ tags = ["web", "css", "deployment"]
 [Oath](https://ledergames.com/products/oath-chronicles-of-empire-exile) is a great board game, which is in some sense a game about _history_, and in others a game  about _empires_.
 If you're not already familiar with the game, I'd highly recommend that you give it a try.
 
-In this article, we will discuss some of the odds in the oath combat system.
+In this article, I will discuss some of the odds in the oath combat system.
 I will be relatively light on mathematical details: for a full derivation of the formulas, you can see [my writeup](oath_dice_odds.pdf).
 If you just want to see some pre-computed unit loss tables, here are the links:
 
@@ -38,7 +38,6 @@ The sides of the dice are shown in red and blue respectively in the image below.
   <img src="oath_dice_faces.jpg" alt="Faces of the oath attack and defence dice.">
   <figcaption>Oath attack and defence dice faces. © Leder Games</figcaption>
 </figure>
-The attacker rolls <var>n</var> attacking dice, the defender rolls <var>k</var> defending dice.
 The attacker has a power of the number of solid swords roll, along with half of the outlined swords (rounded down), and must sacrifice 1 unit for each skull.
 
 The defending distribution is given by taking multiplying the number of shields by 2 for every ×2 dice roll.
