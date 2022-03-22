@@ -59,8 +59,9 @@ When we compute the power of the polynomial raised to the <var>n</var><sup>th</s
 
 Finally, we need to do some rounding: conveniently, it is alright to round the total, rather than the number of hollow sword rolls, since they are equivalent.
 
-For the defence odds, the main observation is that, for a number of the form <var>2<sup>m</sup>·l</var> where <var>l</var> is odd, we can compute the probability by summing over all possible values of <var>k</var> for ×2 rolls (i.e. between <var>0</var> and <var>m</var>), and then computing the number of ways to roll <var>2<sup>m-k</sup>·l</var> using only shields, without multipliers.
-The number of ways to roll <var>m</var> ×2 dice is just given by the binomial, and we can obtain the remaining counts by considering the expansion of the polynomial <var>(2+2x+x<sup>2</sup>)<sup>n</sup></var>.
+For the defence odds, suppose we are rolling <var>n</var> dice where <var>n=2<sup>m</sup>·l</var> with <var>l</var> odd.
+Then the only way to roll exactly <var>n</var> is to have <var>k</var> dice show ×2 (for some <var>k</var> between <var>0</var> and <var>m</var>), and then roll <var>2<sup>m-k</sup>·l</var> using only shields with the remaining dice.
+The number of ways to roll <var>k</var> ×2 dice is <var>n</var> choose <var>k</var>, and the number of ways to roll <var>2<sup>m-k</sup>·l</var> using only shields is the coefficient of <var>x<sup>2<sup>m-k</sup>·l</sup></var> in the polynomial <var>(2+2x+x<sup>2</sup>)<sup>n-k</sup></var>.
 
 ## Summary of odds
 In each entry, the rows correspond to the number of attacking dice, and the columns correspond to the number of defending dice.
