@@ -2,7 +2,7 @@
 title = "Oath Dice and Combat Odds"
 description = "A comprehensive look at the combat odds in the Oath board game."
 weight = 0
-date = 2022-03-21
+date = 2022-03-31
 draft = true
 
 [extra]
@@ -30,7 +30,7 @@ With that out of the way, let's see some more detail!
 
 ### Combat mechanics
 Combat is an important part of Oath, and the combat system is relatively straightforward, while also being feature-rich with somewhat deceptive odds.
-Cole Wehrle has written about the [development process](https://boardgamegeek.com/thread/2473354/designer-diary-18-campaign-revisited) of the combat system.
+Cole Wehrle (the designer of Oath) has written about the [development process](https://boardgamegeek.com/thread/2473354/designer-diary-18-campaign-revisited) of the combat system.
 
 During combat, there are two sets of dice: attacking, and defending.
 The sides of the dice are shown in red and blue respectively in the image below.
@@ -65,12 +65,12 @@ The number of ways to roll <var>k</var> ×2 dice is <var>n</var> choose <var>k</
 
 ## Summary of odds
 In each entry, the rows correspond to the number of attacking dice, and the columns correspond to the number of defending dice.
-The three numbers are in each entry the 50<sup>th</sup>, 90<sup>th</sup>, and 99<sup>th</sup> percentiles, respectively.
+The three numbers are in each entry are the 50<sup>th</sup>, 90<sup>th</sup>, and 99<sup>th</sup> percentiles, respectively.
 
 In order to use the [unit difference table](#unit-difference-percentiles), choose the row with the number of attacking dice and the column with the number of defending dice.
 Then, for example, the second entry is is the number of units you will need to sacrifice 90% of the time in order to (strictly) overcome the defence roll power.
 
-Note that other factors, such as the number of skulls rolled, as well as the defensive unit power, will influence the outcome as well.
+Other factors, such as the number of skulls rolled, as well as the defensive unit power, will influence the outcome as well.
 In order to estimate how many units you will lose, you need to
 
 1. Look up the corresponding value in the table for your attack and defence dice counts, as well as your desired percentile.
@@ -81,7 +81,7 @@ The resulting number is approximately a lower bound on the number of units you w
 Note this does not account for the case where you roll well beyond the defensive strength, but still need to sacrifice units because of skulls.
 To get an idea of what these numbers look like for certain defensive unit counts, I've included 3 additional tables at the end of this article.
 
-Note that certain cards, such as _Rangers_ and _Kindred Warriors_, also allow the attacker to roll without sacrificing units from double sword dice rolls.
+Certain cards, such as _Rangers_ and _Kindred Warriors_, also allow the attacker to roll without sacrificing units from double sword dice rolls.
 <figure>
 <img src="rangers_oath_card.webp" alt="Rangers Oath card">
 <img src="kindred_warriors_oath_card.webp" alt="Kindred Warriors Oath card">
