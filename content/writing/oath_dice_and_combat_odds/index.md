@@ -3,7 +3,7 @@ title = "Oath Dice and Combat Odds"
 description = "A comprehensive look at the combat odds in the Oath board game."
 weight = 0
 date = 2022-03-31
-draft = true
+draft = false
 
 [extra]
 toc = false
