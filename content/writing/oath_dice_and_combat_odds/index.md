@@ -34,15 +34,16 @@ With that out of the way, let's see some more detail!
 
 ### Combat heuristics
 The main insight from the odds are the zero-loss curves.
-Looking at the [unit difference tables](#unit-difference-percentiles), we can see the various attack dice / defence dice pairings which result in the attacker not having to sacrifice any units 50% of the time:
+Looking at the [unit difference tables](#unit-difference-percentiles), we can see the various defence dice / attack dice pairings which result in the attacker not having to sacrifice any units 50% of the time:
 
-- <var>2</var> vs. <var>1</var>
-- <var>3</var> vs. <var>2</var>
-- <var>4</var> vs. <var>3</var>
-- <var>6</var> vs. <var>4</var>
-- <var>7</var> vs. <var>5</var>
-- <var>9</var> vs. <var>6</var>
-- <var>12</var> vs. <var>7</var>
+- <var>1</var> vs. <var>2</var>
+- <var>2</var> vs. <var>3</var>
+- <var>3</var> vs. <var>4</var>
+- <var>4</var> vs. <var>6</var>
+- <var>5</var> vs. <var>7</var>
+- <var>6</var> vs. <var>9</var>
+- <var>7</var> vs. <var>12</var>
+- <var>8</var> vs. <var>15</var>
 - etc.
 
 Fitting a quadratic to this curve and rounding slightly, we can estimate that, when there are <var>n</var> defending dice, you should have <var>2+(n<sup>2</sup>-n)/4</var> attacking units in order to beat the defending dice roll 50% of the time.
@@ -60,9 +61,12 @@ Let's compare this to the table computing the [unit loss with 8 defenders](#unit
 This estimate isn't perfect, but it is relatively easy to compute in-game!
 
 If you're in a hurry and don't want to do too much mental math, simply doing (1) will give you a good idea for the number of units you'd want to not have to sacrifice any units 50% of the time.
+If you want, you can also just memorize the zero-loss curve table to get a more precise estimate.
 
-If you want instead want the count with 90% certainty (instead of 50%), you can perform the same estimate by computing the **attack balance point** with <var>5 - 0.9 n + 0.6 n<sup>2</sup></var>.
+If you instead want the estimate with 90% certainty (instead of 50%), you can perform the same estimate by computing the **attack balance point** with <var>5 - 0.9 n + 0.6 n<sup>2</sup></var>.
 This number gets very large, very fast!
+
+Also, if you have a card which means you do not sacrifice units when you roll skulls, simply adjust the <var>3/4</var> factor to <var>11/12</var>.
 
 ## Precise combat odds
 ### Combat mechanics
