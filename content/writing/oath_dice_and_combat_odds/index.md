@@ -17,7 +17,11 @@ If you're not already familiar with the game, I'd highly recommend that you give
 
 In this article, I will discuss some of the odds in the oath combat system.
 I will be relatively light on mathematical details: for a full derivation of the formulas, you can see [my writeup](oath_dice_odds.pdf).
-If you just want to see some pre-computed unit loss tables, here are the links:
+
+In the [combat heuristics](#combat-heuristics) section, I will discuss some good rules for estimating your odds in-game.{% inline_note() %}Thank you to users [@steveowen](https://boardgamegeek.com/user/steveowen) and [@Samuel Vriezen](https://boardgamegeek.com/user/Samuel%20Vriezen) for comments on BGG which motivated this section.{% end %}
+In particular, the [unit loss estimate](#unit-loss-estimate) section gives a quick procedure you can follow to work out how many units you would expect to have left, after combat.
+
+If you instead want to see some pre-computed unit loss tables, here are the links:
 
 - [Unit difference](#unit-difference-percentiles)
 - [Unit loss with 3 defenders](#unit-loss-with-3-defenders)
@@ -28,6 +32,43 @@ If you use [Mathematica](https://www.wolfram.com/mathematica/), I've also implem
 
 With that out of the way, let's see some more detail!
 
+### Combat heuristics
+The main insight from the odds are the zero-loss curves.
+Looking at the [unit difference tables](#unit-difference-percentiles), we can see the various defence dice / attack dice pairings which result in the attacker not having to sacrifice any units 50% of the time:
+
+- <var>1</var> vs. <var>2</var>
+- <var>2</var> vs. <var>3</var>
+- <var>3</var> vs. <var>4</var>
+- <var>4</var> vs. <var>6</var>
+- <var>5</var> vs. <var>7</var>
+- <var>6</var> vs. <var>9</var>
+- <var>7</var> vs. <var>12</var>
+- <var>8</var> vs. <var>15</var>
+- etc.
+
+Fitting a quadratic to this curve and rounding slightly, we can estimate that, when there are <var>n</var> defending dice, you should have <var>2+(n<sup>2</sup>-n)/4</var> attacking units in order to beat the defending dice roll 50% of the time.
+Now if you have a different number of attacking units, since there are 3 attacking outcomes worth 0.5, and 3 attacking outcomes worth either 1 or 2 (with unit sacrifice), for every extra attacking dice you have, you expect to get an extra 0.75 attacking power in your roll.
+
+### Unit loss estimate
+Combining these observations gives the following procedure to estimate the number of attacking units you will have remaining after combat:
+
+1. Determine the number of defending dice, <var>n</var>, and compute the **attack balance point** <var>k=2+(n<sup>2</sup>-n)/4</var> _(for example, if there are 8 defending dice, the attack balance point is 16)_
+2. Determine your attacking dice count, <var>a</var>, and compute the **power adjustment** <var>1+(k-a)·3/4</var> _(for example, if you have 12 attacking dice, the power adjustment is 4)_
+3. Add the defending unit count and add the power adjustment _(for example, if there are 8 defending units, the final result is 12)_
+
+Now, 50% of the time, you should expect to lose at most 12 units.
+Let's compare this to the table computing the [unit loss with 8 defenders](#unit-loss-with-8-defenders): this table states that for 8 defending dice, 8 defenders, and 13 attacking dice, you would lose 11 units 50% of the time.
+This estimate isn't perfect, but it is relatively easy to compute in-game!
+
+If you're in a hurry and don't want to do too much mental math, simply doing (1) will give you a good idea for the number of units you'd want to not have to sacrifice any units 50% of the time.
+If you want, you can also just memorize the zero-loss curve table to get a more precise estimate.
+
+If you instead want the estimate with 90% certainty (instead of 50%), you can perform the same estimate by computing the **attack balance point** with <var>5 - 0.9 n + 0.6 n<sup>2</sup></var>.
+This number gets very large, very fast!
+
+Also, if you have a card which means you do not sacrifice units when you roll skulls, simply adjust the <var>3/4</var> factor to <var>11/12</var>.
+
+## Precise combat odds
 ### Combat mechanics
 Combat is an important part of Oath, and the combat system is relatively straightforward, while also being feature-rich with somewhat deceptive odds.
 Cole Wehrle (the designer of Oath) has written about the [development process](https://boardgamegeek.com/thread/2473354/designer-diary-18-campaign-revisited) of the combat system.
