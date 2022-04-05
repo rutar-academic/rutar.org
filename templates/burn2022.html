@@ -1,0 +1,154 @@
+{% import "macros/data_links.html" as linker %}
+{% extends "base.html" %}
+{% block title %}{{ section.title | safe }}{% endblock %}
+{% block description %}{{ section.description | safe }}{% endblock %}
+{% block head %}<link rel="stylesheet" type="text/css" href="/burn2022.css">{% endblock %}
+{% block content %}
+<h2>Monday, April 11</h2>
+<table class="schedule">
+    <tr>
+        <td><nobr>13:30</nobr></td>
+        <td><em>Bus departure (St Andrews - Mathematical Institute)</em></td>
+    </tr>
+    <tr>
+        <td><nobr>14:00</nobr></td>
+        <td><em>Bus departure (Dundee - V&A)</em></td>
+    </tr>
+    <tr>
+        <td><nobr>16:15 - 16:45</nobr></td>
+        <td><strong>Laura Johnson</strong> - <em>Algebra Intro Talk</em></td>
+    </tr>
+    <tr>
+        <td><nobr>16:45 - 17:15</nobr></td>
+        <td><strong>Kate Mowbray</strong> - <em>Solar Intro Talk</em></td>
+    </tr>
+    <tr>
+        <td><nobr>17:15 - 17:30</nobr></td>
+        <td><em>Coffee break</em></td>
+    </tr>
+    <tr>
+        <td><nobr>17:30 - 18:00</nobr></td>
+        <td><strong>Liam Stuart</strong> - <em>Analysis Intro Talk</em></td>
+    <tr>
+        <td><nobr>18:00 - 18:30</nobr></td>
+        <td><strong>Dimitrios Katsaounis</strong> - <em>StAMBio Intro Talk</em></td>
+    </tr>
+    <tr>
+        <td><nobr>18:30 - 20:00</nobr></td>
+        <td><em>Dinner</em></td>
+    </tr>
+    <tr>
+        <td><nobr>20:00 - late</nobr></td>
+        <td><em>Intro social</em></td>
+    </tr>
+</table>
+<h2>Tuesday, April 12</h2>
+<table class="schedule">
+    <tr>
+        <td><nobr>09:00 - 10:00</nobr></td>
+        <td><em>Breakfast</em></td>
+    </tr>
+    <tr>
+        <td><nobr>10:00 - 10:20</nobr></td>
+        <td><strong>Liam Stott</strong> - <em>TODO</em> <label for="lsto">abstract</label><input type="checkbox" id="lsto"><small>TODO</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr>10:20 - 10:40</nobr></td>
+        <td><strong>Peiran Wu</strong> - <em>TODO</em> <label for="pwu">abstract</label><input type="checkbox" id="pwu"><small>TODO</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr></nobr><nobr>10:40 - 11:00</nobr></td>
+        <td><strong>Russell Campbell</strong> - <em>Sea ice and the evolution of a brine channel</em> <label for="russell-cambell">abstract</label><input type="checkbox" id="russell-cambell"><small>As climate change alters the nature of arctic sea ice, it is becoming increasingly important to understand the processes underpinning its formation and evolution. In this talk, I will present a very brief introduction to the dominant framework used to model the evolution of the ice interior and discuss one of the most crucial features governing ice development.</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr>11:00 - 11:20</nobr></td>
+        <td><strong>Alex Rutar</strong> - <em>TODO</em> <label for="arutar">abstract</label><input type="checkbox" id="arutar"><small>TODO</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr>11:20 - 11:50</nobr></td>
+        <td><em>Coffee break</em></td>
+    </tr>
+    <tr>
+        <td><nobr>11:50 - 12:10</nobr></td>
+        <td><strong>Felix Petersma</strong> - <em>Close-kin mark recapture: a new way to estimate animal abundance</em> <label for="fpet">abstract</label><input type="checkbox" id="fpet"><small>We estimate the abundance of animals in order to understand their ecology and to improve our conservation efforts. We estimate abundance because it is often difficult to know exactly how many there are: we can go out and start counting them, but how many did we miss? Close-kin mark recapture (CKMR) is a novel method to estimate total abundance of a population based on a sample. By taking genetic samples and evaluating the kinship among our sampled individuals, we can make inferences on size and characteristics of the entire population. This method lives in the intersection of statistics, population biology, and genetics, and applications are often big collaborative efforts. It relies on many assumptions, some of which I will test based on a case study of grey reef sharks.</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr>12:10 - 12:30</nobr></td>
+        <td><strong>Maria Tsalakou</strong> - <em>The low index congruences method for monoids</em> <label for="mtsa">abstract</label><input type="checkbox" id="mtsa"><small>The low index congruences method is a semigroup theoretic analogue of an algorithm known as the low index subgroup algorithm for finitely presented groups. I will describe the algorithm and explain how it can be used to compute the lattice of congruences of a finite monoid.</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr>12:30 - 12:50</nobr></td>
+        <td><strong>Raquel Couto</strong> - <em>TODO</em> <label for="rcou">abstract</label><input type="checkbox" id="rcou"><small>TODO</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr>13:00 - 16:00</nobr></td>
+        <td><em>Lunch and free time</em></td>
+    </tr>
+    <tr>
+        <td><nobr>16:00 - 17:00</nobr></td>
+        <td><strong>Natalia Jurga</strong> - <em>TODO</em></td>
+    </tr>
+    <tr>
+        <td><nobr>17:00 - 18:30</nobr></td>
+        <td><strong>Workshop</strong> - <em>TODO</em></td>
+    </tr>
+    <tr>
+        <td><nobr>16:30 - 18:30</nobr></td>
+        <td><em>Free time</em></td>
+    </tr>
+    <tr>
+        <td><nobr>18:30 - 20:00</nobr></td>
+        <td><em>Dinner</em></td>
+    </tr>
+    <tr>
+        <td><nobr>20:00 - late</nobr></td>
+        <td><em>Evening social</em></td>
+    </tr>
+</table>
+<h2>Wednesday, April 13</h2>
+<table class="schedule">
+    <tr>
+        <td><nobr>09:00 - 10:20</nobr></td>
+        <td><em>Breakfast</em></td>
+    </tr>
+    <tr>
+        <td><nobr></nobr><nobr>10:40 - 11:00</nobr></td>
+        <td><strong>Amlan Banaji</strong> - <em>TODO</em> <label for="aban">abstract</label><input type="checkbox" id="aban"><small>TODO</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr>11:00 - 11:20</nobr></td>
+        <td><strong>Konstantinos Alexiou</strong> - <em>TODO</em> <label for="kale">abstract</label><input type="checkbox" id="kale"><small>TODO</small>
+        </td>
+    </tr>
+    <tr>
+        <td><nobr>11:20 - 11:40</nobr></td>
+        <td><em>Coffee break</em></td>
+    </tr>
+    <tr>
+        <td><nobr>11:40 - 12:00</nobr></td>
+        <td><strong>Victor Velasco Pardo</strong> - <em>TODO</em> <label for="vvp">abstract</label><input type="checkbox" id="vvp"><small>TODO</small>
+        </td>
+    </tr>
+    </tr>
+    <tr>
+        <td><nobr>12:20 - 13:00</nobr></td>
+        <td><em>Free time</em></td>
+    </tr>
+    <tr>
+        <td><nobr>13:00 - 14:30</nobr></td>
+        <td><em>Lunch</em></td>
+    </tr>
+    <tr>
+        <td><nobr>14:30</nobr></td>
+        <td><em>Bus return</em></td>
+    </tr>
+</table>
+{% endblock %}
