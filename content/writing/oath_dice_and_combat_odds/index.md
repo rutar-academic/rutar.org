@@ -63,7 +63,8 @@ This estimate isn't perfect, but it is relatively easy to compute in-game!
 If you're in a hurry and don't want to do too much mental math, simply doing (1) will give you a good idea for the number of units you'd want to not have to sacrifice any units 50% of the time.
 If you want, you can also just memorize the zero-loss curve table to get a more precise estimate.
 
-If you instead want the estimate with 90% certainty (instead of 50%), you can perform the same estimate by computing the **attack balance point** with <var>5 - 0.9 n + 0.6 n<sup>2</sup></var>.
+If you instead want the estimate with ≈80% certainty (instead of 50%), you can perform the same estimate by computing the **attack balance point** with <var>5 - 3n/4 + n<sup>2</sup>/2</var>, rounded down.
+And for ≈90% certainty, use <var>5 - 0.9 n + 0.6 n<sup>2</sup></var>, rounded down.
 This number gets very large, very fast!
 
 Also, if you have a card which means you do not sacrifice units when you roll skulls, simply adjust the <var>3/4</var> factor to <var>11/12</var>.
