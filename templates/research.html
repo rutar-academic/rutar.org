@@ -50,7 +50,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
 {%- endfor -%}
 </table>
 
-<h2>Talks</h2>
+<h2>Presentations</h2>
 <ul>
 {%- set sorted_talks = load_data(path="data/talks.json") | sort(attribute="date") | reverse -%}
 {%- for talk in sorted_talks -%}
