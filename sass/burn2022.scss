@@ -1,0 +1,28 @@
+@import "base";
+@import "variables";
+
+// Abstract
+// --------
+label {
+  cursor: pointer;
+  line-height: 1;
+  padding-left: .1em;
+  color: $themeColor;
+  &::before {content:"(";}
+  &::after {content:")";}
+
+  & + input,
+  & + input + small {
+    display: none;
+  }
+}
+
+input:checked + small {
+  display: block;
+  color: $fadeColor;
+  padding: .8em 0 1em 0;
+}
+
+tr > :first-child {
+  min-width: fit-content;
+}
