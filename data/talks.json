@@ -1,5 +1,14 @@
 [
   {
+    "title": "Geometric and Combinatorial Properties of Self-similar Measures",
+    "date": "2022-04-06",
+    "venue": "Probability, Analysis, and Dynamics 2022",
+    "venue_url": "https://people.maths.bris.ac.uk/~mb13434/pad21/",
+    "links": {
+        "poster": "posters/pad_bristol_apr_2022.pdf"
+    }
+  },
+  {
     "title": "Attainable forms of intermediate dimensions",
     "date": "2022-02-08",
     "venue": "St Andrews Analysis Seminar",
