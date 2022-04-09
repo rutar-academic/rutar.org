@@ -17,6 +17,10 @@ label {
   }
 }
 
+.time {
+  white-space: nowrap;
+}
+
 input:checked + small {
   display: block;
   color: $fadeColor;
