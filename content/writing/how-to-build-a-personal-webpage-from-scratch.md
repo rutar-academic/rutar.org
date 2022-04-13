@@ -441,7 +441,7 @@ With Cloudflare Pages, your URL will be `project-name.pages.dev`, where `project
 
 ### Creating the repository on GitHub
 First, you need to create a new repository.
-I would recommend that you follow the instructions [here](https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-repository).
+I would recommend that you follow the instructions [here](https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-repository=).
 Here are a couple notes:
 
 1. If you are using Cloudflare Pages, you can name the repository anything you would like (you do not need to choose `hello-world`).
