@@ -99,7 +99,7 @@ header a:hover {
 }
 
 // center headers when on mobile
-header, nav {
+header, nav.site {
   @include mobile {
     text-align: center;
     justify-self: center;
