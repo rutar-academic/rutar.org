@@ -1,4 +1,9 @@
 {
+  "AFM": {
+    "name": "Ann. Fenn. Math.",
+    "long_name": "Annales Fennici Mathematici",
+    "url": "https://afm.journal.fi/"
+  },
   "JoTP": {
     "name": "J. Theoret. Probab.",
     "long_name": "Journal of Theoretical Probability",
