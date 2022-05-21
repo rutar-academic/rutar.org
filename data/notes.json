@@ -21,6 +21,13 @@
     }
   },
   {
+    "title": "Introduction to Galois Theory",
+    "short_title": "Galois Theory",
+    "links": {
+      "pdf": "notes/galois_theory_notes.pdf"
+    }
+  },
+  {
     "title": "Random Matrix Products",
     "short_title": "Random Matrix Products",
     "links": {
