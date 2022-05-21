@@ -28,6 +28,13 @@
     }
   },
   {
+    "title": "Introduction to Algebraic Number Theory",
+    "short_title": "Algebraic Number Theory",
+    "links": {
+      "pdf": "notes/algebraic_number_theory.pdf"
+    }
+  },
+  {
     "title": "Random Matrix Products",
     "short_title": "Random Matrix Products",
     "links": {
