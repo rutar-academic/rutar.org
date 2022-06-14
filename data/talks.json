@@ -1,5 +1,14 @@
 [
   {
+    "title": "Pisot Numbers and Bernoulli Convolutions",
+    "date": "2022-04-12",
+    "venue": "St Andrews Burn Meet",
+    "venue_url": "https://rutar.org/burn2022/",
+    "links": {
+        "slides": "talks/pisot_bernoulli_apr_2022.pdf"
+    }
+  },
+  {
     "title": "Geometric and Combinatorial Properties of Self-similar Measures",
     "date": "2022-04-06",
     "venue": "Probability, Analysis, and Dynamics 2022",

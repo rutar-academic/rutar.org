@@ -14,6 +14,11 @@
     "long_name": "Proceedings of the American Math Society",
     "url": "https://www.ams.org/publications/journals/journalsframework/proc"
   },
+  "ProcEMS": {
+    "name": "Proc. Edinb. Math. Soc.",
+    "long_name": "Proceedings of the Edinburgh Math Society",
+    "url": "https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society"
+  },
   "ETDS": {
     "name": "Ergod. Theory Dyn. Syst.",
     "long_name": "Ergodic Theory and Dynamical Systems",
