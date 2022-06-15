@@ -1,5 +1,14 @@
 [
   {
+    "title": "Geometric and Combinatorial Properties of Self-similar Measures",
+    "date": "2022-05-11",
+    "venue": "Workshop on Self-affine and Overlapping IFS",
+    "venue_url": "https://www.troscheit.eu/workshop2022/index.html",
+    "links": {
+        "poster": "posters/pad_bristol_apr_2022.pdf"
+    }
+  },
+  {
     "title": "Pisot Numbers and Bernoulli Convolutions",
     "date": "2022-04-12",
     "venue": "St Andrews Burn Meet",
