@@ -1,5 +1,14 @@
 [
   {
+    "title": "Attainable forms of Assouad spectra",
+    "journal": "preprint",
+    "status": "(submitted)",
+    "links": {
+      "pdf": "papers/attainable_assouad_spectra.pdf",
+      "arxiv": "2206.06921"
+    }
+  },
+  {
     "title": "Attainable forms of intermediate dimensions",
     "with": [
       "abanaji"
