@@ -3,6 +3,7 @@ title = "Some thoughts on Burn trip organization"
 description = "Some comments and observations from the organization process of the St Andrews Burn Trip in 2022."
 weight = 0
 date = 2022-06-14
+draft = true
 
 [extra]
 toc = true
