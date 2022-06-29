@@ -1,5 +1,14 @@
 [
   {
+    "title": "Classifying Dimension Spectra",
+    "date": "2022-06-30",
+    "venue": "Geometry of Deterministic and Random Fractals",
+    "venue_url": "https://simon60.math.bme.hu/",
+    "links": {
+        "slides": "talks/classifying_spectra.pdf"
+    }
+  },
+  {
     "title": "Geometric and Combinatorial Properties of Self-similar Measures",
     "date": "2022-05-11",
     "venue": "Workshop on Self-affine and Overlapping IFS",

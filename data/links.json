@@ -13,6 +13,7 @@
         {"url": "/alex_rutar_cv.pdf", "name": "Curriculum Vitae"}
     ],
     "external": [
+        {"url": "http://arxiv.org/a/rutar_a_1", "name": "arXiv Author Page"},
         {"url": "https://mathscinet.ams.org/mathscinet/", "name": "MathSciNet"},
         {"url": "https://xkcd.com/1724/", "name": "xkcd"},
         {"url": "https://www.openstreetmap.org", "name": "OpenStreetMap"}
