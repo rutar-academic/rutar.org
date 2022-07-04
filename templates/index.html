@@ -7,7 +7,7 @@
 
 {% block flexgrid %}
 <div>
-  <h2>Electronic</h2>
+  <h2>Identifiers</h2>
   <table>
     <tbody>
       <tr>
@@ -33,6 +33,14 @@
       <tr>
         <td>mr-id:</td>
         <td><a rel="noopener" target="_blank" href="https://mathscinet.ams.org/mathscinet/MRAuthorID/{{ config.extra.info.mrid }}">{{ config.extra.info.mrid }}</a></td>
+      </tr>
+      <tr>
+        <td>arxiv:</td>
+        <td><a rel="noopener" target="_blank" href="https://arxiv.org/a/{{ config.extra.info.arxiv }}.html">{{ config.extra.info.arxiv }}</a></td>
+      </tr>
+      <tr>
+        <td>zbmath:</td>
+        <td><a rel="noopener" target="_blank" href="https://zbmath.org/authors/?q=ai:{{ config.extra.info.zbmath }}">{{ config.extra.info.zbmath }}</a></td>
       </tr>
     </tbody>
   </table>
