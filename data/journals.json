@@ -1,4 +1,9 @@
 {
+  "NON": {
+    "name": "Nonlinearity",
+    "long_name": "Nonlinearity",
+    "url": "https://iopscience.iop.org/journal/0951-7715"
+  },
   "AFM": {
     "name": "Ann. Fenn. Math.",
     "long_name": "Annales Fennici Mathematici",
