@@ -1,5 +1,14 @@
 [
   {
+    "title": "Attainable forms of intermediate dimensions",
+    "date": "2022-07-21",
+    "venue": "BECMC 2022",
+    "venue_url": "https://web.mat.bham.ac.uk/BYMC/BECMC22/",
+    "links": {
+        "slides": "talks/becmc2022.pdf"
+    }
+  },
+  {
     "title": "Dimension theory and classification of Assouad spectra through homogeneous Moran sets",
     "date": "2022-07-07",
     "venue": "University of Vienna Ergodic Theory Seminar",
