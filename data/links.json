@@ -7,7 +7,7 @@
     "internal": [
         {"url": "/research/#publications", "name": "Publications"},
         {"url": "/research/#software", "name": "Software"},
-        {"url": "/research/#talks", "name": "Talks"},
+        {"url": "/research/#presentations", "name": "Presentations"},
         {"url": "/tags/", "name":"Non-Math Writing"},
         {"url": "/writing/", "name": "Expository Notes"},
         {"url": "/alex_rutar_cv.pdf", "name": "Curriculum Vitae"}

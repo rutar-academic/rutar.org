@@ -168,11 +168,11 @@ q {
   background: $selectionColor;
 }
 
-em, i {
+li.list cite, em, i {
   font-style: italic;
 }
 
-cite, b, strong {
+ol.pubs cite, b, strong {
   font-weight: bold;
 }
 
