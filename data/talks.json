@@ -1,6 +1,15 @@
 [
   {
     "title": "Geometric and Combinatorial Properties of Self-similar Measures",
+    "date": "2022-09-06",
+    "venue": "Fractals and Related Fields IV",
+    "venue_url": "https://farf4.math.cnrs.frt",
+    "links": {
+        "slides": "talks/farf_iv_2022.pdf"
+    }
+  },
+  {
+    "title": "Geometric and Combinatorial Properties of Self-similar Measures",
     "date": "2022-08-30",
     "venue": "BME Dynamical Systems Seminar",
     "venue_url": "https://math.bme.hu/~dinamika/",
