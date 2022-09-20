@@ -342,6 +342,11 @@ sup {
   font-size: 70%;
 }
 
+sub {
+  vertical-align: sub;
+  font-size: 70%;
+}
+
 var {
   font-family: $mathFonts;
   font-style: italic;
