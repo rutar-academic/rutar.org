@@ -354,7 +354,7 @@ Now, our webpage also looks respectable even when viewed on exceptionally tiny p
 ### Dealing with links
 Throughout this article, the links have been written in the form `href="style.css"`.
 This specifies a _relative link_: the file path is taken relative to the directory that the file in which the link sits.
-The syntax `href="../"` specifies that we are referring to a file in the directory containing the current file.
+The syntax `href="../"` specifies that we are referring to a file in the directory containing the current directory.
 
 However, when deploying the webpage to a server, you will want to write the links in the form `href="/style.css"`, which will give a link to the root of your website.
 This tells the browser to take the base URL (for example {% verbose_url() %}https://example.rutar.org{% end %}) and append the link.
