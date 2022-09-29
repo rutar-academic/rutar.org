@@ -92,7 +92,7 @@ This is in contrast to software such as Microsoft Word, in which the content tha
 Some popular graphical text editors include [Atom](https://atom.io) and [Sublime Text](https://www.sublimetext.com).
 If you do not want to install anything, [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3) is a built-in text editor on Windows.
 Similarly, [TextEdit](https://support.apple.com/en-ca/guide/textedit/welcome/mac) is built-in on macOS.
-For command-line editors, you could consider [Neovim](https://neovim.io) or [Emacs](https://www.gnu.org/software/emacs/).
+If you prefer a command-line interface, you could consider [Neovim](https://neovim.io) or [Emacs](https://www.gnu.org/software/emacs/).
 
 One subtlety is that not all text is the same.
 Underneath, text is just binary data, so rules are required to convert the binary data into the textual representation: this process is known as [character encoding](https://en.wikipedia.org/wiki/Character_encoding).
@@ -419,7 +419,7 @@ If you are interested in this, you can find some pointers to get started on the 
 
 For site deployment, I will cover two main options: using [GitHub Pages](https://pages.github.com), or using [Cloudflare Pages](https://pages.cloudflare.com).
 Both options are free.
-General, Cloudflare Pages is a more robust web hosting solution than GitHub Pages, whereas GitHub Pages is specialized for GitHub repositories.
+Generally speaking, Cloudflare Pages is a more robust web hosting solution than GitHub Pages, whereas GitHub Pages is specialized for GitHub repositories.
 Here are some benefits of using Cloudflare Pages over GitHub Pages:
 
 1. **Easier custom domain setup.**
