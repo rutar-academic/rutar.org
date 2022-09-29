@@ -1,6 +1,6 @@
 [
   {
-    "title": "Assouad-type Dimensions of Overlapping Self-affine Sets",
+    "title": "Assouad-type dimensions of overlapping self-affine sets",
     "with": [
         "jmfraser"
     ],
@@ -34,7 +34,7 @@
     }
   },
   {
-    "title": "A Multifractal Decomposition for Self-similar Measures with Exact Overlaps",
+    "title": "A multifractal decomposition for self-similar measures with exact overlaps",
     "journal": "preprint",
     "status": "(submitted)",
     "links": {
@@ -43,7 +43,7 @@
     }
   },
   {
-    "title": "Local Dimensions of Self-similar Measures Satisfying the Finite Neighbour Condition",
+    "title": "Local dimensions of self-similar measures satisfying the Finite Neighbour Condition",
     "with": [
       "kehare"
     ],
@@ -56,7 +56,7 @@
     }
   },
   {
-    "title": "Geometric and Combinatorial Properties of Self-similar Multifractal Measures",
+    "title": "Geometric and combinatorial properties of self-similar multifractal measures",
     "journal": "ETDS",
     "status": "(to appear)",
     "links": {
