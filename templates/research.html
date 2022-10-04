@@ -3,7 +3,7 @@
 {% block title %}{{ section.title }}{% endblock %}
 {% block description %}{{ section.description }}{% endblock %}
 {% block content %}
-<h2>Publications</h2>
+<h2 id="publications">Publications</h2>
 <p>Files linked as direct .pdf files are typically the most updated versions with the fewest typos.
 This is sometimes ahead of the arXiv file, though the numbering and content will be identical in the limit.
 </p>
@@ -29,7 +29,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
   </li>
   {% endfor %}
 </ol>
-<h2>Software</h2>
+<h2 id="software">Software</h2>
 <table class="full-width">
   <thead>
     <tr>
@@ -50,7 +50,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
 {%- endfor -%}
 </table>
 
-<h2>Presentations</h2>
+<h2 id="presentations">Presentations</h2>
 <ul>
 {%- set sorted_talks = load_data(path="data/talks.json") | sort(attribute="date") | reverse -%}
 {%- for talk in sorted_talks -%}
