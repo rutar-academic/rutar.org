@@ -14,10 +14,10 @@ article {
     h3 {
       counter-increment: subsec;
     }
-    h2 span a::after {
+    h2 a::after {
       content: counter(sec) ".\0000a0";
     }
-    h3 span a::after {
+    h3 a::after {
       content: counter(sec) "." counter(subsec) ".\0000a0";
     }
 
