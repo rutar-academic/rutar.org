@@ -10,7 +10,7 @@ toc = true
 [taxonomies]
 tags = ["web", "css", "deployment"]
 +++
-## An overview of static webpage deployment
+## An overview of static webpage development
 ### What is a static webpage?
 Modern webpages are (primarily) composed of three types of files: HTML, CSS, and JavaScript.
 Basically,
