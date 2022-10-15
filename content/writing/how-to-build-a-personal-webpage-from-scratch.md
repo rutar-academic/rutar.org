@@ -151,7 +151,7 @@ Here's an explanation of some of the tags:
 
 - `<head>...</head>` and `<body>...</body>`: these are the two main sections of your HTML file.
   `<head>` contains the metadata, and `<body>` contains the content that will show up on your screen when you visit the webpage.
-- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8).
+- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8).{% inline_note() %}You also need to make sure the file you are editing has the correct encoding!{% end %}
 - `<meta name="viewport" content="width=device-width">` ensures that, if this page is opened on a browser with a small screen, it will not be incredibly zoomed out.
   This is the bare minimum required so your page looks passable on a phone.
   You can read a bit about this [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag).
