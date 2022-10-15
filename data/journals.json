@@ -1,4 +1,9 @@
 {
+  "ProcRSE-A": {
+    "name": "Proc. Roy. Soc. Edinburgh Sect. A",
+    "long_name": "Proceedings of the Royal Society of Edinburgh Section A: Mathematics",
+    "url": "https://www.cambridge.org/core/journals/proceedings-of-the-royal-society-of-edinburgh-section-a-mathematics"
+  },
   "NON": {
     "name": "Nonlinearity",
     "long_name": "Nonlinearity",
