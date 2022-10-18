@@ -15,6 +15,8 @@
     "external": [
         {"url": "https://mathscinet.ams.org/mathscinet/collaborationDistance.html", "name": "Collaboration Distance"},
         {"url": "https://xkcd.com/1724/", "name": "xkcd"},
-        {"url": "https://www.openstreetmap.org", "name": "OpenStreetMap"}
+        {"url": "https://www.openstreetmap.org", "name": "OpenStreetMap"},
+        {"url": "https://photography.rutar.org", "name": "Personal Photos"},
+        {"url": "https://food.rutar.org", "name": "Personal Recipes"}
     ]
 }
