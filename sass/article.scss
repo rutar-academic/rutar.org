@@ -4,6 +4,7 @@
 article {
   // setup counters for article section, subsection, etc.
   .post-contents {
+    margin-bottom: 10px;
     counter-reset: sec;
     // when https://github.com/getzola/zola/issues/1759 is resolved
     // add another space here
