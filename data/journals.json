@@ -1,4 +1,14 @@
 {
+  "JFG": {
+    "name": "J. Fractal Geom.",
+    "long_name": "Journal of Fractal Geometry",
+    "url": "https://ems.press/journals/jfg"
+  },
+  "CamPhilSoc": {
+    "name": "Math. Proc. Cambridge Philos. Soc.",
+    "long_name": "Mathematical Proceedings of the Cambridge Philosophical Society",
+    "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society"
+  },
   "ProcRSE-A": {
     "name": "Proc. Roy. Soc. Edinburgh Sect. A",
     "long_name": "Proceedings of the Royal Society of Edinburgh Section A: Mathematics",
