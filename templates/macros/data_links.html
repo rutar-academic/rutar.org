@@ -30,7 +30,7 @@
       {%- if name is matching("code") %}{% set opts = ["download"] %}
       {%- endif -%}
 
-      <span><a rel="noopener" target="_blank" href="{{ prefix ~ url | safe }}"{% if opts %} {{ opts | join(sep=" ") }}{% endif %}>{{ name }}</a></span>
+      <span><a rel="noopener" title = "{{ url | safe }}" target="_blank" href="{{ prefix ~ url | safe }}"{% if opts %} {{ opts | join(sep=" ") }}{% endif %}>{{ name }}</a></span>
     {%- endfor -%}
     {{ post | safe }}
   {%- endif -%}
