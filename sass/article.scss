@@ -26,6 +26,16 @@ article {
     h2:hover a, h3:hover a {
       color: $themeColor;
     }
+
+    blockquote {
+      margin: 0;
+      border-left: 2px solid $fadeColor;
+      padding: 0 1rem;
+      font-style: italic;
+      p {
+        margin: 2px 0;
+      }
+    }
   }
 
   // post footer
