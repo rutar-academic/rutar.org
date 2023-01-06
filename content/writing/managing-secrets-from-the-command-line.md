@@ -7,7 +7,7 @@ date = 2022-01-16
 [extra]
 
 [taxonomies]
-tags = ["cli", "pgp", "shell"]
+tags = ["cli", "pgp"]
 +++
 ## Managing secrets programmatically
 Generally speaking, it's not a great idea to store password files in plain text on your computer.
