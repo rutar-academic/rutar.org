@@ -43,7 +43,7 @@ As a mathematics postgraduate student at the University of St Andrews in the [an
 This office has been used by analysis research students continuously over the past 10 years, and this history is present through the various idiosyncrasies of the space itself: copies of old books and publications, the name-tag-chain of past members of the office, the dilapidated giraffe poster on the wall.
 
 I perceive our shared postgraduate office as more than just a space in which to work and interact with others: the space helps to constitute my membership of the analysis group itself.
-However, a personal, permanent, and physical connection to the space is a core requirement for such a space to develop and maintain such an individual identity.
+However, a personal, permanent, and physical connection to the space is a core requirement for such a space to develop and maintain its individual identity.
 The creation of a shared workspace is more than just the destruction of such spaces: it is the creation of an environment which implicitly precludes the creation of such spaces entirely.
 
 ### Environmental familiarity
@@ -72,11 +72,11 @@ Bernstein and Turban explore this dynamic in [their study on interaction in open
 In their particular experimental environment, they observe that an open workspace actually *decreases* interactions between the members, and by a substantial amount (approximately 70%).
 In the introduction, they observe that “spatial boundaries have long served a functional role at multiple levels of analysis, helping people make sense of their environment by modularizing it, clarifying who is watching and who is not, who has information and who does not, who belongs and who does not, who controls what and who does not, to whom one answers and to whom one does not.”
 This implies a possible conceptual explanation for the reduction of interaction: since one does not have control over one’s surroundings, one must constantly accommodate for ones *social appearance*.
-For instance, one might be more inclined to give the appearance of continual focused work, even when the most beneficial action would be to take a break and read a book.
+For instance, one might be more inclined to give the appearance of continual focused work, even when the most beneficial action would be to take a break and socialize (or read a book).
 
 Moreover, even if such a space did foster collaboration, it is unclear that the form of collaboration is relevant for postgraduate research students.
 For a postgraduate researcher who does not have wide expertise in a field, it is very difficult to collaborate with people in vastly different areas.
-In an open workspace, the interactions among postgraduate students will primarily be among students with different mathematical expertise: for the purposes of collaborative work, such interactions are essentially useless.
+In an open workspace, the interactions among postgraduate students will primarily be among students with different mathematical expertise; for the purposes of collaborative work, such interactions are essentially useless.
 Of course, this is not to deny the importance of social interaction among postgraduate students: but the solution is not to place all postgraduate students in a large open workspace.
 
 In this sense, small shared offices are a better method to promote collaboration.
