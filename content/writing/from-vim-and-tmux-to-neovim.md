@@ -6,7 +6,7 @@ date = 2021-04-12
 [extra]
 
 [taxonomies]
-tags = ["vim", "shell"]
+tags = ["vim", "cli"]
 +++
 I recently migrated from a Vim and tmux work environment to one using only [Neovim](https://github.com/neovim/neovim){% inline_note() %}Using [Vim 8](https://www.vim.org/vim-8.1-released.php) or newer should be fine as well, but I make no guarantees.{% end %}.
 In this article, I will discuss some of the issues I had with my old workflow, and why this transition resolved some of these problems.
