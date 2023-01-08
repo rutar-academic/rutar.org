@@ -92,4 +92,4 @@ Now, whenever we want a table of contents, we simply include the tag
 [extra]
 toc = true
 ```
-at the beginning of our article.
+at the beginning of our article{% inline_note() %}Test{% end %}.
