@@ -25,7 +25,7 @@ However, over time, I accumulated some annoyances that were challenging to resol
 
 ## Disillusionment
 My main struggle with using Vim inside tmux is that there are often multiple ways to do the same thing.
-For example, tmux lets you split the window vertically with {% kbd() %}Ctrl+B{% end %} {% kbd() %}"{% end %} and Vim lets you do this with {% kbd() %}Ctrl+W{% end %} {% kbd() %}s{% end %} or `:vsp`.
+For example, tmux lets you split the window vertically with {% kbd() %}Ctrl+B{% end %} {% kbd() %}"{% end %} and Vim lets you do this with {% kbd() %}Ctrl+W{% end %} {% kbd() %}S{% end %} or `:vsp`.
 And these splits are not interoperable.
 Navigation commands are different, and often I found myself trying to {% kbd() %}Ctrl+W{% end %} {% kbd() %}L{% end %} into a tmux split, which just doesn't work.
 Moreover, you can't yank / paste between different tmux splits.
