@@ -1,5 +1,16 @@
 [
   {
+    "title": "Multifractal analysis of measures arising from random substitutions",
+    "with": [
+        "amitchell"
+    ],
+    "journal": "preprint",
+    "status": "(submitted)",
+    "links": {
+      "pdf": "papers/substitution_multifractal.pdf"
+    }
+  },
+  {
     "title": "Assouad-type dimensions of overlapping self-affine sets",
     "with": [
         "jmfraser"
