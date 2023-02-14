@@ -1,4 +1,9 @@
 {
+  "IUMJ": {
+    "name": "Indiana Univ. Math. J.",
+    "long_name": "Indiana University Math Journal",
+    "url": "https://iumj.org/"
+  },
   "JFG": {
     "name": "J. Fractal Geom.",
     "long_name": "Journal of Fractal Geometry",
