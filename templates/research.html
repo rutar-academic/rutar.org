@@ -9,24 +9,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
 </p>
 <ol class="pubs" reversed>
   {%- for publ in load_data(path="data/publications.json") %}
-  <li><cite>{{ publ.title }}</cite>
-    <table class="pub">
-    {%- if publ.with -%}
-    <tr>
-      <td>With:</td>
-      <td>{{ linker::data_link_arr(data=load_data(path="data/people.json"), key_arr=publ.with, join_str=", ") }}</td>
-    </tr>
-    {%- endif -%}
-    <tr>
-      <td>Journal:</td>
-      <td><em>{{ linker::data_link(data=load_data(path="data/journals.json"), key=publ.journal) | safe }}</em> {{ publ.status | trim | safe }}</td>
-    </tr>
-    <tr>
-      <td>Links:</td>
-      <td class="list">{{ linker::list_links(hash=publ.links) }}</td>
-    </tr>
-    </table>
-  </li>
+  {{ linker::publication(publ=publ) }}
   {% endfor %}
 </ol>
 <h2 id="software">Software</h2>

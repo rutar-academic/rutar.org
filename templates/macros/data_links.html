@@ -59,3 +59,24 @@
   {%- endfor -%}
 </ul>
 {% endmacro %}
+
+{% macro publication(publ) %}
+  <li><cite>{{ publ.title }}</cite>
+    <table class="pub">
+    {%- if publ.with -%}
+    <tr>
+      <td>With:</td>
+      <td>{{ self::data_link_arr(data=load_data(path="data/people.json"), key_arr=publ.with, join_str=", ") }}</td>
+    </tr>
+    {%- endif -%}
+    <tr>
+      <td>Journal:</td>
+      <td><em>{{ self::data_link(data=load_data(path="data/journals.json"), key=publ.journal) | safe }}</em> {{ publ.status | trim | safe }}</td>
+    </tr>
+    <tr>
+      <td>Links:</td>
+      <td class="list">{{ self::list_links(hash=publ.links) }}</td>
+    </tr>
+    </table>
+  </li>
+{% endmacro %}
