@@ -9,7 +9,8 @@
     "links": {
       "pdf": "papers/substitution_multifractal.pdf",
       "arxiv": "2301.04958"
-    }
+    },
+    "tags": ["multifractal", "substitutions"]
   },
   {
     "title": "Assouad-type dimensions of overlapping self-affine sets",
@@ -21,7 +22,8 @@
     "links": {
       "pdf": "papers/planar_assouad_overlapping.pdf",
       "arxiv": "2209.13952"
-    }
+    },
+    "tags": ["assouad", "self_affine"]
   },
   {
     "title": "Attainable forms of Assouad spectra",
@@ -30,7 +32,8 @@
     "links": {
       "pdf": "papers/attainable_assouad_spectra.pdf",
       "arxiv": "2206.06921"
-    }
+    },
+    "tags": ["assouad", "classification"]
   },
   {
     "title": "Attainable forms of intermediate dimensions",
@@ -43,7 +46,8 @@
       "pdf": "papers/attainable_int_dims.pdf",
       "doi": "10.54330/afm.120529",
       "arxiv": "2111.14678"
-    }
+    },
+    "tags": ["classification", "intermediate dimensions"]
   },
   {
     "title": "A multifractal decomposition for self-similar measures with exact overlaps",
@@ -52,7 +56,8 @@
     "links": {
       "pdf": "papers/fnc_loop_multi.pdf",
       "arxiv": "2104.06997"
-    }
+    },
+    "tags": ["multifractal", "self_similar", "wsc"]
   },
   {
     "title": "Local dimensions of self-similar measures satisfying the Finite Neighbour Condition",
@@ -65,7 +70,8 @@
       "pdf": "papers/fnc_loop_set.pdf",
       "doi": "10.1088/1361-6544/ac8040",
       "arxiv": "2101.07400"
-    }
+    },
+    "tags": ["multifractal", "self_similar", "wsc"]
   },
   {
     "title": "Geometric and combinatorial properties of self-similar multifractal measures",
@@ -75,7 +81,8 @@
       "pdf": "papers/wsc_multi_R.pdf",
       "doi": "10.1017/etds.2022.28",
       "arxiv": "2008.00197"
-    }
+    },
+    "tags": ["multifractal", "self_similar", "wsc"]
   },
   {
     "title": "When the Weak Separation Condition implies the Generalized Finite Type Condition",
@@ -89,6 +96,7 @@
       "pdf": "papers/wsc_equals_fnc.pdf",
       "doi": "10.1090/proc/15307",
       "arxiv": "2002.04575"
-    }
+    },
+    "tags": ["self_similar", "wsc", "separation"]
   }
 ]
