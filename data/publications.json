@@ -23,7 +23,7 @@
       "pdf": "papers/planar_assouad_overlapping.pdf",
       "arxiv": "2209.13952"
     },
-    "tags": ["assouad", "self_affine"]
+    "tags": ["assouad", "self-affine"]
   },
   {
     "title": "Attainable forms of Assouad spectra",
@@ -57,7 +57,7 @@
       "pdf": "papers/fnc_loop_multi.pdf",
       "arxiv": "2104.06997"
     },
-    "tags": ["multifractal", "self_similar", "wsc"]
+    "tags": ["multifractal", "self-similar", "wsc"]
   },
   {
     "title": "Local dimensions of self-similar measures satisfying the Finite Neighbour Condition",
@@ -71,7 +71,7 @@
       "doi": "10.1088/1361-6544/ac8040",
       "arxiv": "2101.07400"
     },
-    "tags": ["multifractal", "self_similar", "wsc"]
+    "tags": ["multifractal", "self-similar", "wsc"]
   },
   {
     "title": "Geometric and combinatorial properties of self-similar multifractal measures",
@@ -82,7 +82,7 @@
       "doi": "10.1017/etds.2022.28",
       "arxiv": "2008.00197"
     },
-    "tags": ["multifractal", "self_similar", "wsc"]
+    "tags": ["multifractal", "self-similar", "wsc"]
   },
   {
     "title": "When the Weak Separation Condition implies the Generalized Finite Type Condition",
@@ -97,6 +97,6 @@
       "doi": "10.1090/proc/15307",
       "arxiv": "2002.04575"
     },
-    "tags": ["self_similar", "wsc", "separation"]
+    "tags": ["self-similar", "wsc", "separation"]
   }
 ]

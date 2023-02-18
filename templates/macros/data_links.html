@@ -60,8 +60,12 @@
 </ul>
 {% endmacro %}
 
+{% macro get_pub_id(publ) %}
+{{- publ.links.pdf | replace(from="/", to="-") | replace(from=".pdf", to="") -}}
+{% endmacro %}
+
 {% macro publication(publ) %}
-  <li><cite>{{ publ.title }}</cite>
+  <li id="{{ self::get_pub_id(publ=publ) }}"><cite>{{ publ.title }}</cite>
     <table class="pub">
     {%- if publ.with -%}
     <tr>
