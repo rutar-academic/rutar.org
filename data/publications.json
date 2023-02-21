@@ -4,8 +4,7 @@
     "with": [
         "amitchell"
     ],
-    "journal": "preprint",
-    "status": "(submitted)",
+    "status": "submitted",
     "links": {
       "pdf": "papers/substitution_multifractal.pdf",
       "arxiv": "2301.04958"
@@ -17,8 +16,7 @@
     "with": [
         "jmfraser"
     ],
-    "journal": "preprint",
-    "status": "(submitted)",
+    "status": "submitted",
     "links": {
       "pdf": "papers/planar_assouad_overlapping.pdf",
       "arxiv": "2209.13952"
@@ -27,8 +25,10 @@
   },
   {
     "title": "Attainable forms of Assouad spectra",
-    "journal": "IUMJ",
-    "status": "(to appear)",
+    "status": "accepted",
+    "ref": {
+      "journal": "IUMJ"
+    },
     "links": {
       "pdf": "papers/attainable_assouad_spectra.pdf",
       "arxiv": "2206.06921"
@@ -40,8 +40,14 @@
     "with": [
       "abanaji"
     ],
-    "journal": "AFM",
-    "status": "<b>47</b> (2022), 939-960",
+    "status": "published",
+    "ref": {
+      "journal": "AFM",
+      "vol": "47",
+      "year": "2022",
+      "page_start": "939",
+      "page_end": "960"
+    },
     "links": {
       "pdf": "papers/attainable_int_dims.pdf",
       "doi": "10.54330/afm.120529",
@@ -51,38 +57,45 @@
   },
   {
     "title": "A multifractal decomposition for self-similar measures with exact overlaps",
-    "journal": "preprint",
-    "status": "(submitted)",
+    "status": "submitted",
     "links": {
       "pdf": "papers/fnc_loop_multi.pdf",
       "arxiv": "2104.06997"
     },
-    "tags": ["multifractal", "self-similar", "wsc"]
+    "tags": ["multifractal", "self-similar"]
   },
   {
     "title": "Local dimensions of self-similar measures satisfying the Finite Neighbour Condition",
     "with": [
       "kehare"
     ],
-    "journal": "NON",
-    "status": "<b>35</b> (2022), 4876-4904",
+    "status": "published",
+    "ref": {
+      "journal": "NON",
+      "vol": "35",
+      "year": "2022",
+      "page_start": "4876",
+      "page_end": "4904"
+    },
     "links": {
       "pdf": "papers/fnc_loop_set.pdf",
       "doi": "10.1088/1361-6544/ac8040",
       "arxiv": "2101.07400"
     },
-    "tags": ["multifractal", "self-similar", "wsc"]
+    "tags": ["multifractal", "self-similar"]
   },
   {
     "title": "Geometric and combinatorial properties of self-similar multifractal measures",
-    "journal": "ETDS",
-    "status": "(to appear)",
+    "status": "accepted",
+    "ref": {
+      "journal": "ETDS"
+    },
     "links": {
       "pdf": "papers/wsc_multi_R.pdf",
       "doi": "10.1017/etds.2022.28",
       "arxiv": "2008.00197"
     },
-    "tags": ["multifractal", "self-similar", "wsc"]
+    "tags": ["multifractal", "self-similar"]
   },
   {
     "title": "When the Weak Separation Condition implies the Generalized Finite Type Condition",
@@ -90,13 +103,19 @@
       "kehare",
       "kghare"
     ],
-    "journal": "ProcAMS",
-    "status": "<b>149</b> (2021), 1555-1568 ",
+    "status": "published",
+    "ref": {
+      "journal": "ProcAMS",
+      "vol": "149",
+      "year": "2021",
+      "page_start": "1555",
+      "page_end": "1568"
+    },
     "links": {
       "pdf": "papers/wsc_equals_fnc.pdf",
       "doi": "10.1090/proc/15307",
       "arxiv": "2002.04575"
     },
-    "tags": ["self-similar", "wsc", "separation"]
+    "tags": ["self-similar", "separation"]
   }
 ]

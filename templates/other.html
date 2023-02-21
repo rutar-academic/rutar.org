@@ -30,7 +30,7 @@
 
 <div>
   <h2>Journals</h2>
-  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/publications.json") | map(attribute="journal"), data=load_data(path="data/journals.json")) }}
+  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/publications.json") | map(attribute="ref.journal"), data=load_data(path="data/journals.json")) }}
 </div>
 {#
 <div>
