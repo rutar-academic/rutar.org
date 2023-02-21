@@ -5,7 +5,7 @@
         {"url": "/other/", "name": "Other"}
     ],
     "internal": [
-        {"url": "/research/#publications", "name": "Publications"},
+        {"url": "/publications/", "name": "Publications"},
         {"url": "/research/#software", "name": "Software"},
         {"url": "/research/#presentations", "name": "Presentations"},
         {"url": "/tags/", "name":"Non-Math Writing"},

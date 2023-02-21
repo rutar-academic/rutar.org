@@ -1,0 +1,15 @@
+{% import "macros/data_links.html" as linker %}
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block content %}
+<h2>Description</h2>
+{{ page.content | safe }}
+
+<h2>Relevant Publications</h2>
+<ol class="pubs" reversed>
+  {%- for publ in load_data(path="data/publications.json") %}
+  {%- if publ.tags is containing(page.slug) %}{{ linker::publication(publ=publ) }}{% endif -%}
+  {% endfor %}
+</ol>
+{% endblock %}

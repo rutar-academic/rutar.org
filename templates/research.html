@@ -3,15 +3,23 @@
 {% block title %}{{ section.title }}{% endblock %}
 {% block description %}{{ section.description }}{% endblock %}
 {% block content %}
+{%- set publ_hash = load_data(path="data/publications.json") -%}
 <h2 id="publications">Publications</h2>
-<p>Files linked as direct .pdf files are typically the most updated versions with the fewest typos.
-This is sometimes ahead of the arXiv file, though the numbering and content will be identical in the limit.
-</p>
-<ol class="pubs" reversed>
-  {%- for publ in load_data(path="data/publications.json") %}
-  {{- linker::publication(publ=publ) -}}
+<p>I have written <a class="hidden-link" href="/publications/"><strong>{{ publ_hash | length }}</strong> research papers</a>, of which:</p>
+<ul>
+    <li><strong>{{ publ_hash | filter(attribute="status", value="published") | length }}</strong> are published;</li>
+    <li><strong>{{ publ_hash | filter(attribute="status", value="accepted") | length }}</strong> are accepted but not yet published;</li>
+    <li><strong>{{ publ_hash | filter(attribute="status", value="submitted") | length }}</strong> are submitted.</li>
+</ul>
+<p>Generally speaking, my work is subdivided into a number of non-disjoint categories.
+Click on each entry to get a description of the category as well as a list of the relevant papers.</p>
+<ul>
+  {% for page in section.pages | sort(attribute="title") %}
+  <li><a href="{{ page.path | safe }}">{{ page.title }}</a></li>
   {% endfor %}
-</ol>
+</ul>
+You can also read a <a href="/publications/">complete list of all my publications</a>.
+
 <h2 id="software">Software</h2>
 <table class="full-width">
   <thead>
