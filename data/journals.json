@@ -1,62 +1,62 @@
 {
-  "IUMJ": {
-    "name": "Indiana Univ. Math. J.",
-    "long_name": "Indiana University Math Journal",
-    "url": "https://iumj.org/"
-  },
-  "JFG": {
-    "name": "J. Fractal Geom.",
-    "long_name": "Journal of Fractal Geometry",
-    "url": "https://ems.press/journals/jfg"
-  },
-  "CamPhilSoc": {
-    "name": "Math. Proc. Cambridge Philos. Soc.",
-    "long_name": "Mathematical Proceedings of the Cambridge Philosophical Society",
-    "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society"
-  },
-  "ProcRSE-A": {
-    "name": "Proc. Roy. Soc. Edinburgh Sect. A",
-    "long_name": "Proceedings of the Royal Society of Edinburgh Section A: Mathematics",
-    "url": "https://www.cambridge.org/core/journals/proceedings-of-the-royal-society-of-edinburgh-section-a-mathematics"
-  },
-  "NON": {
-    "name": "Nonlinearity",
-    "long_name": "Nonlinearity",
-    "url": "https://iopscience.iop.org/journal/0951-7715"
-  },
   "AFM": {
-    "name": "Ann. Fenn. Math.",
     "long_name": "Annales Fennici Mathematici",
+    "name": "Ann. Fenn. Math.",
     "url": "https://afm.journal.fi/"
   },
+  "CamPhilSoc": {
+    "long_name": "Mathematical Proceedings of the Cambridge Philosophical Society",
+    "name": "Math. Proc. Cambridge Philos. Soc.",
+    "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society"
+  },
+  "ETDS": {
+    "long_name": "Ergodic Theory and Dynamical Systems",
+    "name": "Ergod. Theory Dyn. Syst.",
+    "url": "https://www.cambridge.org/core/journals/ergodic-theory-and-dynamical-systems"
+  },
+  "IUMJ": {
+    "long_name": "Indiana University Math Journal",
+    "name": "Indiana Univ. Math. J.",
+    "url": "https://iumj.org/"
+  },
+  "IsraelJ": {
+    "long_name": "Israel Journal of Mathematics",
+    "name": "Israel J. Math.",
+    "url": "http://www.math.huji.ac.il/~ijmath/"
+  },
+  "JFG": {
+    "long_name": "Journal of Fractal Geometry",
+    "name": "J. Fractal Geom.",
+    "url": "https://ems.press/journals/jfg"
+  },
   "JoTP": {
-    "name": "J. Theoret. Probab.",
     "long_name": "Journal of Theoretical Probability",
+    "name": "J. Theoret. Probab.",
     "url": "https://www.springer.com/journal/10959"
   },
+  "NON": {
+    "long_name": "Nonlinearity",
+    "name": "Nonlinearity",
+    "url": "https://iopscience.iop.org/journal/0951-7715"
+  },
   "ProcAMS": {
-    "name": "Proc. Amer. Math. Soc.",
     "long_name": "Proceedings of the American Math Society",
+    "name": "Proc. Amer. Math. Soc.",
     "url": "https://www.ams.org/publications/journals/journalsframework/proc"
   },
   "ProcEMS": {
-    "name": "Proc. Edinb. Math. Soc.",
     "long_name": "Proceedings of the Edinburgh Math Society",
+    "name": "Proc. Edinb. Math. Soc.",
     "url": "https://www.cambridge.org/core/journals/proceedings-of-the-edinburgh-mathematical-society"
   },
-  "ETDS": {
-    "name": "Ergod. Theory Dyn. Syst.",
-    "long_name": "Ergodic Theory and Dynamical Systems",
-    "url": "https://www.cambridge.org/core/journals/ergodic-theory-and-dynamical-systems"
-  },
-  "IsraelJ": {
-    "name": "Israel J. Math.",
-    "long_name": "Israel Journal of Mathematics",
-    "url": "http://www.math.huji.ac.il/~ijmath/"
+  "ProcRSE-A": {
+    "long_name": "Proceedings of the Royal Society of Edinburgh Section A: Mathematics",
+    "name": "Proc. Roy. Soc. Edinburgh Sect. A",
+    "url": "https://www.cambridge.org/core/journals/proceedings-of-the-royal-society-of-edinburgh-section-a-mathematics"
   },
   "preprint": {
-    "name": "Preprint",
     "long_name": "ArXiV Preprint",
+    "name": "Preprint",
     "url": "https://arxiv.org"
   }
 }

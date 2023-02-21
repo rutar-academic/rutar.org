@@ -1,32 +1,32 @@
 {
-    "abanaji": {
-        "name": "Amlan Banaji",
-        "short_name": "Amlan Banaji",
-        "url": "https://amlan-banaji.github.io/"
-    },
-    "amitchell": {
-        "name": "Andrew Mitchell",
-        "short_name": "Andrew Mitchell",
-        "url": "https://www.birmingham.ac.uk/research/activity/mathematics/topology-dynamics/navigation.aspx?ReferenceId=200021&Name=mr-andrew-mitchell"
-    },
-    "kehare": {
-        "name": "Kathryn E. Hare",
-        "short_name": "Kathryn Hare",
-        "url": "https://uwaterloo.ca/pure-mathematics/kathryn-e-hare"
-    },
-    "kghare": {
-        "name": "Kevin G. Hare",
-        "short_name": "Kevin Hare",
-        "url": "https://uwaterloo.ca/scholar/kghare/home"
-    },
-    "jmfraser": {
-        "name": "Jonathan M. Fraser",
-        "short_name": "Jonathan Fraser",
-        "url": "http://www.mcs.st-and.ac.uk/~jmf32/"
-    },
-    "kjfalconer": {
-        "name": "Kenneth J. Falconer",
-        "short_name": "Kenneth Falconer",
-        "url": "http://www.mcs.st-and.ac.uk/~kenneth/"
-    }
+  "abanaji": {
+    "name": "Amlan Banaji",
+    "short_name": "Amlan Banaji",
+    "url": "https://amlan-banaji.github.io/"
+  },
+  "amitchell": {
+    "name": "Andrew Mitchell",
+    "short_name": "Andrew Mitchell",
+    "url": "https://www.birmingham.ac.uk/research/activity/mathematics/topology-dynamics/navigation.aspx?ReferenceId=200021&Name=mr-andrew-mitchell"
+  },
+  "jmfraser": {
+    "name": "Jonathan M. Fraser",
+    "short_name": "Jonathan Fraser",
+    "url": "http://www.mcs.st-and.ac.uk/~jmf32/"
+  },
+  "kehare": {
+    "name": "Kathryn E. Hare",
+    "short_name": "Kathryn Hare",
+    "url": "https://uwaterloo.ca/pure-mathematics/kathryn-e-hare"
+  },
+  "kghare": {
+    "name": "Kevin G. Hare",
+    "short_name": "Kevin Hare",
+    "url": "https://uwaterloo.ca/scholar/kghare/home"
+  },
+  "kjfalconer": {
+    "name": "Kenneth J. Falconer",
+    "short_name": "Kenneth Falconer",
+    "url": "http://www.mcs.st-and.ac.uk/~kenneth/"
+  }
 }
