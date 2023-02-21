@@ -9,7 +9,7 @@ This is sometimes ahead of the arXiv file, though the numbering and content will
 </p>
 <ol class="pubs" reversed>
   {%- for publ in load_data(path="data/publications.json") %}
-  {{ linker::publication(publ=publ) }}
+  {{- linker::publication(publ=publ) -}}
   {% endfor %}
 </ol>
 <h2 id="software">Software</h2>
