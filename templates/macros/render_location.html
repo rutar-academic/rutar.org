@@ -1,0 +1,22 @@
+{% macro location(entry, past) %}
+{%- set current_date = now() | date(format="%Y%m%d") | int -%}
+{%- set entry_date = entry.date_start | date(format="%Y%m%d") | int -%}
+
+{%- set b1 = entry_date > current_date and not past -%}
+{%- set b2 = entry_date <= current_date and past -%}
+{%- set is_current = past and current_date <= entry.date_end | date(format="%Y%m%d") | int -%}
+
+{%- if b1 or b2 -%}
+<table class="loc{% if is_current %} curr-loc{% endif %}">
+  <thead><tr><th>{{ self::osm(entry=entry) }}</th></tr></thead>
+  <tbody>
+    {%- if entry.venue %}<tr><td>{% if entry.url %}<a class="hidden-link" target="_blank" href="{{ entry.url }}">{{ entry.venue }}</a>{% else %}{{ entry.venue }}{% endif %}</td></tr>{% endif -%}
+    <tr><td><em>from</em> {{ entry.date_start | date(format="%B %e, %Y") }}{%- if entry.date_end %} <em>to</em> {{ entry.date_end | date(format="%B %e, %Y") }}{% endif -%}</td></tr>
+  </tbody></table>
+{%- endif %}
+{% endmacro %}
+
+{% macro osm(entry) -%}
+  {%- set location_dct = load_data(path="data/location.json") -%}
+  <a class="hidden-link" target="_blank" href="https://www.openstreetmap.org/{{ location_dct[entry.location].osm }}">{{ location_dct[entry.location].name }}</a>
+{%- endmacro %}

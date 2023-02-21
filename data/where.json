@@ -1,0 +1,178 @@
+{
+  "permanent": [
+    {
+      "location": "StA",
+      "year": 2020,
+      "date_start": "2020-09-27",
+      "date_end": "2024-09-26"
+    },
+    {
+      "location": "UWaterloo",
+      "year": 2016,
+      "date_start": "2016-09-01",
+      "date_end": "2020-04-30"
+    }
+  ],
+  "travel": [
+    {
+      "venue": "Fractal geometry",
+      "location": "ICMS",
+      "url": "https://www.icms.org.uk/workshops/2023/fractal-geometry",
+      "year": 2023,
+      "date_start": "2023-07-03",
+      "date_end": "2023-07-07"
+    },
+    {
+      "venue": "Multifractal analysis and self-similarity",
+      "location": "CIRM",
+      "url": "https://conferences.cirm-math.fr/2751.html",
+      "year": 2023,
+      "date_start": "2023-06-26",
+      "date_end": "2023-06-30"
+    },
+    {
+      "venue": "Incidence Problems in Harmonic Analysis, Geometric Measure Theory, and Ergodic Theory",
+      "location": "Oberwolfach",
+      "url": "https://www.mfo.de/occasion/2323/www_view",
+      "year": 2023,
+      "date_start": "2023-06-04",
+      "date_end": "2023-06-10"
+    },
+    {
+      "location": "BME",
+      "year": 2023,
+      "date_start": "2023-05-20",
+      "date_end": "2023-06-04"
+    },
+    {
+      "venue": "Thermodynamic Formalism: Non-additive Aspects and Related Topics",
+      "location": "Bedlewo",
+      "url": "https://www.impan.pl/en/activities/banach-center/conferences/23-thermoform",
+      "year": 2023,
+      "date_start": "2023-05-14",
+      "date_end": "2023-05-19"
+    },
+    {
+      "venue": "Dynamics and fractals",
+      "location": "IMPAN",
+      "url": "https://www.impan.pl/en/activities/banach-center/conferences/23-simons-v/programme",
+      "year": 2023,
+      "date_start": "2023-05-07",
+      "date_end": "2023-05-13"
+    },
+    {
+      "location": "UJyv",
+      "year": 2023,
+      "date_start": "2023-04-03",
+      "date_end": "2023-04-06"
+    },
+    {
+      "location": "UOulu",
+      "year": 2023,
+      "date_start": "2023-01-20",
+      "date_end": "2024-04-20"
+    },
+    {
+      "location": "BME",
+      "year": 2023,
+      "date_start": "2023-01-04",
+      "date_end": "2023-01-18"
+    },
+    {
+      "location": "UManchester",
+      "year": 2022,
+      "date_start": "2022-10-31",
+      "date_end": "2022-11-02"
+    },
+    {
+      "venue": "Fractals and Related Fields IV",
+      "location": "Porquerolles",
+      "url": "https://farf4.math.cnrs.fr/",
+      "year": 2022,
+      "date_start": "2022-09-03",
+      "date_end": "2022-09-09"
+    },
+    {
+      "location": "BME",
+      "year": 2022,
+      "date_start": "2022-08-29",
+      "date_end": "2022-09-02"
+    },
+    {
+      "venue": "British Early Career Mathematics Conference",
+      "location": "UBir",
+      "url": "https://web.mat.bham.ac.uk/BYMC/BECMC22/",
+      "year": 2022,
+      "date_start": "2022-07-21",
+      "date_end": "2022-07-22"
+    },
+    {
+      "location": "UVienna",
+      "year": 2022,
+      "date_start": "2022-07-04",
+      "date_end": "2022-07-08"
+    },
+    {
+      "venue": "Geometry of Deterministic and Random Fractals",
+      "location": "BME",
+      "url": "https://simon60.math.bme.hu/",
+      "year": 2022,
+      "date_start": "2022-06-27",
+      "date_end": "2022-07-01"
+    },
+    {
+      "venue": "Renyi 100",
+      "location": "MTA",
+      "url": "https://conferences.renyi.hu/renyi100",
+      "year": 2022,
+      "date_start": "2022-06-20",
+      "date_end": "2022-06-23"
+    },
+    {
+      "venue": "Workshop on Self-affine and Overlapping IFS",
+      "location": "UBristol",
+      "url": "https://www.troscheit.eu/workshop2022/index.html",
+      "year": 2022,
+      "date_start": "2022-05-10",
+      "date_end": "2022-05-12"
+    },
+    {
+      "venue": "St Andrews Burn Meeting",
+      "location": "TheBurn",
+      "url": "https://rutar.org/burn2022/",
+      "year": 2022,
+      "date_start": "2022-04-11",
+      "date_end": "2022-04-13"
+    },
+    {
+      "venue": "Probability, Analysis, and Dynamics",
+      "location": "UBristol",
+      "url": "https://people.maths.bris.ac.uk/~mb13434/pad21/",
+      "year": 2022,
+      "date_start": "2022-04-06",
+      "date_end": "2022-04-08"
+    },
+    {
+      "venue": "Junior Ergodic Theory Meeting",
+      "location": "ICMS",
+      "url": "https://www.icms.org.uk/workshops/2022/junior-ergodic-theory-meeting",
+      "year": 2022,
+      "date_start": "2022-03-28",
+      "date_end": "2022-03-31"
+    },
+    {
+      "venue": "Canadian Undergraduate Mathematics Conference 2019",
+      "location": "Queens",
+      "year": 2019,
+      "date_start": "2019-07-24",
+      "date_end": "2019-07-28"
+    },
+    {
+      "venue": "Canadian Undergraduate Mathematics Conference 2018",
+      "location": "USask",
+      "year": 2018,
+      "date_start": "2018-07-11",
+      "date_end": "2018-07-15"
+    }
+  ]
+}

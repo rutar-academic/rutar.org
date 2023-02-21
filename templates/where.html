@@ -1,0 +1,37 @@
+{% import "macros/render_location.html" as render %}
+{% extends "base.html" %}
+{% block title %}{{ section.title }}{% endblock %}
+{% block description %}{{ section.description }}{% endblock %}
+{% block content %}
+{%- set current_date = now() | date(format="%Y%m%d") | int %}
+{%- set travel_db = load_data(path="data/where.json") -%}
+{%- set location_dct = load_data(path="data/location.json") -%}
+{%- set grouped_past_travel = travel_db.travel | group_by(attribute="year") -%}
+
+<p>I am currently based out of the {{ render::osm(entry=travel_db.permanent[0]) }}.
+Otherwise, you can figure out where I currently am based on this overly comprehensive account of my past and future travel.
+Jump to:</p>
+<ul>
+    <li><a href="#future-travel">Future Travel</a></li>
+    <li><a href="#past-travel">Past Travel</a></li>
+</ul>
+
+<h2 id="future-travel">Future Travel</h2>
+{%- for entry in travel_db.travel | sort(attribute="date_start") -%}
+{{- render::location(entry=entry, past=false) -}}
+{% endfor %}
+
+<h2 id="past-travel">Past Travel</h2>
+Jump to year:
+<ul>
+    {%- for year, _ in grouped_past_travel -%}
+    <li><a href="#past-{{ year }}">{{ year }}</a></li>
+    {%- endfor -%}
+</ul>
+{% for year, entry_arr in grouped_past_travel %}
+<h3 id="past-{{ year }}">{{ year }}</h3>
+{%- for entry in entry_arr -%}
+{{- render::location(entry=entry, past=true) -}}
+{%- endfor -%}
+{%- endfor -%}
+{% endblock %}
