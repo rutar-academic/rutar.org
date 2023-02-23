@@ -3,7 +3,7 @@
 {% block title %}{{ section.title }}{% endblock %}
 {% block description %}{{ section.description }}{% endblock %}
 {% block content %}
-{%- set publ_hash = load_data(path="data/publications.json") -%}
+{%- set publ_hash = load_data(path="data/papers.json") -%}
 <h2 id="publications">Publications</h2>
 <p>I have written <a class="hidden-link" href="/publications/"><strong>{{ publ_hash | length }}</strong> research papers</a>, of which:</p>
 <ul>
@@ -19,6 +19,11 @@ Click on each entry to get a description of the category as well as a list of th
   {% endfor %}
 </ul>
 You can also read a <a href="/publications/">complete list of all my publications</a>.
+
+<h2 id="presentations">Presentations</h2>
+I have given a total of <strong>{{ load_data(path="data/talks.json") | length }}</strong> talks at various venues.
+You can read a <a href="/presentations/">a complete list of presentations</a> that I have given.
+If you are curious, you can also find a complete description of my <a href="/where">past and future travel</a>.
 
 <h2 id="software">Software</h2>
 <table class="full-width">
@@ -40,18 +45,4 @@ You can also read a <a href="/publications/">complete list of all my publication
   </tbody>
 {%- endfor -%}
 </table>
-
-<h2 id="presentations">Presentations</h2>
-This is a complete list of presentations which I have given at various venues.
-If you are curious, you can also find a complete description of my <a href="/where">travel history</a>.
-<ul>
-{%- set sorted_talks = load_data(path="data/talks.json") | sort(attribute="date") | reverse -%}
-{%- for talk in sorted_talks -%}
-
-{%- if talk.venue_url -%}{% set talk_name = '<a href="' ~ talk.venue_url ~ '" class="hidden-link">' ~ talk.venue ~ '</a>' %}
-  {%- else -%}{% set talk_name = talk.venue %}
-  {%- endif %}
-  <li class="list">{{ talk.date | date(format="%b. %Y") }} - {{ talk_name | safe }} - <cite>{{ talk.title }}</cite> {{ linker::list_links(hash=talk.links, pre="(", post=")") | safe }}</li>
-  {% endfor -%}
-</ul>
 {% endblock %}

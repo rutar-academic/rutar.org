@@ -1,4 +1,5 @@
-.PHONY: all clean
+.PHONY: all clean build serve
+
 all: public
 
 public:
@@ -6,3 +7,10 @@ public:
 
 clean:
 	rm -rf public
+
+build:
+	python runner.py build
+	zola build
+
+serve: build
+	zola serve

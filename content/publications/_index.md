@@ -1,5 +1,5 @@
 +++
 title = "Publications"
 template = "publications.html"
-description = "Finer information about my research."
+description = "Complete list of publications."
 +++

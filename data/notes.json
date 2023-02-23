@@ -14,13 +14,6 @@
     }
   },
   {
-    "title": "Lecture Notes in Analysis",
-    "short_title": "Analysis notes",
-    "links": {
-      "pdf": "notes/analysis_notes.pdf"
-    }
-  },
-  {
     "title": "Introduction to Galois Theory",
     "short_title": "Galois Theory",
     "links": {
@@ -39,13 +32,6 @@
     "short_title": "Random Matrix Products",
     "links": {
       "pdf": "notes/random_matrix_products.pdf"
-    }
-  },
-  {
-    "title": "On <var>L<sup>q</sup></var>-Spectra of Self-similar Measures",
-    "short_title": "<var>L<sup>q</sup></var>-Spectra",
-    "links": {
-      "pdf": "notes/lq_spectrum.pdf"
     }
   }
 ]

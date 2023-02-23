@@ -8,7 +8,7 @@
 
 <h2>Relevant Publications</h2>
 <ol class="pubs" reversed>
-  {%- for publ in load_data(path="data/publications.json") %}
+  {%- for publ in load_data(path="data/papers.json") %}
   {%- if publ.tags is containing(page.slug) %}{{ linker::publication(publ=publ) }}{% endif -%}
   {% endfor %}
 </ol>

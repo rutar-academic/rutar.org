@@ -1,0 +1,16 @@
+{% import "macros/data_links.html" as linker %}
+{% extends "base.html" %}
+{% block title %}{{ section.title }}{% endblock %}
+{% block description %}{{ section.description }}{% endblock %}
+{% block content %}
+<ul>
+{%- set sorted_talks = load_data(path="data/talks.json") | sort(attribute="date") | reverse -%}
+{%- for talk in sorted_talks -%}
+
+{%- if talk.venue_url -%}{% set talk_name = '<a href="' ~ talk.venue_url ~ '" class="hidden-link">' ~ talk.venue ~ '</a>' %}
+  {%- else -%}{% set talk_name = talk.venue %}
+  {%- endif %}
+  <li class="list">{{ talk.date | date(format="%b. %Y") }} - {{ talk_name | safe }} - <cite>{{ talk.title }}</cite> {{ linker::list_links(hash=talk.links, pre="(", post=")") | safe }}</li>
+  {% endfor -%}
+</ul>
+{% endblock %}

@@ -1,0 +1,29 @@
+name: Build Zola Site
+
+on:
+  push:
+    branches:
+      - nightly-build
+  # schedule:
+  #   cron: '30 10 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Download papers and other release files
+        run: python runner.py build
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Build public HTML
+        uses: shalzz/zola-deploy-action@v0.17.0
+        env:
+          BUILD_ONLY: true
+      - name: Publish to Cloudflare Preview
+        uses: cloudflare/wrangler-action@2.0.0
+        if: github.ref != 'refs/heads/master'
+        with:
+          command: pages publish public --project-name=rutar-nightly
+          apiToken: ${{ secrets.CF_API_TOKEN }}

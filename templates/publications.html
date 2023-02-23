@@ -4,7 +4,7 @@
 {% block description %}{{ section.description }}{% endblock %}
 {% block content %}
 <ol class="pubs" reversed>
-  {%- for publ in load_data(path="data/publications.json") %}
+  {%- for publ in load_data(path="data/papers.json") %}
   {{- linker::publication(publ=publ) -}}
   {% endfor %}
 </ol>
