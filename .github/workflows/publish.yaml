@@ -1,0 +1,37 @@
+name: Build Zola Site
+
+on:
+  push:
+  schedule:
+    - cron: '30 10 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Download papers and other release files
+        run: python runner.py build
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Build public HTML with drafts
+        uses: shalzz/zola-deploy-action@v0.17.0
+        if: github.ref != 'refs/heads/master'
+        env:
+          BUILD_FLAGS: --drafts
+          BUILD_ONLY: true
+      - name: Build public HTML
+        uses: shalzz/zola-deploy-action@v0.17.0
+        if: github.ref == 'refs/heads/master'
+        env:
+          BUILD_ONLY: true
+      - name: Check HTML and CSS
+        run: |
+          pip install html5validator
+          html5validator --root public/ --also-check-css --show-warnings
+      - name: Publish to Cloudflare
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          command: pages publish public "--project-name=rutar" "--branch=${{ github.ref_name }}"
+          apiToken: ${{ secrets.CF_API_TOKEN }}

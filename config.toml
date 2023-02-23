@@ -9,7 +9,7 @@ build_search_index = false
 generate_feed = true
 
 taxonomies = [
-   { name = "tags", paginate = 10}
+   {name = "tags", paginate = 10}
 ]
 
 

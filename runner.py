@@ -30,8 +30,10 @@ def load_papers(tname, dry_run=False):
     ]
     if not dry_run:
         processes = [Popen(cmd) for cmd in commands]
-        for p in processes:
-            p.wait()
+        outputs = [p.wait(timeout=120) for p in processes]
+        if not all(out == 0 for out in outputs):
+            print(f"Error downloading files for '{tname}'")
+            sys.exit(1)
 
 
 def run_build():
