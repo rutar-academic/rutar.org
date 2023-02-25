@@ -3,7 +3,7 @@
 {% block description %}{{ page.description | safe }}{% endblock %}
 {% block content %}
 <div class="post-date">{% if page.draft %}DRAFT{% else %}{{ page.date | date(format="%B %-d, %Y") }}{% endif %}</div>
-<div class="post-author">Written by <a href="{{ config.base_url }}">{{ config.extra.author }}</a></div>
+<div class="post-author">Written by <a href="{{ config.base_url }}">{{ config.author }}</a></div>
 {% if page.extra.toc %}
 <h2>Contents</h2>
 <nav class="toc">
@@ -26,7 +26,7 @@
 {{ page.content | safe }}
 </div>
 <div class="post-footer">
-    <div class="post-info"><span><a class="hidden-link" href="mailto:{{ config.extra.info.email | urlencode_strict }}">Alex Rutar</a></span><span><a class="hidden-link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+    <div class="post-info"><span><a class="hidden-link" href="mailto:{{ config.extra.info.email | urlencode_strict }}">{{ config.author }}</a></span><span><a class="hidden-link" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
   </div>
   <div class="list post-tags">
       {%- for tag in page.taxonomies.tags | sort -%}
