@@ -5,6 +5,7 @@
 {% block content %}
 {%- set publ_hash = load_data(path="data/papers.json") -%}
 <h2 id="publications">Publications</h2>
+<p>Here is a <a href="/publications/">complete list of all my publications</a>.</p>
 <p>I have written <a class="hidden-link" href="/publications/"><strong>{{ publ_hash | length }}</strong> research papers</a>, of which:</p>
 <ul>
     <li><strong>{{ publ_hash | filter(attribute="status", value="published") | length }}</strong> are published;</li>
@@ -18,7 +19,6 @@ Click on each entry to get a description of the category as well as a list of th
   <li><a href="{{ page.path | safe }}">{{ page.title }}</a></li>
   {% endfor %}
 </ul>
-You can also read <a href="/publications/">complete list of all my publications</a>.
 
 <h2 id="presentations">Presentations</h2>
 I have given a total of <strong>{{ load_data(path="data/talks.json") | length }}</strong> talks at various venues.
