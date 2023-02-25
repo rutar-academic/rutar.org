@@ -6,6 +6,7 @@
     ],
     "internal": [
         {"url": "/publications/", "name": "Publications"},
+        {"url": "/where/", "name": "Travel"},
         {"url": "/research/#software", "name": "Software"},
         {"url": "/research/#presentations", "name": "Presentations"},
         {"url": "/tags/", "name":"Non-Math Writing"},
