@@ -188,7 +188,7 @@ When to run
 ```
 on:
   schedule:
-    - cron: '30 10 * * *'
+    - cron: '15 08 * * *'
 ```
 Main jobs
 ```
