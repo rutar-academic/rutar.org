@@ -1,18 +1,18 @@
-# used in templates/atom.xml
+# global information, also used in templates/atom.xml
 title = "Alex Rutar's Blog"
 description = "Personal webpage for math and related topics."
 author = "Alex Rutar"
 
 base_url = "https://rutar.org"
+
+# build settings
 compile_sass = true
 build_search_index = false
-
 generate_feed = true
 
 taxonomies = [
    {name = "tags", paginate = 10}
 ]
-
 
 [markdown]
 highlight_code = false
@@ -21,8 +21,8 @@ smart_punctuation = true
 
 [extra]
 feed_length = 10 # number of elements to show in feed
-description = "Personal webpage for math and related topics."
 
+# extra information renedered on home page
 [extra.info]
 email = "alex@rutar.org"
 keyid = "EE53A00E"
