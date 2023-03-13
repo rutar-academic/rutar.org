@@ -23,14 +23,6 @@
       "date_end": "2023-07-07"
     },
     {
-      "venue": "Thermodynamic Formalism: Non-additive Aspects and Related Topics",
-      "location": "Bedlewo",
-      "url": "https://www.impan.pl/en/activities/banach-center/conferences/23-thermoform",
-      "year": 2023,
-      "date_start": "2023-05-14",
-      "date_end": "2023-05-19"
-    },
-    {
       "venue": "Dynamics and fractals",
       "location": "IMPAN",
       "url": "https://www.impan.pl/en/activities/banach-center/conferences/23-simons-v/programme",
@@ -61,6 +53,14 @@
       "year": 2023,
       "date_start": "2023-05-20",
       "date_end": "2023-06-04"
+    },
+    {
+      "venue": "Thermodynamic Formalism: Non-additive Aspects and Related Topics",
+      "location": "Bedlewo",
+      "url": "https://www.impan.pl/en/activities/banach-center/conferences/23-thermoform",
+      "year": 2023,
+      "date_start": "2023-05-14",
+      "date_end": "2023-05-19"
     },
     {
       "location": "UJyv",
