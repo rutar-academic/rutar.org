@@ -15,14 +15,6 @@
   ],
   "unconfirmed": [
     {
-      "venue": "Fractal geometry",
-      "location": "ICMS",
-      "url": "https://www.icms.org.uk/workshops/2023/fractal-geometry",
-      "year": 2023,
-      "date_start": "2023-07-03",
-      "date_end": "2023-07-07"
-    },
-    {
       "venue": "Dynamics and fractals",
       "location": "IMPAN",
       "url": "https://www.impan.pl/en/activities/banach-center/conferences/23-simons-v/programme",
@@ -32,6 +24,14 @@
     }
   ],
   "travel": [
+    {
+      "venue": "Fractal geometry",
+      "location": "ICMS",
+      "url": "https://www.icms.org.uk/workshops/2023/fractal-geometry",
+      "year": 2023,
+      "date_start": "2023-07-03",
+      "date_end": "2023-07-07"
+    },
     {
       "venue": "Multifractal analysis and self-similarity",
       "location": "CIRM",
@@ -52,7 +52,7 @@
       "location": "BME",
       "year": 2023,
       "date_start": "2023-05-20",
-      "date_end": "2023-06-04"
+      "date_end": "2023-06-02"
     },
     {
       "venue": "Thermodynamic Formalism: Non-additive Aspects and Related Topics",
