@@ -9,7 +9,7 @@
 {%- set grouped_past_travel = travel_db.travel | group_by(attribute="year") -%}
 
 <p>I am currently based out of the {{ render::osm(entry=travel_db.permanent[0]) }}.
-Otherwise, you can figure out where I currently am based on this overly comprehensive account of my past and future travel.
+Otherwise, you can figure out where I currently am by using this overly comprehensive account of my past and future travel.
 Jump to:</p>
 <ul>
     <li><a href="#future-travel">Future Travel</a></li>
