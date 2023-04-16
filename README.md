@@ -14,8 +14,9 @@ Running
 make build
 ```
 from the root of the project generates the folder `public`, which is the static webpage.
-This site is currently prepared for [Zola 17.0](https://github.com/getzola/zola/releases/tag/v0.17.0).
+This site is currently prepared for [Zola 17.2](https://github.com/getzola/zola/releases/tag/v0.17.2).
 
 It is convenient to validate the output HTML for errors: to do this, I use this [HTML5 validator tool](https://github.com/svenkreiss/html5validator) which I run with the command
 ```fish
 html5validator --root public/ --also-check-css --show-warnings --format gnu -ll
+```

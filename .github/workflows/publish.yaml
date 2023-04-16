@@ -16,13 +16,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
       - name: Build public HTML with drafts
-        uses: shalzz/zola-deploy-action@v0.17.0
+        uses: shalzz/zola-deploy-action@v0.17.2
         if: github.ref != 'refs/heads/master'
         env:
           BUILD_FLAGS: --drafts
           BUILD_ONLY: true
       - name: Build public HTML
-        uses: shalzz/zola-deploy-action@v0.17.0
+        uses: shalzz/zola-deploy-action@v0.17.2
         if: github.ref == 'refs/heads/master'
         env:
           BUILD_ONLY: true
