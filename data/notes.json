@@ -1,5 +1,12 @@
 [
   {
+    "title": "Substitutions and cycles",
+    "short_title": "Assouad dichotomy",
+    "links": {
+      "pdf": "notes/substitutions_and_cycles.pdf"
+    }
+  },
+  {
     "title": "Assouad dimensions and self-similar sets satisfying the weak separation condition in <var>ℝ</var>",
     "short_title": "Assouad dichotomy",
     "links": {
