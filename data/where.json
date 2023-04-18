@@ -14,14 +14,6 @@
     }
   ],
   "unconfirmed": [
-    {
-      "venue": "Dynamics and fractals",
-      "location": "IMPAN",
-      "url": "https://www.impan.pl/en/activities/banach-center/conferences/23-simons-v/programme",
-      "year": 2023,
-      "date_start": "2023-05-07",
-      "date_end": "2023-05-13"
-    }
   ],
   "travel": [
     {
@@ -61,6 +53,14 @@
       "year": 2023,
       "date_start": "2023-05-14",
       "date_end": "2023-05-19"
+    },
+    {
+      "venue": "Dynamics and fractals",
+      "location": "IMPAN",
+      "url": "https://www.impan.pl/en/activities/banach-center/conferences/23-simons-v/programme",
+      "year": 2023,
+      "date_start": "2023-05-07",
+      "date_end": "2023-05-13"
     },
     {
       "location": "UJyv",
