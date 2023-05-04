@@ -86,9 +86,13 @@
   },
   {
     "title": "Geometric and combinatorial properties of self-similar multifractal measures",
-    "status": "accepted",
+    "status": "published",
     "ref": {
-      "journal": "ETDS"
+      "journal": "ETDS",
+      "vol": "43",
+      "year": "2023",
+      "page_start": "2028",
+      "page_end": "2072"
     },
     "links": {
       "pdf": "papers/wsc_multi_R.pdf",
