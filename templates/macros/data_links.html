@@ -38,7 +38,7 @@
 {% endmacro %}
 
 {# key is the element counted, and data is the loop for key
-- e.g. name "kehare", data is load_data("data/people.json")
+- e.g. name "hare.kathryn-e", data is load_data("data/people.json")
 #}
 {% macro count_li(key, data, attr="name", ct) %}
   <li>{{ self::data_link(key=key, data=data, attr=attr) }} <span class="side-count">({{ ct }})</span></li>

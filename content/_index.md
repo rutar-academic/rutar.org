@@ -3,7 +3,7 @@ title = "About"
 template = "index.html"
 description = "Personal webpage for math and related topics."
 +++
-{% hidden_link(url="/images/alex.jpg") %}I{% end %} am a maths PhD student at the {% hidden_link(url="https://www.st-andrews.ac.uk/mathematics-statistics/") %}University of St Andrews, Scotland{% end %} (supervised by {{ person(key="jmfraser") }} and {{ person(key="kjfalconer") }}) in the [analysis group](http://www.mcs.st-and.ac.uk/pg/pure/Analysis/index.html).
+{% hidden_link(url="/images/alex.jpg") %}I{% end %} am a maths PhD student at the {% hidden_link(url="https://www.st-andrews.ac.uk/mathematics-statistics/") %}University of St Andrews, Scotland{% end %} (supervised by {{ person(key="fraser.jonathan-m") }} and {{ person(key="falconer.kenneth-j") }}) in the [analysis group](http://www.mcs.st-and.ac.uk/pg/pure/Analysis/index.html).
 
 I did my undergraduate studies at the {% hidden_link(url="https://uwaterloo.ca/pure-mathematics/") %}University of Waterloo, Ontario{% end %}.
 You can [read my CV](/alex_rutar_cv.pdf) for more detail.
