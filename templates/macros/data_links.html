@@ -21,6 +21,7 @@
       {# set prefix #}
       {%- if name is matching("arxiv") %}{% set prefix = "https://arxiv.org/abs/" %}
       {%- elif name is matching("doi") %}{% set prefix = "https://doi.org/" %}
+      {%- elif name is matching("zbl") %}{% set prefix = "https://zbmath.org/" %}
       {%- elif name is matching("pypi") %}{% set prefix = "https://pypi.org/project/" %}
       {%- elif name is matching("github") %}{% set prefix = "https://github.com/" %}
       {%- elif name is matching("pdf|slides|code|poster") %}{% set prefix = "/" %}

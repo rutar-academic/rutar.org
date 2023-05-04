@@ -51,6 +51,7 @@
     "links": {
       "pdf": "papers/attainable_int_dims.pdf",
       "doi": "10.54330/afm.120529",
+      "zbl": "07573915",
       "arxiv": "2111.14678"
     },
     "tags": ["classification", "intermediate dimensions"]
@@ -80,6 +81,7 @@
     "links": {
       "pdf": "papers/fnc_loop_set.pdf",
       "doi": "10.1088/1361-6544/ac8040",
+      "zbl": "7591215",
       "arxiv": "2101.07400"
     },
     "tags": ["multifractal"]
@@ -118,6 +120,7 @@
     "links": {
       "pdf": "papers/wsc_equals_fnc.pdf",
       "doi": "10.1090/proc/15307",
+      "zbl": "1466.28010",
       "arxiv": "2002.04575"
     },
     "tags": ["separation"]
