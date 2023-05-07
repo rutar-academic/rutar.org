@@ -92,3 +92,12 @@
     </table>
   </li>
 {% endmacro %}
+
+{% macro publication_count(type) -%}
+{% if type is matching("accepted") %}{% set message = "accepted but not yet published" %}{% else %}{% set message = type %}{% endif -%}
+{% if type is matching("submitted") %}{% set punct = "." %}{% else %}{% set punct = ";" %}{% endif -%}
+{% set count = load_data(path="data/papers.json") | filter(attribute="status", value=type) | length -%}
+{% if count == 1 %}{% set verb = "is" %}
+{% else %}{% set verb = "are" %}
+{% endif %}<li><strong>{{ count }}</strong> {{ verb }} {{ message }}{{ punct }}</li>
+{%- endmacro %}
