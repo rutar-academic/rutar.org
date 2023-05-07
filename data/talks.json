@@ -1,5 +1,12 @@
 [
   {
+    "title": "Assouad dimension and tangents of dynamically invariant sets",
+    "date": "2023-04-25",
+    "venue": "St Andrews Analysis Seminar",
+    "venue_url": "https://analysis.rutar.org/seminars/",
+    "links": {}
+  },
+  {
     "title": "Interpolating between box and Assouad dimension",
     "date": "2023-04-14",
     "venue": "Oulu Analysis Seminar",
@@ -98,7 +105,7 @@
     "title": "Attainable forms of intermediate dimensions",
     "date": "2022-02-08",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "http://www.mcs.st-andrews.ac.uk/pg/pure/Analysis/seminars.html",
+    "venue_url": "https://analysis.rutar.org/seminars/",
     "links": {}
   },
   {
@@ -121,7 +128,7 @@
     "title": "Multifractal Analysis for Self-Similar Measures with Exact Overlaps",
     "date": "2020-10-27",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "http://www.mcs.st-andrews.ac.uk/pg/pure/Analysis/seminars.html",
+    "venue_url": "https://analysis.rutar.org/seminars/",
     "links": {
       "slides": "talks/sta_analysis_oct_2020.pdf",
       "video": "https://www.youtube.com/watch?v=PJa2iJAN2gs"
