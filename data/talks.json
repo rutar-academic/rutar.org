@@ -1,9 +1,9 @@
 [
   {
-    "title": "Assouad dimension and tangents of dynamically invariant sets",
-    "date": "2023-04-25",
-    "venue": "St Andrews Analysis Seminar",
-    "venue_url": "https://analysis.rutar.org/seminars/",
+    "title": "Multifractal analysis of random substitutions",
+    "date": "2023-05-18",
+    "venue": "Thermodynamic Formalism: Non-additive Aspects and Related Topics",
+    "venue_url": "https://www.impan.pl/en/activities/banach-center/conferences/23-thermoform/program",
     "links": {}
   },
   {
@@ -55,7 +55,7 @@
     "venue": "BECMC 2022",
     "venue_url": "https://web.mat.bham.ac.uk/BYMC/BECMC22/",
     "links": {
-        "slides": "talks/becmc2022.pdf"
+        "slides": "talks/becmc_2022.pdf"
     }
   },
   {
