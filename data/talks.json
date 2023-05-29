@@ -4,7 +4,9 @@
     "date": "2023-05-18",
     "venue": "Thermodynamic Formalism: Non-additive Aspects and Related Topics",
     "venue_url": "https://www.impan.pl/en/activities/banach-center/conferences/23-thermoform/program",
-    "links": {}
+    "links": {
+        "slides": "talks/thermo_form_2023.pdf"
+    }
   },
   {
     "title": "Interpolating between box and Assouad dimension",
