@@ -1,5 +1,14 @@
 [
   {
+    "title": "Pointwise Assouad dimension and regularity of invariant sets",
+    "date": "2023-07-04",
+    "venue": "Fractal Geometry",
+    "venue_url": "https://www.icms.org.uk/workshops/2023/fractal-geometry",
+    "links": {
+        "slides": "talks/icms_fractal_2023.pdf"
+    }
+  },
+  {
     "title": "Multifractal analysis on (some) self-affine carpets",
     "date": "2023-06-28",
     "venue": "Multifractal analysis and self-similarity",
