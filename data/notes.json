@@ -1,7 +1,14 @@
 [
   {
+    "title": "Box versus packing dimensions via anti-Frostman measures",
+    "short_title": "Box versus packing dimensions",
+    "links": {
+      "pdf": "notes/box_versus_packing.pdf"
+    }
+  },
+  {
     "title": "Substitutions and cycles",
-    "short_title": "Assouad dichotomy",
+    "short_title": "Substitutions and cycles",
     "links": {
       "pdf": "notes/substitutions_and_cycles.pdf"
     }
