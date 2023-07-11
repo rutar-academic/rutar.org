@@ -1,10 +1,17 @@
 [
   {
-    "description": "An automatic LaTeX project templater",
+    "description": "LaTeX Project Manager",
+    "lang": "Fish",
+    "links": {
+      "github": "alexrutar/tpr"
+    }
+  },
+  {
+    "description": "Mathematics Bibliography Manager",
     "lang": "Python",
     "links": {
-      "pypi": "texproject",
-      "github": "alexrutar/texproject"
+      "github": "alexrutar/mathbib-pi",
+      "pypi": "mathbib"
     }
   },
   {
