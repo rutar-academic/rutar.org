@@ -10,7 +10,7 @@
 {%- if talk.venue_url -%}{% set talk_name = '<a href="' ~ talk.venue_url ~ '" class="hidden-link">' ~ talk.venue ~ '</a>' %}
   {%- else -%}{% set talk_name = talk.venue %}
   {%- endif %}
-  <li class="list">{{ talk.date | date(format="%b. %Y") }} - {{ talk_name | safe }} - <cite>{{ talk.title }}</cite> {{ linker::list_links(hash=talk.links, pre="(", post=")") | safe }}</li>
+  <li class="list">{{ talk.date | date(format="%b. %Y") }} - {{ talk_name | safe }} - <cite>{{ talk.title | safe }}</cite> {{ linker::list_links(hash=talk.links, pre="(", post=")") | safe }}</li>
   {% endfor -%}
 </ul>
 {% endblock %}

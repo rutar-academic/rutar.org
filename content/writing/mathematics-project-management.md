@@ -14,13 +14,12 @@ tags = ["latex", "math"]
 
 - Include a section explaining the tool sources in detail, installation, and references.
 
+Partially to increase the smoothness of my workflow, but also partially for personal entertainment, I've written a variety of tools over the past few years in an attempt to streamline my workflow.
+
 
 1. Using `vs`.
 2. Using `mbib`.
-3. Using `copier` [https://copier.readthedocs.io/en/stable/](https://copier.readthedocs.io/en/stable/)
-4. [https://pre-commit.com/](https://pre-commit.com/)
-5. Using `git`, automatic compilation scripts, tags
-6. Writing templates
+3. Using `tpr`.
 
 
 # Miscellaneous scripts

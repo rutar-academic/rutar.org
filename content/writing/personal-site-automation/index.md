@@ -11,49 +11,56 @@ toc = false
 [taxonomies]
 tags = ["web", "deployment", "github"]
 +++
-In this article, I will discuss some options for personal research site automation.
-Since I primarily use [GitHub](https://github.com), this article will focus on the implementation details offered through their platforms.
+In this article, I will discuss some options for hosting and automating personal websites.
+Since I primarily use [GitHub](https://github.com), this article will focus on the implementation details offered through their platform.
 However, there are many other providers which offer the same functionality described here: part of the goal of this article is to highlight some of the tools which exist, and what you might hope should be possible.
+Of course, this article comes with the natural caveat that the details in this document are highly opinionated may need modification for your particular setup.
 
-## Setup and preliminaries
+## Preliminaries and setup
+### Using a deployment server
+In practice, everything in this article could be implemented to run directly on your computer.
+However, for services which you want to run frequently, it is often useful to have the code execute on a server.
+This has many benefits:
+
+- The code can run automatically under certain conditions, without being sensitive to the status of your local device (e.g. whether it is connected to the internet, or whether it is turned on or not)
+- You do not need to dedicate any resources while using your device
+- You decrease your own personal workload since you do not need to do anything manually: everything just happens directly
+
+However, there are of course a number of caveats:
+
+- You need to do more checks: for instance, you probably need a well-designed [pre-commit](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to catch errors before you deploy them
+- You need to check intermediate steps so things do not get badly broken (for instance, the build stage fails and you push a malformed webpage to a server)
+- You need to understand how to recover from these situations if things go wrong
+
+One reasonable option, and the option that will be used in this article, is to use [GitHub Actions](https://docs.github.com/en/actions).
+This option is particularly convenient if your git repositories are already hosted on GitHub.
+For general reference, the [GitHub Actions Documentation](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) is a good place to start.
+However, I will try to include most of the details concerning the usage of this platform from within this article.
+
+The main drawback of using GitHub Actions is that you do not control your own instances and are dependent on an external framework that may cease to exist or change form to something less usable.
+It is certainly possible to host this on your own server, but the details of doing this are well beyond the scope of this article!
+
+### Setup
 I will assume that your personal website, and each project (such as a directory containing LaTeX files for a paper, or notes for a course) has its own repository.
 Throughout this article, I will refer to the personal website repository as `owner/website-repo` and the project repository as `owner/project-repo`, and that they are hosted on GitHub.
 
-I will assume that the structure of your website repository `owner/website-repo` contains a top-level directory `public-html` containing the public HTML files, as well as (possibly) other files.
+I will also assume that the structure of your website repository `owner/website-repo` contains a top-level directory `public-html` containing the public HTML files, as well as (possibly) other files.
 Similarly, I will assume that the project repository `owner/project-repo` consists of a primary top-level LaTeX file `main.tex`, along with any other auxiliary files.
 You can find an example project repository TODO: hosted here.
 
+### Outline
+Our general approach consists of two steps.
 
-### Preliminaries on GitHub Actions
-In practice, everything in this article could be implemented directly on your computer.
-However, for services which you want to run frequently, it is often good to have the code execute on a server.
-This has many benefits:
-
-- The code can be written to run automatically under certain conditions without monitoring
-- You do not use local resources
-- You do not need to wait for things to execute
-- You decrease your own personal workload since you do not need to do anything manually: everything just happens directly
-
-Caveats:
-
-- need to do more checks (e.g. pre-commit)
-- need to check intermediate steps so things do not get badly broken (e.g. malformed website push)
-- need to understand how to recover from these situations if things go wrong
+1. Inside each `owner/project-repo`, automatically compile the document into a PDF and save that PDF somewhere programmatically accessible.
+   This is detailed in the [Generating release files](generating-release-files-in-project-repositories) section.
+2. Inside the `owner/website-repo`, retrieve the compiled PDFs from the various project repositories, add them to the files in your website, and then copy to your server.
 
 
-
-One reasonable option, especially if you already have the code for your website stored in a GitHub repository, is to use [GitHub Actions](https://docs.github.com/en/actions).
-
-The [GitHub Actions Documentation](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) is a good place to start.
-Here, I will explain how one might implement the above code inside a basic website repository.
-
-### Pre-requisites and existing setup
-
-## Generating release files in paper repositories
+## Generating release files in project repositories
 ### Workflow contents
 As discussed earlier, we put workflow files in the `.github/workflows` directory.
-The immediate step is to create a file `.github/workflows/build.yml` with contents
-```
+The immediate step is to create a file `.github/workflows/build.yaml` with contents
+```yaml
 name: Build LaTeX document
 on:
   push:
@@ -154,6 +161,11 @@ I will assume that your site is hosted on Cloudflare, since this is what I have 
 
 In this setup, the build happens according to the cron, i.e. every day at 10:30am UTC.
 You can also use a different activation, (TODO ref actions on), multiple are allowed, maybe mention API thing
+
+### Rsync
+```
+rsync -avz --delete source target
+```
 
 ### Publish
 Create a file `.github/actions/publish.yml` with the contents
