@@ -55,6 +55,7 @@
   },
   {
     "title": "<var>L<sup>q</sup></var>-spectra and multifractal analysis of random substitutions",
+    "title_latex": "$L^q$-spectra and multifractal analysis of random substitutions",
     "date": "2022-11-22",
     "venue": "St Andrews Analysis Seminar",
     "venue_url": "https://analysis.rutar.org/seminars/",
@@ -184,7 +185,8 @@
     "links": {}
   },
   {
-    "title": "Pisot-Vijayaraghavan numbers",
+    "title": "Pisot–Vijayaraghavan numbers",
+    "title_latex": "Pisot--Vijayaraghavan numbers",
     "date": "2018-07-15",
     "venue": "CUMC 2018",
     "venue_url": "https://cumc.math.ca/2017/",

@@ -2,3 +2,5 @@ public
 .DS_Store
 static/papers
 static/notes
+venv
+cv_build

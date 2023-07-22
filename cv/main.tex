@@ -1,0 +1,74 @@
+% Project created on 2020-07-24
+\documentclass{mathcv}
+\addbibresource{main.bib}
+
+\begin{document}
+\par{\centering
+    {\Huge \textbf{Curriculum Vitae}\\\vspace{0.5cm}\huge \textit{Alex Rutar}
+}\bigskip\par}
+\noindent
+\BLOCK{for ct in nocites}
+\nocite{\VAR{ct}}
+\BLOCK{endfor}
+
+\textit{Last updated:} \textit{\today}
+
+\begin{twocolsec}{Personal Information}
+    \textbf{Institution} & University of St Andrews \\
+    \textbf{Email}       & \href{mailto:alex@rutar.org}{\texttt{alex@rutar.org}}\\
+    \textbf{Website}     & \href{https://rutar.org}{\texttt{https://rutar.org}}\\
+    \textbf{Citizenship} & Canadian\\
+    \textbf{Languages}   & English (native), French (reading)
+\end{twocolsec}
+
+\begin{twocolsec}{Education}
+    2020-     & \textbf{PhD in Mathematics}, {\bfseries\textit{University of St Andrews}}, \textit{St Andrews, UK}\newline
+                Advisors: Jonathan Fraser and Kenneth Falconer\\
+    2016-2020 & \textbf{Bachelor of Mathematics}, {\bfseries\textit{University of Waterloo}}, \textit{Waterloo, ON}\newline
+                Major: Pure Mathematics, Minor: Combinatorics and Optimization\newline
+                GPA: 95.7/100 \\
+    Fall 2018 & \textbf{Exchange}, {\bfseries\textit{Budapest Semesters in Mathematics}}, \textit{Budapest}\newline
+                Magna Cum Laude\newline
+                GPA: 4.0/4.0 \\
+    2012-2016 & \textbf{Secondary School}, {\bfseries\textit{Tempo School}}, \textit{Edmonton, AB}\newline
+                Advanced Placement National Scholar\newline
+                GPA: 99/100
+\end{twocolsec}
+
+\begin{threecolsec}{Funding}
+    2022 & £13,388 & \textbf{EPSRC Doctoral Funding}\\
+    2021 & £15,609 & \textbf{EPSRC Doctoral Funding}\\
+    2020 & £15,285 & \textbf{EPSRC Doctoral Funding}\\
+    2019 & \$4,500 & \textbf{NSERC Undergraduate Research Award}\\
+    2018 & \$4,500 & \textbf{NSERC Undergraduate Research Award}
+\end{threecolsec}
+
+\begin{threecolsec}{Scholarships and Awards}
+    2023 & £6,000 & \textbf{Cecil King Travel Scholarship}, \textit{London Math Society}\\
+    2022 & \$105,000 & \textbf{NSERC CGS-D}, \textit{Government of Canada}\\
+    2020 & £73,000 & \textbf{Hansel Scholarship}, \textit{University of St Andrews}\\
+    2020 & \$1,000 & \textbf{Pure Math Undergraduate Research Prize}, \textit{University of Waterloo}\\
+    2016 & \$20,000 & \textbf{W.~T.~Tutte National Scholarship}, \textit{University of Waterloo}\\
+    2016 & \$5,000 &\textbf{President’s Scholarship}, \textit{University of Waterloo}\\
+    2016 & \$2,500 &\textbf{Rutherford Scholarship}, \textit{Government of Alberta}\\
+    2016 & \$0 &\textbf{Governor General Bronze}, \textit{Tempo School}
+\end{threecolsec}
+
+\rsec{Publications}
+\printbibliography[heading=none]
+
+\begin{twocolsec}{Conferences and Presentations}
+    \BLOCK{for talk in talks}
+\VAR{talk.date} & \textbf{\VAR{talk.venue}}: \textit{\VAR{talk.title}}\BLOCK{if not loop.last}\\
+\BLOCK{endif}
+\BLOCK{endfor}
+\end{twocolsec}
+
+\begin{twocolsec}{Other Skills}
+    \LaTeX & typesetting and package development\\
+    git & version control software\\
+    Python & software development, numerical computation, symbolic computation, graphical tools\\
+    Mathematica & functional programming, algorithm implementation for research papers\\
+    HTML / CSS & fundamentals of web development
+\end{twocolsec}
+\end{document}
