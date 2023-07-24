@@ -2,5 +2,6 @@ public
 .DS_Store
 static/papers
 static/notes
+static/alex_rutar_cv.pdf
 venv
-cv_build
+build

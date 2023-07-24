@@ -1,22 +1,29 @@
-.PHONY: all clean build serve
+.PHONY: all clean build_cmd serve
 
 all: public
 
-public: build
+public: build_cmd static/alex_rutar_cv.pdf
 	if [ "$$CF_PAGES_BRANCH" = "master" ]; then zola build; else zola build -u "https://$$CF_PAGES_BRANCH.rutar.pages.dev" --drafts; fi
 
 
-cv_build:
+build:
 	python build_cv.py
-	mbib generate cv_build/alex_rutar_cv.tex --out cv_build/main.bib
+	mbib generate build/alex_rutar_cv.tex --out build/alex_rutar_cv.bib
+	latexmk -pdf -interaction=nonstopmode -silent -Werror -file-line-error -cd build/alex_rutar_cv.tex
 
 clean:
 	rm -rf public
-	rm -rf cv_build
+	rm -rf build
+	rm -rf static/alex_rutar_cv.pdf
+	rm -rf static/papers
+	rm -rf static/notes
 
-build: cv_build
+static/alex_rutar_cv.pdf: build
+	mv build/alex_rutar_cv.pdf static/
+
+build_cmd: build
 	python runner.py build
 	zola build
 
-serve: build
+serve: build_cmd
 	zola serve

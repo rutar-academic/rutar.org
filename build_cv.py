@@ -1,4 +1,5 @@
 from jinja2 import FileSystemLoader, Environment, select_autoescape
+import subprocess
 from pathlib import Path
 import json
 from datetime import datetime
@@ -31,15 +32,19 @@ def run():
              } for talk in talk_data]
     talks.sort(reverse=True, key=lambda talk: talk['date'])
 
-    # create latex build directory
+    # get date of current commit
+    completed_proc = subprocess.run(['git', 'log', '-1', '--format=%ci'], capture_output=True)
+    git_commit_date = datetime.strptime(
+         completed_proc.stdout.decode('ascii').split(' ')[0],
+         '%Y-%m-%d').strftime('%B %-d, %Y')
 
     # write main tex file
-    template = env.get_template("main.tex")
-    Path('cv_build').mkdir(exist_ok=True)
-    Path('cv_build/alex_rutar_cv.tex').write_text(template.render(nocites=nocites, talks=talks))
+    template = env.get_template("alex_rutar_cv.tex")
+    Path('build').mkdir(exist_ok=True)
+    Path('build/alex_rutar_cv.tex').write_text(template.render(nocites=nocites, talks=talks, today=git_commit_date))
 
     # copy in macro file
-    Path('cv_build/mathcv.cls').write_text(Path('cv/mathcv.cls').read_text())
+    Path('build/mathcv.cls').write_text(Path('cv/mathcv.cls').read_text())
 
 
 def get_priority_val(entry):
