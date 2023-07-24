@@ -36,9 +36,12 @@ def load_papers(tname, dry_run=False):
             sys.exit(1)
 
 
-def run_build():
-    for tname in ("papers", "notes"):
-        load_papers(tname, dry_run=False)
+def run_papers():
+    load_papers("papers", dry_run=False)
+
+
+def run_notes():
+    load_papers("notes", dry_run=False)
 
 
 def run_dry():
@@ -47,7 +50,7 @@ def run_dry():
 
 
 if __name__ == "__main__":
-    dispatch = {"build": run_build, "dry": run_dry}
+    dispatch = {"papers": run_papers, "notes": run_notes, "dry": run_dry}
     try:
         dispatch[sys.argv[1]]()
     except KeyError:

@@ -11,8 +11,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Download papers and other release files
-        run: python runner.py build
+      - name: Download papers
+        run: python runner.py papers
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Download notes
+        run: python runner.py notes
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
       - name: Build public HTML with drafts
