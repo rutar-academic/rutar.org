@@ -5,6 +5,48 @@ import json
 from datetime import datetime
 
 
+def make_auth_string(auth_list):
+    match len(auth_list):
+        case 0:
+            return ""
+        case 1:
+            return f"(with {auth_list[0]}) "
+        case 2:
+            return f"(with {auth_list[0]} and {auth_list[1]}) "
+        case _:
+            return f"(with {', '.join(auth_list[:-1])}, and {auth_list[-1]}) "
+
+
+def make_journal_ref(pages, journal, vol, year):
+    return f"\\textit{{{journal}}} \\textbf{{{vol}}} ({year}), {pages}"
+
+
+def make_ref(entry, journal_data):
+    match entry["status"]:
+        case "published":
+            return make_journal_ref(
+                f"{entry['ref']['page_start']}--{entry['ref']['page_end']}",
+                journal_data[entry["ref"]["journal"]]["name"],
+                entry["ref"]["vol"],
+                entry["ref"]["year"],
+            )
+        case "submitted":
+            return f"Preprint. \\href{{https://arxiv.org/abs/{entry['links']['arxiv']}}}{{\\texttt{{arxiv:{entry['links']['arxiv']}}}}}"
+
+        case "accepted":
+            return f"To appear in: \\textit{{{journal_data[entry['ref']['journal']]['name']}}}"
+
+
+def normalize_publ_data(entry, auth_data, journal_data):
+    return {
+        "title": entry["title"],
+        "with": make_auth_string(
+            [auth_data[auth]["short_name"] for auth in entry.get("with", [])]
+        ),
+        "ref": make_ref(entry, journal_data),
+    }
+
+
 def run():
     env = Environment(
         loader=FileSystemLoader("cv"),
@@ -19,10 +61,11 @@ def run():
         line_comment_prefix="%#",
         trim_blocks=True,
     )
-    # get publication keys and save to 'nocites'
+    # get publication data
     publ_data = json.loads(Path("data/papers.json").read_text())
-    cites_or_none = [get_priority_val(entry) for entry in publ_data]
-    nocites = [ct for ct in cites_or_none if ct is not None]
+    auth_data = json.loads(Path("data/people.json").read_text())
+    journal_data = json.loads(Path("data/journals.json").read_text())
+    publ = [normalize_publ_data(entry, auth_data, journal_data) for entry in publ_data]
 
     # get talk data
     talk_data = json.loads(Path("data/talks.json").read_text())
@@ -50,7 +93,7 @@ def run():
     template = env.get_template("alex_rutar_cv.tex")
     Path("build").mkdir(exist_ok=True)
     Path("build/alex_rutar_cv.tex").write_text(
-        template.render(nocites=nocites, talks=talks, today=git_commit_date)
+        template.render(publications=publ, talks=talks, today=git_commit_date)
     )
 
     # copy in macro file

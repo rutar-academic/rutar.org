@@ -1,6 +1,5 @@
 % Project created on 2020-07-24
 \documentclass{mathcv}
-\addbibresource{alex_rutar_cv.bib}
 
 \begin{document}
 \par{\centering
@@ -55,7 +54,11 @@
 \end{threecolsec}
 
 \rsec{Publications}
-\printbibliography[heading=none]
+\begin{enumerate}[itemsep=0.5mm]
+    \BLOCK{for publ in publications}
+    \item \VAR{publ.with}\VAR{publ.title}. \VAR{publ.ref}
+    \BLOCK{endfor}
+\end{enumerate}
 
 \begin{twocolsec}{Conferences and Presentations}
     \BLOCK{for talk in talks}

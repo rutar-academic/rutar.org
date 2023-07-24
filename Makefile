@@ -8,7 +8,6 @@ public: static/papers static/notes static/alex_rutar_cv.pdf
 
 build:
 	python build_cv.py
-	mbib generate build/alex_rutar_cv.tex --out build/alex_rutar_cv.bib
 	latexmk -pdf -interaction=nonstopmode -silent -Werror -file-line-error -cd build/alex_rutar_cv.tex
 
 clean_remote: clean
