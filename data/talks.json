@@ -12,9 +12,7 @@
     "title": "Multifractal analysis on (some) self-affine carpets",
     "date": "2023-06-28",
     "venue": "Multifractal analysis and self-similarity",
-    "venue_url": "https://conferences.cirm-math.fr/2751.html",
-    "links": {
-    }
+    "venue_url": "https://conferences.cirm-math.fr/2751.html"
   },
   {
     "title": "Multifractal analysis of random substitutions",
@@ -29,43 +27,37 @@
     "title": "Assouad dimension and tangents of dynamically invariant sets",
     "date": "2023-04-25",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "https://analysis.rutar.org/seminars/",
-    "links": {}
+    "venue_url": "https://analysis.rutar.org/seminars/"
   },
   {
     "title": "Interpolating between box and Assouad dimension",
     "date": "2023-04-14",
     "venue": "Oulu Analysis Seminar",
-    "venue_url": "https://docs.google.com/document/d/1leXex6QBkjgqU0DElEs9f7FtJe5fpJtx8koEswnE5CI/",
-    "links": {}
+    "venue_url": "https://docs.google.com/document/d/1leXex6QBkjgqU0DElEs9f7FtJe5fpJtx8koEswnE5CI/"
   },
   {
     "title": "Assouad dimension and tangents of dynamically invariant sets",
     "date": "2023-04-03",
     "venue": "Jyväskylä Geometric Analysis Seminar",
-    "venue_url": "https://www.jyu.fi/science/en/maths/current/seminars/geometric-analysis-seminar",
-    "links": {}
+    "venue_url": "https://www.jyu.fi/science/en/maths/current/seminars/geometric-analysis-seminar"
   },
   {
     "title": "Convex Optimization and Multifractal Analysis",
     "date": "2023-01-27",
     "venue": "Oulu Analysis Seminar",
-    "venue_url": "https://docs.google.com/document/d/1leXex6QBkjgqU0DElEs9f7FtJe5fpJtx8koEswnE5CI/",
-    "links": {}
+    "venue_url": "https://docs.google.com/document/d/1leXex6QBkjgqU0DElEs9f7FtJe5fpJtx8koEswnE5CI/"
   },
   {
     "title": "<var>L<sup>q</sup></var>-spectra and multifractal analysis of random substitutions",
     "title_latex": "$L^q$-spectra and multifractal analysis of random substitutions",
     "date": "2022-11-22",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "https://analysis.rutar.org/seminars/",
-    "links": {}
+    "venue_url": "https://analysis.rutar.org/seminars/"
   },
   {
     "title": "Assouad dimension and slices of self-affine sets",
     "date": "2022-10-31",
-    "venue": "Manchester Dynamics Seminar",
-    "links": {}
+    "venue": "Manchester Dynamics Seminar"
   },
   {
     "title": "Geometric and Combinatorial Properties of Self-similar Measures",
@@ -80,8 +72,7 @@
     "title": "Geometric and Combinatorial Properties of Self-similar Measures",
     "date": "2022-08-30",
     "venue": "BME Dynamical Systems Seminar",
-    "venue_url": "https://math.bme.hu/~dinamika/",
-    "links": {}
+    "venue_url": "https://math.bme.hu/~dinamika/"
   },
   {
     "title": "Attainable forms of intermediate dimensions",
@@ -96,8 +87,7 @@
     "title": "Dimension theory and classification of Assouad spectra through homogeneous Moran sets",
     "date": "2022-07-07",
     "venue": "University of Vienna Ergodic Theory Seminar",
-    "venue_url": "https://mathematik.univie.ac.at/forschung/seminare/arbeitsgemeinschaft-ergodentheorie/",
-    "links": {}
+    "venue_url": "https://mathematik.univie.ac.at/forschung/seminare/arbeitsgemeinschaft-ergodentheorie/"
   },
   {
     "title": "Classifying Dimension Spectra",
@@ -139,8 +129,7 @@
     "title": "Attainable forms of intermediate dimensions",
     "date": "2022-02-08",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "https://analysis.rutar.org/seminars/",
-    "links": {}
+    "venue_url": "https://analysis.rutar.org/seminars/"
   },
   {
     "title": "Self-similar measures with non-concave spectra and multifractal analysis",
@@ -181,15 +170,13 @@
     "title": "An Algebraic Proof of Quadratic Reciprocity",
     "date": "2019-07-25",
     "venue": "CUMC 2019",
-    "venue_url": "https://cumc.math.ca/2019/",
-    "links": {}
+    "venue_url": "https://cumc.math.ca/2019/"
   },
   {
     "title": "Pisot–Vijayaraghavan numbers",
     "title_latex": "Pisot--Vijayaraghavan numbers",
     "date": "2018-07-15",
     "venue": "CUMC 2018",
-    "venue_url": "https://cumc.math.ca/2017/",
-    "links": {}
+    "venue_url": "https://cumc.math.ca/2017/"
   }
 ]
