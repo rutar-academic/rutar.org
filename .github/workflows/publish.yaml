@@ -33,7 +33,7 @@ jobs:
           cache-name: cache-cv
         with:
           path: static/alex_rutar_cv.pdf
-          key: ${{ hashFiles('data/papers.json', 'data/talks.json', 'cv/*', 'build_cv.py') }}
+          key: cache-cv-${{ hashFiles('data/papers.json', 'data/talks.json', 'data/cv.json', 'cv/*', 'requirements.txt', 'build_cv.py') }}
       - if: ${{ steps.cache-cv.outputs.cache-hit != 'true' }}
         name: Generate CV .tex from template
         run: python build_cv.py

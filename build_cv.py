@@ -47,6 +47,11 @@ def normalize_publ_data(entry, auth_data, journal_data):
     }
 
 
+def format_currency(value, currency):
+    currency_symbol = {"CAD": "\\$", "EUR": "€", "GBP": "£"}
+    return f"{currency_symbol[currency]}{value:,}"
+
+
 def run():
     env = Environment(
         loader=FileSystemLoader("cv"),
@@ -61,6 +66,7 @@ def run():
         line_comment_prefix="%#",
         trim_blocks=True,
     )
+
     # get publication data
     publ_data = json.loads(Path("data/papers.json").read_text())
     auth_data = json.loads(Path("data/people.json").read_text())
@@ -81,6 +87,30 @@ def run():
     ]
     talks.sort(reverse=True, key=lambda talk: talk["date"])
 
+    cv_data = json.loads(Path("data/cv.json").read_text())
+    # get award data
+    award_data = cv_data["awards"]
+    awards = [
+        {
+            "year": award["year"],
+            "name": award["name"],
+            "source": award["source"],
+            "value": format_currency(award["value"], award["currency"]),
+        }
+        for award in award_data
+    ]
+
+    # get funding data
+    fund_data = cv_data["funding"]
+    funding = [
+        {
+            "year": fund["year"],
+            "name": fund["name"],
+            "value": format_currency(fund["value"], fund["currency"]),
+        }
+        for fund in fund_data
+    ]
+
     # get date of current commit
     completed_proc = subprocess.run(
         ["git", "log", "-1", "--format=%ci"], capture_output=True
@@ -93,7 +123,16 @@ def run():
     template = env.get_template("alex_rutar_cv.tex")
     Path("build").mkdir(exist_ok=True)
     Path("build/alex_rutar_cv.tex").write_text(
-        template.render(publications=publ, talks=talks, today=git_commit_date)
+        template.render(
+            publications=publ,
+            talks=talks,
+            today=git_commit_date,
+            awards=awards,
+            funding=funding,
+            personal=cv_data["personal"],
+            skills=cv_data["skills"],
+            education=cv_data["education"],
+        )
     )
 
     # copy in macro file

@@ -1,0 +1,139 @@
+{
+  "personal": {
+    "name": "Alex Rutar",
+    "email": "alex@rutar.org",
+    "institution": "University of St Andrews",
+    "website": "https://rutar.org",
+    "citizenship": "Canadian",
+    "lang": "English (native), French (reading)"
+  },
+  "funding": [
+    {
+      "year": "2022",
+      "value": 13388,
+      "currency": "GBP",
+      "name": "EPSRC Doctoral Funding"
+    },
+    {
+      "year": "2021",
+      "value": 15609,
+      "currency": "GBP",
+      "name": "EPSRC Doctoral Funding"
+    },
+    {
+      "year": "2020",
+      "value": 15285,
+      "currency": "GBP",
+      "name": "EPSRC Doctoral Funding"
+    }
+  ],
+  "awards": [
+    {
+      "year": "2023",
+      "value": 6000,
+      "currency": "GBP",
+      "name": "Cecil King Travel Scholarship",
+      "source": "London Math Society"
+    },
+    {
+      "year": "2022",
+      "value": 105000,
+      "currency": "CAD",
+      "name": "NSERC CGS-D",
+      "source": "Government of Canada"
+    },
+    {
+      "year": "2020",
+      "value": 73000,
+      "currency": "GBP",
+      "name": "Hansel Scholarship",
+      "source": "University of St Andrews"
+    },
+    {
+      "year": "2020",
+      "value": 1000,
+      "currency": "CAD",
+      "name": "Pure Math Undergraduate Research Prize",
+      "source": "University of Waterloo"
+    },
+    {
+      "year": "2019",
+      "value": 4500,
+      "currency": "CAD",
+      "name": "NSERC Undergraduate Research Award",
+      "source": "Government of Canada"
+    },
+    {
+      "year": "2018",
+      "value": 4500,
+      "currency": "CAD",
+      "name": "NSERC Undergraduate Research Award",
+      "source": "Government of Canada"
+    },
+    {
+      "year": "2016",
+      "value": 20000,
+      "currency": "CAD",
+      "name": "W.~T.~Tutte National Scholarship",
+      "source": "University of Waterloo"
+    },
+    {
+      "year": "2016",
+      "value": 5000,
+      "currency": "CAD",
+      "name": "President's Scholarship",
+      "source": "University of Waterloo"
+    },
+    {
+      "year": "2016",
+      "value": 2500,
+      "currency": "CAD",
+      "name": "Rutherford Scholarship",
+      "source": "Government of Alberta"
+    },
+    {
+      "year": "2016",
+      "value": 0,
+      "currency": "CAD",
+      "name": "Governor General's Bronze",
+      "source": "Government of Alberta"
+    }
+  ],
+  "education": [
+    {
+      "date": "2020-",
+      "title": "PhD in Mathematics",
+      "institution": "University of St Andrews",
+      "location": "St Andrews, Scotland",
+      "extra": ["Advisors: Kenneth Falconer and Jonathan Fraser"]
+    },
+    {
+      "date": "2016-2020",
+      "title": "Bachelor of Mathematics",
+      "institution": "University of Waterloo",
+      "location": "Waterloo, Canada",
+      "extra": ["Major: Pure Mathematics, Minor: Combinatorics and Optimization", "GPA: 95.7/100"]
+    },
+    {
+      "date": "Fall 2016",
+      "title": "Exchange",
+      "institution": "Budapest Semesters in Mathematics",
+      "location": "Budapest, Hungary",
+      "extra": ["Magna Cum Laude", "GPA: 4.0/4.0"]
+    },
+    {
+      "date": "2012-2016",
+      "title": "Secondary School",
+      "institution": "Tempo School",
+      "location": "Edmonton, Canada",
+      "extra": ["Advanced Placement National Scholar", "GPA: 99/100"]
+    }
+  ],
+  "skills": [
+    {"name": "\\LaTeX", "description": "typesetting and package development"},
+    {"name": "git", "description": "version control software"},
+    {"name": "Python", "description": "software development, numerical computation, symbolic computation, graphical tools"},
+    {"name": "Mathematica", "description": "functional programming, algorithm implementation for research papers, visualization"},
+    {"name": "HTML / CSS", "description": "fundamentals of web development"}
+  ]
+}
