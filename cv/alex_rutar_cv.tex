@@ -12,7 +12,7 @@
 \textit{Last updated: \VAR{today}}
 
 \begin{twocolsec}{Personal Information}
-    \textbf{Institution} & University of St Andrews \\
+    \textbf{Institution} & \VAR{personal.institution}\\
     \textbf{Email}       & \href{mailto:\VAR{personal.email}}{\texttt{\VAR{personal.email}}}\\
     \textbf{Website}     & \href{\VAR{personal.website}}{\texttt{\VAR{personal.website}}}\\
     \textbf{Citizenship} & \VAR{personal.citizenship}\\
@@ -40,7 +40,7 @@
 \rsec{Publications}
 \begin{enumerate}[itemsep=0.5mm]
 \BLOCK{for publ in publications}
-    \item \VAR{publ.with}\VAR{publ.title}. \VAR{publ.ref}
+    \item \VAR{publ.with}\textit{\VAR{publ.title}}. \VAR{publ.ref}
 \BLOCK{endfor}
 \end{enumerate}
 

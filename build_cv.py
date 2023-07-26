@@ -18,7 +18,7 @@ def make_auth_string(auth_list):
 
 
 def make_journal_ref(pages, journal, vol, year):
-    return f"\\textit{{{journal}}} \\textbf{{{vol}}} ({year}), {pages}"
+    return f"{journal} \\textbf{{{vol}}} ({year}), {pages}"
 
 
 def make_ref(entry, journal_data):
