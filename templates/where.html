@@ -17,6 +17,7 @@ Jump to:</p>
 </ul>
 
 <h2 id="future-travel">Future Travel</h2>
+{{ render::has_future_travel(travel=travel_db.travel) }}
 {%- for entry in travel_db.travel | sort(attribute="date_start") -%}
 {{- render::location(entry=entry, past=false) -}}
 {% endfor %}

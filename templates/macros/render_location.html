@@ -16,6 +16,16 @@
 {%- endif %}
 {% endmacro %}
 
+{% macro has_future_travel(travel) -%}
+{%- set current_date = now() | date(format="%Y%m%d") | int -%}
+{%- set has_future = false -%}
+{%- for entry in travel -%}
+  {%- set entry_date = entry.date_start | date(format="%Y%m%d") | int -%}
+  {%- if entry_date > current_date -%}{% set has_future = true %}{%- endif -%}
+{%- endfor -%}
+{%- if not has_future -%}<p>No future travel planned!</p>{%- endif -%}
+{%- endmacro %}
+
 {% macro osm(entry) -%}
   {%- set location_dct = load_data(path="data/location.json") -%}
   <a class="hidden-link" target="_blank" href="https://www.openstreetmap.org/{{ location_dct[entry.location].osm }}">{{ location_dct[entry.location].name }}</a>

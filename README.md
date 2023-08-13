@@ -15,6 +15,7 @@ make
 ```
 from the root of the project generates the folder `public`, which is the static webpage.
 This site is currently prepared for [Zola 17.2](https://github.com/getzola/zola/releases/tag/v0.17.2).
+Note that running `make` yourself on this repository will likely fail since the release files for papers are in private repositories and require permission to access.
 
 It is convenient to validate the output HTML for errors: to do this, I use this [HTML5 validator tool](https://github.com/svenkreiss/html5validator) which I run with the command
 ```fish
