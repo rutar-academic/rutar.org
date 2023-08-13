@@ -30,7 +30,7 @@ The strict dependency structure can be found in the [`Makefile`](/Makefile).
    The files are downloaded to `static/papers` and `static/notes`.
 3. Generate PDF data using [pypdf](https://pypi.org/project/pypdf/) from the newly downloaded files in `static/papers` and `static/notes`.
    The generated PDF data is written to `data/pdf_data.json`.
-4. Generate the CV `.text` file from the template [`cv/alex_rutar_cv.tex`](/cv/alex_rutar_cv.tex) by using `python scripts/cv.py`.
+4. Generate the CV `.tex` file using [jinja](https://jinja.palletsprojects.com/en/3.1.x/)from the template [`cv/alex_rutar_cv.tex`](/cv/alex_rutar_cv.tex) by using `python scripts/cv.py`.
    A lot of the CV data is taken from various files in the [`data`](/data) directory.
    The generated template is copied to the file `build/alex_rutar_cv.tex`.
 5. Compile the LaTeX file `build/alex_rutar_cv.tex` and copy the compiled PDF to `static/alex_rutar_cv.pdf`.
