@@ -67,14 +67,12 @@ def run():
         trim_blocks=True,
     )
 
+    source_data = {k: json.loads(Path(f"data/{k}.json").read_text()) for k in ("papers", "people", "journals", "talks")}
+
     # get publication data
-    publ_data = json.loads(Path("data/papers.json").read_text())
-    auth_data = json.loads(Path("data/people.json").read_text())
-    journal_data = json.loads(Path("data/journals.json").read_text())
-    publ = [normalize_publ_data(entry, auth_data, journal_data) for entry in publ_data]
+    publ = [normalize_publ_data(entry, source_data["people"], source_data["journals"]) for entry in source_data["papers"]]
 
     # get talk data
-    talk_data = json.loads(Path("data/talks.json").read_text())
     talks = [
         {
             "date": datetime.strptime(talk["date"], "%Y-%m-%d").strftime("%Y.%m"),
@@ -83,7 +81,7 @@ def run():
             else talk["title"],
             "venue": talk["venue"],
         }
-        for talk in talk_data
+        for talk in source_data["talks"]
     ]
     talks.sort(reverse=True, key=lambda talk: talk["date"])
 
@@ -111,9 +109,9 @@ def run():
         for fund in fund_data
     ]
 
-    # get date of current commit
+    # get date of the most recent commit that modifies a relevant data file
     completed_proc = subprocess.run(
-        ["git", "log", "-1", "--format=%ci"], capture_output=True
+        ["git", "log", "-1", "--format=%ci", "--"] + [f"data/{k}.json" for k in source_data.keys()], capture_output=True
     )
     git_commit_date = datetime.strptime(
         completed_proc.stdout.decode("ascii").split(" ")[0], "%Y-%m-%d"
