@@ -26,6 +26,8 @@ jobs:
         run: python runner.py notes
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Generate PDF data
+        run: python pdf_data.py
       - name: Cache CV build
         uses: actions/cache@v3
         id: cache-cv
