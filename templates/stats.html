@@ -10,7 +10,7 @@
     {% for publ_type in ["published", "accepted", "submitted"] %}{{ linker::publication_count(type=publ_type) }}{% endfor %}
 </ul>
 {%- set pdf_data = load_data(path="data/pdf_data.json") -%}
-<p>The total page count of all of my papers is <strong>{{ pdf_data.papers.page_count }}</strong>, which gives an average of <strong>{{ pdf_data.papers.average_page_count }}</strong> pages per paper.</p>
+<p>The total page count of all of my papers is <strong>{{ pdf_data.papers.page_count }}</strong>, which gives an average of <strong>{{ pdf_data.papers.average_page_count }}</strong> pages per paper. For page-count consistency, all of my papers are prepared using the linked <a href="https://github.com/rutar-academic/template-preprint">preprint template</a>.</p>
 {% endblock %}
 {% block flexgrid %}
 <div>
