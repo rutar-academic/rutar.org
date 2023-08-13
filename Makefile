@@ -3,7 +3,7 @@
 all: public
 
 public: static/papers static/notes static/alex_rutar_cv.pdf
-	if [ "$$CF_PAGES_BRANCH" = "master" ]; then zola build; else zola build -u "https://$$CF_PAGES_BRANCH.rutar.pages.dev" --drafts; fi
+	if [ $$(git rev-parse --abbrev-ref HEAD) = "master" ]; then zola build; else zola build -u "https://$$(git rev-parse --abbrev-ref HEAD).rutar.pages.dev" --drafts; fi
 
 
 build:
