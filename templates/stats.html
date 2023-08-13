@@ -1,0 +1,29 @@
+{% import "macros/data_links.html" as linker %}
+{% extends "base.html" %}
+{% block title %}{{ section.title | safe }}{% endblock %}
+{% block description %}{{ section.description | safe }}{% endblock %}
+{% block content %}
+{%- set publ_hash = load_data(path="data/papers.json") -%}
+<h2 id="publications">Publications</h2>
+<p>I have written <a class="hidden-link" href="/publications/"><strong>{{ publ_hash | length }}</strong> research papers</a>, of which:</p>
+<ul>
+    {% for publ_type in ["published", "accepted", "submitted"] %}{{ linker::publication_count(type=publ_type) }}{% endfor %}
+</ul>
+{%- set pdf_data = load_data(path="data/pdf_data.json") -%}
+<p>The total page count of all of my papers is <strong>{{ pdf_data.papers.page_count }}</strong>, which gives an average of <strong>{{ pdf_data.papers.average_page_count }}</strong> pages per paper.</p>
+{% endblock %}
+{% block flexgrid %}
+<div>
+  <h2>Collaborators</h2>
+  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/papers.json") | map(attribute="with"), data=load_data(path="data/people.json")) }}
+</div>
+
+<div>
+  <h2>Journals</h2>
+  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/papers.json") | map(attribute="ref.journal"), data=load_data(path="data/journals.json")) }}
+</div>
+<div>
+  <h2>Refereeing</h2>
+  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/refereeing.json") | map(attribute="journal"), data=load_data(path="data/journals.json")) }}
+</div>
+{% endblock %}

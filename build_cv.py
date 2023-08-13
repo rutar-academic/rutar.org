@@ -67,10 +67,16 @@ def run():
         trim_blocks=True,
     )
 
-    source_data = {k: json.loads(Path(f"data/{k}.json").read_text()) for k in ("papers", "people", "journals", "talks")}
+    source_data = {
+        k: json.loads(Path(f"data/{k}.json").read_text())
+        for k in ("papers", "people", "journals", "talks")
+    }
 
     # get publication data
-    publ = [normalize_publ_data(entry, source_data["people"], source_data["journals"]) for entry in source_data["papers"]]
+    publ = [
+        normalize_publ_data(entry, source_data["people"], source_data["journals"])
+        for entry in source_data["papers"]
+    ]
 
     # get talk data
     talks = [
@@ -111,7 +117,9 @@ def run():
 
     # get date of the most recent commit that modifies a relevant data file
     completed_proc = subprocess.run(
-        ["git", "log", "-1", "--format=%ci", "--"] + [f"data/{k}.json" for k in source_data.keys()], capture_output=True
+        ["git", "log", "-1", "--format=%ci", "--"]
+        + [f"data/{k}.json" for k in source_data.keys()],
+        capture_output=True,
     )
     git_commit_date = datetime.strptime(
         completed_proc.stdout.decode("ascii").split(" ")[0], "%Y-%m-%d"

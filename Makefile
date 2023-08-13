@@ -2,7 +2,7 @@
 
 all: public
 
-public: static/papers static/notes static/alex_rutar_cv.pdf
+public: static/papers static/notes static/alex_rutar_cv.pdf data/pdf_data.json
 	if [ $$(git rev-parse --abbrev-ref HEAD) = "master" ]; then zola build; else zola build -u "https://$$(git rev-parse --abbrev-ref HEAD).rutar.pages.dev" --drafts; fi
 
 
@@ -18,6 +18,7 @@ clean:
 	rm -rf public
 	rm -rf build
 	rm -rf static/alex_rutar_cv.pdf
+	rm -rf data/pdf_data.json
 
 static/alex_rutar_cv.pdf: build
 	mv build/alex_rutar_cv.pdf static/
@@ -27,6 +28,9 @@ static/papers:
 
 static/notes:
 	python runner.py notes
+
+data/pdf_data.json: static/papers static/notes
+	python pdf_data.py
 
 serve: public
 	zola serve
