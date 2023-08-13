@@ -34,6 +34,11 @@
     "name": "J. Theoret. Probab.",
     "url": "https://www.springer.com/journal/10959"
   },
+  "MR": {
+    "long_name": "MathSciNet Reviews",
+    "name": "MathSciNet Reviews",
+    "url": "https://mathscinet.ams.org/mresubs/index.html"
+  },
   "NON": {
     "long_name": "Nonlinearity",
     "name": "Nonlinearity",
