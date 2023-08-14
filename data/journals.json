@@ -4,7 +4,7 @@
     "name": "Ann. Fenn. Math.",
     "url": "https://afm.journal.fi/"
   },
-  "CamPhilSoc": {
+  "MathProcCamPhilSoc": {
     "long_name": "Mathematical Proceedings of the Cambridge Philosophical Society",
     "name": "Math. Proc. Camb. Philos. Soc.",
     "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society"
@@ -34,7 +34,7 @@
     "name": "J. Theoret. Probab.",
     "url": "https://www.springer.com/journal/10959"
   },
-  "MR": {
+  "MathRev": {
     "long_name": "MathSciNet Reviews",
     "name": "MathSciNet Reviews",
     "url": "https://mathscinet.ams.org/mresubs/index.html"

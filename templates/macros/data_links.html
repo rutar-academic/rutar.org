@@ -50,7 +50,6 @@
   {# construct the flattened array #}
   {%- set flat_arr = [] -%}
   {%- for arr in arr_of_arr %}{% set_global flat_arr = flat_arr | concat(with=arr) %}{% endfor -%}
-  {%- set uniques = flat_arr | unique | sort -%}
 
   {# get the counts #}
   {%- for key in flat_arr | unique | sort -%}
