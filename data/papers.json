@@ -1,5 +1,17 @@
 [
   {
+    "title": "Interpolating with generalized Assouad dimensions",
+    "with": [
+        "banaji.amlan",
+        "troscheit.sascha"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/assouad_interpolation.pdf"
+    },
+    "tags": ["dimension-theory", "branching-processes", "ifs"]
+  },
+  {
     "title": "Multifractal analysis of measures arising from random substitutions",
     "with": [
         "mitchell.andrew"
@@ -9,7 +21,7 @@
       "pdf": "papers/substitution_multifractal.pdf",
       "arxiv": "2301.04958"
     },
-    "tags": ["multifractal", "substitutions"]
+    "tags": ["multifractal-analysis", "symbolic-dynamics"]
   },
   {
     "title": "Assouad-type dimensions of overlapping self-affine sets",
@@ -21,7 +33,7 @@
       "pdf": "papers/planar_assouad_overlapping.pdf",
       "arxiv": "2209.13952"
     },
-    "tags": ["assouad"]
+    "tags": ["dimension-theory", "ifs"]
   },
   {
     "title": "Attainable forms of Assouad spectra",
@@ -33,7 +45,7 @@
       "pdf": "papers/attainable_assouad_spectra.pdf",
       "arxiv": "2206.06921"
     },
-    "tags": ["assouad", "classification"]
+    "tags": ["dimension-theory"]
   },
   {
     "title": "Attainable forms of intermediate dimensions",
@@ -54,7 +66,7 @@
       "zbl": "07573915",
       "arxiv": "2111.14678"
     },
-    "tags": ["classification", "intermediate dimensions"]
+    "tags": ["dimension-theory"]
   },
   {
     "title": "A multifractal decomposition for self-similar measures with exact overlaps",
@@ -63,7 +75,7 @@
       "pdf": "papers/fnc_loop_multi.pdf",
       "arxiv": "2104.06997"
     },
-    "tags": ["multifractal"]
+    "tags": ["multifractal-analysis", "ifs"]
   },
   {
     "title": "Local dimensions of self-similar measures satisfying the Finite Neighbour Condition",
@@ -84,7 +96,7 @@
       "zbl": "07591215",
       "arxiv": "2101.07400"
     },
-    "tags": ["multifractal"]
+    "tags": ["multifractal-analysis", "ifs"]
   },
   {
     "title": "Geometric and combinatorial properties of self-similar multifractal measures",
@@ -102,7 +114,7 @@
       "zbl": "07682668",
       "arxiv": "2008.00197"
     },
-    "tags": ["multifractal"]
+    "tags": ["multifractal-analysis", "ifs"]
   },
   {
     "title": "When the Weak Separation Condition implies the Generalized Finite Type Condition",
@@ -124,6 +136,6 @@
       "zbl": "1466.28010",
       "arxiv": "2002.04575"
     },
-    "tags": ["separation"]
+    "tags": ["ifs"]
   }
 ]

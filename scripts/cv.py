@@ -31,7 +31,10 @@ def make_ref(entry, journal_data):
                 entry["ref"]["year"],
             )
         case "submitted":
-            return f"Preprint. \\href{{https://arxiv.org/abs/{entry['links']['arxiv']}}}{{\\texttt{{arxiv:{entry['links']['arxiv']}}}}}"
+            try:
+                return f"Preprint. \\href{{https://arxiv.org/abs/{entry['links']['arxiv']}}}{{\\texttt{{arxiv:{entry['links']['arxiv']}}}}}"
+            except KeyError:
+                return f"Preprint."
 
         case "accepted":
             return f"To appear in: \\textit{{{journal_data[entry['ref']['journal']]['name']}}}"
