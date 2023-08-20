@@ -17,6 +17,12 @@
   ],
   "travel": [
     {
+      "location": "BME",
+      "year": 2023,
+      "date_start": "2023-10-12",
+      "date_end": "2023-10-27"
+    },
+    {
       "location": "UBristol",
       "year": 2023,
       "date_start": "2023-08-28",
