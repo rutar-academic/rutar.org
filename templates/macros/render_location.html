@@ -21,7 +21,7 @@
 {%- set has_future = false -%}
 {%- for entry in travel -%}
   {%- set entry_date = entry.date_start | date(format="%Y%m%d") | int -%}
-  {%- if entry_date > current_date -%}{% set has_future = true %}{%- endif -%}
+  {%- if entry_date > current_date -%}{% set_global has_future = true %}{%- endif -%}
 {%- endfor -%}
 {%- if not has_future -%}<p>No future travel planned!</p>{%- endif -%}
 {%- endmacro %}

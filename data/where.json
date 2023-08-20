@@ -17,6 +17,12 @@
   ],
   "travel": [
     {
+      "location": "UBristol",
+      "year": 2023,
+      "date_start": "2023-08-28",
+      "date_end": "2023-09-01"
+    },
+    {
       "venue": "Fractal geometry",
       "location": "ICMS",
       "url": "https://www.icms.org.uk/workshops/2023/fractal-geometry",
