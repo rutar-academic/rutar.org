@@ -11,4 +11,4 @@ A classical example is the Fibonacci substitution, which is composed of the tran
 Random substitutions are a generalization of deterministic substitutions where a transformation rule is chosen randomly from a list of rules.
 Deterministic and random substitutions have associated dynamical systems and invariant measures, which capture certain "asymptotic statistics" of the substitution.
 
-In my [joint paper](/papers/substitution_multifractal.pdf) with {{ person(key="amitchell") }}, we study the multifractal properties of measure associated with random substitutions.
+In my [joint paper](/papers/substitution_multifractal.pdf) with {{ person(key="mitchell.andrew") }}, we study the multifractal properties of measure associated with random substitutions.
