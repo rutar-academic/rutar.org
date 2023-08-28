@@ -1,7 +1,7 @@
 {
     "nav": [
         {"url": "/writing/", "name": "Writing"},
-        {"url": "/research/", "name": "Research"},
+        {"url": "/research/", "name": "Research", "related": ["/publications/", "/stats/"]},
         {"url": "/other/", "name": "Other"}
     ],
     "internal": [

@@ -51,6 +51,7 @@
         {%- for obj in links.nav -%}
         {%- if not current_path %}{% set cur = false %}
         {%- elif current_path is starting_with(obj.url) %}{% set cur = true %}
+        {%- elif obj.related and obj.related is containing(current_path) %}{% set cur = true %}
         {%- else %}{% set cur = false %}{% endif %}
         <a {% if cur %}class='cur' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>
         {%- endfor %}
