@@ -7,7 +7,8 @@
     ],
     "status": "submitted",
     "links": {
-      "pdf": "papers/assouad_interpolation.pdf"
+      "pdf": "papers/assouad_interpolation.pdf",
+      "arxiv": "2308.12975"
     },
     "tags": ["dimension-theory", "branching-processes", "ifs"]
   },
