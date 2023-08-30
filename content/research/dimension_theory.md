@@ -15,5 +15,5 @@ Some examples include the *(generalized) intermediate dimensions*, the *Assouad 
 
 Here is a summary my work in this area:
 - I have proven classification results for [intermediate dimensions](/papers/attainable_int_dims.pdf) (with {{ person(key="banaji.amlan") }}) and [Assouad spectra](/papers/attainable_assouad_spectra.pdf).
-- I have studied the Assouad dimension of overlapping self-affine carpets in my [joint paper](/papers/planar_assouad_overlapping.pdf) with {{ person(key="fraser.jonathan-m") }}
+- I have studied the Assouad dimension of overlapping self-affine carpets in my [joint paper](/papers/planar_assouad_overlapping.pdf) with {{ person(key="fraser.jonathan-m") }}.
 - I have studied the generalized Assouad dimensions, both in a general setting and for sets associated with branching processes and iterated function systems, in a [joint paper](/papers/assouad_interpolation.pdf) with {{ person(key="banaji.amlan") }} and {{ person(key="troscheit.sascha") }}).

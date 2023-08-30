@@ -16,6 +16,12 @@ Since I primarily use [GitHub](https://github.com), this article will focus on t
 However, there are many other providers which offer the same functionality described here: part of the goal of this article is to highlight some of the tools which exist, and what you might hope should be possible.
 Of course, this article comes with the natural caveat that the details in this document are highly opinionated may need modification for your particular setup.
 
+### Why?
+
+- because it's fun!
+- redistribution of effort: i.e. you can put effort in when you can: e.g. to write complicated scripts, etc. and then when you do not have the effort to actively maintain the website, it just works on its own.
+- link [xkcd](https://xkcd.com/1319/)
+
 ## Preliminaries and setup
 ### Using a deployment server
 In practice, everything in this article could be implemented to run directly on your computer.
