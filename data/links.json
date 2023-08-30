@@ -14,7 +14,7 @@
         {"url": "/alex_rutar_cv.pdf", "name": "Curriculum Vitae"}
     ],
     "external": [
-        {"url": "https://mathscinet.ams.org/mathscinet/collaborationDistance.html", "name": "Collaboration Distance"},
+        {"url": "https://zbmath.org/collaboration-distance/", "name": "Collaboration Distance"},
         {"url": "https://xkcd.com/1724/", "name": "xkcd"},
         {"url": "https://www.openstreetmap.org", "name": "OpenStreetMap"},
         {"url": "https://photography.rutar.org", "name": "Personal Photos"},
