@@ -1,10 +1,11 @@
 {% macro location(entry, past) %}
 {%- set current_date = now() | date(format="%Y%m%d") | int -%}
-{%- set entry_date = entry.date_start | date(format="%Y%m%d") | int -%}
+{%- set entry_start = entry.date_start | date(format="%Y%m%d") | int -%}
+{%- set entry_end = entry.date_end | date(format="%Y%m%d") | int -%}
 
-{%- set b1 = entry_date > current_date and not past -%}
-{%- set b2 = entry_date <= current_date and past -%}
-{%- set is_current = past and current_date <= entry.date_end | date(format="%Y%m%d") | int -%}
+{%- set b1 = entry_end >= current_date and not past -%}
+{%- set b2 = entry_end < current_date and past -%}
+{%- set is_current = not past and current_date >= entry_start -%}
 
 {%- if b1 or b2 -%}
 <table class="loc{% if is_current %} curr-loc{% endif %}">
