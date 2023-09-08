@@ -10,7 +10,7 @@
     "description": "Mathematics Bibliography Manager",
     "lang": "Python",
     "links": {
-      "github": "alexrutar/mathbib-pi",
+      "github": "alexrutar/mathbib-py",
       "pypi": "mathbib"
     }
   },
