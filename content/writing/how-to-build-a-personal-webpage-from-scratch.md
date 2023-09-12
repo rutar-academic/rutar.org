@@ -315,7 +315,7 @@ This is important since the row has height 60 pixels, and without this argument,
 Finally, we add a border above the `<article>` element with `border-top: 2px solid gray` to visually separate our header and navigation bar from the rest of the content.
 
 ### Responsive design
-Now, our layout looks decent on a computer, but now we might have some problems on small screens!
+Our layout looks decent on a computer, but now we might have some problems on small screens!
 The main problem is that if the screen is narrow, our header and navigation bar will start folding over itself.
 To fix this, we can use [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries).
 This is CSS which is applied only when the query is satisfied: in this situation, we want these rules when the screen is narrow (less than 430 pixels wide).
@@ -419,13 +419,13 @@ If you are interested in this, you can find some pointers to get started on the 
 
 For site deployment, I will cover two main options: using [GitHub Pages](https://pages.github.com), or using [Cloudflare Pages](https://pages.cloudflare.com).
 Both options are free.
-Generally speaking, Cloudflare Pages is a more robust web hosting solution than GitHub Pages, whereas GitHub Pages is specialized for GitHub repositories.
+Generally speaking, Cloudflare Pages is a more comprehensive web hosting solution than GitHub Pages, whereas GitHub Pages is specialized for GitHub repositories.
 Here are some benefits of using Cloudflare Pages over GitHub Pages:
 
 1. **Easier custom domain setup.**
    Since Cloudflare is also a domain registrar and DNS provider, they will manage many of the details for you which makes setup substantially simpler.
 2. **Support for multiple sites.**
-   GitHub Pages restricts you account to 1 site per account, whereas Cloudflare Pages lets you have as many options as you would like.
+   GitHub Pages restricts you account to 1 site per account, whereas Cloudflare Pages lets you have as many sites as you would like.
 3. **Repository privacy.**
    Unless you pay, GitHub Pages requires your repository [to be public](https://docs.github.com/en/get-started/learning-about-github/githubs-products).
    It is possible, but somewhat complicated, to work around this requirement.
