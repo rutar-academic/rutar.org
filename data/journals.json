@@ -4,25 +4,25 @@
     "name": "Ann. Fenn. Math.",
     "url": "https://afm.journal.fi/"
   },
-  "MathProcCamPhilSoc": {
-    "long_name": "Mathematical Proceedings of the Cambridge Philosophical Society",
-    "name": "Math. Proc. Camb. Philos. Soc.",
-    "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society"
-  },
   "ETDS": {
     "long_name": "Ergodic Theory and Dynamical Systems",
     "name": "Ergodic Theory Dyn. Syst.",
     "url": "https://www.cambridge.org/core/journals/ergodic-theory-and-dynamical-systems"
+  },
+  "IsraelJ": {
+    "long_name": "Israel Journal of Mathematics",
+    "name": "Israel J. Math.",
+    "url": "http://www.math.huji.ac.il/~ijmath/"
   },
   "IUMJ": {
     "long_name": "Indiana University Math Journal",
     "name": "Indiana Univ. Math. J.",
     "url": "https://iumj.org/"
   },
-  "IsraelJ": {
-    "long_name": "Israel Journal of Mathematics",
-    "name": "Israel J. Math.",
-    "url": "http://www.math.huji.ac.il/~ijmath/"
+  "MathProcCamPhilSoc": {
+    "long_name": "Mathematical Proceedings of the Cambridge Philosophical Society",
+    "name": "Math. Proc. Camb. Philos. Soc.",
+    "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society"
   },
   "JFG": {
     "long_name": "Journal of Fractal Geometry",
@@ -58,6 +58,11 @@
     "long_name": "Proceedings of the Royal Society of Edinburgh Section A: Mathematics",
     "name": "Proc. Roy. Soc. Edinburgh Sect. A",
     "url": "https://www.cambridge.org/core/journals/proceedings-of-the-royal-society-of-edinburgh-section-a-mathematics"
+  },
+  "RAEx": {
+    "long_name": "Real Analysis Exchange",
+    "name": "Real Anal. Exch.",
+    "url": "https://msupress.org/journals/real-analysis-exchange/"
   },
   "preprint": {
     "long_name": "ArXiV Preprint",
