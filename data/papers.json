@@ -1,5 +1,16 @@
 [
   {
+    "title": "Tangents and pointwise Assouad dimension of invariant sets",
+    "with": [
+      "kaenmaki.antti"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/pointwise_assouad.pdf"
+    },
+    "tags": ["dimension-theory", "ifs"]
+  },
+  {
     "title": "Interpolating with generalized Assouad dimensions",
     "with": [
         "banaji.amlan",
