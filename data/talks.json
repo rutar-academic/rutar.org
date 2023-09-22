@@ -1,5 +1,11 @@
 [
   {
+    "title": "Multifractal analysis of planar self-affine measures via convex optimization",
+    "date": "2023-09-19",
+    "venue": "St Andrews Analysis Seminar",
+    "venue_url": "https://sta-analysis.github.io/seminars/"
+  },
+  {
     "title": "Pointwise Assouad dimension and regularity of invariant sets",
     "date": "2023-07-04",
     "venue": "Fractal Geometry",
@@ -27,7 +33,7 @@
     "title": "Assouad dimension and tangents of dynamically invariant sets",
     "date": "2023-04-25",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "https://analysis.rutar.org/seminars/"
+    "venue_url": "https://sta-analysis.github.io/seminars/"
   },
   {
     "title": "Interpolating between box and Assouad dimension",
@@ -52,7 +58,7 @@
     "title_latex": "$L^q$-spectra and multifractal analysis of random substitutions",
     "date": "2022-11-22",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "https://analysis.rutar.org/seminars/"
+    "venue_url": "https://sta-analysis.github.io/seminars/"
   },
   {
     "title": "Assouad dimension and slices of self-affine sets",
@@ -129,7 +135,7 @@
     "title": "Attainable forms of intermediate dimensions",
     "date": "2022-02-08",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "https://analysis.rutar.org/seminars/"
+    "venue_url": "https://sta-analysis.github.io/seminars/"
   },
   {
     "title": "Self-similar measures with non-concave spectra and multifractal analysis",
@@ -151,7 +157,7 @@
     "title": "Multifractal Analysis for Self-Similar Measures with Exact Overlaps",
     "date": "2020-10-27",
     "venue": "St Andrews Analysis Seminar",
-    "venue_url": "https://analysis.rutar.org/seminars/",
+    "venue_url": "https://sta-analysis.github.io/seminars/",
     "links": {
       "slides": "talks/sta_analysis_oct_2020.pdf",
       "video": "https://www.youtube.com/watch?v=PJa2iJAN2gs"
