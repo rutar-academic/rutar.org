@@ -6,7 +6,8 @@
     ],
     "status": "submitted",
     "links": {
-      "pdf": "papers/pointwise_assouad.pdf"
+      "pdf": "papers/pointwise_assouad.pdf",
+      "arxiv": "2309.11971"
     },
     "tags": ["dimension-theory", "ifs"]
   },
