@@ -51,6 +51,10 @@
     "name": "University of Bristol",
     "osm": "way/417854867"
   },
+  "UEdi": {
+    "name": "University of Edinburgh",
+    "osm": "way/9529767"
+  },
   "UJyv": {
     "name": "University of Jyväskylä",
     "osm": "way/54849812"

@@ -12,7 +12,11 @@
   <thead><tr><th>{{ self::osm(entry=entry) }}</th></tr></thead>
   <tbody>
     {%- if entry.venue %}<tr><td>{% if entry.url %}<a class="hidden-link" target="_blank" href="{{ entry.url }}">{{ entry.venue }}</a>{% else %}{{ entry.venue }}{% endif %}</td></tr>{% endif -%}
-    <tr><td><em>from</em> {{ entry.date_start | date(format="%B %e, %Y") }}{%- if entry.date_end %} <em>to</em> {{ entry.date_end | date(format="%B %e, %Y") }}{% endif -%}</td></tr>
+    <tr><td>
+        {%- if entry_end > entry_start %}<em>from</em> {{ entry.date_start | date(format="%B %e, %Y") }}{%- if entry.date_end %} <em>to</em> {{ entry.date_end | date(format="%B %e, %Y") }}{% endif -%}
+        {%- else %}<em>on</em> {{ entry.date_start | date(format="%B %e, %Y") }}
+        {%- endif -%}
+      </td></tr>
   </tbody></table>
 {%- endif %}
 {% endmacro %}
