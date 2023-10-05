@@ -17,10 +17,22 @@
   ],
   "travel": [
     {
+      "location": "Madison",
+      "year": 2023,
+      "date_start": "2024-03-26",
+      "date_end": "2024-04-01"
+    },
+    {
       "location": "UBristol",
       "year": 2023,
       "date_start": "2023-11-15",
       "date_end": "2023-11-16"
+    },
+    {
+      "location": "ISTA",
+      "year": 2023,
+      "date_start": "2023-10-20",
+      "date_end": "2023-10-20"
     },
     {
       "location": "BME",

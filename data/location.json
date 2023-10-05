@@ -1,4 +1,12 @@
 {
+  "Madison": {
+    "name": "University of Wisconsin, Madison",
+    "osm": "relation/7144092"
+  },
+  "ISTA": {
+    "name": "Institute of Science and Technology Austria",
+    "osm": "way/920075061"
+  },
   "BME": {
     "name": "Budapest University of Technology and Economics",
     "osm": "relation/4627650"
