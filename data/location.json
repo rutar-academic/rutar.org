@@ -3,6 +3,10 @@
     "name": "University of Wisconsin, Madison",
     "osm": "relation/7144092"
   },
+  "UBC": {
+    "name": "University of British Columbia",
+    "osm": "relation/11678160"
+  },
   "ISTA": {
     "name": "Institute of Science and Technology Austria",
     "osm": "way/920075061"
