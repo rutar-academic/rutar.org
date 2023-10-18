@@ -3,7 +3,10 @@
     "title": "Assouad-type dimensions: finer information on scaling and homogeneity",
     "date": "2023-10-18",
     "venue": "OARS: Online Analysis Research Seminar",
-    "venue_url": "https://sites.google.com/view/o-a-r-s"
+    "venue_url": "https://sites.google.com/view/o-a-r-s",
+    "links": {
+        "slides": "talks/oars_2023.pdf"
+    }
   },
   {
     "title": "Multifractal analysis of planar self-affine measures via convex optimization",
