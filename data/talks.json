@@ -1,5 +1,11 @@
 [
   {
+    "title": "Assouad-type dimensions: finer information on scaling and homogeneity",
+    "date": "2023-10-18",
+    "venue": "OARS: Online Analysis Research Seminar",
+    "venue_url": "https://sites.google.com/view/o-a-r-s"
+  },
+  {
     "title": "Multifractal analysis of planar self-affine measures via convex optimization",
     "date": "2023-09-19",
     "venue": "St Andrews Analysis Seminar",
@@ -116,7 +122,7 @@
   {
     "title": "Pisot Numbers and Bernoulli Convolutions",
     "date": "2022-04-12",
-    "venue": "St Andrews Burn Meet",
+    "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
     "venue_url": "https://rutar.org/burn2022/",
     "links": {
         "slides": "talks/pisot_bernoulli_apr_2022.pdf"
@@ -148,7 +154,7 @@
   {
     "title": "Analysis Group Intro Talk",
     "date": "2021-01-25",
-    "venue": "St Andrews Online Burn Meet",
+    "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
     "links": {
       "slides": "talks/sta_burn_jan_2021.pdf"
     }

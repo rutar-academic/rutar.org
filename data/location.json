@@ -7,6 +7,10 @@
     "name": "University of British Columbia",
     "osm": "relation/11678160"
   },
+  "Bonn": {
+    "name": "University of Bonn",
+    "osm": "node/2113115094"
+  },
   "ISTA": {
     "name": "Institute of Science and Technology Austria",
     "osm": "way/920075061"
