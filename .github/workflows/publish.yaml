@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python 3.x
         uses: actions/setup-python@v4
         with:
@@ -41,7 +41,7 @@ jobs:
         run: python scripts/cv.py
       - if: ${{ steps.cache-cv.outputs.cache-hit != 'true' }}
         name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
           work_in_root_file_dir: true
           root_file: "build/alex_rutar_cv.tex"
