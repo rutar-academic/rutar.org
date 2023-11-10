@@ -1,6 +1,17 @@
 [
   {
+    "title": "Multifractal analysis via convex optimization",
+    "type": "expository",
+    "short_title": "Convex optimization and multifractal analysis",
+    "status": "expository",
+    "links": {
+      "pdf": "notes/ssc_multifractal.pdf"
+    },
+    "tags": ["multifractal-analysis", "ifs"]
+  },
+  {
     "title": "Tangents and pointwise Assouad dimension of invariant sets",
+    "type": "research",
     "with": [
       "kaenmaki.antti"
     ],
@@ -12,7 +23,18 @@
     "tags": ["dimension-theory", "ifs"]
   },
   {
+    "title": "Box versus packing dimensions via anti-Frostman measures",
+    "type": "expository",
+    "short_title": "Box versus packing dimensions",
+    "status": "expository",
+    "links": {
+      "pdf": "notes/box_versus_packing.pdf"
+    },
+    "tags": ["dimension-theory"]
+  },
+  {
     "title": "Interpolating with generalized Assouad dimensions",
+    "type": "research",
     "with": [
         "banaji.amlan",
         "troscheit.sascha"
@@ -26,6 +48,7 @@
   },
   {
     "title": "Multifractal analysis of measures arising from random substitutions",
+    "type": "research",
     "with": [
         "mitchell.andrew"
     ],
@@ -38,6 +61,7 @@
   },
   {
     "title": "Assouad-type dimensions of overlapping self-affine sets",
+    "type": "research",
     "with": [
         "fraser.jonathan-m"
     ],
@@ -50,6 +74,7 @@
   },
   {
     "title": "Attainable forms of Assouad spectra",
+    "type": "research",
     "status": "accepted",
     "ref": {
       "journal": "IUMJ"
@@ -61,7 +86,18 @@
     "tags": ["dimension-theory"]
   },
   {
+    "title": "Assouad dimensions and self-similar sets satisfying the weak separation condition",
+    "type": "expository",
+    "short_title": "Assouad dichotomy",
+    "status": "expository",
+    "links": {
+      "pdf": "notes/assouad_dichotomy_R.pdf"
+    },
+    "tags": ["dimension-theory", "ifs"]
+  },
+  {
     "title": "Attainable forms of intermediate dimensions",
+    "type": "research",
     "with": [
       "banaji.amlan"
     ],
@@ -83,6 +119,7 @@
   },
   {
     "title": "A multifractal decomposition for self-similar measures with exact overlaps",
+    "type": "research",
     "status": "submitted",
     "links": {
       "pdf": "papers/fnc_loop_multi.pdf",
@@ -92,6 +129,7 @@
   },
   {
     "title": "Local dimensions of self-similar measures satisfying the Finite Neighbour Condition",
+    "type": "research",
     "with": [
       "hare.kathryn-e"
     ],
@@ -113,6 +151,7 @@
   },
   {
     "title": "Geometric and combinatorial properties of self-similar multifractal measures",
+    "type": "research",
     "status": "published",
     "ref": {
       "journal": "ETDS",
@@ -131,6 +170,7 @@
   },
   {
     "title": "When the Weak Separation Condition implies the Generalized Finite Type Condition",
+    "type": "research",
     "with": [
       "hare.kathryn-e",
       "hare.kevin-g"

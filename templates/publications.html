@@ -3,9 +3,14 @@
 {% block title %}{{ section.title }}{% endblock %}
 {% block description %}{{ section.description }}{% endblock %}
 {% block content %}
+{%- set publications = load_data(path="data/papers.json") -%}
+Jump to: <a href="#research">research articles</a> or <a href="#expository">expository articles</a>.
+{%- for article_type in ["research","expository"] -%}
+<h2 id="{{ article_type }}">{% if article_type == "research" %}Research{% else %}Expository{% endif %}</h2>
 <ol class="pubs" reversed>
-  {%- for publ in load_data(path="data/papers.json") %}
+  {%- for publ in publications | filter(attribute="type", value=article_type) %}
   {{- linker::publication(publ=publ) -}}
   {% endfor %}
 </ol>
+{%- endfor -%}
 {% endblock %}

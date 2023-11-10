@@ -4,8 +4,10 @@
 {% block description %}{{ section.description | safe }}{% endblock %}
 {% block content %}
 {%- set publ_hash = load_data(path="data/papers.json") -%}
+{%- set publ_hash_research = publ_hash | filter(attribute="type", value="research") -%}
+{%- set publ_hash_expository = publ_hash | filter(attribute="type", value="expository") -%}
 <h2 id="publications">Publications</h2>
-<p>I have written <a class="hidden-link" href="/publications/"><strong>{{ publ_hash | length }}</strong> research papers</a>, of which:</p>
+<p>I have written <a class="hidden-link" href="/publications/"><strong>{{ publ_hash_research | length }}</strong> research papers</a>, of which:</p>
 <ul>
     {% for publ_type in ["published", "accepted", "submitted"] %}{{ linker::publication_count(type=publ_type) }}{% endfor %}
 </ul>
