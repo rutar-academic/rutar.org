@@ -14,11 +14,16 @@
     <li><a href="#expository">Expository Articles</a></li>
 </ul>
 {%- for article_type in ["research","expository"] -%}
+{%- set publ_list = publications | filter(attribute="type", value=article_type) -%}
+{% set_global has_article = false -%}
+{% for publ in publ_list %}{% if publ.tags is containing(page.slug) %}{% set_global has_article = true %}{% endif %}{% endfor -%}
+{% if has_article -%}
 <h2 id="{{ article_type }}">{% if article_type == "research" %}Relevant Research Articles{% else %}Relevant Expository Articles{% endif %}</h2>
 <ol class="pubs" reversed>
-  {%- for publ in publications | filter(attribute="type", value=article_type) %}
+  {%- for publ in publ_list %}
   {%- if publ.tags is containing(page.slug) %}{{ linker::publication(publ=publ) }}{% endif -%}
   {% endfor %}
 </ol>
+{%- endif -%}
 {%- endfor -%}
 {%- endblock -%}
