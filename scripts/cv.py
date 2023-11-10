@@ -39,6 +39,9 @@ def make_ref(entry, journal_data):
         case "accepted":
             return f"To appear in: \\textit{{{journal_data[entry['ref']['journal']]['name']}}}"
 
+        case "expository":
+            return f"Permanent Preprint. \\url{{https://rutar.org/{entry['links']['pdf']}}}"
+
 
 def normalize_publ_data(entry, auth_data, journal_data):
     return {
@@ -79,6 +82,14 @@ def run():
     publ = [
         normalize_publ_data(entry, source_data["people"], source_data["journals"])
         for entry in source_data["papers"]
+        if entry["type"] == "research"
+    ]
+
+    # get expository data
+    expository = [
+        normalize_publ_data(entry, source_data["people"], source_data["journals"])
+        for entry in source_data["papers"]
+        if entry["type"] == "expository"
     ]
 
     # get talk data
@@ -134,6 +145,7 @@ def run():
     Path("build/alex_rutar_cv.tex").write_text(
         template.render(
             publications=publ,
+            expository=expository,
             talks=talks,
             today=git_commit_date,
             awards=awards,
