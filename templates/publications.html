@@ -9,7 +9,6 @@
     <li><a href="#expository">Expository Articles</a></li>
 </ul>
 {%- for article_type in ["research","expository"] -%}
-<hr>
 <h2 id="{{ article_type }}">{% if article_type == "research" %}Research Articles{% else %}Expository Articles{% endif %}</h2>
 <ol class="pubs" reversed>
   {%- for publ in publications | filter(attribute="type", value=article_type) %}

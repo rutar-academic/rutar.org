@@ -10,7 +10,16 @@ def status_echo(cmd_list):
     return cmd_list
 
 
-def load_papers(tname, dry_run=False):
+def get_file_list(block_size=8):
+    all_publ = [
+        Path(publ["links"]["pdf"])
+        for tname in ["papers", "notes"]
+        for publ in json.loads(Path(f"data/{tname}.json").read_text())
+    ]
+    return [all_publ[i : i + block_size] for i in range(0, len(all_publ), block_size)]
+
+
+def load_papers(block, dry_run=False):
     commands = [
         status_echo(
             [
@@ -18,41 +27,24 @@ def load_papers(tname, dry_run=False):
                 "release",
                 "download",
                 "--repo",
-                f"rutar-academic/{Path(publ['links']['pdf']).stem}",
+                f"rutar-academic/{publ.stem}",
                 "--pattern",
                 "*.pdf",
                 "--dir",
-                f"static/{tname}/",
+                f"static/{publ.parent}",
                 "--clobber",
             ]
         )
-        for publ in json.loads(Path(f"data/{tname}.json").read_text())
+        for publ in block
     ]
     if not dry_run:
         processes = [Popen(cmd) for cmd in commands]
         outputs = [p.wait(timeout=120) for p in processes]
         if not all(out == 0 for out in outputs):
-            print(f"Error downloading files for '{tname}'")
+            print(f"Error downloading files!")
             sys.exit(1)
 
 
-def run_papers():
-    load_papers("papers", dry_run=False)
-
-
-def run_notes():
-    load_papers("notes", dry_run=False)
-
-
-def run_dry():
-    for tname in ("papers", "notes"):
-        load_papers(tname, dry_run=True)
-
-
 if __name__ == "__main__":
-    dispatch = {"papers": run_papers, "notes": run_notes, "dry": run_dry}
-    try:
-        dispatch[sys.argv[1]]()
-    except KeyError:
-        print("Error: invalid build command!")
-        sys.exit(1)
+    for block in get_file_list():
+        load_papers(block)
