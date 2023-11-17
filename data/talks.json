@@ -1,5 +1,11 @@
 [
   {
+    "title": "Pointwise Assouad dimension and regularity of invariant sets",
+    "date": "2023-11-17",
+    "venue": "Bristol Ergodic Theory and Dynamical Systems Seminar",
+    "venue_url": "https://www.bristolmathsresearch.org/events/ergodic-theory-and-dynamical-systems/"
+  },
+  {
     "title": "Multifractal analysis of non-conformal measures",
     "date": "2023-10-20",
     "venue": "BudWiSer: Budapest–Wien Dynamical Systems Seminar",
@@ -15,6 +21,12 @@
     }
   },
   {
+    "title": "Pointwise Assouad dimension and regularity of invariant sets",
+    "date": "2023-10-09",
+    "venue": "University of Edinburgh Analysis Seminar",
+    "venue_url": "https://blogs.ed.ac.uk/analysis/analysis-seminar/"
+  },
+  {
     "title": "Multifractal analysis of planar self-affine measures via convex optimization",
     "date": "2023-09-19",
     "venue": "St Andrews Analysis Seminar",
@@ -23,7 +35,7 @@
   {
     "title": "Pointwise Assouad dimension and regularity of invariant sets",
     "date": "2023-07-04",
-    "venue": "Fractal Geometry",
+    "venue": "ICMS: Fractal Geometry",
     "venue_url": "https://www.icms.org.uk/workshops/2023/fractal-geometry",
     "links": {
         "slides": "talks/icms_fractal_2023.pdf"
