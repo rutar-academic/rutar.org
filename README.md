@@ -19,7 +19,7 @@ Note that running `make` yourself on this repository will likely fail since the 
 
 It is convenient to validate the output HTML for errors: to do this, I use this [HTML5 validator tool](https://github.com/svenkreiss/html5validator) which I run with the command
 ```fish
-html5validator --root public/ --also-check-css --show-warnings --format gnu -ll
+html5validator --root public/ --also-check-css --show-warnings
 ```
 ### Build steps
 The build process is somewhat order dependent, so the entire process is summarized here.
