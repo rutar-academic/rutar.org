@@ -1,11 +1,11 @@
 [
   {
-    "title": "Multifractal analysis via convex optimization",
+    "title": "Multifractal analysis via Lagrange duality",
     "type": "expository",
-    "short_title": "Convex optimization and multifractal analysis",
+    "short_title": "Multifractal analysis via Lagrange duality",
     "status": "expository",
     "links": {
-      "pdf": "notes/ssc_multifractal.pdf"
+      "pdf": "notes/multifractal_duality.pdf"
     },
     "tags": ["multifractal-analysis", "ifs"]
   },
