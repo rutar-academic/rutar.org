@@ -4,6 +4,11 @@
     "name": "Ann. Fenn. Math.",
     "url": "https://afm.journal.fi/"
   },
+  "CommMathPhys": {
+    "long_name": "Communications in Mathematical Physics",
+    "name": "Comm. Math. Phys.",
+    "url": "https://www.springer.com/journal/220"
+  },
   "ETDS": {
     "long_name": "Ergodic Theory and Dynamical Systems",
     "name": "Ergodic Theory Dyn. Syst.",

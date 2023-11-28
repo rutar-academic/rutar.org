@@ -52,10 +52,13 @@
     "with": [
         "mitchell.andrew"
     ],
-    "status": "submitted",
+    "status": "accepted",
     "links": {
       "pdf": "papers/substitution_multifractal.pdf",
       "arxiv": "2301.04958"
+    },
+    "ref": {
+      "journal": "CommMathPhys"
     },
     "tags": ["multifractal-analysis", "symbolic-dynamics"]
   },
