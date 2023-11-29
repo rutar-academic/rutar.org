@@ -5,11 +5,8 @@ all: public
 public: static/papers static/notes static/alex_rutar_cv.pdf data/pdf_data.json
 	if [ $$(git rev-parse --abbrev-ref HEAD) = "master" ]; then zola build; else zola build -u "https://$$(git rev-parse --abbrev-ref HEAD).rutar.pages.dev" --drafts; fi
 
-static/papers:
-	venv/bin/python scripts/releases.py papers
-
-static/notes:
-	venv/bin/python scripts/releases.py notes
+static/papers static/notes:
+	venv/bin/python scripts/releases.py
 
 venv:
 	python3 -m venv venv
