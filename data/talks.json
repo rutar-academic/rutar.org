@@ -1,5 +1,14 @@
 [
   {
+    "title": "Multifractal analysis and the geometry of Lagrange multipliers",
+    "date": "2023-12-01",
+    "venue": "University of St Andrews Research Day",
+    "venue_url": "https://mtoddm.github.io/Meetings/MnSResDayTT23.pdf",
+    "links": {
+        "slides": "talks/sta_research_day_2023.pdf"
+    }
+  },
+  {
     "title": "Pointwise Assouad dimension and regularity of invariant sets",
     "date": "2023-11-17",
     "venue": "Bristol Ergodic Theory and Dynamical Systems Seminar",
