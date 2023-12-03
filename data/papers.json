@@ -68,10 +68,13 @@
     "with": [
         "fraser.jonathan-m"
     ],
-    "status": "submitted",
+    "status": "accepted",
     "links": {
       "pdf": "papers/planar_assouad_overlapping.pdf",
       "arxiv": "2209.13952"
+    },
+    "ref": {
+      "journal": "AFM"
     },
     "tags": ["dimension-theory", "ifs"]
   },
