@@ -3,9 +3,10 @@
     "title": "Multifractal analysis via Lagrange duality",
     "type": "expository",
     "short_title": "Multifractal analysis via Lagrange duality",
-    "status": "expository",
+    "status": "submitted",
     "links": {
-      "pdf": "notes/multifractal_duality.pdf"
+      "pdf": "notes/multifractal_duality.pdf",
+      "arxiv": "2312.08974"
     },
     "tags": ["multifractal-analysis", "ifs"]
   },

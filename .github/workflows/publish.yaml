@@ -43,13 +43,13 @@ jobs:
           root_file: "build/alex_rutar_cv.tex"
           post_compile: mv "build/alex_rutar_cv.pdf" "static/"
       - name: Build public HTML with drafts
-        uses: shalzz/zola-deploy-action@v0.17.2
+        uses: shalzz/zola-deploy-action@v0.18.0
         if: github.ref != 'refs/heads/master'
         env:
           BUILD_FLAGS: --drafts
           BUILD_ONLY: true
       - name: Build public HTML
-        uses: shalzz/zola-deploy-action@v0.17.2
+        uses: shalzz/zola-deploy-action@v0.18.0
         if: github.ref == 'refs/heads/master'
         env:
           BUILD_ONLY: true
