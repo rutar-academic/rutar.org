@@ -15,7 +15,13 @@ taxonomies = [
 ]
 
 [markdown]
-highlight_code = false
+highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+  # {theme = "solarized-light", filename = "syntax.css"},
+  # {theme = "subway-madrid", filename = "syntax.css"},
+  {theme = "cheerfully-light", filename = "syntax.css"},
+]
 external_links_target_blank = true
 smart_punctuation = true
 

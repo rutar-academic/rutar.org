@@ -31,7 +31,7 @@ The majority of web pages on the internet are dynamic webpages.
 
 When building a static webpage, you can simply prepare the entire webpage as a directory containing files.
 In fact, you can make a webpage (using your own device as the server) simply by writing a bit of HTML with no CSS or JavaScript: create a file named `index.html` with the contents
-```
+```html
 <html><body>content</body></html>
 ```
 and, when you double-click on the file, it should open in your browser and show a (rather minimal) page displaying the line "content".
@@ -98,7 +98,7 @@ One subtlety is that not all text is the same.
 Underneath, text is just binary data, so rules are required to convert the binary data into the textual representation: this process is known as [character encoding](https://en.wikipedia.org/wiki/Character_encoding).
 The most common type of encoding used on webpages is [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which is the transfer format for the [Unicode](https://en.wikipedia.org/wiki/Unicode) standard.
 [ASCII](https://en.wikipedia.org/wiki/ASCII) is also a well-known encoding, but only supports a very restricted number of characters.
-Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII:{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the .tex file.{% end %} for example, to input directional quotation marks `“”` (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>``</code> and `''`.
+Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII:{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the .tex file.{% end %} for example, to input directional quotation marks `“”` (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>&#96;&#96;</code> and `''`.
 However, unless you are forced otherwise, you should try to write all your content in Unicode.
 
 ## Crash course in HTML and CSS
@@ -120,7 +120,7 @@ We are going to create 4 files:
 ### Getting started
 Let's start with a rather minimal HTML file.
 Call it `index.html` in your (currently empty) website folder.
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -164,14 +164,14 @@ Now if you open the file `index.html` with your web browser (you can probably ju
 Unfortunately the **Writing** link does nothing: we need to create that page.
 Create a new directory called `writing` and in that directory create a file called `index.html`.
 Then, fill it with pretty much the same contents as `index.html`, but replace the `<nav>...</nav>` with the contents
-```
+```html
 <nav>
   <a href="index.html">Writing</a>
   <a href="../index.html">About</a>
 </nav>
 ```
 and replace the `<article>...</article>` with something slightly different, say
-```
+```html
 <article>
   <h1>Some things I've written</h1>
   <p>Nothing here yet...</p>
@@ -183,11 +183,11 @@ Now, if you click on the navigation links, you have two working pages!
 ### Styling the page
 We have a functional webpage, but it would be nice to make everything look a bit better.
 Create a file `style.css`, and add the line
-```
+```html
 <link rel="stylesheet" type="text/css" href="style.css">
 ```
 to the `<head>` of `index.html` and
-```
+```html
 <link rel="stylesheet" type="text/css" href="../style.css">
 ```
 to the `<head>` of `writing/index.html`.
@@ -198,7 +198,7 @@ This will make the styling changes more clear as you make them.
 
 Let's begin with some basic styling.
 First, add
-```
+```css
 body {
   margin: 0 auto;
   max-width: 700px;
@@ -212,7 +212,7 @@ This centres the text body, prevents it from being too wide on large screens, en
 The `min-width: 0` is useful to prevent large elements from (accidentally) making the page very wide on screens narrower than 700 pixels.
 
 We can also adjust the spacing so that the text is laid out a bit more nicely:
-```
+```css
 h2 {
   margin-top: 1em;
   padding-top: 1em;
@@ -222,7 +222,7 @@ nav a {
 }
 ```
 And adjust the colour of the text itself to something a bit more pleasant:
-```
+```css
 body {
   color: #444;
 }
@@ -231,7 +231,7 @@ h1, h2, strong {
 }
 ```
 Then touch up the font sizes:
-```
+```css
 header {
   margin: 0px;
   font-size: 23px;
@@ -251,7 +251,7 @@ h2 {
 }
 ```
 Finally, let's add a bit of character by styling the links:
-```
+```css
 a {
   color: #ffa64d;
 }
@@ -267,7 +267,7 @@ Essentially, CSS Grid allows us to specify layout in a parent element, and then 
 First, let's specify the general layout of our grid.
 We want three sections: a header in the top left (for our title), a navigation bar in the top right, and then a main area containing all the content of the site.
 We will target the `<body>` element to set up this grid:
-```
+```css
 body {
   display: grid;
   row-gap: 5px;
@@ -289,7 +289,7 @@ Let's break down what this is doing.
   Note that the names can be whatever you would like (there is no special meaning assigned to using `header` and `nav`).
 
 Now, let's assign our child elements to the areas in this grid, and do a bit of styling.
-```
+```css
 header {
   grid-area: header;
   justify-self: left;
@@ -327,7 +327,7 @@ Here, we only change the styling a bit:
 - remove the asymmetric styling on the navigation links
 
 This is done with the following CSS.
-```
+```css
 @media screen and (max-width: 430px) {
   body {
     grid-template-columns: auto;
@@ -569,7 +569,7 @@ If you want to create a custom icon, you can use an [online SVG editor](https://
 
 To add the favicon to our webpage, first copy the icon file, say `icon.svg`, to the root of your project directory.
 Then add the following line to the `<head>` of each page on your site:
-```
+```html
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 ```
 This tells the browser that there's an icon located at `/icon.svg`, and that it's an SVG file.

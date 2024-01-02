@@ -20,7 +20,7 @@ copies the second line of the password stored in `password/name`.
 
 ### Copy login and password to clipboard
 Here is a short fish shell function which first copies the login information to the clipboard, and then the password (after confirming the prompt):
-```
+```fish
 function psk --wraps='pass show'
     set -l username (pass show $argv | string match -r ".+:\ (.+)" | head -n 2 | tail -n 1)
     if test -n "$username"
@@ -34,14 +34,14 @@ function psk --wraps='pass show'
 end
 ```
 The username is extracted from the first matching line of the form
-```
+```yaml
 username: <value>
 ```
 You don't need to use `username`: any string not containing the substring `: ` is fine.
 If there is no matching line, the password will be immediately copied to the clipboard.
 
 To use this function, call it like
-```
+```fish
 psk password/name
 ```
 Autocompletions are provided from `pass show` by the `--wraps` option.
@@ -54,7 +54,7 @@ The command
 {{ cli(command="pass generate -i password/name") }}
 generates a new password in `password/name`, which only replaces the first line (preserving the other information).
 With this, we can write a utility function to update existing passwords:
-```
+```fish
 function psu --wraps='pass show'
     pass show -c $argv
     read -p 'echo "Press ENTER to generate replacement password "'
@@ -79,7 +79,7 @@ See `man tr` for a description of other possible options.
 
 It is also possible to change the default password length (which is 25).
 For example, if you want 50 character passwords, just
-```
+```fish
 set -x PASSWORD_STORE_GENERATED_LENGTH 50
 ```
 

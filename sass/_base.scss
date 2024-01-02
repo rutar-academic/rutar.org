@@ -255,7 +255,7 @@ address {
 
 code {
   font: 15px/1.4 $monoFonts;
-  background: $borderColor;
+  background: $inlineCodeBackgroundColor;
   padding: 0 3px;
   border-radius: 2px;
 }
@@ -274,7 +274,7 @@ code mark {
 
 // render display-style code so you can scroll to see really wide lines
 pre code {
-  background: $borderColor;
+  background: $codeBackgroundColor;
   padding: 10px;
   max-width: 100%;
   min-width: 0;

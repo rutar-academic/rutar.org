@@ -59,14 +59,14 @@ Running a terminal inside Neovim is very easy: just run `:term` to convert the c
 Open a terminal in a new vertical split with `:vsp +term` (or any file other editing command).
 With focus on a terminal buffer, hit `i` to enter a special terminal edit mode, and return to normal mode with {% kbd() %}Ctrl+\\{% end %} {% kbd() %}Ctrl+N{% end %} (all other keystrokes are passed through to the interactive shell).
 In order to use your standard login shell, add a line like
-```
+```vim
 set shell=zsh\ --login
 ```
 to your `init.vim`.
 
 To have an authentic terminal experience, it's also nice to turn off line numbers.
 Neovim provides an event `TermOpen` which we can use for this purpose:
-```
+```vim
 autocmd TermOpen * setlocal nonumber norelativenumber
 ```
 We now have a functional terminal running inside Neovim.
@@ -103,11 +103,11 @@ Now, `:Obsess session.vim` is already running and we don't need to think about i
 
 For convenience, we can write a quick wrapper for `:Obsess` to save all our session files in a single location, and a utility to restore sessions.
 Place the line
-```
+```vim
 command -nargs=1 SSave Obsess $NVIM_SESSION_DIR/<args>.vim
 ```
 somewhere in your `init.vim`, and the function
-```
+```vim
 v() {
     local fname
     if [ -n "$1" ]; then
@@ -123,7 +123,7 @@ v() {
 ```
 in your `.zshrc` (or similar).
 You will also need to place a line like
-```
+```vim
 export NVIM_SESSION_DIR="/my/session/dir"
 ```
 in your `.zshrc`, where `/my/session/dir` is the directory in which you want the session files to be saved.
@@ -136,7 +136,7 @@ As a warning, since `:Obsess` will overwrite existing session files, `:SSave` (i
 You may want to modify the definition of `:SSave` to prevent this from happening.
 
 If you want completion, first add the helper function
-```
+```vim
 v_session_list() {
     cd $NVIM_SESSION_DIR && find . -type f -name "*.vim" \
         | cut -c 3- | cut -d "." -f 1
@@ -144,7 +144,7 @@ v_session_list() {
 ```
 to your `~/.zshrc`.
 Then, create a file with name `_v` somewhere in your `$fpath` (or wherever completion files belong in your personal shell) with content
-```
+```vim
 #compdef v
 
 _v() {

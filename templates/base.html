@@ -33,7 +33,12 @@
     <meta property="og:title" content="{{ title }} - {{ config.author }}">
     <meta property="og:description" content="{{ description }}">
 
-    {% if page %}<link rel="stylesheet" type="text/css" href="/article.css?v=1.5">{% else %}<link rel="stylesheet" type="text/css" href="/main.css?v=1.4">{% endif %}
+    {% if page -%}
+    <link rel="stylesheet" type="text/css" href="/article.css?v=1.6">
+    <link rel="stylesheet" type="text/css" href="/syntax.css">
+    {%- else -%}
+    <link rel="stylesheet" type="text/css" href="/main.css?v=1.6">
+    {%- endif %}
     <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon.ico" sizes="any">

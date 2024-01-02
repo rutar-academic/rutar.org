@@ -38,7 +38,7 @@ This works for the main branch, but our development branch has a different URL, 
 
 Conveniently, Cloudflare Pages defines an environment variable `$CF_PAGES_BRANCH`, which is the name of the branch currently being built.
 We can use this variable to write a new build command with better behaviour:
-```
+```sh
 if [ "$CF_PAGES_BRANCH" = "main" ]; then zola build; else zola build -u "https://$CF_PAGES_BRANCH.<project-name>.pages.dev" --drafts; fi
 ```
 If the branch is your main branch, then just run `zola build`.

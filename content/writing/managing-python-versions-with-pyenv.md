@@ -18,7 +18,7 @@ Otherwise, I will assume you are using macOS with Fish Shell.
 First install `pyenv` and `pyenv-virtualenv` with brew:
 {{ cli(command="brew install pyenv pyenv-virtualenv") }}
 You also want to add some lines to your `config.fish`:
-```
+```fish
 set -Ux PYENV_ROOT "$HOME"/.pyenv
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
