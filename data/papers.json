@@ -1,5 +1,21 @@
 [
   {
+    "title": "Assouad dimension of Gatzouras–Lalley carpets",
+    "type": "research",
+    "with": [
+      "banaji.amlan",
+      "fraser.jonathan-m",
+      "kolossvary.istvan-t"
+    ],
+    "short_title": "Assouad dimension of Gatzouras–Lalley carpets",
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/gl_assouad_spectrum.pdf",
+      "arxiv": "2401.07168"
+    },
+    "tags": ["dimension-theory", "ifs", "multifractal-analysis"]
+  },
+  {
     "title": "Multifractal analysis via Lagrange duality",
     "type": "expository",
     "short_title": "Multifractal analysis via Lagrange duality",
