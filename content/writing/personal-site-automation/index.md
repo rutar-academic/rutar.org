@@ -11,16 +11,18 @@ toc = false
 [taxonomies]
 tags = ["web", "deployment", "github"]
 +++
-In this article, I will discuss some options for hosting and automating personal websites.
+In this article, I will discuss some options for hosting and automating personal research websites.
 Since I primarily use [GitHub](https://github.com), this article will focus on the implementation details offered through their platform.
 However, there are many other providers which offer the same functionality described here: part of the goal of this article is to highlight some of the tools which exist, and what you might hope should be possible.
-Of course, this article comes with the natural caveat that the details in this document are highly opinionated may need modification for your particular setup.
 
 ### Why?
-
-- because it's fun!
-- redistribution of effort: i.e. you can put effort in when you can: e.g. to write complicated scripts, etc. and then when you do not have the effort to actively maintain the website, it just works on its own.
-- link [xkcd](https://xkcd.com/1319/)
+Why should you bother to actually do this?
+It's (at least initially) a lot of work, with the usual [automation caveats](https://xkcd.com/1319/).
+At least, I justify it to myself in the following ways:
+- It's fun!
+- It redistributes effort.
+  You can write complicated scripts when you have the time, and then when you are too busy to actively maintain the website, it just works on its own.
+- Your website stays more up-to-date, since it decreases the barrier to making minor updates.
 
 ## Preliminaries and setup
 ### Using a deployment server
@@ -28,15 +30,14 @@ In practice, everything in this article could be implemented to run directly on 
 However, for services which you want to run frequently, it is often useful to have the code execute on a server.
 This has many benefits:
 
-- The code can run automatically under certain conditions, without being sensitive to the status of your local device (e.g. whether it is connected to the internet, or whether it is turned on or not)
-- You do not need to dedicate any resources while using your device
-- You decrease your own personal workload since you do not need to do anything manually: everything just happens directly
+- The code can run automatically under certain conditions, without being sensitive to the status of your local device (e.g. whether it is connected to the internet, or whether it is turned on or not).
+- You do not need to dedicate any resources while using your device.
 
 However, there are of course a number of caveats:
 
-- You need to do more checks: for instance, you probably need a well-designed [pre-commit](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to catch errors before you deploy them
-- You need to check intermediate steps so things do not get badly broken (for instance, the build stage fails and you push a malformed webpage to a server)
-- You need to understand how to recover from these situations if things go wrong
+- You need to do more checks: for instance, it can be helpful to have a well-designed [pre-commit](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to catch errors before you deploy them.
+- You need to check intermediate steps so things do not get badly broken (for instance, the build stage fails and you push a malformed webpage to a server).
+- You need to understand how to manually recover if things go wrong.
 
 One reasonable option, and the option that will be used in this article, is to use [GitHub Actions](https://docs.github.com/en/actions).
 This option is particularly convenient if your git repositories are already hosted on GitHub.
@@ -52,12 +53,11 @@ Throughout this article, I will refer to the personal website repository as `own
 
 I will also assume that the structure of your website repository `owner/website-repo` contains a top-level directory `public-html` containing the public HTML files, as well as (possibly) other files.
 Similarly, I will assume that the project repository `owner/project-repo` consists of a primary top-level LaTeX file `main.tex`, along with any other auxiliary files.
-You can find an example project repository TODO: hosted here.
 
 ### Outline
 Our general approach consists of two steps.
 
-1. Inside each `owner/project-repo`, automatically compile the document into a PDF and save that PDF somewhere programmatically accessible.
+1. Inside each `owner/project-repo`, automatically compile the document into a PDF and save that PDF somewhere accessible.
    This is detailed in the [Generating release files](generating-release-files-in-project-repositories) section.
 2. Inside the `owner/website-repo`, retrieve the compiled PDFs from the various project repositories, add them to the files in your website, and then copy to your server.
 
