@@ -96,9 +96,9 @@ def run():
     talks = [
         {
             "date": datetime.strptime(talk["date"], "%Y-%m-%d").strftime("%Y.%m"),
-            "title": talk["title_latex"]
-            if "title_latex" in talk.keys()
-            else talk["title"],
+            "title": (
+                talk["title_latex"] if "title_latex" in talk.keys() else talk["title"]
+            ),
             "venue": talk["venue"],
         }
         for talk in source_data["talks"]
