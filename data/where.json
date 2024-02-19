@@ -17,16 +17,28 @@
   ],
   "travel": [
     {
+      "location": "Loughborough",
+      "year": 2024,
+      "date_start": "2024-03-04",
+      "date_end": "2024-03-07"
+    },
+    {
+      "location": "Warwick",
+      "year": 2024,
+      "date_start": "2024-03-03",
+      "date_end": "2024-03-04"
+    },
+    {
       "location": "Madison",
-      "year": 2023,
-      "date_start": "2024-03-26",
-      "date_end": "2024-04-01"
+      "year": 2024,
+      "date_start": "2024-02-26",
+      "date_end": "2024-03-01"
     },
     {
       "location": "UBC",
-      "year": 2023,
-      "date_start": "2024-03-12",
-      "date_end": "2024-03-14"
+      "year": 2024,
+      "date_start": "2024-02-12",
+      "date_end": "2024-02-14"
     },
     {
       "location": "Bonn",

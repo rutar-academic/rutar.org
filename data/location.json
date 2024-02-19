@@ -1,4 +1,12 @@
 {
+  "Loughborough": {
+    "name": "Loughborough University",
+    "osm": "way/9961576"
+  },
+  "Warwick": {
+    "name": "University of Warwick",
+    "osm": "relation/2437023"
+  },
   "Madison": {
     "name": "University of Wisconsin, Madison",
     "osm": "relation/7144092"
