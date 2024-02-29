@@ -2,7 +2,10 @@
   {
     "title": "Some exotic phenomena for Assouad spectra",
     "date": "2024-02-19",
-    "venue": "Shenzhen Fractal Geometry Seminar"
+    "venue": "Shenzhen Fractal Geometry Seminar",
+    "links": {
+        "slides": "talks/shenzhen_2024.pdf"
+    }
   },
   {
     "title": "Pointwise Assouad dimension and tangents of invariant sets",
