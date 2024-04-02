@@ -69,14 +69,19 @@
     "with": [
         "mitchell.andrew"
     ],
-    "status": "accepted",
+    "status": "published",
     "links": {
       "pdf": "papers/substitution_multifractal.pdf",
       "doi": "10.1007/s00220-023-04895-3",
+      "zbl": "07811484",
       "arxiv": "2301.04958"
     },
     "ref": {
-      "journal": "CommMathPhys"
+      "journal": "CommMathPhys",
+      "vol": "405",
+      "year": "2024",
+      "article_no": "63",
+      "page_count": "44"
     },
     "tags": ["multifractal-analysis", "symbolic-dynamics"]
   },
@@ -90,6 +95,7 @@
     "links": {
       "pdf": "papers/planar_assouad_overlapping.pdf",
       "doi": "10.54330/afm.142535",
+      "zbl": "07808129",
       "arxiv": "2209.13952"
     },
     "ref": {
@@ -141,7 +147,7 @@
     "links": {
       "pdf": "papers/attainable_int_dims.pdf",
       "doi": "10.54330/afm.120529",
-      "zbl": "07573915",
+      "zbl": "1509.28005",
       "arxiv": "2111.14678"
     },
     "tags": ["dimension-theory"]
@@ -173,7 +179,7 @@
     "links": {
       "pdf": "papers/fnc_loop_set.pdf",
       "doi": "10.1088/1361-6544/ac8040",
-      "zbl": "07591215",
+      "zbl": "1514.28007",
       "arxiv": "2101.07400"
     },
     "tags": ["multifractal-analysis", "ifs"]
