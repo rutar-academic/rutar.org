@@ -31,7 +31,7 @@ feed_length = 10 # number of elements to show in feed
 # extra information renedered on home page
 [extra.info]
 email = "alex@rutar.org"
-keyid = "EE53A00E"
+keyid = "0FC554378AEAD4AF"
 fingerprint = "4B75B74978D18070E5A67BDE0FC554378AEAD4AF"
 uni = "ar339@st-andrews.ac.uk"
 github = "alexrutar"
