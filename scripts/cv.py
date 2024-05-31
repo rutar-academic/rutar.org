@@ -25,7 +25,7 @@ def make_ref(entry, journal_data):
     match entry["status"]:
         case "published":
             if "article_no" in entry["ref"].keys():
-                pages = f"Paper No.\ {entry['ref']['article_no']}, {entry['ref']['page_count']} p."
+                pages = f"Paper No.\ {entry['ref']['article_no']}, {entry['ref']['page_count']} pp."
             else:
                 pages = f"{entry['ref']['page_start']}--{entry['ref']['page_end']}"
 
