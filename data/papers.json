@@ -1,5 +1,19 @@
 [
   {
+    "title": "Lower box dimension of infinitely generated self-conformal sets",
+    "type": "research",
+    "with": [
+      "banaji.amlan"
+    ],
+    "short_title": "Lower box dimension of infinitely generated self-conformal sets",
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/infinite_ifs_box_dims.pdf",
+      "arxiv": "2406.12821"
+    },
+    "tags": ["dimension-theory", "ifs"]
+  },
+  {
     "title": "Assouad spectrum of Gatzouras–Lalley carpets",
     "type": "research",
     "with": [
