@@ -8,7 +8,7 @@ base_url = "https://rutar.org"
 # build settings
 compile_sass = true
 build_search_index = false
-generate_feed = true
+generate_feeds = true
 
 taxonomies = [
    {name = "tags", paginate = 10}
