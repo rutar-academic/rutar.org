@@ -1,10 +1,16 @@
 {
   "permanent": [
     {
+      "location": "UJyv",
+      "year": 2024,
+      "date_start": "2024-09-02",
+      "date_end": "2026-09-02"
+    },
+    {
       "location": "StA",
       "year": 2020,
       "date_start": "2020-09-27",
-      "date_end": "2024-09-26"
+      "date_end": "2024-09-02"
     },
     {
       "location": "UWaterloo",
@@ -14,6 +20,18 @@
     }
   ],
   "travel": [
+    {
+      "location": "Renyi",
+      "year": 2024,
+      "date_start": "2024-08-11",
+      "date_end": "2024-09-08"
+    },
+    {
+      "location": "UOulu",
+      "year": 2024,
+      "date_start": "2024-06-25",
+      "date_end": "2024-06-28"
+    },
     {
       "location": "Loughborough",
       "year": 2024,

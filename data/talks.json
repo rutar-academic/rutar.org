@@ -1,5 +1,14 @@
 [
   {
+    "title": "Dynamical covering arguments and Assouad spectra of Gatzouras–Lalley carpets",
+    "date": "2024-06-27",
+    "venue": "Geometry and Fractals under the Midnight Sun Conference",
+    "venue_url": "https://midnightsun2024.gitlab.io/",
+    "links": {
+        "slides": "talks/midnight_sun_2024.pdf"
+    }
+  },
+  {
     "title": "Dynamical covering arguments via large deviations and non-convex optimization",
     "date": "2024-03-06",
     "venue": "University of Loughborough Dynamical Systems Seminar"

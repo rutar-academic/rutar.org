@@ -27,6 +27,10 @@
     "name": "Budapest University of Technology and Economics",
     "osm": "relation/4627650"
   },
+  "Renyi": {
+    "name": "Alfréd Rényi Institute of Mathematics",
+    "osm": "relation/3309026"
+  },
   "Bedlewo": {
     "name": "Będlewo",
     "osm": "way/216030948"
