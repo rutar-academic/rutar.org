@@ -1,5 +1,14 @@
 [
   {
+    "title": "Box dimensions of countably-generated self-conformal sets",
+    "date": "2024-09-24",
+    "venue": "Workshop on the Geometry of Deterministic and Random Fractals II",
+    "venue_url": "https://erdoscenter.renyi.hu/events/workshop-geometry-deterministic-and-random-fractals-ii",
+    "links": {
+        "slides": "talks/budapest_2024.pdf"
+    }
+  },
+  {
     "title": "Dynamical covering arguments and Assouad spectra of Gatzouras–Lalley carpets",
     "date": "2024-06-27",
     "venue": "Geometry and Fractals under the Midnight Sun Conference",
