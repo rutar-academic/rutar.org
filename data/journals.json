@@ -4,6 +4,16 @@
     "name": "Ann. Fenn. Math.",
     "url": "https://afm.journal.fi/"
   },
+  "Indag": {
+    "long_name": "Indagationes Mathematicae",
+    "name": "Indag. Math.",
+    "url": "https://www.sciencedirect.com/journal/indagationes-mathematicae"
+  },
+  "JMAA": {
+    "long_name": "Journal of Mathematical Analysis and Applications",
+    "name": "J. Math. Anal. Appl.",
+    "url": "https://www.sciencedirect.com/journal/journal-of-mathematical-analysis-and-applications"
+  },
   "CommMathPhys": {
     "long_name": "Communications in Mathematical Physics",
     "name": "Comm. Math. Phys.",
