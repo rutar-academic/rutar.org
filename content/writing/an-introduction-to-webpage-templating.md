@@ -1,6 +1,6 @@
 +++
 title = "An Introduction to Webpage Templating"
-description = "How to use template processors to simply static webpage development."
+description = "Using template processors to simplify static webpage development."
 weight = 0
 date = 2022-02-05
 draft = true
