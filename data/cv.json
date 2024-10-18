@@ -2,12 +2,24 @@
   "personal": {
     "name": "Alex Rutar",
     "email": "alex@rutar.org",
-    "institution": "University of St Andrews",
+    "institution": "University of Jyväskylä",
     "website": "https://rutar.org",
     "citizenship": "Canadian",
     "lang": "English (native), French (reading)"
   },
   "funding": [
+    {
+      "year": "2024",
+      "value": 11844,
+      "currency": "GBP",
+      "name": "EPSRC Doctoral Funding"
+    },
+    {
+      "year": "2023",
+      "value": 9954,
+      "currency": "GBP",
+      "name": "EPSRC Doctoral Funding"
+    },
     {
       "year": "2022",
       "value": 13388,
@@ -28,6 +40,13 @@
     }
   ],
   "awards": [
+    {
+      "year": "2024",
+      "value": 140000,
+      "currency": "CAD",
+      "name": "NSERC Postdoctoral Fellowship",
+      "source": "Government of Canada"
+    },
     {
       "year": "2023",
       "value": 6000,
@@ -99,16 +118,24 @@
       "source": "Government of Alberta"
     }
   ],
+  "work": [
+    {
+      "date": "2024--2026",
+      "title": "Postdoctoral Researcher",
+      "institution": "University of Jyväskylä",
+      "extra": ["Funded by Tuomas Orponen's ERC and Academy of Finland Grants"]
+    }
+  ],
   "education": [
     {
-      "date": "2020-",
+      "date": "2020-2024",
       "title": "PhD in Mathematics",
       "institution": "University of St Andrews",
       "location": "St Andrews, Scotland",
       "extra": ["Advisors: Kenneth Falconer and Jonathan Fraser"]
     },
     {
-      "date": "2016-2020",
+      "date": "2016--2020",
       "title": "Bachelor of Mathematics",
       "institution": "University of Waterloo",
       "location": "Waterloo, Canada",
@@ -122,7 +149,7 @@
       "extra": ["Magna Cum Laude", "GPA: 4.0/4.0"]
     },
     {
-      "date": "2012-2016",
+      "date": "2012--2016",
       "title": "Secondary School",
       "institution": "Tempo School",
       "location": "Edmonton, Canada",

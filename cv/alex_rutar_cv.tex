@@ -19,6 +19,12 @@
     \textbf{Languages}   & \VAR{personal.lang}
 \end{twocolsec}
 
+\begin{twocolsec}{Academic work experience}
+\BLOCK{for w in work}
+    \VAR{w.date} & \textbf{\VAR{w.title}}, {\bfseries\textit{\VAR{w.institution}}}, \textit{\VAR{w.location}}\BLOCK{for ext in w.extra}\newline \VAR{ext}\BLOCK{endfor}\BLOCK{if not loop.last}\\\BLOCK{endif}
+\BLOCK{endfor}
+\end{twocolsec}
+
 \begin{twocolsec}{Education}
 \BLOCK{for edu in education}
     \VAR{edu.date} & \textbf{\VAR{edu.title}}, {\bfseries\textit{\VAR{edu.institution}}}, \textit{\VAR{edu.location}}\BLOCK{for ext in edu.extra}\newline \VAR{ext}\BLOCK{endfor}\BLOCK{if not loop.last}\\\BLOCK{endif}

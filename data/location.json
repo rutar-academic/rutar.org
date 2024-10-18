@@ -1,4 +1,8 @@
 {
+  "Chemnitz": {
+    "name": "Chemnitz University of Technology",
+    "osm": "way/24518628"
+  },
   "Loughborough": {
     "name": "Loughborough University",
     "osm": "way/9961576"

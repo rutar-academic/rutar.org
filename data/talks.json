@@ -1,7 +1,27 @@
 [
   {
+    "title": "Assouad dimension and uniformity of microsets",
+    "date": "2024-10-16",
+    "venue": "University of Jyväskylä Analysis Seminar"
+  },
+  {
     "title": "Box dimensions of countably-generated self-conformal sets",
-    "date": "2024-09-24",
+    "date": "2024-09-23",
+    "venue": "Fractal geometry and stochastics 7",
+    "venue_url": "https://www.tu-chemnitz.de/mathematik/stochastik/fgs7/schedule.html"
+  },
+  {
+    "title": "Box dimensions of countably-generated self-conformal sets",
+    "date": "2024-09-03",
+    "venue": "Workshop on the Geometry of Deterministic and Random Fractals II",
+    "venue_url": "https://erdoscenter.renyi.hu/events/workshop-geometry-deterministic-and-random-fractals-ii",
+    "links": {
+        "slides": "talks/budapest_2024.pdf"
+    }
+  },
+  {
+    "title": "Box dimensions of countably-generated self-conformal sets",
+    "date": "2024-09-03",
     "venue": "Workshop on the Geometry of Deterministic and Random Fractals II",
     "venue_url": "https://erdoscenter.renyi.hu/events/workshop-geometry-deterministic-and-random-fractals-ii",
     "links": {

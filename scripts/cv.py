@@ -158,6 +158,7 @@ def run():
             personal=cv_data["personal"],
             skills=cv_data["skills"],
             education=cv_data["education"],
+            work=cv_data["work"],
         )
     )
 
