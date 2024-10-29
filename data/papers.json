@@ -1,5 +1,31 @@
 [
   {
+    "title": "Tangents and slices of self-affine carpets",
+    "type": "research",
+    "with": [
+      "kaenmaki.antti"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/self_affine_tangents.pdf",
+      "arxiv": "2410.19404"
+    },
+    "tags": ["dimension-theory", "ifs"]
+  },
+  {
+    "title": "Regularity of non-autonomous self-similar sets",
+    "type": "research",
+    "with": [
+      "kaenmaki.antti"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/non_autonomous_assouad.pdf",
+      "arxiv": "2410.17944"
+    },
+    "tags": ["dimension-theory", "ifs"]
+  },
+  {
     "title": "Lower box dimension of infinitely generated self-conformal sets",
     "type": "research",
     "with": [
@@ -41,7 +67,7 @@
     "tags": ["multifractal-analysis", "ifs"]
   },
   {
-    "title": "Tangents and pointwise Assouad dimension of invariant sets",
+    "title": "Tangents of invariant sets",
     "type": "research",
     "with": [
       "kaenmaki.antti"
@@ -51,7 +77,7 @@
       "pdf": "papers/pointwise_assouad.pdf",
       "arxiv": "2309.11971"
     },
-    "tags": ["dimension-theory", "ifs"]
+    "tags": ["dimension-theory"]
   },
   {
     "title": "Box versus packing dimensions via anti-Frostman measures",
