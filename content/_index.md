@@ -9,5 +9,5 @@ I did my PhD at the {% hidden_link(url="https://www.st-andrews.ac.uk/mathematics
 I am primarily interested in fractal geometry and dynamical systems, including (but not limited to) the geometry of self-similar and self-affine sets and associated invariant measures, multifractal analysis, and general dimension theory and dimension interpolation.
 You can find more information on my [research page](/research/), in my [CV](/alex_rutar_cv.pdf), looking at my [publications](/publications/), or reading my [expository work](/writing/).
 
-In my spare time I develop [open-source software](https://github.com/alexrutar) which mostly centres around tooling, such as a [Vim session manager](https://github.com/alexrutar/vs), [LaTeX templating software](https://github.com/alexrutar/tpr), or an [automatic bibliography generator](https://github.com/alexrutar/mathbib-py).
+In my spare time I develop [open-source software](https://github.com/alexrutar) which mostly centres around tooling, such as an [automatic bibliography generator](https://github.com/autobib/autobib), a [Vim session manager](https://github.com/alexrutar/vs), or [LaTeX templating software](https://github.com/alexrutar/tpr).
 I also greatly enjoy [cooking](https://food.rutar.org) and [taking photos](https://photography.rutar.org).
