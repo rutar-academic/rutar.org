@@ -1,31 +1,40 @@
 [
   {
-    "description": "LaTeX Project Manager",
-    "lang": "Fish",
+    "description": "An automatic bibliography generation tool",
+    "lang": "Rust",
     "links": {
-      "github": "alexrutar/tpr"
+      "github": "autobib/autobib",
+      "crates.io": "autobib"
     }
   },
   {
-    "description": "Mathematics Bibliography Manager",
-    "lang": "Python",
+    "description": "A fuzzy picker TUI library",
+    "lang": "Rust",
     "links": {
-      "github": "alexrutar/mathbib-py",
-      "pypi": "mathbib"
+      "github": "autobib/nucleo-picker",
+      "crates.io": "nucleo-picker"
     }
   },
   {
-    "description": "Manage (Neo)Vim sessions",
+    "description": "A generic (de)serializer for BibTeX files",
+    "lang": "Rust",
+    "links": {
+      "github": "autobib/serde_bibtex",
+      "crates.io": "serde_bibtex"
+    }
+  },
+  {
+    "description": "(Neo)Vim sessions manager",
     "lang": "Fish",
     "links": {
       "github": "alexrutar/vs"
     }
   },
   {
-    "description": "Query adjacency properties of four-letter words",
-    "lang": "C",
+    "description": "LaTeX project tools",
+    "lang": "Fish",
     "links": {
-      "github": "alexrutar/wordpath"
+      "github": "alexrutar/tpr"
     }
   }
 ]
