@@ -113,7 +113,7 @@
     "links": {
       "pdf": "papers/substitution_multifractal.pdf",
       "doi": "10.1007/s00220-023-04895-3",
-      "zbl": "07811484",
+      "zbl": "1541.37056",
       "arxiv": "2301.04958"
     },
     "ref": {
@@ -152,10 +152,16 @@
     "type": "research",
     "status": "accepted",
     "ref": {
-      "journal": "IUMJ"
+      "journal": "IUMJ",
+      "vol": "73",
+      "year": "2024",
+      "page_start": "1331",
+      "page_end": "1356"
     },
     "links": {
       "pdf": "papers/attainable_assouad_spectra.pdf",
+      "doi": "10.1512/iumj.2024.73.9928",
+      "zbl": "07937992",
       "arxiv": "2206.06921"
     },
     "tags": ["dimension-theory"]
