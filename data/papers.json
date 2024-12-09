@@ -1,5 +1,17 @@
 [
   {
+    "title": "Fibre stability for dominated self-affine sets",
+    "type": "research",
+    "with": [
+      "anttila.roope"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/dominated_fibre_stability.pdf"
+    },
+    "tags": ["dimension-theory", "ifs"]
+  },
+  {
     "title": "Tangents and slices of self-affine carpets",
     "type": "research",
     "with": [
