@@ -16,7 +16,7 @@ The selection is done through an interactive query, with a search algorithm used
 A popular choice, and the one internal to `nucleo-picker`{% inline_note() %}Not my implementation, but rather from Pascal Kuthe's [`nucleo`](https://docs.rs/nucleo/latest/nucleo) crate.{% end %}, is to use the [Smith–Waterman algorithm](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm) from DNA sequence alignment since it is relatively simple to implement, performant even in the presence of a large number of matches, and not too sensitive to typos and other user input errors.
 
 In our case, since we are implementing a library, we do not make any choices concerning rendering: instead, the library user must define how their types should be represented within the picker.
-In the end, I decided on the following closure-style trait with generic associated types, which is generic over the picker item `T`.
+In the end, I decided on the following closure-style trait with generic associated types.
 ```rust
 pub trait Render<T> {
     type Str<'a>: AsRef<str>
@@ -26,12 +26,12 @@ pub trait Render<T> {
     fn render<'a>(&self, item: &'a T) -> Self::Str<'a>;
 }
 ```
-I would like to discuss my thought process behind this choice, and mainly why my API decisions differ from the much more popular [skim](https://docs.rs/skim/latest/skim) picker library.
+I would like to discuss my thought process behind this choice, and mainly why this API differs from the much more popular [skim](https://docs.rs/skim/latest/skim) picker library.
 Instead of just explaining the benefits of such a choice, let's work our way through some alternative approaches and see how this solution arises.
 
 ## No generics
 The first possibility, and certainly the simplest possible choice, is simply to have a concrete type within the picker that the item must be rendered as.
-For instance, one might require that all items are sent to the picker as a `String`.
+For instance, one might require that all items are sent to the picker as a `String`, or some other internal representation.
 Internally, for performance reasons, this can be quite ideal: since a matcher engine must perform a large number of score computations every time the query string changes, having an optimized internal representation can greatly improve performance.
 
 However, there are quite a few issues with this approach.
@@ -234,7 +234,9 @@ pub trait Render<T> {
     fn render<'a>(&self, item: &'a T) -> Self::Str<'a>;
 }
 ```
-And finally, the corresponding picker implementation:
+The `where T: 'a` is a [non-local requirement](https://blog.rust-lang.org/2022/10/28/gats-stabilization.html#non-local-requirements-for-where-clauses-on-gats) since this bound is implied by the signature of render.
+
+Finally, we have the corresponding picker implementation:
 ```rust
 struct Picker<T, R> {
     renderer: R,
@@ -248,7 +250,7 @@ impl<T, R: Render<T>> Picker<T, R> {
     }
 }
 ```
-Note that the return type of `render` cannot actually be `&'a str`, since it is possible that the `render` implementation could return a type which requires ownership (such as a `String`), and then calling `as_ref()` will return a reference to local variable which is immediately dropped.
+Note that the return type of `Picker::render` cannot actually be `&'a str`, since it is possible that the `render` implementation could return a type which requires ownership (such as a `String`), and then calling `as_ref()` will return a reference to local variable which is immediately dropped.
 
 Now, for instance, if we want to render a value in terms of its `Display` implementation, we can implement a renderer for it:
 ```rust
@@ -280,8 +282,6 @@ impl<T: AsRef<Path>> Render<T> for PathRenderer {
     }
 }
 ```
-The `where T: 'a` is a [non-local requirement](https://blog.rust-lang.org/2022/10/28/gats-stabilization.html#non-local-requirements-for-where-clauses-on-gats) since this bound is implied by the signature of render.
-
 The main downside of this solution is that it is quite a bit more verbose than the closure syntax.
 In particular, we lose out on closure features such as automatic variable capturing.
 
