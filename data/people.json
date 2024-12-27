@@ -1,8 +1,13 @@
 {
-  "anttila.roope": {
-    "name": "Roope Anttila",
-    "short_name": "Roope Anttila",
-    "url": "https://r-anttila.github.io/"
+  "balka.richard": {
+    "name": "Richárd Bálka",
+    "short_name": "Richárd Bálka",
+    "url": "https://sites.google.com/site/balkarichard/"
+  },
+  "orgovanyi.vilma": {
+    "name": "Vilma Orgoványi",
+    "short_name": "Vilma Orgoványi",
+    "url": "https://ovanyi.org"
   },
   "orponen.tuomas": {
     "name": "Tuomas Orponen",
@@ -53,5 +58,10 @@
     "name": "Sascha Troscheit",
     "short_name": "Sascha Troscheit",
     "url": "https://www.troscheit.eu/"
+  },
+  "anttila.roope": {
+    "name": "Roope Anttila",
+    "short_name": "Roope Anttila",
+    "url": "https://r-anttila.github.io/"
   }
 }

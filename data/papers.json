@@ -1,5 +1,18 @@
 [
   {
+    "title": "On the uniformity and size of microsets",
+    "type": "research",
+    "with": [
+      "balka.richard",
+      "orgovanyi.vilma"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/microset_uniformity.pdf"
+    },
+    "tags": ["dimension-theory"]
+  },
+  {
     "title": "Fibre stability for dominated self-affine sets",
     "type": "research",
     "with": [
