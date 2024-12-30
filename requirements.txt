@@ -1,4 +1,4 @@
-Jinja2==3.1.4
-pip==24.0
+Jinja2==3.1.5
+pip==24.3.1
 html5validator==0.4.2
-pypdf==4.2.0
+pypdf==5.1.0
