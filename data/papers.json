@@ -8,7 +8,8 @@
     ],
     "status": "submitted",
     "links": {
-      "pdf": "papers/microset_uniformity.pdf"
+      "pdf": "papers/microset_uniformity.pdf",
+      "arxiv": "2412.20594"
     },
     "tags": ["dimension-theory"]
   },
