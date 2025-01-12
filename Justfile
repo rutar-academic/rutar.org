@@ -5,19 +5,15 @@ public: releases cv data build
 fast: cv data build
 
 releases:
-    venv/bin/python scripts/releases.py
+    uv run --python 3.12 --with-requirements requirements.txt scripts/releases.py
 
 cv:
-    venv/bin/python scripts/cv.py
+    uv run --python 3.12 --with-requirements requirements.txt scripts/cv.py
     latexmk -pdf -interaction=nonstopmode -silent -Werror -file-line-error -cd build/alex_rutar_cv.tex
     mv build/alex_rutar_cv.pdf static/
 
 data:
-    venv/bin/python scripts/pdf_data.py
-
-init:
-    python3 -m venv venv
-    venv/bin/pip install -r requirements.txt
+    uv run --python 3.12 --with-requirements requirements.txt scripts/pdf_data.py
 
 build:
     if [ "{{branch}}" = "master" ]; then zola build; else zola build -u "https://{{branch}}.rutar.pages.dev" --drafts; fi
