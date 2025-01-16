@@ -1,4 +1,9 @@
 {
+  "AdvMath": {
+    "long_name": "Advances in Mathematics",
+    "name": "Adv. Math",
+    "url": "https://www.sciencedirect.com/journal/advances-in-mathematics"
+  },
   "AFM": {
     "long_name": "Annales Fennici Mathematici",
     "name": "Ann. Fenn. Math.",
