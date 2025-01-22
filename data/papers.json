@@ -1,5 +1,19 @@
 [
   {
+    "title": "A fractal local smoothing problem for the wave equation",
+    "type": "research",
+    "with": [
+      "beltran.david",
+      "roos.joris",
+      "seeger.andreas"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/fractal_local_smoothing.pdf"
+    },
+    "tags": ["harmonic-analysis", "dimension-theory"]
+  },
+  {
     "title": "On the uniformity and size of microsets",
     "type": "research",
     "with": [
