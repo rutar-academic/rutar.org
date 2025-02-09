@@ -1,4 +1,14 @@
 {
+  "ActaSciMath": {
+    "long_name": "Acta Scientiarum Mathematicarum",
+    "name": "Acta Sci. Math.",
+    "url": "https://link.springer.com/journal/44146"
+  },
+  "Inventiones": {
+    "long_name": "Inventiones mathematicae",
+    "name": "Invent. Math.",
+    "url": "https://link.springer.com/journal/222"
+  },
   "AdvMath": {
     "long_name": "Advances in Mathematics",
     "name": "Adv. Math",
