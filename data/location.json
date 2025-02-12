@@ -1,59 +1,27 @@
 {
-  "Brown": {
-    "name": "Brown University",
-    "osm": "relation/13816239"
-  },
-  "UML": {
-    "name": "University of Massachusetts Lowell",
-    "osm": "relation/7981004"
-  },
-  "SLMath": {
-    "name": "Simons Laufer Mathematical Sciences Institute",
-    "osm": "way/70661576"
-  },
-  "Chemnitz": {
-    "name": "Chemnitz University of Technology",
-    "osm": "way/24518628"
-  },
-  "Loughborough": {
-    "name": "Loughborough University",
-    "osm": "way/9961576"
-  },
-  "Warwick": {
-    "name": "University of Warwick",
-    "osm": "relation/2437023"
-  },
-  "Madison": {
-    "name": "University of Wisconsin, Madison",
-    "osm": "relation/7144092"
-  },
-  "UBC": {
-    "name": "University of British Columbia",
-    "osm": "relation/11678160"
-  },
-  "Bonn": {
-    "name": "University of Bonn",
-    "osm": "node/2113115094"
-  },
-  "ISTA": {
-    "name": "Institute of Science and Technology Austria",
-    "osm": "way/920075061"
-  },
   "BME": {
     "name": "Budapest University of Technology and Economics",
     "osm": "relation/4627650"
-  },
-  "Renyi": {
-    "name": "Alfréd Rényi Institute of Mathematics",
-    "osm": "relation/3309026"
   },
   "Bedlewo": {
     "name": "Będlewo",
     "osm": "way/216030948"
   },
+  "Bonn": {
+    "name": "University of Bonn",
+    "osm": "node/2113115094"
+  },
+  "Brown": {
+    "name": "Brown University",
+    "osm": "relation/13816239"
+  },
   "CIRM": {
     "name": "CIRM",
     "osm": "way/153535453"
+  },
+  "Chemnitz": {
+    "name": "Chemnitz University of Technology",
+    "osm": "way/24518628"
   },
   "ICMS": {
     "name": "ICMS, Bayes Center",
@@ -63,9 +31,21 @@
     "name": "IMPAN",
     "osm": "node/7914309326"
   },
+  "ISTA": {
+    "name": "Institute of Science and Technology Austria",
+    "osm": "way/920075061"
+  },
+  "Loughborough": {
+    "name": "Loughborough University",
+    "osm": "way/9961576"
+  },
   "MTA": {
     "name": "Hungarian Academy of Sciences",
     "osm": "relation/11772"
+  },
+  "Madison": {
+    "name": "University of Wisconsin, Madison",
+    "osm": "relation/7144092"
   },
   "Oberwolfach": {
     "name": "Oberwolfach",
@@ -79,6 +59,14 @@
     "name": "Queens University",
     "osm": "way/12030883"
   },
+  "Renyi": {
+    "name": "Alfréd Rényi Institute of Mathematics",
+    "osm": "relation/3309026"
+  },
+  "SLMath": {
+    "name": "Simons Laufer Mathematical Sciences Institute",
+    "osm": "way/70661576"
+  },
   "StA": {
     "name": "University of St Andrews",
     "osm": "relation/2025300"
@@ -86,6 +74,10 @@
   "TheBurn": {
     "name": "The Burn, Edzell",
     "osm": "way/99060865"
+  },
+  "UBC": {
+    "name": "University of British Columbia",
+    "osm": "relation/11678160"
   },
   "UBir": {
     "name": "University of Birmingham",
@@ -102,6 +94,10 @@
   "UJyv": {
     "name": "University of Jyväskylä",
     "osm": "way/54849812"
+  },
+  "UML": {
+    "name": "University of Massachusetts Lowell",
+    "osm": "relation/7981004"
   },
   "UManchester": {
     "name": "University of Manchester",
@@ -122,5 +118,9 @@
   "UWaterloo": {
     "name": "University of Waterloo",
     "osm": "way/258817910"
+  },
+  "Warwick": {
+    "name": "University of Warwick",
+    "osm": "relation/2437023"
   }
 }

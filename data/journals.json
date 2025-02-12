@@ -1,33 +1,18 @@
 {
-  "ActaSciMath": {
-    "long_name": "Acta Scientiarum Mathematicarum",
-    "name": "Acta Sci. Math.",
-    "url": "https://link.springer.com/journal/44146"
-  },
-  "Inventiones": {
-    "long_name": "Inventiones mathematicae",
-    "name": "Invent. Math.",
-    "url": "https://link.springer.com/journal/222"
-  },
-  "AdvMath": {
-    "long_name": "Advances in Mathematics",
-    "name": "Adv. Math",
-    "url": "https://www.sciencedirect.com/journal/advances-in-mathematics"
-  },
   "AFM": {
     "long_name": "Annales Fennici Mathematici",
     "name": "Ann. Fenn. Math.",
     "url": "https://afm.journal.fi/"
   },
-  "Indag": {
-    "long_name": "Indagationes Mathematicae",
-    "name": "Indag. Math.",
-    "url": "https://www.sciencedirect.com/journal/indagationes-mathematicae"
+  "ActaSciMath": {
+    "long_name": "Acta Scientiarum Mathematicarum",
+    "name": "Acta Sci. Math.",
+    "url": "https://link.springer.com/journal/44146"
   },
-  "JMAA": {
-    "long_name": "Journal of Mathematical Analysis and Applications",
-    "name": "J. Math. Anal. Appl.",
-    "url": "https://www.sciencedirect.com/journal/journal-of-mathematical-analysis-and-applications"
+  "AdvMath": {
+    "long_name": "Advances in Mathematics",
+    "name": "Adv. Math",
+    "url": "https://www.sciencedirect.com/journal/advances-in-mathematics"
   },
   "CommMathPhys": {
     "long_name": "Communications in Mathematical Physics",
@@ -39,20 +24,25 @@
     "name": "Ergodic Theory Dyn. Syst.",
     "url": "https://www.cambridge.org/core/journals/ergodic-theory-and-dynamical-systems"
   },
-  "IsraelJ": {
-    "long_name": "Israel Journal of Mathematics",
-    "name": "Israel J. Math.",
-    "url": "http://www.math.huji.ac.il/~ijmath/"
-  },
   "IUMJ": {
     "long_name": "Indiana University Math Journal",
     "name": "Indiana Univ. Math. J.",
     "url": "https://iumj.org/"
   },
-  "MathProcCamPhilSoc": {
-    "long_name": "Mathematical Proceedings of the Cambridge Philosophical Society",
-    "name": "Math. Proc. Camb. Philos. Soc.",
-    "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society"
+  "Indag": {
+    "long_name": "Indagationes Mathematicae",
+    "name": "Indag. Math.",
+    "url": "https://www.sciencedirect.com/journal/indagationes-mathematicae"
+  },
+  "Inventiones": {
+    "long_name": "Inventiones mathematicae",
+    "name": "Invent. Math.",
+    "url": "https://link.springer.com/journal/222"
+  },
+  "IsraelJ": {
+    "long_name": "Israel Journal of Mathematics",
+    "name": "Israel J. Math.",
+    "url": "http://www.math.huji.ac.il/~ijmath/"
   },
   "JFG": {
     "long_name": "Journal of Fractal Geometry",
@@ -64,15 +54,25 @@
     "name": "J. Geom. Anal.",
     "url": "https://www.springer.com/journal/12220"
   },
+  "JLMS": {
+    "long_name": "Journal of the London Math Society",
+    "name": "J. Lond. Math. Soc.",
+    "url": "https://www.lms.ac.uk/publications/jlms"
+  },
+  "JMAA": {
+    "long_name": "Journal of Mathematical Analysis and Applications",
+    "name": "J. Math. Anal. Appl.",
+    "url": "https://www.sciencedirect.com/journal/journal-of-mathematical-analysis-and-applications"
+  },
   "JoTP": {
     "long_name": "Journal of Theoretical Probability",
     "name": "J. Theoret. Probab.",
     "url": "https://www.springer.com/journal/10959"
   },
-  "JLMS": {
-    "long_name": "Journal of the London Math Society",
-    "name": "J. Lond. Math. Soc.",
-    "url": "https://www.lms.ac.uk/publications/jlms"
+  "MathProcCamPhilSoc": {
+    "long_name": "Mathematical Proceedings of the Cambridge Philosophical Society",
+    "name": "Math. Proc. Camb. Philos. Soc.",
+    "url": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society"
   },
   "MathRev": {
     "long_name": "MathSciNet Reviews",

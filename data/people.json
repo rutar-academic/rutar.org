@@ -1,48 +1,28 @@
 {
-  "seeger.andreas": {
-    "name": "Andreas Seeger",
-    "short_name": "Andreas Seeger",
-    "url": "https://people.math.wisc.edu/~aseeger/"
-  },
-  "roos.joris": {
-    "name": "Joris Roos",
-    "short_name": "Joris Roos",
-    "url": "https://sites.google.com/view/joris-roos"
-  },
-  "beltran.david": {
-    "name": "David Beltran",
-    "short_name": "David Beltran",
-    "url": "https://sites.google.com/site/mathdbeltran/"
+  "anttila.roope": {
+    "name": "Roope Anttila",
+    "short_name": "Roope Anttila",
+    "url": "https://r-anttila.github.io/"
   },
   "balka.richard": {
     "name": "Richárd Bálka",
     "short_name": "Richárd Bálka",
     "url": "https://sites.google.com/site/balkarichard/"
   },
-  "orgovanyi.vilma": {
-    "name": "Vilma Orgoványi",
-    "short_name": "Vilma Orgoványi",
-    "url": "https://ovanyi.org"
-  },
-  "orponen.tuomas": {
-    "name": "Tuomas Orponen",
-    "short_name": "Tuomas Orponen",
-    "url": "https://sites.google.com/view/tuomaths/"
-  },
-  "kaenmaki.antti": {
-    "name": "Antti Käenmäki",
-    "short_name": "Antti Käenmäki",
-    "url": "https://kaenmaki.net/"
-  },
   "banaji.amlan": {
     "name": "Amlan Banaji",
     "short_name": "Amlan Banaji",
     "url": "https://amlan-banaji.github.io/"
   },
-  "mitchell.andrew": {
-    "name": "Andrew Mitchell",
-    "short_name": "Andrew Mitchell",
-    "url": "https://www.birmingham.ac.uk/research/activity/mathematics/topology-dynamics/navigation.aspx?ReferenceId=200021&Name=mr-andrew-mitchell"
+  "beltran.david": {
+    "name": "David Beltran",
+    "short_name": "David Beltran",
+    "url": "https://sites.google.com/site/mathdbeltran/"
+  },
+  "falconer.kenneth-j": {
+    "name": "Kenneth J. Falconer",
+    "short_name": "Kenneth Falconer",
+    "url": "https://kennethfalconer.github.io/"
   },
   "fraser.jonathan-m": {
     "name": "Jonathan M. Fraser",
@@ -59,24 +39,44 @@
     "short_name": "Kevin Hare",
     "url": "https://uwaterloo.ca/scholar/kghare/home"
   },
-  "falconer.kenneth-j": {
-    "name": "Kenneth J. Falconer",
-    "short_name": "Kenneth Falconer",
-    "url": "https://kennethfalconer.github.io/"
+  "kaenmaki.antti": {
+    "name": "Antti Käenmäki",
+    "short_name": "Antti Käenmäki",
+    "url": "https://kaenmaki.net/"
   },
   "kolossvary.istvan-t": {
     "name": "István Kolossváry",
     "short_name": "István Kolossváry",
     "url": "https://ikolossvary.github.io/"
   },
+  "mitchell.andrew": {
+    "name": "Andrew Mitchell",
+    "short_name": "Andrew Mitchell",
+    "url": "https://www.birmingham.ac.uk/research/activity/mathematics/topology-dynamics/navigation.aspx?ReferenceId=200021&Name=mr-andrew-mitchell"
+  },
+  "orgovanyi.vilma": {
+    "name": "Vilma Orgoványi",
+    "short_name": "Vilma Orgoványi",
+    "url": "https://ovanyi.org"
+  },
+  "orponen.tuomas": {
+    "name": "Tuomas Orponen",
+    "short_name": "Tuomas Orponen",
+    "url": "https://sites.google.com/view/tuomaths/"
+  },
+  "roos.joris": {
+    "name": "Joris Roos",
+    "short_name": "Joris Roos",
+    "url": "https://sites.google.com/view/joris-roos"
+  },
+  "seeger.andreas": {
+    "name": "Andreas Seeger",
+    "short_name": "Andreas Seeger",
+    "url": "https://people.math.wisc.edu/~aseeger/"
+  },
   "troscheit.sascha": {
     "name": "Sascha Troscheit",
     "short_name": "Sascha Troscheit",
     "url": "https://www.troscheit.eu/"
-  },
-  "anttila.roope": {
-    "name": "Roope Anttila",
-    "short_name": "Roope Anttila",
-    "url": "https://r-anttila.github.io/"
   }
 }
