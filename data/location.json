@@ -1,4 +1,16 @@
 {
+  "Brown": {
+    "name": "Brown University",
+    "osm": "relation/13816239"
+  },
+  "UML": {
+    "name": "University of Massachusetts Lowell",
+    "osm": "relation/7981004"
+  },
+  "SLMath": {
+    "name": "Simons Laufer Mathematical Sciences Institute",
+    "osm": "way/70661576"
+  },
   "Chemnitz": {
     "name": "Chemnitz University of Technology",
     "osm": "way/24518628"

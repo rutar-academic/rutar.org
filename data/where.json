@@ -21,6 +21,24 @@
   ],
   "travel": [
     {
+      "location": "SLMath",
+      "year": 2025,
+      "date_start": "2025-03-03",
+      "date_end": "2025-03-07"
+    },
+    {
+      "location": "UML",
+      "year": 2025,
+      "date_start": "2025-02-24",
+      "date_end": "2025-02-27"
+    },
+    {
+      "location": "Brown",
+      "year": 2025,
+      "date_start": "2025-02-19",
+      "date_end": "2025-02-21"
+    },
+    {
       "location": "Renyi",
       "year": 2024,
       "date_start": "2024-10-25",
