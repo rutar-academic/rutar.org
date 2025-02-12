@@ -8,15 +8,9 @@
     "title": "Box dimensions of countably-generated self-conformal sets",
     "date": "2024-09-23",
     "venue": "Fractal geometry and stochastics 7",
-    "venue_url": "https://www.tu-chemnitz.de/mathematik/stochastik/fgs7/schedule.html"
-  },
-  {
-    "title": "Box dimensions of countably-generated self-conformal sets",
-    "date": "2024-09-03",
-    "venue": "Workshop on the Geometry of Deterministic and Random Fractals II",
-    "venue_url": "https://erdoscenter.renyi.hu/events/workshop-geometry-deterministic-and-random-fractals-ii",
+    "venue_url": "https://www.tu-chemnitz.de/mathematik/stochastik/fgs7/schedule.html",
     "links": {
-        "slides": "talks/budapest_2024.pdf"
+      "slides": "talks/fgs7.pdf"
     }
   },
   {
@@ -25,7 +19,16 @@
     "venue": "Workshop on the Geometry of Deterministic and Random Fractals II",
     "venue_url": "https://erdoscenter.renyi.hu/events/workshop-geometry-deterministic-and-random-fractals-ii",
     "links": {
-        "slides": "talks/budapest_2024.pdf"
+      "slides": "talks/budapest_2024.pdf"
+    }
+  },
+  {
+    "title": "Box dimensions of countably-generated self-conformal sets",
+    "date": "2024-09-03",
+    "venue": "Workshop on the Geometry of Deterministic and Random Fractals II",
+    "venue_url": "https://erdoscenter.renyi.hu/events/workshop-geometry-deterministic-and-random-fractals-ii",
+    "links": {
+      "slides": "talks/budapest_2024.pdf"
     }
   },
   {
@@ -34,7 +37,7 @@
     "venue": "Geometry and Fractals under the Midnight Sun Conference",
     "venue_url": "https://midnightsun2024.gitlab.io/",
     "links": {
-        "slides": "talks/midnight_sun_2024.pdf"
+      "slides": "talks/midnight_sun_2024.pdf"
     }
   },
   {
@@ -57,7 +60,7 @@
     "date": "2024-02-19",
     "venue": "Shenzhen Fractal Geometry Seminar",
     "links": {
-        "slides": "talks/shenzhen_2024.pdf"
+      "slides": "talks/shenzhen_2024.pdf"
     }
   },
   {
@@ -72,7 +75,7 @@
     "venue": "University of St Andrews Research Day",
     "venue_url": "https://mtoddm.github.io/Meetings/MnSResDayTT23.pdf",
     "links": {
-        "slides": "talks/sta_research_day_2023.pdf"
+      "slides": "talks/sta_research_day_2023.pdf"
     }
   },
   {
@@ -93,7 +96,7 @@
     "venue": "OARS: Online Analysis Research Seminar",
     "venue_url": "https://sites.google.com/view/o-a-r-s",
     "links": {
-        "slides": "talks/oars_2023.pdf"
+      "slides": "talks/oars_2023.pdf"
     }
   },
   {
@@ -114,7 +117,7 @@
     "venue": "ICMS: Fractal Geometry",
     "venue_url": "https://www.icms.org.uk/workshops/2023/fractal-geometry",
     "links": {
-        "slides": "talks/icms_fractal_2023.pdf"
+      "slides": "talks/icms_fractal_2023.pdf"
     }
   },
   {
@@ -129,7 +132,7 @@
     "venue": "Thermodynamic Formalism: Non-additive Aspects and Related Topics",
     "venue_url": "https://www.impan.pl/en/activities/banach-center/conferences/23-thermoform/program",
     "links": {
-        "slides": "talks/thermo_form_2023.pdf"
+      "slides": "talks/thermo_form_2023.pdf"
     }
   },
   {
@@ -174,7 +177,7 @@
     "venue": "Fractals and Related Fields IV",
     "venue_url": "https://farf4.math.cnrs.frt",
     "links": {
-        "slides": "talks/farf_iv_2022.pdf"
+      "slides": "talks/farf_iv_2022.pdf"
     }
   },
   {
@@ -189,7 +192,7 @@
     "venue": "BECMC 2022",
     "venue_url": "https://web.mat.bham.ac.uk/BYMC/BECMC22/",
     "links": {
-        "slides": "talks/becmc_2022.pdf"
+      "slides": "talks/becmc_2022.pdf"
     }
   },
   {
@@ -204,7 +207,7 @@
     "venue": "Geometry of Deterministic and Random Fractals",
     "venue_url": "https://simon60.math.bme.hu/",
     "links": {
-        "slides": "talks/classifying_spectra.pdf"
+      "slides": "talks/classifying_spectra.pdf"
     }
   },
   {
@@ -213,7 +216,7 @@
     "venue": "Workshop on Self-affine and Overlapping IFS",
     "venue_url": "https://www.troscheit.eu/workshop2022/index.html",
     "links": {
-        "poster": "posters/pad_bristol_apr_2022.pdf"
+      "poster": "posters/pad_bristol_apr_2022.pdf"
     }
   },
   {
@@ -222,7 +225,7 @@
     "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
     "venue_url": "https://rutar.org/burn2022/",
     "links": {
-        "slides": "talks/pisot_bernoulli_apr_2022.pdf"
+      "slides": "talks/pisot_bernoulli_apr_2022.pdf"
     }
   },
   {
@@ -231,7 +234,7 @@
     "venue": "Probability, Analysis, and Dynamics 2022",
     "venue_url": "https://people.maths.bris.ac.uk/~mb13434/pad21/",
     "links": {
-        "poster": "posters/pad_bristol_apr_2022.pdf"
+      "poster": "posters/pad_bristol_apr_2022.pdf"
     }
   },
   {
