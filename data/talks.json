@@ -7,7 +7,10 @@
   {
     "title": "Conformal dimension beyond self-similarity",
     "date": "2025-02-20",
-    "venue": "Brown University Geometric Analysis Seminar"
+    "venue": "Brown University Geometric Analysis Seminar",
+    "links": {
+      "slides": "talks/brown_2025.pdf"
+    }
   },
   {
     "title": "Assouad dimension and uniformity of microsets",
