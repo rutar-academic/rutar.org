@@ -4,26 +4,6 @@
 {% block description %}{{ section.description }}{% endblock %}
 {% block content %}
 {{ section.content | safe }}
-<h2>Math</h2>
-The documents here are in various states of incompletion.
-Peruse at your own risk.
-<table class="full-width">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Links</th>
-    </tr>
-  </thead>
-{%- set notes = load_data(path="data/notes.json") | sort(attribute="title") -%}
-{%- for note in notes -%}
-  <tbody>
-    <tr>
-      <td>{{ note.title | safe }}</td>
-      <td>{{ linker::list_links(hash=note.links) | safe }}</td>
-    </tr>
-  </tbody>
-{%- endfor -%}
-</table>
 <h2>Articles</h2>
 <ul>
 {% for page in section.pages %}
