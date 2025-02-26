@@ -2,7 +2,10 @@
   {
     "title": "Continued fractions and the geometry of conformally invariant sets",
     "date": "2025-02-26",
-    "venue": "University of Massachusetts Lowell Mathematics Colloquium"
+    "venue": "University of Massachusetts Lowell Mathematics Colloquium",
+    "links": {
+      "slides": "talks/uml_2025.pdf"
+    }
   },
   {
     "title": "Conformal dimension beyond self-similarity",
