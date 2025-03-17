@@ -10,49 +10,10 @@
   "funding": [
     {
       "year": "2024",
-      "value": 11844,
-      "currency": "GBP",
-      "name": "EPSRC Doctoral Funding"
-    },
-    {
-      "year": "2023",
-      "value": 9954,
-      "currency": "GBP",
-      "name": "EPSRC Doctoral Funding"
-    },
-    {
-      "year": "2022",
-      "value": 13388,
-      "currency": "GBP",
-      "name": "EPSRC Doctoral Funding"
-    },
-    {
-      "year": "2021",
-      "value": 15609,
-      "currency": "GBP",
-      "name": "EPSRC Doctoral Funding"
-    },
-    {
-      "year": "2020",
-      "value": 15285,
-      "currency": "GBP",
-      "name": "EPSRC Doctoral Funding"
-    }
-  ],
-  "awards": [
-    {
-      "year": "2024",
       "value": 140000,
       "currency": "CAD",
       "name": "NSERC Postdoctoral Fellowship",
       "source": "Government of Canada"
-    },
-    {
-      "year": "2023",
-      "value": 6000,
-      "currency": "GBP",
-      "name": "Cecil King Travel Scholarship",
-      "source": "London Math Society"
     },
     {
       "year": "2022",
@@ -63,9 +24,24 @@
     },
     {
       "year": "2020",
+      "value": 66080,
+      "currency": "GBP",
+      "name": "EPSRC Doctoral Funding"
+    }
+  ],
+  "awards": [
+    {
+      "year": "2023",
+      "value": 6000,
+      "currency": "GBP",
+      "name": "Cecil King Travel Scholarship",
+      "source": "London Math Society"
+    },
+    {
+      "year": "2020",
       "value": 73000,
       "currency": "GBP",
-      "name": "Hansel Scholarship",
+      "name": "Handsel Scholarship",
       "source": "University of St Andrews"
     },
     {
@@ -123,7 +99,8 @@
       "date": "2024--2026",
       "title": "Postdoctoral Researcher",
       "institution": "University of Jyväskylä",
-      "extra": ["Funded by Tuomas Orponen's ERC and Academy of Finland Grants"]
+      "location": "Jyväskylä, Finland",
+      "extra": ["Funded by Tuomas Orponen's Academy of Finland Grant"]
     }
   ],
   "education": [
@@ -132,21 +109,30 @@
       "title": "PhD in Mathematics",
       "institution": "University of St Andrews",
       "location": "St Andrews, Scotland",
-      "extra": ["Advisors: Kenneth Falconer and Jonathan Fraser"]
+      "extra": [
+        "Advisors: Kenneth Falconer and Jonathan Fraser",
+        "Thesis: \\emph{Assouad-type dimensions and the local geometry of fractal sets}"
+      ]
     },
     {
       "date": "2016--2020",
       "title": "Bachelor of Mathematics",
       "institution": "University of Waterloo",
       "location": "Waterloo, Canada",
-      "extra": ["Major: Pure Mathematics, Minor: Combinatorics and Optimization", "GPA: 95.7/100"]
+      "extra": [
+        "Major: Pure Mathematics, Minor: Combinatorics and Optimization",
+        "GPA: 95.7/100"
+      ]
     },
     {
-      "date": "Fall 2016",
+      "date": "Fall 2018",
       "title": "Exchange",
       "institution": "Budapest Semesters in Mathematics",
       "location": "Budapest, Hungary",
-      "extra": ["Magna Cum Laude", "GPA: 4.0/4.0"]
+      "extra": [
+        "Magna Cum Laude",
+        "GPA: 4.0/4.0"
+      ]
     },
     {
       "date": "2012--2016",
@@ -157,10 +143,29 @@
     }
   ],
   "skills": [
-    {"name": "\\LaTeX", "description": "typesetting and package development"},
-    {"name": "git", "description": "version control software"},
-    {"name": "Python", "description": "software development, numerical computation, symbolic computation, graphical tools"},
-    {"name": "Mathematica", "description": "functional programming, algorithm implementation for research papers, visualization"},
-    {"name": "HTML / CSS", "description": "fundamentals of web development"}
+    {
+      "name": "\\LaTeX",
+      "description": "typesetting and package development"
+    },
+    {
+      "name": "Rust",
+      "description": "library development, text-based interfaces, command-line tools"
+    },
+    {
+      "name": "git",
+      "description": "version control, project management for research and software development"
+    },
+    {
+      "name": "Python",
+      "description": "software development, numerical computation, symbolic computation, graphical tools"
+    },
+    {
+      "name": "Mathematica",
+      "description": "functional programming, algorithm implementation for research papers, visualization"
+    },
+    {
+      "name": "HTML / CSS",
+      "description": "web development, webpage design"
+    }
   ]
 }

@@ -41,7 +41,7 @@ def load_papers(block, dry_run=False):
         processes = [Popen(cmd) for cmd in commands]
         outputs = [p.wait(timeout=120) for p in processes]
         if not all(out == 0 for out in outputs):
-            print(f"Error downloading files!")
+            print("Error downloading files!")
             sys.exit(1)
 
 

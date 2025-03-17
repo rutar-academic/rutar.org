@@ -37,9 +37,9 @@ def make_ref(entry, journal_data):
             )
         case "submitted":
             try:
-                return f"Preprint. \\href{{https://arxiv.org/abs/{entry['links']['arxiv']}}}{{\\texttt{{arxiv:{entry['links']['arxiv']}}}}}"
+                return f"arXiv Preprint, {entry['page_count']} pp."
             except KeyError:
-                return f"Preprint."
+                return "Preprint."
 
         case "accepted":
             return f"To appear in: \\textit{{{journal_data[entry['ref']['journal']]['name']}}}"
@@ -80,20 +80,20 @@ def run():
 
     source_data = {
         k: json.loads(Path(f"data/{k}.json").read_text())
-        for k in ("papers", "people", "journals", "talks")
+        for k in ("papers_extended", "people", "journals", "talks")
     }
 
     # get publication data
     publ = [
         normalize_publ_data(entry, source_data["people"], source_data["journals"])
-        for entry in source_data["papers"]
+        for entry in source_data["papers_extended"]
         if entry["type"] == "research"
     ]
 
     # get expository data
     expository = [
         normalize_publ_data(entry, source_data["people"], source_data["journals"])
-        for entry in source_data["papers"]
+        for entry in source_data["papers_extended"]
         if entry["type"] == "expository"
     ]
 

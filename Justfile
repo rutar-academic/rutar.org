@@ -1,13 +1,17 @@
 branch := `git rev-parse --abbrev-ref HEAD`
 
-public: releases cv data build
+public: check releases cv data build
 
 fast: cv data build
+
+check:
+    uv run ruff check scripts
+    uv run ruff format scripts --check
 
 releases:
     uv run --python 3.12 --with-requirements requirements.txt scripts/releases.py
 
-cv:
+cv: data
     uv run --python 3.12 --with-requirements requirements.txt scripts/cv.py
     latexmk -pdf -interaction=nonstopmode -silent -Werror -file-line-error -cd build/alex_rutar_cv.tex
     mv build/alex_rutar_cv.pdf static/
