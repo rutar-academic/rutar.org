@@ -89,6 +89,11 @@
     "name": "Proc. Amer. Math. Soc.",
     "url": "https://www.ams.org/publications/journals/journalsframework/proc"
   },
+  "ProcLMS": {
+    "long_name": "Proceedings of the London Math Society",
+    "name": "Proc. Lond. Math. Soc.",
+    "url": "https://www.lms.ac.uk/publications/plms"
+  },
   "ProcEMS": {
     "long_name": "Proceedings of the Edinburgh Math Society",
     "name": "Proc. Edinb. Math. Soc.",
