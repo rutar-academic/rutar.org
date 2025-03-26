@@ -1,5 +1,17 @@
 [
   {
+    "title": "Frostman’s lemma and subadditive functions",
+    "type": "expository",
+    "with": [
+      "orgovanyi.vilma"
+    ],
+    "status": "expository",
+    "links": {
+      "pdf": "notes/subadditive_frostman.pdf"
+    },
+    "tags": ["dimension-theory"]
+  },
+  {
     "title": "A fractal local smoothing problem for the wave equation",
     "type": "research",
     "with": [
