@@ -1,5 +1,14 @@
 [
   {
+    "title": "The Kakeya conjecture in three dimensions",
+    "type": "expository",
+    "status": "expository",
+    "links": {
+      "pdf": "notes/kakeya_arkhimedes.pdf"
+    },
+    "tags": ["harmonic-analysis"]
+  },
+  {
     "title": "Frostman’s lemma and subadditive functions",
     "type": "expository",
     "with": [
