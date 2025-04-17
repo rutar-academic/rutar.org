@@ -81,10 +81,13 @@
     "with": [
       "kaenmaki.antti"
     ],
-    "status": "submitted",
+    "status": "accepted",
     "links": {
       "pdf": "papers/non_autonomous_assouad.pdf",
       "arxiv": "2410.17944"
+    },
+    "ref": {
+      "journal": "MathProcCamPhilSoc"
     },
     "tags": ["dimension-theory", "ifs"]
   },
