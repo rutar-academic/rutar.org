@@ -2,7 +2,14 @@
   {
     "title": "The Kakeya conjecture in three dimensions",
     "type": "expository",
-    "status": "expository",
+    "status": "published",
+    "ref": {
+      "journal": "Arkhimedes",
+      "vol": "77",
+      "year": "2025",
+      "page_start": "4",
+      "page_end": "10"
+    },
     "links": {
       "pdf": "notes/kakeya_arkhimedes.pdf"
     },
