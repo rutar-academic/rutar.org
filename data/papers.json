@@ -169,13 +169,18 @@
         "banaji.amlan",
         "troscheit.sascha"
     ],
-    "status": "accepted",
+    "status": "published",
     "links": {
       "pdf": "papers/assouad_interpolation.pdf",
-      "arxiv": "2308.12975"
+      "arxiv": "2308.12975",
+      "doi": "10.1007/s12220-025-02099-w"
     },
     "ref": {
-      "journal": "JGEA"
+      "journal": "JGEA",
+      "vol": "35",
+      "year": "2025",
+      "article_no": "270",
+      "page_count": "57"
     },
     "tags": ["dimension-theory", "branching-processes", "ifs"]
   },
