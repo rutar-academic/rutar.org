@@ -1,5 +1,14 @@
 [
   {
+    "title": "On the upper Assouad spectrum",
+    "type": "expository",
+    "status": "expository",
+    "links": {
+      "pdf": "notes/upper_assouad_spectrum.pdf"
+    },
+    "tags": ["dimension-theory"]
+  },
+  {
     "title": "The Kakeya conjecture in three dimensions",
     "type": "expository",
     "status": "published",
