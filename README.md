@@ -1,7 +1,7 @@
 # About
 This is a repository for my [personal webpage](https://rutar.org).
 The site is built using the [Zola](https://www.getzola.org/documentation/getting-started/installation/) static content generator.
-If you want to build this locally, just `git clone`, change into the directory, and `make serve`.
+If you want to build this locally, just `git clone`, change into the directory, and `just serve`.
 My site is hosted on [Cloudflare](https://pages.cloudflare.com/).
 
 ## License
@@ -11,10 +11,10 @@ The content for this site is [CC BY-SA 4.0](https://creativecommons.org/licenses
 ## Building and Verification
 Running
 ```
-make
+just
 ```
 from the root of the project generates the folder `public`, which is the static webpage.
-This site is currently prepared for [Zola `v0.19.2`](https://github.com/getzola/zola/releases/tag/v0.19.2).
+This site is currently prepared for [Zola `v0.21.0`](https://github.com/getzola/zola/releases/tag/v0.21.0).
 Note that running `make` yourself on this repository will likely fail since the release files for papers are in private repositories and require permission to access.
 
 It is convenient to validate the output HTML for errors: to do this, I use this [HTML5 validator tool](https://github.com/svenkreiss/html5validator) which I run with the command
