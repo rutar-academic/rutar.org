@@ -5,8 +5,8 @@ public: check releases cv data build
 fast: cv data build
 
 check:
-    uv run ruff check scripts
-    uv run ruff format scripts --check
+    uvx ruff check scripts
+    uvx ruff format scripts --check
 
 releases:
     uv run --python 3.12 --with-requirements requirements.txt scripts/releases.py
