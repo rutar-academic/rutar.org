@@ -42,7 +42,7 @@ def make_ref(entry, journal_data):
                 return "Preprint."
 
         case "accepted":
-            return f"To appear in: \\textit{{{journal_data[entry['ref']['journal']]['name']}}}"
+            return f"To appear in: {journal_data[entry['ref']['journal']]['name']}"
 
         case "expository":
             return f"Permanent Preprint. \\url{{https://rutar.org/{entry['links']['pdf']}}}"
