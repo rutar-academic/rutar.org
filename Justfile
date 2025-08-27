@@ -19,7 +19,7 @@ cv: data
 data:
     uv run --python 3.12 --with-requirements requirements.txt scripts/pdf_data.py
 
-build:
+build: data
     if [ "{{branch}}" = "master" ]; then zola build; else zola build -u "https://{{branch}}.rutar.pages.dev" --drafts; fi
 
 serve: releases cv data

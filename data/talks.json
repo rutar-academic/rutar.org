@@ -197,7 +197,7 @@
     "venue_url": "https://www.jyu.fi/science/en/maths/current/seminars/geometric-analysis-seminar"
   },
   {
-    "title": "Convex Optimization and Multifractal Analysis",
+    "title": "Convex optimization and multifractal analysis",
     "date": "2023-01-27",
     "venue": "Oulu Analysis Seminar",
     "type": "invited_seminar",
@@ -218,7 +218,7 @@
     "venue": "Manchester Dynamics Seminar"
   },
   {
-    "title": "Geometric and Combinatorial Properties of Self-similar Measures",
+    "title": "Geometric and combinatorial properties of self-similar measures",
     "date": "2022-09-06",
     "venue": "Fractals and Related Fields IV",
     "venue_url": "https://farf4.math.cnrs.frt",
@@ -228,7 +228,7 @@
     }
   },
   {
-    "title": "Geometric and Combinatorial Properties of Self-similar Measures",
+    "title": "Geometric and combinatorial properties of self-similar measures",
     "date": "2022-08-30",
     "venue": "BME Dynamical Systems Seminar",
     "type": "invited_seminar",
@@ -252,7 +252,7 @@
     "venue_url": "https://mathematik.univie.ac.at/forschung/seminare/arbeitsgemeinschaft-ergodentheorie/"
   },
   {
-    "title": "Classifying Dimension Spectra",
+    "title": "Classifying dimension spectra",
     "date": "2022-06-30",
     "venue": "Geometry of Deterministic and Random Fractals",
     "venue_url": "https://simon60.math.bme.hu/",
@@ -262,7 +262,7 @@
     }
   },
   {
-    "title": "Geometric and Combinatorial Properties of Self-similar Measures",
+    "title": "Geometric and combinatorial properties of self-similar Measures",
     "date": "2022-05-11",
     "venue": "Workshop on Self-affine and Overlapping IFS",
     "venue_url": "https://www.troscheit.eu/workshop2022/index.html",
@@ -272,7 +272,7 @@
     }
   },
   {
-    "title": "Pisot Numbers and Bernoulli Convolutions",
+    "title": "Pisot numbers and Bernoulli convolutions",
     "date": "2022-04-12",
     "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
     "venue_url": "https://rutar.org/burn2022/",
@@ -282,7 +282,7 @@
     }
   },
   {
-    "title": "Geometric and Combinatorial Properties of Self-similar Measures",
+    "title": "Geometric and combinatorial properties of self-similar measures",
     "date": "2022-04-06",
     "venue": "Probability, Analysis, and Dynamics 2022",
     "venue_url": "https://people.maths.bris.ac.uk/~mb13434/pad21/",
@@ -308,7 +308,7 @@
     }
   },
   {
-    "title": "Analysis Group Intro Talk",
+    "title": "Analysis group intro talk",
     "date": "2021-01-25",
     "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
     "type": "local_seminar",
@@ -317,7 +317,7 @@
     }
   },
   {
-    "title": "Multifractal Analysis for Self-Similar Measures with Exact Overlaps",
+    "title": "Multifractal analysis for self-similar measures with exact overlaps",
     "date": "2020-10-27",
     "venue": "St Andrews Analysis Seminar",
     "venue_url": "https://sta-analysis.github.io/seminars/",
@@ -328,7 +328,7 @@
     }
   },
   {
-    "title": "Geometric and Combinatorial Separation Conditions for IFSs",
+    "title": "Geometric and combinatorial separation conditions for IFSs",
     "date": "2020-02-28",
     "venue": "University of Waterloo Analysis Seminar",
     "venue_url": "https://uwaterloo.ca/pure-mathematics-analysis/events/geometric-and-combinatorial-separation-conditions-iterated",
@@ -338,7 +338,7 @@
     }
   },
   {
-    "title": "An Algebraic Proof of Quadratic Reciprocity",
+    "title": "An algebraic oroof of quadratic reciprocity",
     "date": "2019-07-25",
     "venue": "CUMC 2019",
     "venue_url": "https://cumc.math.ca/2019/",
