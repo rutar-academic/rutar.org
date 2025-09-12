@@ -21,7 +21,49 @@
   ],
   "travel": [
     {
+      "venue": "Simon Semester: Continued Fractions, Fractals, Ergodic theory and Dynamics",
+      "url": "https://sites.google.com/impan.pl/simons-cfd2026/home-page",
+      "location": "IMPAN",
+      "year": 2026,
+      "date_start": "2026-05-01",
+      "date_end": "2026-05-31"
+    },
+    {
+      "venue": "Continued fractions everywhere",
+      "url": "https://sites.google.com/impan.pl/simons-cfd2026/school",
+      "location": "Bedlewo",
+      "year": 2026,
+      "date_start": "2026-04-27",
+      "date_end": "2026-05-01"
+    },
+    {
+      "location": "BME",
+      "year": 2025,
+      "date_start": "2025-10-21",
+      "date_end": "2025-11-07"
+    },
+    {
+      "location": "UEdi",
+      "year": 2025,
+      "date_start": "2025-10-20",
+      "date_end": "2025-10-20"
+    },
+    {
+      "location": "StA",
+      "year": 2025,
+      "date_start": "2025-10-15",
+      "date_end": "2025-10-17"
+    },
+    {
+      "location": "UHel",
+      "year": 2025,
+      "date_start": "2025-10-13",
+      "date_end": "2025-10-14"
+    },
+    {
+      "venue": "Interactions between Harmonic Analysis, Homogeneous Dynamics, and Number Theory",
       "location": "SLMath",
+      "url": "https://www.slmath.org/workshops/1089",
       "year": 2025,
       "date_start": "2025-03-03",
       "date_end": "2025-03-07"
@@ -45,7 +87,9 @@
       "date_end": "2024-11-12"
     },
     {
+      "venue": "Fractal Geometry and Stochastics 7",
       "location": "Chemnitz",
+      "url": "https://www.tu-chemnitz.de/mathematik/stochastik/fgs7/index.html",
       "year": 2024,
       "date_start": "2024-09-23",
       "date_end": "2024-09-27"

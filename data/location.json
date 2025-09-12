@@ -29,7 +29,7 @@
   },
   "IMPAN": {
     "name": "IMPAN",
-    "osm": "node/7914309326"
+    "osm": "way/97629156"
   },
   "ISTA": {
     "name": "Institute of Science and Technology Austria",
@@ -90,6 +90,10 @@
   "UEdi": {
     "name": "University of Edinburgh",
     "osm": "way/9529767"
+  },
+  "UHel": {
+    "name": "University of Helsinki",
+    "osm": "way/16790295"
   },
   "UJyv": {
     "name": "University of Jyväskylä",

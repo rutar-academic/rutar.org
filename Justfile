@@ -18,6 +18,7 @@ cv: data
 
 data:
     uv run --python 3.12 --with-requirements requirements.txt scripts/pdf_data.py
+    uv run --python 3.12 scripts/past_travel.py
 
 build: data
     if [ "{{branch}}" = "master" ]; then zola build; else zola build -u "https://{{branch}}.rutar.pages.dev" --drafts; fi

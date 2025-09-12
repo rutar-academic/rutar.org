@@ -5,8 +5,9 @@
 {% block content %}
 {%- set current_date = now() | date(format="%Y%m%d") | int %}
 {%- set travel_db = load_data(path="data/where.json") -%}
+{%- set past_travel_db = load_data(path="data/past_travel.json") -%}
 {%- set location_dct = load_data(path="data/location.json") -%}
-{%- set grouped_past_travel = travel_db.travel | group_by(attribute="year") -%}
+{%- set grouped_past_travel = past_travel_db | group_by(attribute="year") -%}
 
 <p>I am currently based out of the {{ render::osm(entry=travel_db.permanent[0]) }}.
 Otherwise, you can figure out where I currently am by using this overly comprehensive account of my past and future travel.
@@ -31,7 +32,7 @@ Jump to year:
 </ul>
 {% for year, entry_arr in grouped_past_travel %}
 <h3 id="past-{{ year }}">{{ year }}</h3>
-{%- for entry in entry_arr -%}
+{%- for entry in entry_arr | sort(attribute="date_start") | reverse -%}
 {{- render::location(entry=entry, past=true) -}}
 {%- endfor -%}
 {%- endfor -%}

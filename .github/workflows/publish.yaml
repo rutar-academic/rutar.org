@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '30 10 * * *'
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,6 +29,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
       - name: Generate PDF data
         run: python scripts/pdf_data.py
+      - name: Organize travel data
+        run: python scripts/past_travel.py
       - name: Cache CV build
         uses: actions/cache@v4
         id: cache-cv
