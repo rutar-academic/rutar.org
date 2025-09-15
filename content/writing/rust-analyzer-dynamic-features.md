@@ -96,7 +96,7 @@ We can see here that the `dynamicRegistration` option is `false`.
 As far as I can tell, rust-analyzer by default only requests configuration on startup from Neovim.
 
 ### Workaround: restart rust-analyzer on feature change
-A somewhat unsatisfying but functional workaround is simply to restart rust-analyzer.
+A somewhat unsatisfying but functional workaround is simply to restart rust-analyzer and provide it with the new configuration.
 ```lua
 local rustAnalyzerSettings = vim.lsp.get_clients({ name = "rust_analyzer" })[1].config.settings
 if rustAnalyzerSettings ~= nil then
@@ -166,7 +166,7 @@ vim.api.nvim_create_user_command(
       vim.lsp.enable('rust_analyzer')
     end
   end,
-  { desc = 'Set all rust-analyzer features', nargs = '*' }
+  { desc = 'Set all rust-analyzer features', nargs = 0 }
 )
 ```
 
