@@ -1,5 +1,5 @@
 +++
-title = "Dynamiclly set Cargo features in Neovim"
+title = "Dynamically set Cargo features in Neovim"
 description = "How to update Cargo features used by rust-analyzer in neovim"
 weight = 0
 date = 2025-09-12
