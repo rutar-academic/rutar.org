@@ -44,10 +44,13 @@
       "roos.joris",
       "seeger.andreas"
     ],
-    "status": "submitted",
+    "status": "accepted",
     "links": {
       "pdf": "papers/fractal_local_smoothing.pdf",
       "arxiv": "2501.12805"
+    },
+    "ref": {
+      "journal": "BLMS"
     },
     "tags": ["harmonic-analysis", "dimension-theory"]
   },

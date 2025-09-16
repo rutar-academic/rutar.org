@@ -19,6 +19,11 @@
     "name": "Arkhimedes",
     "url": "https://journal.fi/arkhimedes"
   },
+  "BLMS": {
+    "long_name": "Bulletin of the London Mathematical Society",
+    "name": "Bull. Lond. Math. Soc.",
+    "url": "https://www.lms.ac.uk/publications/blms"
+  },
   "CommMathPhys": {
     "long_name": "Communications in Mathematical Physics",
     "name": "Comm. Math. Phys.",
