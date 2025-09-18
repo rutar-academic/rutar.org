@@ -27,6 +27,10 @@
     "name": "ICMS, Bayes Center",
     "osm": "way/494883143"
   },
+  "IML": {
+    "name": "Mittag Leffler Institute",
+    "osm": "way/119490576"
+  },
   "IMPAN": {
     "name": "IMPAN",
     "osm": "way/97629156"
