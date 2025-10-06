@@ -38,8 +38,8 @@ The following pre-requisites are essential.
 - Measure and Integration 1 & 2
 - Introductory probability theory
 
-## Requirements
-The current plan is that will be based on exercises and a presentation with a written (5-10 pages) and oral component (45-60 minutes).
+## Evaluation
+The current plan is that course evaluation will be based on exercises and a presentation with a written (5-10 pages) and oral component (45-60 minutes).
 
 ## Course material
 This course will be primarily based on comprehensive lecture notes, which will be linked here when they are finished (approx. December 2025).
