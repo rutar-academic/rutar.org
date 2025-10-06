@@ -100,13 +100,18 @@
     "with": [
       "kaenmaki.antti"
     ],
-    "status": "accepted",
+    "status": "published",
     "links": {
       "pdf": "papers/non_autonomous_assouad.pdf",
+      "doi": "10.1017/S0305004125000416",
       "arxiv": "2410.17944"
     },
     "ref": {
-      "journal": "MathProcCamPhilSoc"
+      "journal": "MathProcCamPhilSoc",
+      "vol": "179",
+      "year": "2025",
+      "page_start": "623",
+      "page_end": "648"
     },
     "tags": ["dimension-theory", "ifs"]
   },
