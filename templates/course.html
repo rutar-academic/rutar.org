@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title | safe }}{% endblock %}
+{% block description %}{{ page.description | safe }}{% endblock %}
+{% block content %}
+<table>
+  <tr>
+    <th>Where</th><td>{{ page.extra.where }}</td>
+  </tr>
+  <tr>
+    <th>When</th><td>{{ page.extra.when }}</td>
+  </tr>
+  <tr>
+    <th>Language</th><td>{{ page.extra.lang }}</td>
+  </tr>
+  <tr>
+    <th>Updated</th><td>{{ page.extra.updated | date(format="%B %-d, %Y") }}</td>
+  </tr>
+  <tr>
+    <th>Contact</th><td><a href="mailto:alex@rutar.org">alex@rutar.org</a></td>
+  </tr>
+</table>
+{{ page.content | safe }}
+{% endblock %}

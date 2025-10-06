@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }}{% endblock %}
+{% block description %}{{ section.description }}{% endblock %}
+{% block content %}
+{{ section.content | safe }}
+<ul>
+{% for page in section.pages %}
+    <li>
+        <a href="{{ page.path | safe }}">{{ page.title }}</a>
+        <div class="fade">{{ page.extra.where }}, {{ page.date | date(format="%B %Y") }}</div>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
