@@ -18,7 +18,7 @@ If you have any questions please email me at the email above.
 The goal of this course is to provide an introduction to fractal geometry from the perspective of dynamical systems theory.
 A particular emphasis is given on objects with some form of *invariance under re-scaling*, such as [self-similarity](https://en.wikipedia.org/wiki/Self-similarity).
 
-A key goal of this course is to introduce [dynamical systems theory](https://en.wikipedia.org/wiki/Dynamical_system), which (for us) is a useful frame of reference for understanding invariance.
+A key intermediate goal is to introduce [dynamical systems theory](https://en.wikipedia.org/wiki/Dynamical_system), which (for us) is a useful frame of reference for understanding invariance.
 This is a ubiquitous tool in analysis, PDEs, mathematical physics, geometry, engineering, ...
 
 Some topics which will be covered:
