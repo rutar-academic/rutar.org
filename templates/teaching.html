@@ -7,7 +7,7 @@
 {% for page in section.pages %}
     <li>
         <a href="{{ page.path | safe }}">{{ page.title }}</a>
-        <div class="fade">{{ page.extra.where }}, {{ page.date | date(format="%B %Y") }}</div>
+        <div class="fade">{{ page.extra.where }}: {{ page.extra.when }}</div>
     </li>
 {% endfor %}
 </ul>

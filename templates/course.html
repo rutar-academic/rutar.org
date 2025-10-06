@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title | safe }}{% endblock %}
-{% block description %}{{ page.description | safe }}{% endblock %}
+{% block description %}Course webpage for '{{ page.description | safe }}', {{ page.extra.where }}{% endblock %}
 {% block content %}
 <table>
   <tr>

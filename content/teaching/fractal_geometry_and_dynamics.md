@@ -6,9 +6,9 @@ date = 2025-01-08
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2024-10-07
+updated = 2025-10-07
 +++
-## Current updates
+### *Recent updates*
 This is the course webpage for the upcoming course *fractal geometry and dynamics* to be taught in Spring 2026, Period 3 (January 8 to March 15, 2026).
 As more information becomes available I will add it here.
 
@@ -35,7 +35,7 @@ Related courses:
 
 ## Pre-requisites
 The following pre-requisites are essential.
-- Measure and Integration 1 & 2
+- Measure and integration 1 & 2
 - Introductory probability theory
 
 ## Evaluation
