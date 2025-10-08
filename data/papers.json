@@ -1,5 +1,17 @@
 [
   {
+    "title": "Two-scale branching functions and inhomogeneous attractors",
+    "type": "research",
+    "with": [
+      "orgovanyi.vilma"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/inhomogeneous_assouad_spectra"
+    },
+    "tags": ["dimension-theory"]
+  },
+  {
     "title": "On the upper Assouad spectrum",
     "type": "expository",
     "status": "expository",
