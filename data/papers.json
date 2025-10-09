@@ -7,7 +7,8 @@
     ],
     "status": "submitted",
     "links": {
-      "pdf": "papers/inhomogeneous_assouad_spectra.pdf"
+      "pdf": "papers/inhomogeneous_assouad_spectra.pdf",
+      "arxiv": "2510.07013"
     },
     "tags": ["dimension-theory"]
   },
