@@ -27,6 +27,8 @@ jobs:
         run: python scripts/releases.py
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Set up data subdirectory
+        run: mkdir --parent data/generated
       - name: Generate PDF data
         run: python scripts/pdf_data.py
       - name: Organize travel data
