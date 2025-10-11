@@ -198,7 +198,7 @@ Well, let's try it out:
 Picker::new(|s: &String| AsRef::<str>::as_ref(s));
 ```
 Unfortunately, that doesn't work:
-```text
+```txt
 error: lifetime may not live long enough
   --> src/lib.rs:59:31
    |
