@@ -22,14 +22,16 @@ if __name__ == "__main__":
     paper_data = json.loads(Path("data/papers.json").read_text())
 
     for paper in paper_data:
+        path = Path("static") / paper["links"]["pdf"]
+        print(path)
         paper["page_count"] = len(
             PdfReader(Path("static") / paper["links"]["pdf"]).pages
         )
 
-    Path("data/papers_extended.json").write_text(json.dumps(paper_data))
+    Path("data/generated/papers_extended.json").write_text(json.dumps(paper_data))
 
     generated_data = {
         "papers": generate_pdf_data(paper_data),
         "talks": generate_talk_types("data/talks.json"),
     }
-    Path("data/pdf_data.json").write_text(json.dumps(generated_data))
+    Path("data/generated/pdf_data.json").write_text(json.dumps(generated_data))

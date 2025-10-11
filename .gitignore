@@ -3,8 +3,5 @@ public
 static/papers
 static/notes
 static/alex_rutar_cv.pdf
-data/pdf_data.json
-data/past_travel.json
-data/papers_extended.json
-venv
+data/generated
 build

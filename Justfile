@@ -29,7 +29,9 @@ serve: releases cv data
 clean:
 	rm -rf public
 	rm -rf build
+	rm -rf data/generated/*.pdf
+
+clean_all:
 	rm -rf static/alex_rutar_cv.pdf
-	rm -rf data/pdf_data.json
 	rm -rf static/papers
 	rm -rf static/notes

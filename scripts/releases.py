@@ -10,11 +10,17 @@ def status_echo(cmd_list):
     return cmd_list
 
 
+def dbg(e):
+    print(e)
+    return e
+
+
 def get_file_list(block_size=8):
     all_publ = [
         Path(publ["links"]["pdf"])
         for tname in ["papers", "notes"]
         for publ in json.loads(Path(f"data/{tname}.json").read_text())
+        if not (Path("static") / publ["links"]["pdf"]).exists()
     ]
     return [all_publ[i : i + block_size] for i in range(0, len(all_publ), block_size)]
 

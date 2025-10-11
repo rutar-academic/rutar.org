@@ -80,20 +80,20 @@ def run():
 
     source_data = {
         k: json.loads(Path(f"data/{k}.json").read_text())
-        for k in ("papers_extended", "people", "journals", "talks")
+        for k in ("generated/papers_extended", "people", "journals", "talks")
     }
 
     # get publication data
     publ = [
         normalize_publ_data(entry, source_data["people"], source_data["journals"])
-        for entry in source_data["papers_extended"]
+        for entry in source_data["generated/papers_extended"]
         if entry["type"] == "research"
     ]
 
     # get expository data
     expository = [
         normalize_publ_data(entry, source_data["people"], source_data["journals"])
-        for entry in source_data["papers_extended"]
+        for entry in source_data["generated/papers_extended"]
         if entry["type"] == "expository"
     ]
 

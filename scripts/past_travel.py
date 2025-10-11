@@ -9,4 +9,4 @@ if __name__ == "__main__":
         for tr in travel_dict
         if datetime.strptime(tr["date_end"], "%Y-%m-%d") <= datetime.today()
     ]
-    Path("data/past_travel.json").write_text(json.dumps(past_travel))
+    Path("data/generated/past_travel.json").write_text(json.dumps(past_travel))
