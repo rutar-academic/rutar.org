@@ -1,130 +1,36 @@
 [
-  {
-    "journal": "NON",
-    "date": "2025-05-03"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2025-05-02"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2025-05-02"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2025-04-28"
-  },
-  {
-    "journal": "ProcRSE-A",
-    "date": "2025-03-16"
-  },
-  {
-    "journal": "ProcLMS",
-    "date": "2025-03-14"
-  },
-  {
-    "journal": "ActaSciMath",
-    "date": "2025-02-09"
-  },
-  {
-    "journal": "Inventiones",
-    "date": "2025-01-20"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2025-01-19"
-  },
-  {
-    "journal": "AdvMath",
-    "date": "2025-01-16"
-  },
-  {
-    "journal": "NON",
-    "date": "2024-11-08"
-  },
-  {
-    "journal": "AFM",
-    "date": "2024-10-29"
-  },
-  {
-    "journal": "Indag",
-    "date": "2024-09-22"
-  },
-  {
-    "journal": "JMAA",
-    "date": "2024-09-13"
-  },
-  {
-    "journal": "JLMS",
-    "date": "2024-07-03"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2024-05-07"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2024-05-03"
-  },
-  {
-    "journal": "TAMS",
-    "date": "2024-03-18"
-  },
-  {
-    "journal": "ProcRSE-A",
-    "date": "2024-03-18"
-  },
-  {
-    "journal": "IUMJ",
-    "date": "2024-01-30"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2024-01-28"
-  },
-  {
-    "journal": "JGEA",
-    "date": "2023-11-20"
-  },
-  {
-    "journal": "JGEA",
-    "date": "2023-10-10"
-  },
-  {
-    "journal": "RAEx",
-    "date": "2023-09-17"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2023-09-12"
-  },
-  {
-    "journal": "JFG",
-    "date": "2023-02-18"
-  },
-  {
-    "journal": "MathProcCamPhilSoc",
-    "date": "2022-11-22"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2022-11-20"
-  },
-  {
-    "journal": "MathRev",
-    "date": "2022-11-20"
-  },
-  {
-    "journal": "ProcRSE-A",
-    "date": "2022-10-15"
-  },
-  {
-    "journal": "ProcEMS",
-    "date": "2022-06-06"
-  },
-  {
-    "journal": "JoTP",
-    "date": "2021-01-05"
-  }
+  "ProcRSE-A",
+  "JMAA",
+  "NON",
+  "MathRev",
+  "MathRev",
+  "MathRev",
+  "ProcRSE-A",
+  "ProcLMS",
+  "ActaSciMath",
+  "Inventiones",
+  "MathRev",
+  "AdvMath",
+  "NON",
+  "AFM",
+  "Indag",
+  "JMAA",
+  "JLMS",
+  "MathRev",
+  "MathRev",
+  "TAMS",
+  "ProcRSE-A",
+  "IUMJ",
+  "MathRev",
+  "JGEA",
+  "JGEA",
+  "RAEx",
+  "MathRev",
+  "JFG",
+  "MathProcCamPhilSoc",
+  "MathRev",
+  "MathRev",
+  "ProcRSE-A",
+  "ProcEMS",
+  "JoTP"
 ]
