@@ -75,10 +75,13 @@
       "balka.richard",
       "orgovanyi.vilma"
     ],
-    "status": "submitted",
+    "status": "accepted",
     "links": {
       "pdf": "papers/microset_uniformity.pdf",
       "arxiv": "2412.20594"
+    },
+    "ref": {
+      "journal": "ProcRSE-A"
     },
     "tags": ["dimension-theory"]
   },
