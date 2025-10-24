@@ -9,16 +9,16 @@ check:
     uvx ruff format scripts --check
 
 releases:
-    uv run --python 3.12 --with-requirements requirements.txt scripts/releases.py
+    uv run --python 3.14 --with-requirements requirements.txt scripts/releases.py
 
 cv: data
-    uv run --python 3.12 --with-requirements requirements.txt scripts/cv.py
+    uv run --python 3.14 --with-requirements requirements.txt scripts/cv.py
     latexmk -pdf -interaction=nonstopmode -silent -Werror -file-line-error -cd build/alex_rutar_cv.tex
     mv build/alex_rutar_cv.pdf static/
 
 data:
-    uv run --python 3.12 --with-requirements requirements.txt scripts/pdf_data.py
-    uv run --python 3.12 scripts/past_travel.py
+    uv run --python 3.14 --with-requirements requirements.txt scripts/pdf_data.py
+    uv run --python 3.14 scripts/past_travel.py
 
 build: data
     if [ "{{branch}}" = "master" ]; then zola build; else zola build -u "https://{{branch}}.rutar.pages.dev" --drafts; fi
