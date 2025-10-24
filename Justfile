@@ -16,11 +16,11 @@ cv: data
     latexmk -pdf -interaction=nonstopmode -silent -Werror -file-line-error -cd build/alex_rutar_cv.tex
     mv build/alex_rutar_cv.pdf static/
 
-data:
+data: releases
     uv run --python 3.14 --with-requirements requirements.txt scripts/pdf_data.py
     uv run --python 3.14 scripts/past_travel.py
 
-build: data
+build: releases cv data
     if [ "{{branch}}" = "master" ]; then zola build; else zola build -u "https://{{branch}}.rutar.pages.dev" --drafts; fi
 
 serve: releases cv data
@@ -31,7 +31,7 @@ clean:
 	rm -rf build
 	rm -rf data/generated/*.pdf
 
-clean_all:
+clean_all: clean
 	rm -rf static/alex_rutar_cv.pdf
 	rm -rf static/papers
 	rm -rf static/notes
