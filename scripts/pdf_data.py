@@ -1,3 +1,12 @@
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = "==3.14"
+# dependencies = [
+#   "pypdf==6.1.3",
+# ]
+# ///
+
 from pypdf import PdfReader
 from pathlib import Path
 from collections import Counter
@@ -23,7 +32,6 @@ if __name__ == "__main__":
 
     for paper in paper_data:
         path = Path("static") / paper["links"]["pdf"]
-        print(path)
         paper["page_count"] = len(
             PdfReader(Path("static") / paper["links"]["pdf"]).pages
         )

@@ -1,3 +1,9 @@
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = "==3.14"
+# ///
+
 import json
 import sys
 from pathlib import Path

@@ -1,3 +1,12 @@
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = "==3.14"
+# dependencies = [
+#   "jinja2==3.1.6",
+# ]
+# ///
+
 from jinja2 import FileSystemLoader, Environment, select_autoescape
 import subprocess
 from pathlib import Path

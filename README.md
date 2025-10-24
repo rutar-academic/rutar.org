@@ -15,36 +15,30 @@ just
 ```
 from the root of the project generates the folder `public`, which is the static webpage.
 This site is currently prepared for [Zola `v0.21.0`](https://github.com/getzola/zola/releases/tag/v0.21.0).
-Note that running `make` yourself on this repository will likely fail since the release files for papers are in private repositories and require permission to access.
+Note that running `just` yourself on this repository will likely fail since the release files for papers are in private repositories and require permission to access.
 
 It is convenient to validate the output HTML for errors: to do this, I use this [HTML5 validator tool](https://github.com/svenkreiss/html5validator) which I run with the command
-```fish
-html5validator --root public/ --also-check-css --show-warnings
+```sh
+uvx html5validator --root public/ --also-check-css --show-warnings
 ```
 ### Build steps
 The build process is somewhat order dependent, so the entire process is summarized here.
 The strict dependency structure can be found in the [`Justfile`](/Justfile).
-Scripts are written in Python and executed using [`uv`](https://docs.astral.sh/uv/) with
-```sh
-uv run --python 3.14 --with-requirements requirements.txt <script.py>
-```
+Scripts are written in Python and executed using [`uv`](https://docs.astral.sh/uv/).
 To manually build everything, here are the steps.
 
-1. Install dependencies from [`requirements.txt`](/requirements.txt).
-2. Download all papers from the repositories specified in `data/papers.json` and `data/notes.json` by running `python scripts/releases.py`.
+1. Download all papers from the repositories specified in `data/papers.json` and `data/notes.json` by running `./scripts/releases.py`.
    The download location is hard-coded to `rutar-academic/<filename>` where `<filename>.pdf` is the name specified in the `.links.pdf` entry.
    The files are downloaded to `static/papers` and `static/notes`.
 3. Generate PDF data using [pypdf](https://pypi.org/project/pypdf/) from the newly downloaded files in `static/papers` and `static/notes`.
    The generated PDF data is written to `data/generated/pdf_data.json`.
-   This is done with `python scripts/pdf_data.py`.
-4. Do some pre-processing of travel data by running `python scripts/past_travel.py`.
-5. Generate the CV `.tex` file using [jinja](https://jinja.palletsprojects.com/en/3.1.x/) from the template [`cv/alex_rutar_cv.tex`](/cv/alex_rutar_cv.tex) by using `python scripts/cv.py`.
+   This is done with `./scripts/pdf_data.py`.
+4. Do some pre-processing of travel data by running `./scripts/past_travel.py`.
+5. Generate the CV `.tex` file using [jinja](https://jinja.palletsprojects.com/en/3.1.x/) from the template [`cv/alex_rutar_cv.tex`](/cv/alex_rutar_cv.tex) by using `./scripts/cv.py`.
    A lot of the CV data is taken from various files in the [`data`](/data) directory.
    The generated template is copied to the file `build/alex_rutar_cv.tex`.
-   This is done with `python scripts/cv.py`.
 5. Compile the LaTeX file `build/alex_rutar_cv.tex` and copy the compiled PDF to `static/alex_rutar_cv.pdf`.
-   For example, you could use `latexmk`.
 6. Generate the HTML files using `zola build`.
    The generated files are placed in the `public` directory.
 
-You can clean-up all local build files using `make clean` and remote files as well with `make clean_all`.
+You can clean-up all local build files using `just clean` and remote files as well with `just clean_all`.

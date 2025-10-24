@@ -13,26 +13,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           persist-credentials: false
-      - name: Set up Python 3.x
-        uses: actions/setup-python@v5
+
+      - name: Set up Python (via uv)
+        uses: astral-sh/setup-uv@v6
         with:
-          python-version: '3.13.1'
-          cache: 'pip'
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
+          enable-cache: true
+
+      - name: Check formatting
+        shell: bash
+        run: |
+          uvx ruff check scripts
+          uvx ruff format scripts --check
+
       - name: Download papers and notes
-        run: python scripts/releases.py
+        run: ./scripts/releases.py
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-      - name: Set up data subdirectory
-        run: mkdir --parent data/generated
-      - name: Generate PDF data
-        run: python scripts/pdf_data.py
-      - name: Organize travel data
-        run: python scripts/past_travel.py
+
+      - name: Generate data
+        shell: bash
+        run: |
+          mkdir --parent data/generated
+          ./scripts/pdf_data.py
+          ./scripts/past_travel.py
+
       - name: Cache CV build
         uses: actions/cache@v4
         id: cache-cv
@@ -40,17 +47,18 @@ jobs:
           cache-name: cache-cv
         with:
           path: static/alex_rutar_cv.pdf
-          key: cache-cv-${{ hashFiles('data/papers.json', 'data/talks.json', 'data/cv.json', 'cv/*', 'requirements.txt', 'scripts/cv.py') }}
+          key: cache-cv-${{ hashFiles('data/papers.json', 'data/talks.json', 'data/cv.json', 'cv/*', 'scripts/cv.py') }}
       - if: ${{ steps.cache-cv.outputs.cache-hit != 'true' }}
         name: Generate CV .tex from template
-        run: python scripts/cv.py
+        run: ./scripts/cv.py
       - if: ${{ steps.cache-cv.outputs.cache-hit != 'true' }}
         name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           work_in_root_file_dir: true
           root_file: "build/alex_rutar_cv.tex"
           post_compile: mv "build/alex_rutar_cv.pdf" "static/"
+
       - name: Build public HTML with drafts
         uses: shalzz/zola-deploy-action@v0.21.0
         if: github.ref != 'refs/heads/master'
@@ -62,8 +70,10 @@ jobs:
         if: github.ref == 'refs/heads/master'
         env:
           BUILD_ONLY: true
+
       - name: Check HTML and CSS
-        run: html5validator --root public/ --also-check-css --show-warnings
+        run: uvx html5validator --root public/ --also-check-css --show-warnings
+
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@v3
         with:
