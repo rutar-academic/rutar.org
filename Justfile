@@ -3,7 +3,7 @@ branch := `git rev-parse --abbrev-ref HEAD`
 public: releases cv data
     if [ "{{branch}}" = "master" ]; then zola build; else zola build -u "https://{{branch}}.rutar.pages.dev" --drafts; fi
 
-check:
+check: public
     uvx ruff check scripts
     uvx ruff format scripts --check
     uvx html5validator --root public/ --also-check-css --show-warnings --format gnu -ll
