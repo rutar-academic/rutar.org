@@ -107,17 +107,11 @@ def run():
     ]
 
     # get talk data
-    talks = [
-        {
-            "date": datetime.strptime(talk["date"], "%Y-%m-%d").strftime("%Y.%m"),
-            "title": (
-                talk["title_latex"] if "title_latex" in talk.keys() else talk["title"]
-            ),
-            "venue": talk["venue"],
-        }
-        for talk in source_data["talks"]
-    ]
-    talks.sort(reverse=True, key=lambda talk: talk["date"])
+    from collections import Counter
+
+    talk_types = Counter(talk["type"] for talk in source_data["talks"])
+
+    talks = {"types": talk_types, "total": sum(talk_types.values())}
 
     cv_data = json.loads(Path("data/cv.json").read_text())
     # get award data

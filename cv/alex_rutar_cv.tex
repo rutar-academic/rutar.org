@@ -50,11 +50,9 @@
 \BLOCK{endfor}
 \end{enumerate}
 
-\begin{twocolsec}{Conferences and Presentations}
-\BLOCK{for talk in talks}
-    \VAR{talk.date} & \textbf{\VAR{talk.venue}}: \textit{\VAR{talk.title}}\BLOCK{if not loop.last}\\\BLOCK{endif}
-\BLOCK{endfor}
-\end{twocolsec}
+\rsec{Conferences and Presentations}
+I have given over \VAR{talks.total} presentations, including \VAR{talks.types.seminar} invited seminars, \VAR{talks.types.contributed} contributed conference talks, 1 colloquium talk, and 1 minicourse.
+You can find a complete list \href{https://rutar.org/presentations}{on my webpage}.
 
 \begin{twocolsec}{Other Skills}
 \BLOCK{for skill in skills}

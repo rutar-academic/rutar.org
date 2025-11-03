@@ -3,27 +3,27 @@
     "title": "Multi-scale properties of infinitely generated self-similar attractors",
     "date": "2025-11-03",
     "venue": "BME Fractal Geometry Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://bmefractalseminar.pages.dev/"
   },
   {
     "title": "Multi-scale properties of continued fraction sets",
     "date": "2025-10-20",
     "venue": "University of Edinburgh Analysis Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://blogs.ed.ac.uk/analysis/analysis-seminar/"
   },
   {
     "title": "Conformal attractors, inhomogeneous iterated function systems, and branching functions",
     "date": "2025-10-16",
     "venue": "University of St Andrews Analysis Seminar",
-    "type": "invited_seminar"
+    "type": "seminar"
   },
   {
     "title": "Conformal attractors and branching functions",
     "date": "2025-10-14",
     "venue": "University of Helsinki Dynamical Systems Seminar",
-    "type": "invited_seminar"
+    "type": "seminar"
   },
   {
     "title": "Continued fractions and the geometry of conformally invariant sets",
@@ -38,7 +38,7 @@
     "title": "Conformal dimension beyond self-similarity",
     "date": "2025-02-20",
     "venue": "Brown University Geometric Analysis Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/brown_2025.pdf"
     }
@@ -53,13 +53,13 @@
   {
     "title": "Non-convex optimization in fractal geometry",
     "date": "2024-10-31",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue": "Rényi Institute Analysis Seminar"
   },
   {
     "title": "Assouad dimension and uniformity of microsets",
     "date": "2024-10-16",
-    "type": "local_seminar",
+    "type": "seminar",
     "venue": "University of Jyväskylä Analysis Seminar"
   },
   {
@@ -95,26 +95,26 @@
   {
     "title": "Dynamical covering arguments via large deviations and non-convex optimization",
     "date": "2024-03-06",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue": "University of Loughborough Dynamical Systems Seminar"
   },
   {
     "title": "Multifractal analysis via Lagrange duality",
     "date": "2024-03-04",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue": "University of Warwick DAGGER Seminar"
   },
   {
     "title": "Dynamical covering arguments via large deviations and non-convex optimization",
     "date": "2024-02-27",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue": "UW Madison Analysis Seminar"
   },
   {
     "title": "Some exotic phenomena for Assouad spectra",
     "date": "2024-02-19",
     "venue": "Shenzhen Fractal Geometry Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/shenzhen_2024.pdf"
     }
@@ -123,7 +123,7 @@
     "title": "Pointwise Assouad dimension and tangents of invariant sets",
     "date": "2024-02-12",
     "venue": "UBC Harmonic Analysis and Fractal Geometry Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://www.pims.math.ca/scientific-event/240212-uhafgar"
   },
   {
@@ -131,7 +131,7 @@
     "date": "2023-12-01",
     "venue": "University of St Andrews Research Day",
     "venue_url": "https://mtoddm.github.io/Meetings/MnSResDayTT23.pdf",
-    "type": "local_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/sta_research_day_2023.pdf"
     }
@@ -140,14 +140,14 @@
     "title": "Pointwise Assouad dimension and regularity of invariant sets",
     "date": "2023-11-17",
     "venue": "Bristol Ergodic Theory and Dynamical Systems Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://www.bristolmathsresearch.org/events/ergodic-theory-and-dynamical-systems/"
   },
   {
     "title": "Multifractal analysis of non-conformal measures",
     "date": "2023-10-20",
     "venue": "BudWiSer: Budapest–Wien Dynamical Systems Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://math.bme.hu/~dinamika/"
   },
   {
@@ -155,7 +155,7 @@
     "date": "2023-10-18",
     "venue": "OARS: Online Analysis Research Seminar",
     "venue_url": "https://sites.google.com/view/o-a-r-s",
-    "type": "invited_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/oars_2023.pdf"
     }
@@ -164,14 +164,14 @@
     "title": "Pointwise Assouad dimension and regularity of invariant sets",
     "date": "2023-10-09",
     "venue": "University of Edinburgh Analysis Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://blogs.ed.ac.uk/analysis/analysis-seminar/"
   },
   {
     "title": "Multifractal analysis of planar self-affine measures via convex optimization",
     "date": "2023-09-19",
     "venue": "St Andrews Analysis Seminar",
-    "type": "local_seminar",
+    "type": "seminar",
     "venue_url": "https://sta-analysis.github.io/seminars/"
   },
   {
@@ -205,28 +205,28 @@
     "title": "Assouad dimension and tangents of dynamically invariant sets",
     "date": "2023-04-25",
     "venue": "St Andrews Analysis Seminar",
-    "type": "local_seminar",
+    "type": "seminar",
     "venue_url": "https://sta-analysis.github.io/seminars/"
   },
   {
     "title": "Interpolating between box and Assouad dimension",
     "date": "2023-04-14",
     "venue": "Oulu Analysis Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://docs.google.com/document/d/1leXex6QBkjgqU0DElEs9f7FtJe5fpJtx8koEswnE5CI/"
   },
   {
     "title": "Assouad dimension and tangents of dynamically invariant sets",
     "date": "2023-04-03",
     "venue": "Jyväskylä Geometric Analysis Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://www.jyu.fi/science/en/maths/current/seminars/geometric-analysis-seminar"
   },
   {
     "title": "Convex optimization and multifractal analysis",
     "date": "2023-01-27",
     "venue": "Oulu Analysis Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://docs.google.com/document/d/1leXex6QBkjgqU0DElEs9f7FtJe5fpJtx8koEswnE5CI/"
   },
   {
@@ -234,13 +234,13 @@
     "title_latex": "$L^q$-spectra and multifractal analysis of random substitutions",
     "date": "2022-11-22",
     "venue": "St Andrews Analysis Seminar",
-    "type": "local_seminar",
+    "type": "seminar",
     "venue_url": "https://sta-analysis.github.io/seminars/"
   },
   {
     "title": "Assouad dimension and slices of self-affine sets",
     "date": "2022-10-31",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue": "Manchester Dynamics Seminar"
   },
   {
@@ -257,7 +257,7 @@
     "title": "Geometric and combinatorial properties of self-similar measures",
     "date": "2022-08-30",
     "venue": "BME Dynamical Systems Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://math.bme.hu/~dinamika/"
   },
   {
@@ -274,7 +274,7 @@
     "title": "Dimension theory and classification of Assouad spectra through homogeneous Moran sets",
     "date": "2022-07-07",
     "venue": "University of Vienna Ergodic Theory Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "venue_url": "https://mathematik.univie.ac.at/forschung/seminare/arbeitsgemeinschaft-ergodentheorie/"
   },
   {
@@ -302,7 +302,7 @@
     "date": "2022-04-12",
     "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
     "venue_url": "https://rutar.org/burn2022/",
-    "type": "local_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/pisot_bernoulli_apr_2022.pdf"
     }
@@ -321,14 +321,14 @@
     "title": "Attainable forms of intermediate dimensions",
     "date": "2022-02-08",
     "venue": "St Andrews Analysis Seminar",
-    "type": "local_seminar",
+    "type": "seminar",
     "venue_url": "https://sta-analysis.github.io/seminars/"
   },
   {
     "title": "Self-similar measures with non-concave spectra and multifractal analysis",
     "date": "2021-04-16",
     "venue": "Junior Ergodic Theory Seminar",
-    "type": "invited_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/jets_apr_2021.pdf"
     }
@@ -337,7 +337,7 @@
     "title": "Analysis group intro talk",
     "date": "2021-01-25",
     "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
-    "type": "local_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/sta_burn_jan_2021.pdf"
     }
@@ -347,7 +347,7 @@
     "date": "2020-10-27",
     "venue": "St Andrews Analysis Seminar",
     "venue_url": "https://sta-analysis.github.io/seminars/",
-    "type": "local_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/sta_analysis_oct_2020.pdf",
       "video": "https://www.youtube.com/watch?v=PJa2iJAN2gs"
@@ -358,7 +358,7 @@
     "date": "2020-02-28",
     "venue": "University of Waterloo Analysis Seminar",
     "venue_url": "https://uwaterloo.ca/pure-mathematics-analysis/events/geometric-and-combinatorial-separation-conditions-iterated",
-    "type": "local_seminar",
+    "type": "seminar",
     "links": {
       "slides": "talks/uw_analysis_feb_2020.pdf"
     }

@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{mathcv}[2023/06/05 Mathematics CV Class]
 
-\LoadClass[12pt, a4paper]{article}
+\LoadClass[11pt, a4paper]{article}
 
 \RequirePackage[bottom=3cm, right=2.3cm, top=2.5cm, left=2.3cm]{geometry}
 \RequirePackage{bm}
