@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ page.title | safe }}{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
 {% block description %}{{ page.description | safe }}{% endblock %}
 {% block content %}
 <div class="post-date">{% if page.draft %}DRAFT{% else %}{{ page.date | date(format="%B %-d, %Y") }}{% endif %}</div>

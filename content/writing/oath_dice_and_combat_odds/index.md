@@ -9,7 +9,7 @@ draft = false
 toc = false
 
 [taxonomies]
-tags = ["misc"]
+tags = ["fun"]
 +++
 ## The Oath combat system
 [Oath](https://ledergames.com/products/oath-chronicles-of-empire-exile) is a great board game, which is in some sense a game about _history_, and in others a game  about _empires_.

@@ -9,7 +9,7 @@ draft = true
 toc = false
 
 [taxonomies]
-tags = ["web", "deployment", "github"]
+tags = ["web", "deployment", "git"]
 +++
 In this article, I will discuss some options for hosting and automating personal research websites.
 Since I primarily use [GitHub](https://github.com), this article will focus on the implementation details offered through their platform.

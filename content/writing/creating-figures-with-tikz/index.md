@@ -9,7 +9,7 @@ draft = true
 toc = true
 
 [taxonomies]
-tags = ["tex", "tikz"]
+tags = ["latex"]
 +++
 ## LaTeX and TikZ
 [LaTeX](https://www.latex-project.org/) is a well-known typesetting system which is commonly used in the scientific and academic community for generating high-quality documents.
