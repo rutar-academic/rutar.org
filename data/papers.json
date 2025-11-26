@@ -155,13 +155,18 @@
       "kolossvary.istvan-t"
     ],
     "short_title": "Assouad spectrum of Gatzouras–Lalley carpets",
-    "status": "accepted",
+    "status": "published",
     "links": {
       "pdf": "papers/gl_assouad_spectrum.pdf",
-      "arxiv": "2401.07168"
+      "arxiv": "2401.07168",
+      "doi": "10.1016/j.aim.2025.110707"
     },
     "ref": {
-      "journal": "AdvMath"
+      "journal": "AdvMath",
+      "vol": "484",
+      "year": "2026",
+      "article_no": "110707",
+      "page_count": "46"
     },
     "tags": ["dimension-theory", "ifs", "multifractal-analysis"]
   },

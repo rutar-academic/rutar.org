@@ -68,7 +68,7 @@
 {% macro publ_status(publ) %}
 {%- if publ.status == "submitted" %}<em>{{ self::data_link(data=load_data(path="data/journals.json"), key="preprint") }}</em> (submitted)
 {%- elif publ.status == "accepted" %}<em>{{ self::data_link(data=load_data(path="data/journals.json"), key=publ.ref.journal) }}</em> (to appear)
-{%- elif publ.status == "published" %}<em>{{ self::data_link(data=load_data(path="data/journals.json"), key=publ.ref.journal) }}</em> <b>{{ publ.ref.vol }}</b> ({{ publ.ref.year }}), {% if publ.ref.article_no %}Paper No. {{ publ.ref.article_no}}, {{ publ.ref.page_count }} p.{% else %}{{ publ.ref.page_start }}–{{ publ.ref.page_end }}{% endif %}
+{%- elif publ.status == "published" %}<em>{{ self::data_link(data=load_data(path="data/journals.json"), key=publ.ref.journal) }}</em> <b>{{ publ.ref.vol }}</b> ({{ publ.ref.year }}), {% if publ.ref.article_no %}Paper No. {{ publ.ref.article_no}}, {{ publ.ref.page_count }} pp.{% else %}{{ publ.ref.page_start }}–{{ publ.ref.page_end }}{% endif %}
 {%- elif publ.status == "expository" %}<em>Permanent Preprint</em>
 {%- endif -%}
 {% endmacro %}
