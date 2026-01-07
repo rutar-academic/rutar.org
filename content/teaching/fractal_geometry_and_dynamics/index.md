@@ -13,9 +13,9 @@ This is the course webpage for the course *fractal geometry and dynamics* taught
 Any important course updates will be posted here.
 
 
-<!-- ### Exercise sheets -->
+### Exercise sheets
 
-<!-- - [Exercise 1](fgd-ex-1.pdf) due 12:15pm Thursday January 15 -->
+- [Exercise 1](fgd-ex-1.pdf) due 12:15pm Thursday January 15
 <!-- - [Exercise 2](fgd-ex-2.pdf) due 12:15pm Thursday January 22 -->
 <!-- - [Exercise 3](fgd-ex-3.pdf) due 12:15pm Thursday January 29 -->
 <!-- - [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 5 -->
