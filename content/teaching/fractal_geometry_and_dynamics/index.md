@@ -6,7 +6,7 @@ date = 2025-01-08
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2026-01-07
+updated = 2026-01-08
 +++
 ### *Recent updates*
 This is the course webpage for the course *fractal geometry and dynamics* taught in Spring 2026.
@@ -26,7 +26,7 @@ Any important course updates will be posted here.
 
 ### Course material
 
-Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-07), last updated on Jan 7, 2026.
+Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-08), last updated on Jan 8, 2026.
 
 I am unfortunately behind schedule with the preparation of lecture notes and they are not finished.
 I will update the lecture notes each weekend to cover at least the material for the lectures in the following week.
