@@ -49,8 +49,8 @@ Course evaluation will be based on:
 
 - Lectures take place from *12:15* to *14:00* on Thursdays and Fridays, starting on January 8 and ending on February 20.
 - Exercise classes take place from *14:15* to *16:00* on Fridays, starting on January 16 and ending on February 20.
-- There will be 1 exercise sheet due per week, on January 15, January 22, January 29, Feburary 5, and February 12.
-- There will be a final project, due on February 19, with presentations between February 20 and February 27.
+- There will be 1 exercise sheet due per week, on January 15, January 22, January 29, Feburary 5, February 12, and February 19.
+- There will be a final project, due on February 22, with presentations between February 22 and February 27.
 - There will be no exam and the course will end on February 27.
 
 ## Course details
