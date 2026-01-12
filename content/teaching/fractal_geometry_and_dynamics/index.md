@@ -21,6 +21,23 @@ Any important course updates will be posted here.
 <!-- - [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 5 -->
 <!-- - [Exercise 5](fgd-ex-5.pdf) due 12:15pm Thursday February 12 -->
 
+### Final project information
+
+The final project will be due on Sunday, February 22 at 23:59.
+Here is the current list of projects.
+I will add more in the next few days if I think of new ones.
+The pre-requisite material for these projects should mostly be covered by the midpoint of the course.
+
+- Dimensions of self-affine carpets
+- Separation conditions for self-similar sets
+- Inhomogeneous self-similar sets
+- Assouad dimension and weak tangents
+- Multifractal analysis for self-similar measures
+- Topological dynamical systems
+
+
+For detail on the projects, as well as information about the evaluation, see the [information sheet](fgd-final-project.pdf).
+
 
 ## Important course information
 
