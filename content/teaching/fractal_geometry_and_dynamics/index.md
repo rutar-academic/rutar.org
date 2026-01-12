@@ -6,7 +6,7 @@ date = 2025-01-08
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2026-01-08
+updated = 2026-01-12
 +++
 ### *Recent updates*
 This is the course webpage for the course *fractal geometry and dynamics* taught in Spring 2026.
@@ -40,10 +40,16 @@ These notes are based on the following references:
 - Gerald Folland's [real analysis textbook](https://apachepersonal.miun.se/~andrli/Bok.pdf).
 
 ### Evaluation
-Course evaluation will be based on:
-- exercises solutions (40% of the total grade)
-- presentation of the exercises during exercise classes (10% of the total grade)
-- an independent final project (50% of the total grade) with a written (5-10 pages) and oral component (45-60 minutes).
+This course is scored out of 100, but ultimately the evaluation is pass-fail.
+
+To pass, you require at least 60 points, with a minimum of 25 points on the final project.
+The finer breakdown is as follows:
+
+- written exercise solutions (40 points)
+- presentation of the exercises during exercise classes (10 points)
+- an independent final project with a written (5-10 pages, 25 points) and oral component (45-60 minutes, 25 points).
+
+There will be 4 available bonus points in the exercises which apply to your overall grade.
 
 ### Schedule
 
