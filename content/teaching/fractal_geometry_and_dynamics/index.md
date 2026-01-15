@@ -43,7 +43,7 @@ For detail on the projects, as well as information about the evaluation, see the
 
 ### Course material
 
-Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-08), last updated on Jan 8, 2026.
+Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-15), last updated on Jan 15, 2026.
 
 I am unfortunately behind schedule with the preparation of lecture notes and they are not finished.
 I will update the lecture notes each weekend to cover at least the material for the lectures in the following week.
