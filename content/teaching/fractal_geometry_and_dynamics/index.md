@@ -8,9 +8,12 @@ where = "University of Jyväskylä"
 lang = "English"
 updated = 2026-01-15
 +++
-### *Recent updates*
-This is the course webpage for the course *fractal geometry and dynamics* taught in Spring 2026.
-Any important course updates will be posted here.
+Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-15), last updated on Jan 15, 2026.
+
+Here is some supplementary material:
+
+- [Material on packing measure and dimension](https://rutar.org/notes/box_versus_packing.pdf)
+- [Supplementary on material on multifractal analysis](https://rutar.org/notes/multifractal_duality.pdf)
 
 
 ### Exercise sheets
@@ -44,6 +47,11 @@ For detail on the projects, as well as information about the evaluation, see the
 ### Course material
 
 Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-15), last updated on Jan 15, 2026.
+
+Here is some relevant supplementary material:
+
+- [Material on packing measure and dimension](https://rutar.org/notes/box_versus_packing.pdf)
+- [Supplementary on material on multifractal analysis](https://rutar.org/notes/multifractal_duality.pdf)
 
 I am unfortunately behind schedule with the preparation of lecture notes and they are not finished.
 I will update the lecture notes each weekend to cover at least the material for the lectures in the following week.
