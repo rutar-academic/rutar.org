@@ -6,9 +6,9 @@ date = 2025-01-08
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2026-01-15
+updated = 2026-01-16
 +++
-Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-15), last updated on Jan 15, 2026.
+Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-16), last updated on Jan 16, 2026.
 
 Here is some supplementary material:
 
