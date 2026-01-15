@@ -6,7 +6,7 @@ date = 2025-01-08
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2026-01-12
+updated = 2026-01-15
 +++
 ### *Recent updates*
 This is the course webpage for the course *fractal geometry and dynamics* taught in Spring 2026.
@@ -16,7 +16,7 @@ Any important course updates will be posted here.
 ### Exercise sheets
 
 - [Exercise 1](fgd-ex-1.pdf) due 12:15pm Thursday January 15
-<!-- - [Exercise 2](fgd-ex-2.pdf) due 12:15pm Thursday January 22 -->
+- [Exercise 2](fgd-ex-2.pdf) due 12:15pm Thursday January 22
 <!-- - [Exercise 3](fgd-ex-3.pdf) due 12:15pm Thursday January 29 -->
 <!-- - [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 5 -->
 <!-- - [Exercise 5](fgd-ex-5.pdf) due 12:15pm Thursday February 12 -->
@@ -66,7 +66,7 @@ The finer breakdown is as follows:
 - presentation of the exercises during exercise classes (10 points)
 - an independent final project with a written (5-10 pages, 25 points) and oral component (45-60 minutes, 25 points).
 
-There will be 4 available bonus points in the exercises which apply to your overall grade.
+There will be 5 available bonus points in the exercises which apply to your overall grade.
 
 ### Schedule
 
