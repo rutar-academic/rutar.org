@@ -72,11 +72,11 @@ This course is scored out of 100, but ultimately the evaluation is pass-fail.
 To pass, you require at least 60 points, with a minimum of 25 points on the final project.
 The finer breakdown is as follows:
 
-- written exercise solutions (40 points)
-- presentation of the exercises during exercise classes (10 points)
+- written exercise solutions (40 points; your scores on the assignments will be multiplied by 2/3)
+- presentation of the exercises during exercise classes (10 points; 2 per exercise class with a free pass if you miss one)
 - an independent final project with a written (5-10 pages, 25 points) and oral component (45-60 minutes, 25 points).
 
-There will be 5 available bonus points in the exercises which apply to your overall grade.
+There will be around 5 available bonus points in the exercises which apply to your overall grade.
 
 ### Schedule
 
