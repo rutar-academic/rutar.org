@@ -58,6 +58,8 @@ I will update the lecture notes each weekend to cover at least the material for 
 In order to get the updated notes, please re-visit this page and click on the link again (instead of refreshing the PDF page).
 
 These notes are based on the following references:
+- [Fractals in probability and analysis](https://www.math.stonybrook.edu/~bishop/classes/math324.F15/book1Dec15.pdf) by Chris Bishop and Yuval Peres.
+- [Techniques in Fractal Geometry](https://zbmath.org/0869.28003) by Kenneth Falconer.
 - [Self-similar and self-affine sets and measures](https://zbmath.org/1543.28001) by Balázs Bárány, Károly Simon, and Boris Solomyak.
   Email me if you want a PDF copy.
 - Mike Hochman's [ergodic theory notes](https://math.huji.ac.il/~mhochman/courses/ergodic-theory-2017/notes.pdf).
