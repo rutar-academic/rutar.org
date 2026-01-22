@@ -19,7 +19,7 @@ Here is some supplementary material:
 ### Exercise sheets
 
 - [Exercise 1](fgd-ex-1.pdf) and [Solutions](fgd-sols-1.pdf)
-- [Exercise 2](fgd-ex-2.pdf) due 12:15pm Thursday January 22
+- [Exercise 2](fgd-ex-2.pdf) due [Solutions](fgd-sols-2.pdf)
 - [Exercise 3](fgd-ex-3.pdf) due 12:15pm Thursday January 29
 <!-- - [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 5 -->
 <!-- - [Exercise 5](fgd-ex-5.pdf) due 12:15pm Thursday February 12 -->
@@ -34,7 +34,7 @@ The pre-requisite material for these projects should mostly be covered by the mi
 - Dimensions of self-affine carpets
 - Separation conditions for self-similar sets
 - Inhomogeneous self-similar sets
-- Assouad dimension and weak tangents
+- Assouad dimension and weak tangents (**reserved for Mikko Liimatainen**)
 - Multifractal analysis for self-similar measures
 - Topological dynamical systems
 
@@ -44,20 +44,8 @@ For detail on the projects, as well as information about the evaluation, see the
 
 ## Important course information
 
-### Course material
+### Additional course material
 
-Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-15), last updated on Jan 15, 2026.
-
-Here is some relevant supplementary material:
-
-- [Material on packing measure and dimension](https://rutar.org/notes/box_versus_packing.pdf)
-- [Supplementary on material on multifractal analysis](https://rutar.org/notes/multifractal_duality.pdf)
-
-I am unfortunately behind schedule with the preparation of lecture notes and they are not finished.
-I will update the lecture notes each weekend to cover at least the material for the lectures in the following week.
-In order to get the updated notes, please re-visit this page and click on the link again (instead of refreshing the PDF page).
-
-These notes are based on the following references:
 - [Fractals in probability and analysis](https://www.math.stonybrook.edu/~bishop/classes/math324.F15/book1Dec15.pdf) by Chris Bishop and Yuval Peres.
 - [Techniques in Fractal Geometry](https://zbmath.org/0869.28003) by Kenneth Falconer.
 - [Self-similar and self-affine sets and measures](https://zbmath.org/1543.28001) by Balázs Bárány, Károly Simon, and Boris Solomyak.
@@ -72,7 +60,7 @@ This course is scored out of 100, but ultimately the evaluation is pass-fail.
 To pass, you require at least 60 points, with a minimum of 25 points on the final project.
 The finer breakdown is as follows:
 
-- written exercise solutions (40 points; your scores on the assignments will be multiplied by 2/3)
+- written exercise solutions (40 points; your scores on the assignments will be normalized if the sum is not 40)
 - presentation of the exercises during exercise classes (10 points; 2 per exercise class with a free pass if you miss one)
 - an independent final project with a written (5-10 pages, 25 points) and oral component (45-60 minutes, 25 points).
 
