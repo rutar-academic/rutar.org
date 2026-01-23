@@ -6,9 +6,9 @@ date = 2025-01-08
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2026-01-22
+updated = 2026-01-23
 +++
-Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-22), last updated on Jan 22, 2026.
+Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-23), last updated on Jan 23, 2026.
 
 Here is some supplementary material:
 
@@ -19,7 +19,7 @@ Here is some supplementary material:
 ### Exercise sheets
 
 - [Exercise 1](fgd-ex-1.pdf) and [Solutions](fgd-sols-1.pdf)
-- [Exercise 2](fgd-ex-2.pdf) due [Solutions](fgd-sols-2.pdf)
+- [Exercise 2](fgd-ex-2.pdf) and [Solutions](fgd-sols-2.pdf)
 - [Exercise 3](fgd-ex-3.pdf) due 12:15pm Thursday January 29
 <!-- - [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 5 -->
 <!-- - [Exercise 5](fgd-ex-5.pdf) due 12:15pm Thursday February 12 -->
