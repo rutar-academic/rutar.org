@@ -18,10 +18,14 @@ Here is some supplementary material:
 
 ### Exercise sheets
 
+Exercises 4 and 5 are delayed by 1 week (so there is no deadline on February 5, and the final exercises are due on February 12 and February 19) to leave more time for the final project.
+I will release Exercise 5 next week (before the deadline for Exercise 4).
+Note that it will be somewhat longer since it covers more material.
+
 - [Exercise 1](fgd-ex-1.pdf) and [Solutions](fgd-sols-1.pdf)
 - [Exercise 2](fgd-ex-2.pdf) and [Solutions](fgd-sols-2.pdf)
-- [Exercise 3](fgd-ex-3.pdf) due 12:15pm Thursday January 29
-- [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 5
+- [Exercise 3](fgd-ex-3.pdf) and [Solutions](fgd-sols-3.pdf)
+- [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 12
 <!-- - [Exercise 5](fgd-ex-5.pdf) due 12:15pm Thursday February 12 -->
 
 ### Final project information
