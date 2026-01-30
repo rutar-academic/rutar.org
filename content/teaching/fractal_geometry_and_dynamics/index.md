@@ -35,7 +35,7 @@ Here is the current list of projects.
 I will add more in the next few days if I think of new ones.
 The pre-requisite material for these projects should mostly be covered by the midpoint of the course.
 
-- Dimensions of self-affine carpets
+- Dimensions of self-affine carpets (**reserved for Yibo Chen**)
 - Separation conditions for self-similar sets
 - Inhomogeneous self-similar sets
 - Assouad dimension and weak tangents (**reserved for Mikko Liimatainen**)
