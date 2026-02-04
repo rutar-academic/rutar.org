@@ -1,14 +1,14 @@
 +++
 title = "Fractal geometry and dynamics"
-date = 2025-01-31
+date = 2026-02-04
 
 [extra]
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2026-01-31
+updated = 2026-02-04
 +++
-Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-01-31), last updated on Jan 31, 2026.
+Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-02-04), last updated on Feb 4, 2026.
 
 Here is some supplementary material:
 
