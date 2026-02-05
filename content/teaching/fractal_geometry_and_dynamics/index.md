@@ -1,12 +1,12 @@
 +++
 title = "Fractal geometry and dynamics"
-date = 2026-02-04
+date = 2026-02-05
 
 [extra]
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2026-02-04
+updated = 2026-02-05
 +++
 Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-02-04), last updated on Feb 4, 2026.
 
@@ -18,15 +18,11 @@ Here is some supplementary material:
 
 ### Exercise sheets
 
-Exercises 4 and 5 are delayed by 1 week (so there is no deadline on February 5, and the final exercises are due on February 12 and February 19) to leave more time for the final project.
-I will release Exercise 5 next week (before the deadline for Exercise 4).
-Note that it will be somewhat longer since it covers more material.
-
 - [Exercise 1](fgd-ex-1.pdf) and [Solutions](fgd-sols-1.pdf)
 - [Exercise 2](fgd-ex-2.pdf) and [Solutions](fgd-sols-2.pdf)
 - [Exercise 3](fgd-ex-3.pdf) and [Solutions](fgd-sols-3.pdf)
 - [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 12
-<!-- - [Exercise 5](fgd-ex-5.pdf) due 12:15pm Thursday February 12 -->
+- [Exercise 5](fgd-ex-5.pdf) due 12:15pm Thursday February 19
 
 ### Final project information
 
