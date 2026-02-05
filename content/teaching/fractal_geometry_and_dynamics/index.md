@@ -27,9 +27,7 @@ Here is some supplementary material:
 ### Final project information
 
 The final project will be due on Sunday, February 22 at 23:59.
-Here is the current list of projects.
-I will add more in the next few days if I think of new ones.
-The pre-requisite material for these projects should mostly be covered by the midpoint of the course.
+Here is the list of available projects.
 
 - Dimensions of self-affine carpets (**reserved for Yibo Chen**)
 - Separation conditions for self-similar sets
