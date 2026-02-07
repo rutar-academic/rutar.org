@@ -34,7 +34,7 @@ Here is the list of available projects.
 - Inhomogeneous self-similar sets
 - Assouad dimension and weak tangents (**reserved for Mikko Liimatainen**)
 - Multifractal analysis for self-similar measures
-- Topological dynamical systems
+- Topological dynamical systems (**reserved for Ella Suur-Askola**)
 
 
 For detail on the projects, as well as information about the evaluation, see the [information sheet](fgd-final-project.pdf).
