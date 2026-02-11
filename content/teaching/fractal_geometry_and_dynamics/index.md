@@ -1,14 +1,14 @@
 +++
 title = "Fractal geometry and dynamics"
-date = 2026-02-05
+date = 2026-02-12
 
 [extra]
 when = "Spring 2026, Period 3"
 where = "University of Jyväskylä"
 lang = "English"
-updated = 2026-02-05
+updated = 2026-02-12
 +++
-Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-02-04), last updated on Feb 4, 2026.
+Here is a [link to the lecture notes](fgd-notes.pdf?v=2026-02-12), last updated on Feb 12, 2026.
 
 Here is some supplementary material:
 
@@ -17,6 +17,8 @@ Here is some supplementary material:
 
 
 ### Exercise sheets
+
+Exercise 5 typo: the definition of semi-algebra was missing the assumption that it is a finite *disjoint* union (thanks Mikko for noticing this!)
 
 - [Exercise 1](fgd-ex-1.pdf) and [Solutions](fgd-sols-1.pdf)
 - [Exercise 2](fgd-ex-2.pdf) and [Solutions](fgd-sols-2.pdf)
@@ -35,7 +37,6 @@ Here is the list of available projects.
 - Assouad dimension and weak tangents (**reserved for Mikko Liimatainen**)
 - Multifractal analysis for self-similar measures
 - Topological dynamical systems (**reserved for Ella Suur-Askola**)
-
 
 For detail on the projects, as well as information about the evaluation, see the [information sheet](fgd-final-project.pdf).
 
