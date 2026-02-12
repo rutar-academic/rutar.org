@@ -23,7 +23,7 @@ Exercise 5 typo: the definition of semi-algebra was missing the assumption that 
 - [Exercise 1](fgd-ex-1.pdf) and [Solutions](fgd-sols-1.pdf)
 - [Exercise 2](fgd-ex-2.pdf) and [Solutions](fgd-sols-2.pdf)
 - [Exercise 3](fgd-ex-3.pdf) and [Solutions](fgd-sols-3.pdf)
-- [Exercise 4](fgd-ex-4.pdf) due 12:15pm Thursday February 12
+- [Exercise 4](fgd-ex-4.pdf) and [Solutions](fgd-sols-4.pdf)
 - [Exercise 5](fgd-ex-5.pdf) due 12:15pm Thursday February 19
 
 ### Final project information
