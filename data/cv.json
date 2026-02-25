@@ -96,6 +96,26 @@
   ],
   "work": [
     {
+      "date": "Fall 2026",
+      "title": "Junior Fellow",
+      "institution": "Institut Mittag-Leffler",
+      "location": "Djursholm, Sweden",
+      "extra": ["Semester program ``Interactions between fractal geometry, harmonic analysis, and dynamical systems''"]
+    },
+    {
+      "date": "2026--2028",
+      "title": "NSERC Postdoctoral Fellow",
+      "institution": "University of British Columbia",
+      "location": "Vancouver, Canada"
+    },
+    {
+      "date": "May 2026",
+      "title": "Early Career Researcher",
+      "institution": "IMPAN",
+      "location": "Warsaw, Poland",
+      "extra": ["Simons Semester ``Continued Fractions, Fractals, Ergodic theory and Dynamics''"]
+    },
+    {
       "date": "2024--2026",
       "title": "Postdoctoral Researcher",
       "institution": "University of Jyväskylä",
