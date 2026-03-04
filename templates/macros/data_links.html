@@ -2,7 +2,11 @@
 {% macro data_link(key, data, attr="name") %}
   {%- if data is containing(key) -%}
     {%- set source = data[key]-%}
-    <a rel="noopener" target="_blank" class="hidden-link" href="{{ source.url | safe }}">{{ source[attr] | safe }}</a>
+    {%- if source.url -%}
+      <a rel="noopener" target="_blank" class="hidden-link" href="{{ source.url | safe }}">{{ source[attr] | safe }}</a>
+    {%- else -%}
+      {{ source[attr] | safe }}
+    {%- endif -%}
   {%- endif -%}
 {%- endmacro %}
 

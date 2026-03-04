@@ -3,6 +3,21 @@
     "title": "Two-scale branching functions and inhomogeneous attractors",
     "type": "research",
     "with": [
+      "chen.haipeng",
+      "banaji.amlan",
+      "wang.wen"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/attainable_lower_spectra.pdf",
+      "arxiv": "2603.03174"
+    },
+    "tags": ["dimension-theory"]
+  },
+  {
+    "title": "Two-scale branching functions and inhomogeneous attractors",
+    "type": "research",
+    "with": [
       "orgovanyi.vilma"
     ],
     "status": "submitted",

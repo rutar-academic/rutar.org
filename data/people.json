@@ -19,6 +19,11 @@
     "short_name": "David Beltran",
     "url": "https://sites.google.com/site/mathdbeltran/"
   },
+  "chen.haipeng": {
+    "name": "Haipeng Chen",
+    "short_name": "Haipeng Chen",
+    "url": "https://sites.google.com/view/hpchen0703/clarence-chens-personal-homepage"
+  },
   "falconer.kenneth-j": {
     "name": "Kenneth J. Falconer",
     "short_name": "Kenneth Falconer",
@@ -78,5 +83,9 @@
     "name": "Sascha Troscheit",
     "short_name": "Sascha Troscheit",
     "url": "https://www.troscheit.eu/"
+  },
+  "wang.wen": {
+    "name": "Wen Wang",
+    "short_name": "Wen Wang"
   }
 }
