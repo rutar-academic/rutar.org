@@ -1,5 +1,14 @@
 [
   {
+    "title": "Monotonization of dimension spectra",
+    "type": "expository",
+    "status": "expository",
+    "links": {
+      "pdf": "notes/spectra_monotonization.pdf"
+    },
+    "tags": ["dimension-theory"]
+  },
+  {
     "title": "Attainable forms of lower spectra",
     "type": "research",
     "with": [
