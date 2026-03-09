@@ -1,5 +1,15 @@
 [
   {
+    "title": "Dimension classification and branching functions",
+    "date": "2026-03-09",
+    "venue": "BME Fractal Geometry Seminar",
+    "type": "seminar",
+    "venue_url": "https://bmefractalseminar.pages.dev/",
+    "links": {
+      "slides": "talks/bme_fractal_seminar_2026_03.pdf"
+    }
+  },
+  {
     "title": "Multi-scale properties of infinitely generated self-similar attractors",
     "date": "2025-11-03",
     "venue": "BME Fractal Geometry Seminar",
