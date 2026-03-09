@@ -27,7 +27,8 @@
     "title": "Conformal attractors, inhomogeneous iterated function systems, and branching functions",
     "date": "2025-10-16",
     "venue": "University of St Andrews Analysis Seminar",
-    "type": "seminar"
+    "type": "seminar",
+    "venue_url": "https://sta-analysis.github.io/seminars/"
   },
   {
     "title": "Conformal attractors and branching functions",
@@ -40,6 +41,7 @@
     "date": "2025-02-26",
     "venue": "University of Massachusetts Lowell Mathematics Colloquium",
     "type": "colloquium",
+    "venue_url": "https://www.uml.edu/sciences/mathematics/news/colloquium.aspx",
     "links": {
       "slides": "talks/uml_2025.pdf"
     }
