@@ -6,7 +6,8 @@
     "type": "seminar",
     "venue_url": "https://bmefractalseminar.pages.dev/",
     "links": {
-      "slides": "talks/bme_fractal_seminar_2026_03.pdf"
+      "slides": "talks/bme_fractal_seminar_2026_03.pdf",
+      "video": "https://www.youtube.com/watch?v=n188m0XCjIg"
     }
   },
   {
@@ -14,7 +15,10 @@
     "date": "2025-11-03",
     "venue": "BME Fractal Geometry Seminar",
     "type": "seminar",
-    "venue_url": "https://bmefractalseminar.pages.dev/"
+    "venue_url": "https://bmefractalseminar.pages.dev/",
+    "links": {
+      "video": "https://www.youtube.com/watch?v=vAfjowi1SzY"
+    }
   },
   {
     "title": "Multi-scale properties of continued fraction sets",
@@ -376,7 +380,7 @@
     }
   },
   {
-    "title": "An algebraic oroof of quadratic reciprocity",
+    "title": "An algebraic proof of quadratic reciprocity",
     "date": "2019-07-25",
     "venue": "CUMC 2019",
     "venue_url": "https://cumc.math.ca/2019/",
