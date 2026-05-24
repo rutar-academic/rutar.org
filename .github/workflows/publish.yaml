@@ -75,7 +75,7 @@ jobs:
         run: uvx html5validator --root public/ --also-check-css --show-warnings
 
       - name: Publish to Cloudflare
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           command: pages deploy public "--project-name=rutar" "--branch=${{ github.ref_name }}"
           apiToken: ${{ secrets.CF_API_TOKEN }}
