@@ -1,5 +1,14 @@
 [
   {
+    "title": "Multi-scale properties of continued fraction sets",
+    "type": "expository",
+    "status": "expository",
+    "links": {
+      "pdf": "notes/multiscale_continued_fractions.pdf"
+    },
+    "tags": ["dimension-theory", "ifs"]
+  },
+  {
     "title": "Monotonization of dimension spectra",
     "type": "expository",
     "status": "expository",
