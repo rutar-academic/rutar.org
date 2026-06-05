@@ -1,5 +1,17 @@
 [
   {
+    "title": "Visible parts and lower bounds on point-ray incidences",
+    "type": "research",
+    "with": [
+      "orponen.tuomas"
+    ],
+    "status": "submitted",
+    "links": {
+      "pdf": "papers/visibility_lower_bounds.pdf"
+    },
+    "tags": ["dimension-theory", "incidence-geometry"]
+  },
+  {
     "title": "Multi-scale properties of continued fraction sets",
     "type": "expository",
     "status": "expository",
