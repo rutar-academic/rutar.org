@@ -7,11 +7,12 @@
 # ]
 # ///
 
-from jinja2 import FileSystemLoader, Environment, select_autoescape
-import subprocess
-from pathlib import Path
 import json
+import subprocess
 from datetime import datetime
+from pathlib import Path
+
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 
 def make_auth_string(auth_list):
@@ -33,7 +34,7 @@ def make_journal_ref(pages, journal, vol, year):
 def make_ref(entry, journal_data):
     match entry["status"]:
         case "published":
-            if "article_no" in entry["ref"].keys():
+            if "article_no" in entry["ref"]:
                 pages = f"Paper No.\\ {entry['ref']['article_no']}, {entry['ref']['page_count']} pp."
             else:
                 pages = f"{entry['ref']['page_start']}--{entry['ref']['page_end']}"
@@ -140,11 +141,12 @@ def run():
     # get date of the most recent commit that modifies a relevant data file
     completed_proc = subprocess.run(
         ["git", "log", "-1", "--format=%ci", "--"]
-        + [f"data/{k}.json" for k in source_data.keys()],
+        + [f"data/{k}.json" for k in source_data],
         capture_output=True,
+        check=True,
     )
     git_commit_date = datetime.strptime(
-        completed_proc.stdout.decode("ascii").split(" ")[0], "%Y-%m-%d"
+        completed_proc.stdout.decode("ascii"), "%Y-%m-%d %H:%M:%S %z\n"
     ).strftime("%B %-d, %Y")
 
     # write main tex file

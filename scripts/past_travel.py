@@ -5,7 +5,7 @@
 # ///
 
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 if __name__ == "__main__":
@@ -13,6 +13,7 @@ if __name__ == "__main__":
     past_travel = [
         tr
         for tr in travel_dict
-        if datetime.strptime(tr["date_end"], "%Y-%m-%d") <= datetime.today()
+        if datetime.strptime(tr["date_end"], "%Y-%m-%d").astimezone(tz=UTC)
+        <= datetime.now(tz=UTC)
     ]
     Path("data/generated/past_travel.json").write_text(json.dumps(past_travel))

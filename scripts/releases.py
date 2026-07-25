@@ -7,8 +7,8 @@
 import json
 import sys
 from pathlib import Path
-from subprocess import Popen
 from shlex import join
+from subprocess import Popen
 
 
 def status_echo(cmd_list):

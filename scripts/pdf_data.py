@@ -7,10 +7,11 @@
 # ]
 # ///
 
-from pypdf import PdfReader
-from pathlib import Path
-from collections import Counter
 import json
+from collections import Counter
+from pathlib import Path
+
+from pypdf import PdfReader
 
 
 def generate_pdf_data(paper_data):
