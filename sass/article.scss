@@ -1,5 +1,4 @@
 @import "base";
-@import "variables";
 
 .giallo-l {
   display: inline-block;
@@ -10,7 +9,7 @@
 article {
   // setup counters for article section, subsection, etc.
   .post-contents {
-    margin-bottom: 10px;
+    margin-block-end: 10px;
     counter-reset: sec inline-note;
     // when https://github.com/getzola/zola/issues/1759 is resolved
     // add another space here
@@ -35,8 +34,8 @@ article {
 
     blockquote {
       margin: 0;
-      border-left: 2px solid $fadeColor;
-      padding: 0 1rem;
+      border-inline-start: 2px solid $fadeColor;
+      padding-inline: 1rem;
       font-style: italic;
       p {
         margin: 2px 0;
@@ -46,7 +45,7 @@ article {
 
   // post footer
   .post-footer {
-    border-top: 2px solid $borderColor;
+    border-block-start: 2px solid $borderColor;
     padding: 10px 0;
     display: grid;
     grid-template-columns: auto auto;
@@ -72,17 +71,20 @@ article {
     // tags
     .post-tags {
       grid-area: tags;
-      justify-self: right;
+      justify-self: end;
       @include mobile {
-        justify-self: left;
+        justify-self: start;
       }
     }
   }
 }
 
 .post-date, .post-tags, .post-author {
-  font-size: 16px;
   color: $fadeColor;
+}
+
+.post-tags {
+  font-size: 16px;
 }
 
 // only display in print styles
@@ -105,7 +107,7 @@ h1.post-title {
   vertical-align: super;
   line-height: 1;
   font-size: .75em;
-  padding-left: .1em;
+  padding-inline-start: .1em;
   color: $themeColor;
   &::before {content:"[";}
   &::after {content:"]";}
@@ -120,23 +122,21 @@ h1.post-title {
 .inline-note-toggle:has(input:checked) + small {
   display: block;
   color: $fadeColor;
-  padding: .8em 0 1em 2.5vw;;
+  padding-block: .8em 1em;
+  padding-inline: 2.5vw 0;
 }
 
 // table of contents
 // -----------------
 nav.toc {
-  border-left: 2px solid $borderColor;
-  display: block;
+  border-inline-start: 2px solid $borderColor;
   li {
     margin: 0;
+    display: block;
   }
   // nested numbering
   ol {
     counter-reset: toc-item
-  }
-  li {
-    display: block
   }
   li::before {
     content: counters(toc-item, ".") ". ";
@@ -148,7 +148,6 @@ table.large {
   // max-height: 200px;
   display: block;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   th,td {
     white-space: nowrap;
   }
@@ -158,8 +157,7 @@ table.large {
   }
   tbody tr th {
     position: sticky;
-    position: -webkit-sticky;
-    left: 0;
+    inset-inline-start: 0;
   }
 }
 
@@ -176,31 +174,31 @@ table.large {
   }
   .container {
     display: initial;
-    grid-template-rows: 0px auto auto;
-    row-gap: 0px;
+    grid-template-rows: 0 auto auto;
+    row-gap: 0;
     & header, & nav {
       display: none;
     }
   }
   article {
-    border-top: none;
+    border-block-start: none;
   }
   code {
     border: 1px solid $borderColor;
   }
   pre code {
     white-space: pre-wrap;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   a.verbose-url {
     font-size: 10pt;
   }
   .post-author {
     display: block;
-    margin: 2px 0px;
+    margin: 2px 0;
   }
   .post-title {
-    margin-bottom: 20px;
+    margin-block-end: 20px;
   }
   .post-contents {
     h2:hover a, h3:hover a {
@@ -215,7 +213,8 @@ table.large {
     & + small {
       display: block;
       color: $fadeColor;
-      padding: .8em 0 1em 2.5vw;;
+      padding-block: .8em 1em;
+      padding-inline: 2.5vw 0;
     }
   }
 }

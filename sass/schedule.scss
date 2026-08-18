@@ -2,28 +2,28 @@
 
 // Abstract
 // --------
-label {
-  cursor: pointer;
-  line-height: 1;
-  padding-left: .1em;
-  color: $themeColor;
-  &::before {content:"(";}
-  &::after {content:")";}
+.abstract {
+  display: inline;
 
-  & + input,
-  & + input + small {
-    display: none;
+  summary {
+    display: inline;
+    cursor: pointer;
+    color: $themeColor;
+
+    &::before {content: "(";}
+    &::after {content: ")";}
+  }
+
+  small {
+    display: block;
+    color: $fadeColor;
+    padding-block: .8em 1em;
   }
 }
 
 .time {
   white-space: nowrap;
-}
-
-input:checked + small {
-  display: block;
-  color: $fadeColor;
-  padding: .8em 0 1em 0;
+  vertical-align: top;
 }
 
 tr > :first-child {

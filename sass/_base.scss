@@ -1,14 +1,7 @@
 @import "variables";
 
-// -----------
-// Reset
-// -----------
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
-*, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 // -----------
@@ -22,7 +15,6 @@ html {
 }
 
 body {
-  line-height: 1;
   background: $mainBackgroundColor;
   font: 18px/1.4 $primaryFonts;
   color: $textColor;
@@ -33,7 +25,8 @@ body {
   background: $contentBackgroundColor;
   margin: 0 auto;
   max-width: $maxWidth;
-  padding: 0 10px 25px;
+  padding-block: 0 25px;
+  padding-inline: 10px;
   width: 100%;
   display: grid;
   min-width: 0;
@@ -62,13 +55,13 @@ body {
 // nav grid element
 nav.site {
   grid-area: nav;
-  justify-self: right;
+  justify-self: end;
   align-self: end;
   font-size: 18px;
   a {
-    margin-left: 20px;
+    margin-inline-start: 20px;
     color: $textColor;
-    text-align: right;
+    text-align: end;
     font-weight: 300;
     letter-spacing: 1px;
     &:hover {
@@ -93,7 +86,7 @@ header {
     style: oblique;
   }
   letter-spacing: 1px;
-  justify-self: left;
+  justify-self: start;
   align-self: end;
 }
 
@@ -125,24 +118,15 @@ article {
   grid-area: ct;
   min-width: 0;
   max-width: 100%;
-  border-top: 2px solid $borderColor;
+  border-block-start: 2px solid $borderColor;
 
 }
 
 // flexible grid element for displaying things at the bottom of the page
 .display {
   display: grid;
-
-  grid: {
-    area: ds;
-    template-columns: 1fr 1fr;
-    template-rows: repeat(auto-fit, auto);
-  }
-
-  @include mobile {
-    grid-template-columns: auto;
-    grid-template-rows: repeat(auto-fit, auto);
-  }
+  grid-area: ds;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 }
 
 // -----------------------
@@ -196,14 +180,9 @@ ol.pubs cite, b, strong {
 
 a {
   color: $themeColor;
-  background-color: transparent;
   text-decoration: none;
-  cursor: pointer;
   &.hidden-link {
     color: inherit;
-  }
-  &:hover, &:active {
-    color: $themeColor;
   }
   nav.site &.cur {
     color: $themeColor;
@@ -245,8 +224,8 @@ h4 {
 // -----------------------------
 address {
   margin: 1.8em .8em;
-  border-left: 2px solid $fadeColor;
-  padding: 0 1rem;
+  border-inline-start: 2px solid $fadeColor;
+  padding-inline: 1rem;
   font-style: italic;
   p {
     margin: 2px 0;
@@ -281,7 +260,6 @@ pre code {
   white-space: pre;
   display: block;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 table {
@@ -291,14 +269,12 @@ table {
   thead tr th, tbody tr th {
     padding: 3px 10px;
     background-color: $tableBackgroundColor;
-    text-align: left;
-    border-bottom: 1px solid $borderColor;
+    text-align: start;
+    border-block-end: 1px solid $borderColor;
   }
   tbody tr td {
     padding: 3px 10px;
-    word-wrap: normal;
-    max-width: 90%;
-    border-bottom: 1px solid $borderColor;
+    border-block-end: 1px solid $borderColor;
   }
   &.full-width {
     width: 100%;
@@ -310,18 +286,18 @@ table {
     margin: 1px 0 0 25px;
   }
   &.loc {
-    border-left: 2px solid $borderColor;
-    thead tr th, thead tbody tr th, tbody tr td {
+    border-inline-start: 2px solid $borderColor;
+    :is(th, td) {
       padding: 1px 10px;
       background-color: inherit;
-      border-bottom: none;
+      border-block-end: none;
     }
     thead {
       font-weight: bold;
     }
   }
   &.curr-loc {
-    border-left: 3px solid $fadeColor;
+    border-inline-start: 3px solid $fadeColor;
   }
 }
 
@@ -332,7 +308,7 @@ span.side-count {
 
 ul, ol {
   margin: 15px 0;
-  padding-left: 30px;
+  padding-inline-start: 30px;
 }
 
 ul {
@@ -342,7 +318,7 @@ ul {
 ol {
   list-style-type: decimal;
   &.pubs li {
-    margin-bottom: 5px;
+    margin-block-end: 5px;
   }
 }
 
@@ -379,10 +355,10 @@ sub, sup {
   vertical-align: baseline;
 }
 sub {
-  bottom: -0.25em;
+  inset-block-end: -0.25em;
 }
 sup {
-  top: -0.5em;
+  inset-block-start: -0.5em;
 }
 
 var {
