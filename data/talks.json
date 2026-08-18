@@ -5,10 +5,10 @@
     "venue": "BME Fractal Geometry Seminar",
     "type": "seminar",
     "venue_url": "https://bmefractalseminar.pages.dev/",
-    "links": {
-      "slides": "talks/bme_fractal_seminar_2026_03.pdf",
-      "video": "https://www.youtube.com/watch?v=n188m0XCjIg"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/bme_fractal_seminar_2026_03.pdf"},
+      {"name": "video", "url": "https://www.youtube.com/watch?v=n188m0XCjIg"}
+    ]
   },
   {
     "title": "Multi-scale properties of infinitely generated self-similar attractors",
@@ -16,9 +16,9 @@
     "venue": "BME Fractal Geometry Seminar",
     "type": "seminar",
     "venue_url": "https://bmefractalseminar.pages.dev/",
-    "links": {
-      "video": "https://www.youtube.com/watch?v=vAfjowi1SzY"
-    }
+    "links": [
+      {"name": "video", "url": "https://www.youtube.com/watch?v=vAfjowi1SzY"}
+    ]
   },
   {
     "title": "Multi-scale properties of continued fraction sets",
@@ -46,18 +46,18 @@
     "venue": "University of Massachusetts Lowell Mathematics Colloquium",
     "type": "colloquium",
     "venue_url": "https://www.uml.edu/sciences/mathematics/news/colloquium.aspx",
-    "links": {
-      "slides": "talks/uml_2025.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/uml_2025.pdf"}
+    ]
   },
   {
     "title": "Conformal dimension beyond self-similarity",
     "date": "2025-02-20",
     "venue": "Brown University Geometric Analysis Seminar",
     "type": "seminar",
-    "links": {
-      "slides": "talks/brown_2025.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/brown_2025.pdf"}
+    ]
   },
   {
     "title": "Fourier decay outside sparse frequencies",
@@ -84,9 +84,9 @@
     "venue": "Fractal geometry and stochastics 7",
     "venue_url": "https://www.tu-chemnitz.de/mathematik/stochastik/fgs7/schedule.html",
     "type": "contributed",
-    "links": {
-      "slides": "talks/fgs7.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/fgs7.pdf"}
+    ]
   },
   {
     "title": "Box dimensions of countably-generated self-conformal sets",
@@ -94,9 +94,9 @@
     "venue": "Workshop on the Geometry of Deterministic and Random Fractals II",
     "venue_url": "https://erdoscenter.renyi.hu/events/workshop-geometry-deterministic-and-random-fractals-ii",
     "type": "contributed",
-    "links": {
-      "slides": "talks/budapest_2024.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/budapest_2024.pdf"}
+    ]
   },
   {
     "title": "Dynamical covering arguments and Assouad spectra of Gatzouras–Lalley carpets",
@@ -104,9 +104,9 @@
     "venue": "Geometry and Fractals under the Midnight Sun Conference",
     "venue_url": "https://midnightsun2024.gitlab.io/",
     "type": "contributed",
-    "links": {
-      "slides": "talks/midnight_sun_2024.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/midnight_sun_2024.pdf"}
+    ]
   },
   {
     "title": "Dynamical covering arguments via large deviations and non-convex optimization",
@@ -131,9 +131,9 @@
     "date": "2024-02-19",
     "venue": "Shenzhen Fractal Geometry Seminar",
     "type": "seminar",
-    "links": {
-      "slides": "talks/shenzhen_2024.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/shenzhen_2024.pdf"}
+    ]
   },
   {
     "title": "Pointwise Assouad dimension and tangents of invariant sets",
@@ -148,9 +148,9 @@
     "venue": "University of St Andrews Research Day",
     "venue_url": "https://mtoddm.github.io/Meetings/MnSResDayTT23.pdf",
     "type": "seminar",
-    "links": {
-      "slides": "talks/sta_research_day_2023.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/sta_research_day_2023.pdf"}
+    ]
   },
   {
     "title": "Pointwise Assouad dimension and regularity of invariant sets",
@@ -172,9 +172,9 @@
     "venue": "OARS: Online Analysis Research Seminar",
     "venue_url": "https://sites.google.com/view/o-a-r-s",
     "type": "seminar",
-    "links": {
-      "slides": "talks/oars_2023.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/oars_2023.pdf"}
+    ]
   },
   {
     "title": "Pointwise Assouad dimension and regularity of invariant sets",
@@ -196,9 +196,9 @@
     "venue": "ICMS: Fractal Geometry",
     "venue_url": "https://www.icms.org.uk/workshops/2023/fractal-geometry",
     "type": "contributed",
-    "links": {
-      "slides": "talks/icms_fractal_2023.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/icms_fractal_2023.pdf"}
+    ]
   },
   {
     "title": "Multifractal analysis on (some) self-affine carpets",
@@ -213,9 +213,9 @@
     "venue": "Thermodynamic Formalism: Non-additive Aspects and Related Topics",
     "venue_url": "https://www.impan.pl/en/activities/banach-center/conferences/23-thermoform/program",
     "type": "contributed",
-    "links": {
-      "slides": "talks/thermo_form_2023.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/thermo_form_2023.pdf"}
+    ]
   },
   {
     "title": "Assouad dimension and tangents of dynamically invariant sets",
@@ -265,9 +265,9 @@
     "venue": "Fractals and Related Fields IV",
     "venue_url": "https://farf4.math.cnrs.frt",
     "type": "contributed",
-    "links": {
-      "slides": "talks/farf_iv_2022.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/farf_iv_2022.pdf"}
+    ]
   },
   {
     "title": "Geometric and combinatorial properties of self-similar measures",
@@ -282,9 +282,9 @@
     "venue": "BECMC 2022",
     "venue_url": "https://web.mat.bham.ac.uk/BYMC/BECMC22/",
     "type": "contributed",
-    "links": {
-      "slides": "talks/becmc_2022.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/becmc_2022.pdf"}
+    ]
   },
   {
     "title": "Dimension theory and classification of Assouad spectra through homogeneous Moran sets",
@@ -299,9 +299,9 @@
     "venue": "Geometry of Deterministic and Random Fractals",
     "venue_url": "https://simon60.math.bme.hu/",
     "type": "contributed",
-    "links": {
-      "slides": "talks/classifying_spectra.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/classifying_spectra.pdf"}
+    ]
   },
   {
     "title": "Geometric and combinatorial properties of self-similar Measures",
@@ -309,9 +309,9 @@
     "venue": "Workshop on Self-affine and Overlapping IFS",
     "venue_url": "https://www.troscheit.eu/workshop2022/index.html",
     "type": "contributed",
-    "links": {
-      "poster": "posters/pad_bristol_apr_2022.pdf"
-    }
+    "links": [
+      {"name": "poster", "url": "posters/pad_bristol_apr_2022.pdf"}
+    ]
   },
   {
     "title": "Pisot numbers and Bernoulli convolutions",
@@ -319,9 +319,9 @@
     "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
     "venue_url": "https://rutar.org/burn2022/",
     "type": "seminar",
-    "links": {
-      "slides": "talks/pisot_bernoulli_apr_2022.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/pisot_bernoulli_apr_2022.pdf"}
+    ]
   },
   {
     "title": "Geometric and combinatorial properties of self-similar measures",
@@ -329,9 +329,9 @@
     "venue": "Probability, Analysis, and Dynamics 2022",
     "venue_url": "https://people.maths.bris.ac.uk/~mb13434/pad21/",
     "type": "poster",
-    "links": {
-      "poster": "posters/pad_bristol_apr_2022.pdf"
-    }
+    "links": [
+      {"name": "poster", "url": "posters/pad_bristol_apr_2022.pdf"}
+    ]
   },
   {
     "title": "Attainable forms of intermediate dimensions",
@@ -345,18 +345,18 @@
     "date": "2021-04-16",
     "venue": "Junior Ergodic Theory Seminar",
     "type": "seminar",
-    "links": {
-      "slides": "talks/jets_apr_2021.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/jets_apr_2021.pdf"}
+    ]
   },
   {
     "title": "Analysis group intro talk",
     "date": "2021-01-25",
     "venue": "Postgraduate Interdisciplinary Symposium for Mathematics",
     "type": "seminar",
-    "links": {
-      "slides": "talks/sta_burn_jan_2021.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/sta_burn_jan_2021.pdf"}
+    ]
   },
   {
     "title": "Multifractal analysis for self-similar measures with exact overlaps",
@@ -364,10 +364,10 @@
     "venue": "St Andrews Analysis Seminar",
     "venue_url": "https://sta-analysis.github.io/seminars/",
     "type": "seminar",
-    "links": {
-      "slides": "talks/sta_analysis_oct_2020.pdf",
-      "video": "https://www.youtube.com/watch?v=PJa2iJAN2gs"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/sta_analysis_oct_2020.pdf"},
+      {"name": "video", "url": "https://www.youtube.com/watch?v=PJa2iJAN2gs"}
+    ]
   },
   {
     "title": "Geometric and combinatorial separation conditions for IFSs",
@@ -375,9 +375,9 @@
     "venue": "University of Waterloo Analysis Seminar",
     "venue_url": "https://uwaterloo.ca/pure-mathematics-analysis/events/geometric-and-combinatorial-separation-conditions-iterated",
     "type": "seminar",
-    "links": {
-      "slides": "talks/uw_analysis_feb_2020.pdf"
-    }
+    "links": [
+      {"name": "slides", "url": "talks/uw_analysis_feb_2020.pdf"}
+    ]
   },
   {
     "title": "An algebraic proof of quadratic reciprocity",

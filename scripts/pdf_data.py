@@ -11,6 +11,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
+from link_data import get_link
 from pypdf import PdfReader
 
 
@@ -32,10 +33,8 @@ if __name__ == "__main__":
     paper_data = json.loads(Path("data/papers.json").read_text())
 
     for paper in paper_data:
-        path = Path("static") / paper["links"]["pdf"]
-        paper["page_count"] = len(
-            PdfReader(Path("static") / paper["links"]["pdf"]).pages
-        )
+        path = Path("static") / get_link(paper, "pdf")
+        paper["page_count"] = len(PdfReader(path).pages)
 
     Path("data/generated/papers_extended.json").write_text(json.dumps(paper_data))
 

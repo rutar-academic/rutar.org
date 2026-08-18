@@ -1,11 +1,9 @@
-{% import "macros/data_links.html" as linker %}
 {% extends "base.html" %}
-{% block title %}{{ section.title | safe }}{% endblock %}
-{% block description %}{{ section.description | safe }}{% endblock %}
 {% block content %}
 {{ section.content | safe }}
 {% endblock %}
 {% block flexgrid %}
+<div class="display">
 <div>
   <h2>Internal Links</h2>
   <ul>
@@ -25,11 +23,12 @@
 </div>
 <div>
   <h2>Collaborators</h2>
-  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/papers.json") | map(attribute="with"), data=load_data(path="data/people.json")) }}
+  {{<linker.tally_with_flatten arr_of_arr={[publ.with for publ in load_data(path="data/papers.json")]} data={load_data(path="data/people.json")} />}}
 </div>
 
 <div>
   <h2>Journals</h2>
-  {{ linker::tally_with_flatten(arr_of_arr=load_data(path="data/papers.json") | map(attribute="ref.journal"), data=load_data(path="data/journals.json")) }}
+  {{<linker.tally_with_flatten arr_of_arr={[publ.ref.journal for publ in load_data(path="data/papers.json") if publ?['ref']]} data={load_data(path="data/journals.json")} />}}
+</div>
 </div>
 {% endblock %}

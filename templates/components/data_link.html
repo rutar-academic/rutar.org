@@ -1,0 +1,4 @@
+{% component data_link(key: string, path: string, attr: string) -%}
+{% set data = load_data(path=path) -%}
+{{- <linker.data_link key={key} data={data} attr={attr} /> -}}
+{%- endcomponent data_link %}

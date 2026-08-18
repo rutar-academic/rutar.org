@@ -18,7 +18,7 @@ If you're not already familiar with the game, I'd highly recommend that you give
 In this article, I will discuss some of the odds in the oath combat system.
 I will be relatively light on mathematical details: for a full derivation of the formulas, you can see [my writeup](oath_dice_odds.pdf).
 
-In the [combat heuristics](#combat-heuristics) section, I will discuss some good rules for estimating your odds in-game.{% inline_note() %}Thank you to users [@steveowen](https://boardgamegeek.com/user/steveowen) and [@Samuel Vriezen](https://boardgamegeek.com/user/Samuel%20Vriezen) for comments on BGG which motivated this section.{% end %}
+In the [combat heuristics](#combat-heuristics) section, I will discuss some good rules for estimating your odds in-game.{% <inline_note> %}Thank you to users [@steveowen](https://boardgamegeek.com/user/steveowen) and [@Samuel Vriezen](https://boardgamegeek.com/user/Samuel%20Vriezen) for comments on BGG which motivated this section.{% </inline_note> %}
 In particular, the [unit loss estimate](#unit-loss-estimate) section gives a quick procedure you can follow to work out how many units you would expect to have left, after combat.
 
 If you instead want to see some pre-computed unit loss tables, here are the links:
@@ -130,7 +130,7 @@ Certain cards, such as _Rangers_ and _Kindred Warriors_, also allow the attacker
 <figcaption>Some cards which allow ignoring skulls. © Leder Games</figcaption>
 </figure>
 
-Since there are many possible combinations, I recommend using the `combatSummary` function in the <a href="oath.nb" download>Mathematica notebook</a>, which will report the cumulative distribution of the number of attacking units that survive.{% inline_note() %}Eventually, I may write an online Javascript tool to do this computation.{% end %}
+Since there are many possible combinations, I recommend using the `combatSummary` function in the <a href="oath.nb" download>Mathematica notebook</a>, which will report the cumulative distribution of the number of attacking units that survive.{% <inline_note> %}Eventually, I may write an online Javascript tool to do this computation.{% </inline_note> %}
 
 ### Unit difference percentiles
 This is the distribution of the defence roll minus the attack roll.

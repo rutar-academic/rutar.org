@@ -41,7 +41,7 @@ In Git, snapshots also have *integrity*: associated with each snapshot is a [SHA
 ```
 2b07d1e84110e01bc13c0c63e2d0b1cff13151fc
 ```
-This SHA-1 hash is a way to refer uniquely{% inline_note() %}Unfortunately, SHA-1 is now [broken in practice](https://shattered.io/), but this is mainly an issue for maliciously crafted commits and will essentially never occur by accident. A lot of providers have [mitigations](https://github.blog/news-insights/company-news/sha-1-collision-detection-on-github-com/).{% end %} to a snapshot.
+This SHA-1 hash is a way to refer uniquely{% <inline_note> %}Unfortunately, SHA-1 is now [broken in practice](https://shattered.io/), but this is mainly an issue for maliciously crafted commits and will essentially never occur by accident. A lot of providers have [mitigations](https://github.blog/news-insights/company-news/sha-1-collision-detection-on-github-com/).{% </inline_note> %} to a snapshot.
 SHA-1 hashes are widespread throughout Git, and used to identify objects other than snapshots, and you will see them almost everywhere.
 
 At its core, you might find it useful to think about Git as a collection of snapshots along with ordered relationships (the structure of a directed graph) between snapshots.

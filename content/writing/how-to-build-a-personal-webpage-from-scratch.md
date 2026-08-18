@@ -23,7 +23,7 @@ Webpages also consist of additional resources, such as images or documents.
 When you visit a webpage, your web browser requests the documents from a server.
 
 [Static](https://en.wikipedia.org/wiki/Static_web_page) and [dynamic](https://en.wikipedia.org/wiki/Dynamic_web_page) webpages differ in how the files are prepared before they are sent to the visitor.
-A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side{% inline_note() %}This is in contrast to a client-side dynamic webpage which uses JavaScript, but only in your web browser.{% end %}) dynamic webpage typically consists of a database as well as code to generate the files _on the fly_{% inline_note() %}This code can either run in your browser, or the page rendering itself can happen on the server.{% end %} when they are requested by the visitor.
+A static webpage is essentially a _collection of files_ sitting on the server, which are sent directly to the webpage visitor, whereas a (server-side{% <inline_note> %}This is in contrast to a client-side dynamic webpage which uses JavaScript, but only in your web browser.{% </inline_note> %}) dynamic webpage typically consists of a database as well as code to generate the files _on the fly_{% <inline_note> %}This code can either run in your browser, or the page rendering itself can happen on the server.{% </inline_note> %} when they are requested by the visitor.
 
 For example, this website is a static webpage.
 On the other hand, any webpage which allows you to log-in and have user-specific state is a dynamic webpage.
@@ -98,7 +98,7 @@ One subtlety is that not all text is the same.
 Underneath, text is just binary data, so rules are required to convert the binary data into the textual representation: this process is known as [character encoding](https://en.wikipedia.org/wiki/Character_encoding).
 The most common type of encoding used on webpages is [UTF-8](https://en.wikipedia.org/wiki/UTF-8), which is the transfer format for the [Unicode](https://en.wikipedia.org/wiki/Unicode) standard.
 [ASCII](https://en.wikipedia.org/wiki/ASCII) is also a well-known encoding, but only supports a very restricted number of characters.
-Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII:{% inline_note() %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the .tex file.{% end %} for example, to input directional quotation marks `“”` (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>&#96;&#96;</code> and `''`.
+Certain older software, such as [TeX](https://en.wikipedia.org/wiki/TeX), defaults to files encoded in ASCII:{% <inline_note> %}If you `\usepackage[utf8]{inputenc}`, you can use Unicode directly in the .tex file.{% </inline_note> %} for example, to input directional quotation marks `“”` (which are [Left Double Quotation Mark](https://unicode-table.com/en/201C/) and [Right Double Quotation Mark](https://unicode-table.com/en/201D/) respectively), one would use <code>&#96;&#96;</code> and `''`.
 However, unless you are forced otherwise, you should try to write all your content in Unicode.
 
 ## Crash course in HTML and CSS
@@ -151,7 +151,7 @@ Here's an explanation of some of the tags:
 
 - `<head>...</head>` and `<body>...</body>`: these are the two main sections of your HTML file.
   `<head>` contains the metadata, and `<body>` contains the content that will show up on your screen when you visit the webpage.
-- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8).{% inline_note() %}You also need to make sure the file you are editing has the correct encoding!{% end %}
+- `<meta charset="utf-8">`: declare that the content is encoded in [UTF-8](https://en.wikipedia.org/wiki/UTF-8).{% <inline_note> %}You also need to make sure the file you are editing has the correct encoding!{% </inline_note> %}
 - `<meta name="viewport" content="width=device-width">` ensures that, if this page is opened on a browser with a small screen, it will not be incredibly zoomed out.
   This is the bare minimum required so your page looks passable on a phone.
   You can read a bit about this [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag).
@@ -261,7 +261,7 @@ Our webpage looks a bit cleaner now!
 ### Grid layout
 However, we need to address some more serious layout problems: currently, the navigation is way too small, and the header does not stand out at all.
 
-To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid).{% inline_note() %}A nice reference for CSS Grid can be found [here](https://css-tricks.com/snippets/css/complete-guide-grid/).{% end %}
+To fix this, we are going to use a relatively new CSS technique known as [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid).{% <inline_note> %}A nice reference for CSS Grid can be found [here](https://css-tricks.com/snippets/css/complete-guide-grid/).{% </inline_note> %}
 Essentially, CSS Grid allows us to specify layout in a parent element, and then place the children inside this layout.
 
 First, let's specify the general layout of our grid.
@@ -311,7 +311,7 @@ article {
 Here is a quick explanation of what this does.
 First, we want the header to be justified to the left and the navigation bar to be justified to the right.
 Note that `align-self: end` means that, within the grid row, we want to be placed as late as possible.
-This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!{% inline_note() %}In general, *align* refers to vertical placement and *justify* refers to horizontal placement.{% end %}
+This is important since the row has height 60 pixels, and without this argument, our header and navigation bar would be placed adjacent to the top of the screen!{% <inline_note> %}In general, *align* refers to vertical placement and *justify* refers to horizontal placement.{% </inline_note> %}
 Finally, we add a border above the `<article>` element with `border-top: 2px solid gray` to visually separate our header and navigation bar from the rest of the content.
 
 ### Responsive design
@@ -357,7 +357,7 @@ This specifies a _relative link_: the file path is taken relative to the directo
 The syntax `href="../"` specifies that we are referring to a file in the directory containing the current directory.
 
 However, when deploying the webpage to a server, you will want to write the links in the form `href="/style.css"`, which will give a link to the root of your website.
-This tells the browser to take the base URL (for example {% verbose_url() %}https://example.rutar.org{% end %}) and append the link.
+This tells the browser to take the base URL (for example {% <verbose_url> %}https://example.rutar.org{% </verbose_url> %}) and append the link.
 However, when browsing files on your device, the base URL is the root of your filesystem, i.e. `/`, so `/style.css` will (attempt to) link to the root of your filesystem directory, which was not what we wanted!
 
 Moreover, there is a convention for linking directly to files HTML files: files with the name `index.html` are given special treatment.
@@ -378,7 +378,7 @@ To summarize, here are the changes we need to make:
 
 Our links will no longer work properly when browsing the files locally, but when our webpage is online, the links will now work properly.
 We also want to deal with the case where the user tries to browse to a link which does not exist.
-For example, on this site, if you navigate to a URL like {% verbose_url() %}https://rutar.org/does-not-exist{% end %}, you will be shown a page explaining what happened.
+For example, on this site, if you navigate to a URL like {% <verbose_url> %}https://rutar.org/does-not-exist{% </verbose_url> %}, you will be shown a page explaining what happened.
 
 For this to happen automatically, we simply need to create a file `404.html` at the root of our directory, with some content explaining that the page is missing.
 The 404 is a [HTTP response status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), where the server tells the client that the page you are looking for is missing.
@@ -388,16 +388,16 @@ Often, the server will default to showing the contents of the `/404.html` file.
 This file also has proper naming of links, as discussed above.
 
 ### Finishing up
-You can view the complete website at {% verbose_url() %}https://example.rutar.org{% end %}.
+You can view the complete website at {% <verbose_url> %}https://example.rutar.org{% </verbose_url> %}.
 The files themselves can be found [on GitHub](https://github.com/alexrutar/webpage-example).
 You can ignore the additional files: those will be explained in later sections.
 
 Here are some direct links to the files which we have prepared above:
 
-- {% verbose_url(title="404.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html{% end %}
-- {% verbose_url(title="index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html{% end %}
-- {% verbose_url(title="style.css") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% end %}
-- {% verbose_url(title="writing/index.html") %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing/index.html{% end %}
+- {% <verbose_url title="404.html"> %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/404.html{% </verbose_url> %}
+- {% <verbose_url title="index.html"> %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/index.html{% </verbose_url> %}
+- {% <verbose_url title="style.css"> %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/style.css{% </verbose_url> %}
+- {% <verbose_url title="writing/index.html"> %}https://raw.githubusercontent.com/alexrutar/webpage-example/master/writing/index.html{% </verbose_url> %}
 
 In my opinion, the best way to learn more about HTML and CSS is to take a website which you like and use the **View Source** or **Inspect Element** functionality in your browser.
 The [MDN Web Docs](https://developer.mozilla.org/en-US/) are an incredibly rich resource which contain almost everything you might want to know about web development.
@@ -479,7 +479,7 @@ You need to link your GitHub account so that Cloudflare can automatically read t
 Here are a couple notes:
 
 1. The **Project name** that you choose will be used to create the default domain.
-   For example, I named my project `webpage-example` and my default Cloudflare--provided URL is {% verbose_url() %}https://webpage-example.pages.dev{% end %}.
+   For example, I named my project `webpage-example` and my default Cloudflare--provided URL is {% <verbose_url> %}https://webpage-example.pages.dev{% </verbose_url> %}.
 2. Under the **Build command**, simply write `exit 0`.
    Leave the **Framework** option and the **Build output directory** as their default values.
 
@@ -492,7 +492,7 @@ Note that there will be a delay---approximately two minutes---from when you comm
 
 ### A note on git and commits
 Underlying GitHub is the git version control software.
-Essentially, a commit is a complete copy of the state of all the files that git is tracking, at a given point in time.{% inline_note() %}Internally, git only saves the differences, or this would take a large amount of storage space!{% end %}
+Essentially, a commit is a complete copy of the state of all the files that git is tracking, at a given point in time.{% <inline_note> %}Internally, git only saves the differences, or this would take a large amount of storage space!{% </inline_note> %}
 Because of this, git saves your entire history, which makes it relatively straightforward to undo changes and view the state of your site in the past.
 Git is also useful to version control other important files!
 
@@ -519,7 +519,7 @@ Beyond the aesthetic benefits of having a distinctive URL, there are a few addit
   Having your own domain guarantees that your site is always available at the same address on the web.
 - **Email routing.**
   It is also possible to use your domain name to route emails.
-  For example, you can contact me at {% verbose_url(title="alex@rutar.org") %}mailto:alex@rutar.org{% end %}.
+  For example, you can contact me at {% <verbose_url title="alex@rutar.org"> %}mailto:alex@rutar.org{% </verbose_url> %}.
   Again, this is useful since it is a perpetual email address associated with your name, and you do not need to worry about losing your address if your provider goes out of business.
 
 There are a few parts to setting up a custom domain.
@@ -541,11 +541,11 @@ Moreover, if your site is already hosted on Cloudflare, adding the correct DNS r
 #### Domain name registration
 In order to register a new domain, carefully follow the instructions in the [documentation](https://developers.cloudflare.com/registrar/get-started/register-domain).
 It is important to provide accurate information here, since as discussed before, domain name ownership gives you certain legal rights, and providing correct information is required to maintain this.
-Note that this information will not be displayed online since Cloudflare uses [WHOIS redaction](https://developers.cloudflare.com/registrar/why-choose-cloudflare/whois-redaction){% inline_note() %}[WHOIS](https://en.wikipedia.org/wiki/WHOIS) is a protocol which enables lookup of domain ownership records.
-You can see the records for my domain [here](https://whois.gandi.net/en/results?search=rutar.org).{% end %}.
+Note that this information will not be displayed online since Cloudflare uses [WHOIS redaction](https://developers.cloudflare.com/registrar/why-choose-cloudflare/whois-redaction){% <inline_note> %}[WHOIS](https://en.wikipedia.org/wiki/WHOIS) is a protocol which enables lookup of domain ownership records.
+You can see the records for my domain [here](https://whois.gandi.net/en/results?search=rutar.org).{% </inline_note> %}.
 
 #### Setting up DNS
-Essentially, [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) provides a standardized way to convert web addresses, e.g. {% verbose_url() %}https://rutar.org{% end %}, into [IP Addresses](https://en.wikipedia.org/wiki/IP_address).
+Essentially, [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) provides a standardized way to convert web addresses, e.g. {% <verbose_url> %}https://rutar.org{% </verbose_url> %}, into [IP Addresses](https://en.wikipedia.org/wiki/IP_address).
 As a mildly crude analogy, one can think of DNS as a mapping from house addresses to GPS coordinates.
 
 Conveniently, since we are also using Cloudflare for DNS, the domain is automatically linked to the DNS page.
@@ -576,8 +576,8 @@ This tells the browser that there's an icon located at `/icon.svg`, and that it'
 
 If you wish to support more devices, I'd recommend that you read this [favicon article](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs).
 The next most important file to create would be a `favicon.ico` file: this will display the favicon even on outdated browsers.
-Image favicons are somewhat more flexible than SVG favicons, since it is easy to convert most visual files to an ICO file.{% inline_note() %}For example, you might consider [this site](https://www.websiteplanet.com/webtools/favicon-generator/) to generate favicon files from existing images.
-Thanks to a reader for this nice suggestion!{% end %}
+Image favicons are somewhat more flexible than SVG favicons, since it is easy to convert most visual files to an ICO file.{% <inline_note> %}For example, you might consider [this site](https://www.websiteplanet.com/webtools/favicon-generator/) to generate favicon files from existing images.
+Thanks to a reader for this nice suggestion!{% </inline_note> %}
 
 ### Site security
 In order to prevent malicious parties from hijacking your web traffic and impersonating your site, it is important that all HTTP connections are encrypted with [HTTPS](https://en.wikipedia.org/wiki/HTTPS).
@@ -641,7 +641,7 @@ Essentially, [HTTP Strict Transport Security (HSTS)](https://hstspreload.org) pr
 This list is used by your browser to guarantee to prevent connecting to a site on the list without using HTTPS.
 If you are committed to using HTTPS, you can register your site for HSTS Preload.
 
-In order to implement this, you need to register your site at the URL {% verbose_url() %}https://hstspreload.org{% end %}.
+In order to implement this, you need to register your site at the URL {% <verbose_url> %}https://hstspreload.org{% </verbose_url> %}.
 Most of the steps are already done: the only thing that remains to be done is to add the `Strict-Transport-Security` header as follows:
 ```
 Strict-Transport-Security: max-age=31536000; preload; includeSubDomains
@@ -664,4 +664,4 @@ Here are the contents of the `_headers` file, assuming you have implemented all 
 You can also see the file [here](https://raw.githubusercontent.com/alexrutar/webpage-example/master/_headers).
 
 There are many ways to verify that the headers are loaded properly on your site.
-The [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org) page is a nice resource, along with {% verbose_url() %}https://webbkoll.dataskydd.net/en/{% end %} for giving more detailed information and recommendations.
+The [Mozilla observatory](https://observatory.mozilla.org/analyze/rutar.org) page is a nice resource, along with {% <verbose_url> %}https://webbkoll.dataskydd.net/en/{% </verbose_url> %} for giving more detailed information and recommendations.

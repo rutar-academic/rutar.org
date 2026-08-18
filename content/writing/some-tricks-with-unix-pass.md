@@ -15,7 +15,7 @@ In this article, I've collected some convenient tips for using the program.
 ## Showing and copying passwords
 ### Copy additional lines
 You can copy lines other than the first: for example
-{{ cli(command="pass -c2 password/name") }}
+{{<cli command="pass -c2 password/name" />}}
 copies the second line of the password stored in `password/name`.
 
 ### Copy login and password to clipboard
@@ -51,7 +51,7 @@ It implements this behaviour in a more well-defined way (using `yq` to parse YAM
 
 ### Updating existing passwords
 The command
-{{ cli(command="pass generate -i password/name") }}
+{{<cli command="pass generate -i password/name" />}}
 generates a new password in `password/name`, which only replaces the first line (preserving the other information).
 With this, we can write a utility function to update existing passwords:
 ```fish
@@ -86,9 +86,9 @@ set -x PASSWORD_STORE_GENERATED_LENGTH 50
 ## Managing GnuPG with pass
 ### Create passwords which do not require authentication
 First, create a `gpg` key with no passphrase:
-{{ cli(command="gpg --batch --passphrase '' --quick-gen-key <no-auth-key-id> default default") }}
+{{<cli command="gpg --batch --passphrase '' --quick-gen-key <no-auth-key-id> default default" />}}
 Now, choose a subfolder to encrypt using the new key:
-{{ cli(command="pass init -p <no-auth-foldername> <no-auth-key-id>") }}
+{{<cli command="pass init -p <no-auth-foldername> <no-auth-key-id>" />}}
 Any password stored in this subfolder will not prompt you for authentication!
 This is useful for passwords which you may want to use in a non-interactive environment.
 

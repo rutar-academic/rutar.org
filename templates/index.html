@@ -1,11 +1,10 @@
 {% extends "base.html" %}
-{% block title %}{{ section.title }}{% endblock %}
-{% block description %}{{ section.description }}{% endblock %}
 {% block content %}
 {{ section.content | safe }}
 {% endblock %}
 
 {% block flexgrid %}
+<div class="display">
 <div>
   <h2>Identifiers</h2>
   <table>
@@ -55,5 +54,6 @@
     <p>FI-40014 University of Jyväskylä
     <p>Finland</p>
   </address>
+</div>
 </div>
 {% endblock %}

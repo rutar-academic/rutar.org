@@ -1,7 +1,4 @@
-{% import "macros/data_links.html" as linker %}
 {% extends "base.html" %}
-{% block title %}{{ section.title }}{% endblock %}
-{% block description %}{{ section.description }}{% endblock %}
 {% block content %}
 {{ section.content | safe }}
 <h2>Articles</h2>

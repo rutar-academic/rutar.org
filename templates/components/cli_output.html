@@ -1,0 +1,4 @@
+{% component cli_output(command: string) -%}
+<pre><code><kbd>{{ command | escape_html }}</kbd>
+{{ body | escape_html }}</code></pre>
+{%- endcomponent cli_output %}

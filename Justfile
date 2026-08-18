@@ -3,6 +3,8 @@ branch := `git rev-parse --abbrev-ref HEAD`
 public: releases cv data
     if [ "{{branch}}" = "master" ]; then zola build; else zola build -u "https://{{branch}}.rutar.pages.dev" --drafts; fi
 
+build: public
+
 check: public
     uvx ruff check scripts
     uvx ruff format scripts --check
@@ -17,7 +19,7 @@ cv: data
     mv build/alex_rutar_cv.pdf static/
 
 data: releases
-    mkdir --parent data/generated
+    mkdir -p data/generated
     ./scripts/pdf_data.py
     ./scripts/past_travel.py
 

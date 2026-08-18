@@ -52,6 +52,7 @@ The Zola webpage has a nice [article](https://www.getzola.org/documentation/gett
 ### Including data files
 ### Creating tag pages
 ### Adding a table of contents
+{% raw %}
 ```
 {% if page.extra.hastoc %}
 <h2>Contents</h2>
@@ -71,6 +72,7 @@ The Zola webpage has a nice [article](https://www.getzola.org/documentation/gett
 </ol>
 </div>
 ```
+{% endraw %}
 In the CSS file, we add the corresponding contents:
 ```
 .toc {
@@ -92,4 +94,4 @@ Now, whenever we want a table of contents, we simply include the tag
 [extra]
 toc = true
 ```
-at the beginning of our article{% inline_note() %}Test{% end %}.
+at the beginning of our article{% <inline_note> %}Test{% </inline_note> %}.

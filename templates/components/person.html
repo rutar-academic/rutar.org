@@ -1,0 +1,4 @@
+{% component person(key: string) -%}
+{% set data = load_data(path="data/people.json") %}
+{{- <linker.data_link key={key} data={data} attr="short_name" /> -}}
+{%- endcomponent person %}

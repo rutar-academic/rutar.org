@@ -47,7 +47,7 @@ where
 For example, this is the approach that the [entry API](https://doc.rust-lang.org/std/collections/hash_map/enum.Entry.html) takes.
 However, this still requires having the new element at hand at the point when it is replaced; we've just deferred the call to `replace` farther into the closure.
 
-For a more realistic{% inline_note() %}At least this is the example that motivated me to think about this problem.{% end %} situation analogous to the above, suppose we in fact want to replace the element at `idx` with an iterator of elements which can depend on the index.
+For a more realistic{% <inline_note> %}At least this is the example that motivated me to think about this problem.{% </inline_note> %} situation analogous to the above, suppose we in fact want to replace the element at `idx` with an iterator of elements which can depend on the index.
 Here, the analogy to `insert` is [`splice`](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.splice):
 ```rust
 fn update_with_iter<T, F, I>(vec: &mut Vec<T>, idx: usize, f: F)

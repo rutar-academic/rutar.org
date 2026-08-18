@@ -1,7 +1,4 @@
-{% import "macros/data_links.html" as linker %}
 {% extends "base.html" %}
-{% block title %}{{ section.title }}{% endblock %}
-{% block description %}{{ section.description }}{% endblock %}
 {% block content %}
 {%- set publ_hash = load_data(path="data/papers.json") -%}
 <h2 id="publications">Publications</h2>
@@ -35,7 +32,7 @@ If you are curious, you can also find a complete description of my <a href="/whe
     <tr>
       <td>{{ software.description }}</td>
       <td>{{ software.lang }}</td>
-      <td class="list">{{ linker::list_links(hash=software.links) }}</td>
+      <td class="list">{{<linker.list_links links={software.links} />}}</td>
     </tr>
   </tbody>
 {%- endfor -%}

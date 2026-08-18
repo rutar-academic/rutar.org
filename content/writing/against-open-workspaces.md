@@ -51,7 +51,7 @@ One of the key comforts of the personal home is its *familiarity*.
 This familiarity has at least two characteristic features: social repetition (you are exposed to and interact with the same small group of people) and physical persistence (the functional properties of your surroundings is unchanged over time).
 
 Perhaps you are sitting beside a new, somewhat familiar but different person with different tastes and preferences for their workspace interactions.
-Perhaps your keyboard functions in a slightly different way than the keyboard you used last time (the {% kbd() %}A{% end %} key is sticky, rather than the {% kbd() %}S{% end %} key).
+Perhaps your keyboard functions in a slightly different way than the keyboard you used last time (the {% <kbd> %}A{% </kbd> %} key is sticky, rather than the {% <kbd> %}S{% </kbd> %} key).
 Such micro-inconsistencies obstruct the effective usage of space.
 In other words, it is important that the objects of daily use are not only *similar*, but that they are *identical*.
 Moreover, while the magnitude of these irritations is small, the scale is substantially larger: you experience this friction *every single time you use the space*.

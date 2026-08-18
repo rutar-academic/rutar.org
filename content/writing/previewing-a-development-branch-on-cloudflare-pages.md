@@ -17,22 +17,22 @@ First, create a new branch **development** (or any name you would like):
 <kbd>git branch development</kbd>
 </code></pre>
 Now to add draft changes, first
-{{ cli(command="git switch development") }}
+{{<cli command="git switch development" />}}
 then perform the changes you want and commit them. To include those changes in your main branch,
 <pre><code><kbd>git switch main</kbd>
 <kbd>git merge development</kbd>
 <kbd>git push</kbd>
 </code></pre>
 Now, we just need to push the **development** branch to our GitHub repository.
-{{ cli(command="git push origin development") }}
+{{<cli command="git push origin development" />}}
 Cloudflare will automatically build changes to your development branch, which you can preview at the URL `development.<project-name>.pages.dev`.
 
 ## Customizing the build command
 It is often the case that you want the build command for your development branch to be different than the build command for your main branch.
 For example, if you use [Zola](https://getzola.org) for templating, you might build the main branch with
-{{ cli(command="zola build") }}
+{{<cli command="zola build" />}}
 whereas you might build the development branch with
-{{ cli(command="zola build --drafts") }}
+{{<cli command="zola build --drafts" />}}
 Moreover, when using Zola, the site URL is automatically set based on the key `base_url` in your `config.toml`.
 This works for the main branch, but our development branch has a different URL, which will cause non-relative internal links to be broken.
 

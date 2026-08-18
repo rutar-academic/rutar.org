@@ -1,0 +1,111 @@
+{# 'data[key]' is a dict with attribute "url", and 'attr' is the corresponding attribute to print as the link #}
+{% component linker.data_link(key: string, data: map, attr: string = "name") %}
+  {%- if data is containing(pat=key) -%}
+    {%- set source = data[key]-%}
+    {%- if source.url -%}
+      <a rel="noopener" target="_blank" class="hidden-link" href="{{ source.url | safe }}">{{ source[attr] | safe }}</a>
+    {%- else -%}
+      {{ source[attr] | safe }}
+    {%- endif -%}
+  {%- endif -%}
+{%- endcomponent linker.data_link %}
+
+{# as above, except accepts an array of keys 'key_arr' #}
+{% component linker.data_link_arr(key_arr: array, data: map, attr: string = "name", join_str: string = " / ") %}
+  {%- for key in key_arr -%}
+  {{<linker.data_link key={key} data={data} attr={attr} />}}{% if loop.last == false%}{{ join_str }}{% endif %}
+  {%- endfor -%}
+{% endcomponent linker.data_link_arr %}
+
+{% component linker.list_links(links: array, pre: string = "", post: string = "") %}
+  {%- if links | length != 0 -%}
+    {{ pre | safe }}
+    {%- for link in links -%}
+      {%- set name = link.name -%}
+      {%- set url = link.url -%}
+
+      {# set prefix #}
+      {%- if name == "arxiv" %}{% set prefix = "https://arxiv.org/abs/" %}
+      {%- elif name == "doi" %}{% set prefix = "https://doi.org/" %}
+      {%- elif name == "zbl" %}{% set prefix = "https://zbmath.org/" %}
+      {%- elif name == "pypi" %}{% set prefix = "https://pypi.org/project/" %}
+      {%- elif name == "github" %}{% set prefix = "https://github.com/" %}
+      {%- elif name == "crates.io" %}{% set prefix = "https://crates.io/crates/" %}
+      {%- elif name in ["pdf", "slides", "code", "poster"] %}{% set prefix = "/" %}
+      {%- else %}{% set prefix = "" %}{% endif -%}
+
+      {# set options #}
+      {%- if name == "code" %}{% set opts = ["download"] %}
+      {%- endif -%}
+
+      <span><a rel="noopener" title = "{{ url | safe }}" target="_blank" href="{{ prefix ~ url | safe }}"{% if opts %} {{ opts | join(sep=" ") }}{% endif %}>{{ name }}</a></span>
+    {%- endfor -%}
+    {{ post | safe }}
+  {%- endif -%}
+{% endcomponent linker.list_links %}
+
+{# key is the element counted, and data is the loop for key
+- e.g. name "hare.kathryn-e", data is load_data("data/people.json")
+#}
+{% component linker.count_li(key: string, data: map, ct: integer, attr: string = "name") %}
+  <li>{{<linker.data_link key={key} data={data} attr={attr} />}} <span class="side-count">({{ ct }})</span></li>
+{% endcomponent linker.count_li %}
+
+{# consume an array of array and return a hash with keys the set of unique elements and values their respective counts #}
+{% component linker.tally_with_flatten(arr_of_arr: array, data: map, attr: string = "name") %}
+<ul>
+  {# construct the flattened array #}
+  {%- set flat_arr = [] -%}
+  {%- for arr in arr_of_arr -%}
+    {%- if arr is array -%}{% set_global flat_arr = [...flat_arr, ...arr] %}
+    {%- elif arr -%}{% set_global flat_arr = [...flat_arr, arr] %}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {# get the counts #}
+  {%- for key in flat_arr | unique | sort -%}
+    {%- set_global ct = 0 -%}
+    {%- for elem in flat_arr -%}{% if key == elem %}{% set_global ct = ct + 1 %}{% endif %}{%- endfor %}
+  {{<linker.count_li key={key} data={data} attr={attr} ct={ct} />}}
+  {%- endfor -%}
+</ul>
+{% endcomponent linker.tally_with_flatten %}
+
+{% component linker.publ_status(publ: map) %}
+{%- if publ.status == "submitted" %}<em>{{<linker.data_link data={load_data(path="data/journals.json")} key="preprint" />}}</em> (submitted)
+{%- elif publ.status == "accepted" %}<em>{{<linker.data_link data={load_data(path="data/journals.json")} key={publ.ref.journal} />}}</em> (to appear)
+{%- elif publ.status == "published" %}<em>{{<linker.data_link data={load_data(path="data/journals.json")} key={publ.ref.journal} />}}</em> <b>{{ publ.ref.vol }}</b> ({{ publ.ref.year }}), {% if publ.ref.article_no %}Paper No. {{ publ.ref.article_no}}, {{ publ.ref.page_count }} pp.{% else %}{{ publ.ref.page_start }}–{{ publ.ref.page_end }}{% endif %}
+{%- elif publ.status == "expository" %}<em>Permanent Preprint</em>
+{%- endif -%}
+{% endcomponent linker.publ_status %}
+
+{% component linker.publication(publ: map) %}
+  {%- set pdf_url = [link.url for link in publ.links if link.name == "pdf"][0] -%}
+  <li id="{{ pdf_url | replace(from="/", to="-") | replace(from=".pdf", to="") }}"><cite>{{ publ.title }}</cite>
+    <table class="pub">
+    {%- if publ.with -%}
+    <tr>
+      <td>With:</td>
+      <td>{{<linker.data_link_arr data={load_data(path="data/people.json")} key_arr={publ.with} join_str=", " />}}</td>
+    </tr>
+    {%- endif -%}
+    <tr>
+      <td>Journal:</td>
+      <td>{{<linker.publ_status publ={publ} />}}</td>
+    </tr>
+    <tr>
+      <td>Links:</td>
+      <td class="list">{{<linker.list_links links={publ.links} />}}</td>
+    </tr>
+    </table>
+  </li>
+{% endcomponent linker.publication %}
+
+{% component linker.publication_count(type: string) -%}
+{% if type is matching(pat="accepted") %}{% set message = "accepted but not yet published" %}{% else %}{% set message = type %}{% endif -%}
+{% if type is matching(pat="submitted") %}{% set punct = "." %}{% else %}{% set punct = ";" %}{% endif -%}
+{% set count = [publ for publ in load_data(path="data/papers.json") if publ.status == type] | length -%}
+{% if count == 1 %}{% set verb = "is" %}
+{% else %}{% set verb = "are" %}
+{% endif %}<li><strong>{{ count }}</strong> {{ verb }} {{ message }}{{ punct }}</li>
+{%- endcomponent linker.publication_count %}

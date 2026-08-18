@@ -16,7 +16,7 @@ It's best to follow the above link for general installation instructions.
 Otherwise, I will assume you are using macOS with Fish Shell.
 
 First install `pyenv` and `pyenv-virtualenv` with brew:
-{{ cli(command="brew install pyenv pyenv-virtualenv") }}
+{{<cli command="brew install pyenv pyenv-virtualenv" />}}
 You also want to add some lines to your `config.fish`:
 ```fish
 set -Ux PYENV_ROOT "$HOME"/.pyenv
@@ -30,7 +30,7 @@ The remaining commands are used to initialize `pyenv` and add the corresponding 
 
 ## Startup
 The first thing to do is to set your preferred global python version:
-{{ cli(command="pyenv global 2.7.18 3.10.1") }}
+{{<cli command="pyenv global 2.7.18 3.10.1" />}}
 sets the `python2` version to `2.7.18` and the `python3` version to `3.10.1`.
 The global version is useful for user-wide modules and tools you might want to install with `pip`.
 You can get a list of possible versions with `pyenv install -l`.
@@ -42,17 +42,17 @@ This lets you organize what modules you have installed, as well as the python ve
 
 As an example, let's create a virtualenv named `my-venv`.
 First, create it with
-{{ cli(command="pyenv virtualenv 3.10.1 my-venv") }}
+{{<cli command="pyenv virtualenv 3.10.1 my-venv" />}}
 Let's say we are in a project directory where I want to use the `my-venv` virtual environment.
 Simply create a file named `.python-version`, which is populated with the name of the desired virtual environment:
-{{ cli(command='echo "my-venv" > .python-version') }}
+{{<cli command='echo "my-venv" > .python-version' />}}
 Now, whenever you enter this directory, `pyenv` will automatically activate the environment, and whenever you leave, the environment will deactivate.
 
 You can also manually activate the virtual environment with
-{{ cli(command="pyenv activate my-venv") }}
+{{<cli command="pyenv activate my-venv" />}}
 and deactivate with
-{{ cli(command="pyenv deactivate") }}
+{{<cli command="pyenv deactivate" />}}
 To get a list of all the virtual environments currently installed, run
-{{ cli(command="pyenv virtualenvs") }}
+{{<cli command="pyenv virtualenvs" />}}
 You can uninstall virtual environments with
-{{ cli(command="pyenv uninstall my-venv") }}
+{{<cli command="pyenv uninstall my-venv" />}}

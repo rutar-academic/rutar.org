@@ -10,6 +10,8 @@ from pathlib import Path
 from shlex import join
 from subprocess import Popen
 
+from link_data import get_link
+
 
 def status_echo(cmd_list):
     print(join(cmd_list))
@@ -23,10 +25,11 @@ def dbg(e):
 
 def get_file_list(block_size=8):
     all_publ = [
-        Path(publ["links"]["pdf"])
+        Path(pdf_url)
         for tname in ["papers", "notes"]
         for publ in json.loads(Path(f"data/{tname}.json").read_text())
-        if not (Path("static") / publ["links"]["pdf"]).exists()
+        if (pdf_url := get_link(publ, "pdf")) is not None
+        if not (Path("static") / pdf_url).exists()
     ]
     return [all_publ[i : i + block_size] for i in range(0, len(all_publ), block_size)]
 

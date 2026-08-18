@@ -192,9 +192,9 @@ For instance, this would be useful if you are writing an article about creating 
 While SVG files can be created from the PDF output, for higher quality results, it is better to create a DVI file first and convert that to SVG.
 This can be accomplished by using the standalone output from the previous section, the [ghostscript](https://www.ghostscript.com/) dynamic library, and the [dvisvgm](https://dvisvgm.de/) tool.
 In order to generate the SVG, first compile the document to a DVI file with `latex` and then use `dvisvgm` to convert it to a SVG file:
-{{cli(command="latex main.tex && dvisvgm main.dvi") }}
+{{<cli command="latex main.tex && dvisvgm main.dvi" />}}
 However, it is possible that the output will look something like this:
-{% cli_output(command="dvisvgm main.dvi") %}
+{% <cli_output command="dvisvgm main.dvi"> %}
 processing of PostScript specials is disabled (Ghostscript not found)
 pre-processing DVI file (format version 2)
 processing page 1
@@ -202,12 +202,12 @@ processing page 1
   graphic size: ...
   output written to main.svg
 1 of 1 page converted in 0.245896 seconds
-{% end %}
+{% </cli_output> %}
 In this situation, you will need to locate the ghostscript dynamic library file `libgs.dylib` and provide it as an argument to `dvisvgm`.
 For instance, if this file is
 ```sh
 /usr/local/ghostscript/10.0.0/lib/libgs.dylib
 ```
 then you would run
-{{ cli(command="dvisvgm --libgs=/usr/local/ghostscript/10.0.0/lib/libgs.dylib main.dvi") }}
+{{<cli command="dvisvgm --libgs=/usr/local/ghostscript/10.0.0/lib/libgs.dylib main.dvi" />}}
 The exact location will depend on your installation of ghostscript.

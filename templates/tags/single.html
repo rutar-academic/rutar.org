@@ -1,6 +1,4 @@
 {% extends "base.html" %}
-{% block title %}Tag: {{ term.name | safe }}{% endblock %}
-{% block description %}All pages with tags {{ term.name | safe }}{% endblock %}
 {% block content %}
 <ul>
 {%- for page in term.pages %}

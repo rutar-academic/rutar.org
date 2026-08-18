@@ -2,39 +2,39 @@
   {
     "description": "An automatic bibliography generation tool",
     "lang": "Rust",
-    "links": {
-      "github": "autobib/autobib",
-      "crates.io": "autobib"
-    }
+    "links": [
+      {"name": "github", "url": "autobib/autobib"},
+      {"name": "crates.io", "url": "autobib"}
+    ]
   },
   {
     "description": "A fuzzy picker TUI library",
     "lang": "Rust",
-    "links": {
-      "github": "autobib/nucleo-picker",
-      "crates.io": "nucleo-picker"
-    }
+    "links": [
+      {"name": "github", "url": "autobib/nucleo-picker"},
+      {"name": "crates.io", "url": "nucleo-picker"}
+    ]
   },
   {
     "description": "A generic (de)serializer for BibTeX files",
     "lang": "Rust",
-    "links": {
-      "github": "autobib/serde_bibtex",
-      "crates.io": "serde_bibtex"
-    }
+    "links": [
+      {"name": "github", "url": "autobib/serde_bibtex"},
+      {"name": "crates.io", "url": "serde_bibtex"}
+    ]
   },
   {
     "description": "(Neo)Vim sessions manager",
     "lang": "Fish",
-    "links": {
-      "github": "alexrutar/vs"
-    }
+    "links": [
+      {"name": "github", "url": "alexrutar/vs"}
+    ]
   },
   {
     "description": "LaTeX project tools",
     "lang": "Fish",
-    "links": {
-      "github": "alexrutar/tpr"
-    }
+    "links": [
+      {"name": "github", "url": "alexrutar/tpr"}
+    ]
   }
 ]

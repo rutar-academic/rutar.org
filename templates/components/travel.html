@@ -1,4 +1,4 @@
-{% macro location(entry, past) %}
+{% component render.location(entry: map, past: bool) %}
 {%- set current_date = now() | date(format="%Y%m%d") | int -%}
 {%- set entry_start = entry.date_start | date(format="%Y%m%d") | int -%}
 {%- set entry_end = entry.date_end | date(format="%Y%m%d") | int -%}
@@ -9,7 +9,7 @@
 
 {%- if b1 or b2 -%}
 <table class="loc{% if is_current %} curr-loc{% endif %}">
-  <thead><tr><th>{{ self::osm(entry=entry) }}</th></tr></thead>
+  <thead><tr><th>{{<render.osm entry={entry} />}}</th></tr></thead>
   <tbody>
     {%- if entry.venue %}<tr><td>{% if entry.url %}<a class="hidden-link" target="_blank" href="{{ entry.url }}">{{ entry.venue }}</a>{% else %}{{ entry.venue }}{% endif %}</td></tr>{% endif -%}
     <tr><td>
@@ -19,9 +19,9 @@
       </td></tr>
   </tbody></table>
 {%- endif %}
-{% endmacro %}
+{% endcomponent render.location %}
 
-{% macro has_future_travel(travel) -%}
+{% component render.has_future_travel(travel: array) -%}
 {%- set current_date = now() | date(format="%Y%m%d") | int -%}
 {%- set has_future = false -%}
 {%- for entry in travel -%}
@@ -29,9 +29,9 @@
   {%- if entry_date > current_date -%}{% set_global has_future = true %}{%- endif -%}
 {%- endfor -%}
 {%- if not has_future -%}<p>No future travel planned!</p>{%- endif -%}
-{%- endmacro %}
+{%- endcomponent render.has_future_travel %}
 
-{% macro osm(entry) -%}
+{% component render.osm(entry: map) -%}
   {%- set location_dct = load_data(path="data/location.json") -%}
   <a class="hidden-link" target="_blank" href="https://www.openstreetmap.org/{{ location_dct[entry.location].osm }}">{{ location_dct[entry.location].name }}</a>
-{%- endmacro %}
+{%- endcomponent render.osm %}

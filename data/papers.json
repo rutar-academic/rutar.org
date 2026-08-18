@@ -6,29 +6,29 @@
       "orponen.tuomas"
     ],
     "status": "submitted",
-    "links": {
-      "pdf": "papers/visibility_lower_bounds.pdf",
-      "arxiv": "2606.06965"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/visibility_lower_bounds.pdf"},
+      {"name": "arxiv", "url": "2606.06965"}
+    ],
     "tags": ["dimension-theory", "incidence-geometry"]
   },
   {
     "title": "Multi-scale properties of continued fraction sets",
     "type": "expository",
     "status": "expository",
-    "links": {
-      "pdf": "notes/multiscale_continued_fractions.pdf",
-      "arxiv": "2606.07139"
-    },
+    "links": [
+      {"name": "pdf", "url": "notes/multiscale_continued_fractions.pdf"},
+      {"name": "arxiv", "url": "2606.07139"}
+    ],
     "tags": ["dimension-theory", "ifs"]
   },
   {
     "title": "Monotonization of dimension spectra",
     "type": "expository",
     "status": "expository",
-    "links": {
-      "pdf": "notes/spectra_monotonization.pdf"
-    },
+    "links": [
+      {"name": "pdf", "url": "notes/spectra_monotonization.pdf"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
@@ -40,10 +40,10 @@
       "wang.wen"
     ],
     "status": "submitted",
-    "links": {
-      "pdf": "papers/attainable_lower_spectra.pdf",
-      "arxiv": "2603.03174"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/attainable_lower_spectra.pdf"},
+      {"name": "arxiv", "url": "2603.03174"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
@@ -53,19 +53,19 @@
       "orgovanyi.vilma"
     ],
     "status": "submitted",
-    "links": {
-      "pdf": "papers/inhomogeneous_assouad_spectra.pdf",
-      "arxiv": "2510.07013"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/inhomogeneous_assouad_spectra.pdf"},
+      {"name": "arxiv", "url": "2510.07013"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
     "title": "On the upper Assouad spectrum",
     "type": "expository",
     "status": "expository",
-    "links": {
-      "pdf": "notes/upper_assouad_spectrum.pdf"
-    },
+    "links": [
+      {"name": "pdf", "url": "notes/upper_assouad_spectrum.pdf"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
@@ -79,9 +79,9 @@
       "page_start": "4",
       "page_end": "10"
     },
-    "links": {
-      "pdf": "notes/kakeya_arkhimedes.pdf"
-    },
+    "links": [
+      {"name": "pdf", "url": "notes/kakeya_arkhimedes.pdf"}
+    ],
     "tags": ["harmonic-analysis"]
   },
   {
@@ -91,9 +91,9 @@
       "orgovanyi.vilma"
     ],
     "status": "expository",
-    "links": {
-      "pdf": "notes/subadditive_frostman.pdf"
-    },
+    "links": [
+      {"name": "pdf", "url": "notes/subadditive_frostman.pdf"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
@@ -105,12 +105,12 @@
       "seeger.andreas"
     ],
     "status": "published",
-    "links": {
-      "pdf": "papers/fractal_local_smoothing.pdf",
-      "doi": "10.1112/blms.70214",
-      "arxiv": "2501.12805",
-      "zbl": "8140773"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/fractal_local_smoothing.pdf"},
+      {"name": "doi", "url": "10.1112/blms.70214"},
+      {"name": "arxiv", "url": "2501.12805"},
+      {"name": "zbl", "url": "8140773"}
+    ],
     "ref": {
       "journal": "BLMS",
       "vol": "57",
@@ -128,10 +128,10 @@
       "orgovanyi.vilma"
     ],
     "status": "accepted",
-    "links": {
-      "pdf": "papers/microset_uniformity.pdf",
-      "arxiv": "2412.20594"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/microset_uniformity.pdf"},
+      {"name": "arxiv", "url": "2412.20594"}
+    ],
     "ref": {
       "journal": "ProcRSE-A"
     },
@@ -144,10 +144,10 @@
       "anttila.roope"
     ],
     "status": "submitted",
-    "links": {
-      "pdf": "papers/dominated_fibre_stability.pdf",
-      "arxiv": "2412.06579"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/dominated_fibre_stability.pdf"},
+      {"name": "arxiv", "url": "2412.06579"}
+    ],
     "tags": ["dimension-theory", "ifs"]
   },
   {
@@ -157,10 +157,10 @@
       "kaenmaki.antti"
     ],
     "status": "submitted",
-    "links": {
-      "pdf": "papers/self_affine_tangents.pdf",
-      "arxiv": "2410.19404"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/self_affine_tangents.pdf"},
+      {"name": "arxiv", "url": "2410.19404"}
+    ],
     "tags": ["dimension-theory", "ifs"]
   },
   {
@@ -170,12 +170,12 @@
       "kaenmaki.antti"
     ],
     "status": "published",
-    "links": {
-      "pdf": "papers/non_autonomous_assouad.pdf",
-      "doi": "10.1017/S0305004125000416",
-      "zbl": "8103993",
-      "arxiv": "2410.17944"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/non_autonomous_assouad.pdf"},
+      {"name": "doi", "url": "10.1017/S0305004125000416"},
+      {"name": "zbl", "url": "8103993"},
+      {"name": "arxiv", "url": "2410.17944"}
+    ],
     "ref": {
       "journal": "MathProcCamPhilSoc",
       "vol": "179",
@@ -193,10 +193,10 @@
     ],
     "short_title": "Lower box dimension of infinitely generated self-conformal sets",
     "status": "submitted",
-    "links": {
-      "pdf": "papers/infinite_ifs_box_dims.pdf",
-      "arxiv": "2406.12821"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/infinite_ifs_box_dims.pdf"},
+      {"name": "arxiv", "url": "2406.12821"}
+    ],
     "tags": ["dimension-theory", "ifs"]
   },
   {
@@ -209,12 +209,12 @@
     ],
     "short_title": "Assouad spectrum of Gatzouras–Lalley carpets",
     "status": "published",
-    "links": {
-      "pdf": "papers/gl_assouad_spectrum.pdf",
-      "arxiv": "2401.07168",
-      "zbl": "8135613",
-      "doi": "10.1016/j.aim.2025.110707"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/gl_assouad_spectrum.pdf"},
+      {"name": "arxiv", "url": "2401.07168"},
+      {"name": "zbl", "url": "8135613"},
+      {"name": "doi", "url": "10.1016/j.aim.2025.110707"}
+    ],
     "ref": {
       "journal": "AdvMath",
       "vol": "484",
@@ -229,10 +229,10 @@
     "type": "expository",
     "short_title": "Multifractal analysis via Lagrange duality",
     "status": "expository",
-    "links": {
-      "pdf": "notes/multifractal_duality.pdf",
-      "arxiv": "2312.08974"
-    },
+    "links": [
+      {"name": "pdf", "url": "notes/multifractal_duality.pdf"},
+      {"name": "arxiv", "url": "2312.08974"}
+    ],
     "tags": ["multifractal-analysis", "ifs"]
   },
   {
@@ -242,10 +242,10 @@
       "kaenmaki.antti"
     ],
     "status": "submitted",
-    "links": {
-      "pdf": "papers/pointwise_assouad.pdf",
-      "arxiv": "2309.11971"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/pointwise_assouad.pdf"},
+      {"name": "arxiv", "url": "2309.11971"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
@@ -253,9 +253,9 @@
     "type": "expository",
     "short_title": "Box versus packing dimensions",
     "status": "expository",
-    "links": {
-      "pdf": "notes/box_versus_packing.pdf"
-    },
+    "links": [
+      {"name": "pdf", "url": "notes/box_versus_packing.pdf"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
@@ -266,12 +266,12 @@
         "troscheit.sascha"
     ],
     "status": "published",
-    "links": {
-      "pdf": "papers/assouad_interpolation.pdf",
-      "arxiv": "2308.12975",
-      "zbl": "8078927",
-      "doi": "10.1007/s12220-025-02099-w"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/assouad_interpolation.pdf"},
+      {"name": "arxiv", "url": "2308.12975"},
+      {"name": "zbl", "url": "8078927"},
+      {"name": "doi", "url": "10.1007/s12220-025-02099-w"}
+    ],
     "ref": {
       "journal": "JGEA",
       "vol": "35",
@@ -288,12 +288,12 @@
         "mitchell.andrew"
     ],
     "status": "published",
-    "links": {
-      "pdf": "papers/substitution_multifractal.pdf",
-      "doi": "10.1007/s00220-023-04895-3",
-      "zbl": "1541.37056",
-      "arxiv": "2301.04958"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/substitution_multifractal.pdf"},
+      {"name": "doi", "url": "10.1007/s00220-023-04895-3"},
+      {"name": "zbl", "url": "1541.37056"},
+      {"name": "arxiv", "url": "2301.04958"}
+    ],
     "ref": {
       "journal": "CommMathPhys",
       "vol": "405",
@@ -310,12 +310,12 @@
         "fraser.jonathan-m"
     ],
     "status": "published",
-    "links": {
-      "pdf": "papers/planar_assouad_overlapping.pdf",
-      "doi": "10.54330/afm.142535",
-      "zbl": "07808129",
-      "arxiv": "2209.13952"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/planar_assouad_overlapping.pdf"},
+      {"name": "doi", "url": "10.54330/afm.142535"},
+      {"name": "zbl", "url": "07808129"},
+      {"name": "arxiv", "url": "2209.13952"}
+    ],
     "ref": {
       "journal": "AFM",
       "vol": "49",
@@ -336,12 +336,12 @@
       "page_start": "1331",
       "page_end": "1356"
     },
-    "links": {
-      "pdf": "papers/attainable_assouad_spectra.pdf",
-      "doi": "10.1512/iumj.2024.73.9928",
-      "zbl": "07937992",
-      "arxiv": "2206.06921"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/attainable_assouad_spectra.pdf"},
+      {"name": "doi", "url": "10.1512/iumj.2024.73.9928"},
+      {"name": "zbl", "url": "07937992"},
+      {"name": "arxiv", "url": "2206.06921"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
@@ -349,9 +349,9 @@
     "type": "expository",
     "short_title": "Assouad dichotomy",
     "status": "expository",
-    "links": {
-      "pdf": "notes/assouad_dichotomy.pdf"
-    },
+    "links": [
+      {"name": "pdf", "url": "notes/assouad_dichotomy.pdf"}
+    ],
     "tags": ["dimension-theory", "ifs"]
   },
   {
@@ -368,22 +368,22 @@
       "page_start": "939",
       "page_end": "960"
     },
-    "links": {
-      "pdf": "papers/attainable_int_dims.pdf",
-      "doi": "10.54330/afm.120529",
-      "zbl": "1509.28005",
-      "arxiv": "2111.14678"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/attainable_int_dims.pdf"},
+      {"name": "doi", "url": "10.54330/afm.120529"},
+      {"name": "zbl", "url": "1509.28005"},
+      {"name": "arxiv", "url": "2111.14678"}
+    ],
     "tags": ["dimension-theory"]
   },
   {
     "title": "A multifractal decomposition for self-similar measures with exact overlaps",
     "type": "research",
     "status": "submitted",
-    "links": {
-      "pdf": "papers/fnc_loop_multi.pdf",
-      "arxiv": "2104.06997"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/fnc_loop_multi.pdf"},
+      {"name": "arxiv", "url": "2104.06997"}
+    ],
     "tags": ["multifractal-analysis", "ifs"]
   },
   {
@@ -400,12 +400,12 @@
       "page_start": "4876",
       "page_end": "4904"
     },
-    "links": {
-      "pdf": "papers/fnc_loop_set.pdf",
-      "doi": "10.1088/1361-6544/ac8040",
-      "zbl": "1514.28007",
-      "arxiv": "2101.07400"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/fnc_loop_set.pdf"},
+      {"name": "doi", "url": "10.1088/1361-6544/ac8040"},
+      {"name": "zbl", "url": "1514.28007"},
+      {"name": "arxiv", "url": "2101.07400"}
+    ],
     "tags": ["multifractal-analysis", "ifs"]
   },
   {
@@ -419,12 +419,12 @@
       "page_start": "2028",
       "page_end": "2072"
     },
-    "links": {
-      "pdf": "papers/wsc_multi_R.pdf",
-      "doi": "10.1017/etds.2022.28",
-      "zbl": "07682668",
-      "arxiv": "2008.00197"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/wsc_multi_R.pdf"},
+      {"name": "doi", "url": "10.1017/etds.2022.28"},
+      {"name": "zbl", "url": "07682668"},
+      {"name": "arxiv", "url": "2008.00197"}
+    ],
     "tags": ["multifractal-analysis", "ifs"]
   },
   {
@@ -442,12 +442,12 @@
       "page_start": "1555",
       "page_end": "1568"
     },
-    "links": {
-      "pdf": "papers/wsc_equals_fnc.pdf",
-      "doi": "10.1090/proc/15307",
-      "zbl": "1466.28010",
-      "arxiv": "2002.04575"
-    },
+    "links": [
+      {"name": "pdf", "url": "papers/wsc_equals_fnc.pdf"},
+      {"name": "doi", "url": "10.1090/proc/15307"},
+      {"name": "zbl", "url": "1466.28010"},
+      {"name": "arxiv", "url": "2002.04575"}
+    ],
     "tags": ["ifs"]
   }
 ]

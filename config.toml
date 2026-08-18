@@ -9,19 +9,20 @@ base_url = "https://rutar.org"
 compile_sass = true
 build_search_index = false
 generate_feeds = true
+skip_content_templating = ["writing/personal-site-automation/index.md"]
 
 taxonomies = [
    {name = "tags", paginate = 10}
 ]
 
 [markdown]
-highlight_code = true
-highlight_theme = "css"
-highlight_themes_css = [
-  {theme = "cheerfully-light", filename = "syntax.css"},
-]
 external_links_target_blank = true
+external_links_external = false
 smart_punctuation = true
+
+[markdown.highlighting]
+style = "class"
+theme = "github-light"
 
 [extra]
 feed_length = 10 # number of elements to show in feed

@@ -13,6 +13,7 @@ from datetime import datetime
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from link_data import get_link
 
 
 def make_auth_string(auth_list):
@@ -55,7 +56,7 @@ def make_ref(entry, journal_data):
             return f"To appear in: {journal_data[entry['ref']['journal']]['name']}"
 
         case "expository":
-            return f"Permanent Preprint. \\url{{https://rutar.org/{entry['links']['pdf']}}}"
+            return f"Permanent Preprint. \\url{{https://rutar.org/{get_link(entry, 'pdf')}}}"
 
 
 def normalize_publ_data(entry, auth_data, journal_data):
@@ -173,7 +174,7 @@ def run():
 
 def get_priority_val(entry):
     for key in ["zbl", "doi", "arxiv"]:
-        val = entry["links"].get(key)
+        val = get_link(entry, key)
         if val is not None:
             return f"{key}:{val}"
 

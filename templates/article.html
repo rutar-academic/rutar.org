@@ -1,6 +1,4 @@
 {% extends "base.html" %}
-{% block title %}{{ page.title }}{% endblock %}
-{% block description %}{{ page.description | safe }}{% endblock %}
 {% block content %}
 <div class="post-date">{% if page.draft %}DRAFT{% else %}{{ page.date | date(format="%B %-d, %Y") }}{% endif %}</div>
 <div class="post-author">Written by <a href="{{ config.base_url }}">{{ config.author }}</a></div>

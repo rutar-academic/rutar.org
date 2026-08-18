@@ -13,7 +13,7 @@ tags = ["rust", "cli"]
 ## Introduction
 I recently published a [Rust](https://www.rust-lang.org/) library called [`nucleo-picker`](https://docs.rs/nucleo-picker/latest/nucleo_picker) which enables command-line applications to incorporate an interface for making a selection from a number of provided options.
 The selection is done through an interactive query, with a search algorithm used to filter and rank the given possibilities.
-A popular choice, and the one internal to `nucleo-picker`{% inline_note() %}Not my implementation, but rather from Pascal Kuthe's [`nucleo`](https://docs.rs/nucleo/latest/nucleo) crate.{% end %}, is to use the [Smith–Waterman algorithm](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm) from DNA sequence alignment since it is relatively simple to implement, performant even in the presence of a large number of matches, and not too sensitive to typos and other user input errors.
+A popular choice, and the one internal to `nucleo-picker`{% <inline_note> %}Not my implementation, but rather from Pascal Kuthe's [`nucleo`](https://docs.rs/nucleo/latest/nucleo) crate.{% </inline_note> %}, is to use the [Smith–Waterman algorithm](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm) from DNA sequence alignment since it is relatively simple to implement, performant even in the presence of a large number of matches, and not too sensitive to typos and other user input errors.
 
 In our case, since we are implementing a library, we do not make any choices concerning rendering: instead, the library user must define how their types should be represented within the picker.
 In the end, I decided on the following closure-style trait with generic associated types.
@@ -214,7 +214,7 @@ In fact, this (invalid) type signature has a more fundamental issue: the type pa
 Just like the `for <'a>` lifetime bound, the type parameter `S` should only be visible within the renderer and we should not be bounding at the Picker implementation level.
 This is quite natural, since the return type of the closure should be decided by the specific implementation of the closure itself!
 
-Unfortunately, generic return types are currently{% inline_note() %}Well, at least as far as I am aware, and in Rust 1.82.{% end %} not supported in closures.
+Unfortunately, generic return types are currently{% <inline_note> %}Well, at least as far as I am aware, and in Rust 1.82.{% </inline_note> %} not supported in closures.
 The solution is to use a trait which imitates such a closure.
 
 ## The solution: closure-style trait with generic associated types
@@ -315,7 +315,7 @@ In principle, we still have memory overhead if we want an internal representatio
 In order to avoid the overhead from additionally storing the rendered representation, in `nucleo-picker`, we assume that the `Render` implementation is relatively efficient and simply call it again if the internal representation happens to be lossy (which is only the case in the presence of non-ASCII Unicode characters).
 This is reasonable since we only need to call `render` to generate the items which would actually be visible on the screen, which means that there is not too much pressure for optimized render performance.
 
-If render performance is exceptionally bad{% inline_note() %}A generous back-of-the-envelope calculation says, if we want 60 frames per second, and the terminal has 100 lines, then the render call should take on average 0.1 ms, which is an eternity from the perspective of your computer.{% end %}, unfortunately in this situation the library user will probably have to implement a custom wrapper type which internally caches the rendered representation.
+If render performance is exceptionally bad{% <inline_note> %}A generous back-of-the-envelope calculation says, if we want 60 frames per second, and the terminal has 100 lines, then the render call should take on average 0.1 ms, which is an eternity from the perspective of your computer.{% </inline_note> %}, unfortunately in this situation the library user will probably have to implement a custom wrapper type which internally caches the rendered representation.
 ```rust
 pub struct CachedItem<D> {
     data: D,

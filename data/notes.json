@@ -2,36 +2,36 @@
   {
     "title": "Substitutions and cycles",
     "short_title": "Substitutions and cycles",
-    "links": {
-      "pdf": "notes/substitutions_and_cycles.pdf"
-    }
+    "links": [
+      {"name": "pdf", "url": "notes/substitutions_and_cycles.pdf"}
+    ]
   },
   {
     "title": "Convexity and subadditivity techniques in analysis",
     "short_title": "Convexity and subadditivity",
-    "links": {
-      "pdf": "notes/subadditivity.pdf"
-    }
+    "links": [
+      {"name": "pdf", "url": "notes/subadditivity.pdf"}
+    ]
   },
   {
     "title": "Introduction to Galois Theory",
     "short_title": "Galois Theory",
-    "links": {
-      "pdf": "notes/galois_theory_notes.pdf"
-    }
+    "links": [
+      {"name": "pdf", "url": "notes/galois_theory_notes.pdf"}
+    ]
   },
   {
     "title": "Algebraic Number Theory",
     "short_title": "Algebraic Number Theory",
-    "links": {
-      "pdf": "notes/algebraic_number_theory.pdf"
-    }
+    "links": [
+      {"name": "pdf", "url": "notes/algebraic_number_theory.pdf"}
+    ]
   },
   {
     "title": "Random Matrix Products",
     "short_title": "Random Matrix Products",
-    "links": {
-      "pdf": "notes/random_matrix_products.pdf"
-    }
+    "links": [
+      {"name": "pdf", "url": "notes/random_matrix_products.pdf"}
+    ]
   }
 ]

@@ -9,7 +9,7 @@
   {%- if current_path == "/tags/" -%}
   {%- set title = "All Tags" -%}
   {%- set description = "All posts and tags." -%}
-  {%- elif current_path is starting_with("/tags/") -%}
+  {%- elif current_path is starting_with(pat="/tags/") -%}
   {%- set title = "Tag: " ~ term.name -%}
   {%- set description = "All pages with tag " ~ term.name -%}
   {%- endif -%}
@@ -35,7 +35,7 @@
 
     {% if page -%}
     <link rel="stylesheet" type="text/css" href="/article.css?v=1.6">
-    <link rel="stylesheet" type="text/css" href="/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/giallo.css">
     {%- else -%}
     <link rel="stylesheet" type="text/css" href="/main.css?v=1.6">
     {%- endif %}
@@ -55,8 +55,8 @@
         {%- set links = load_data(path="data/links.json") %}
         {%- for obj in links.nav -%}
         {%- if not current_path %}{% set cur = false %}
-        {%- elif current_path is starting_with(obj.url) %}{% set cur = true %}
-        {%- elif obj.related and obj.related is containing(current_path) %}{% set cur = true %}
+        {%- elif current_path is starting_with(pat=obj.url) %}{% set cur = true %}
+        {%- elif obj.related and obj.related is containing(pat=current_path) %}{% set cur = true %}
         {%- else %}{% set cur = false %}{% endif %}
         <a {% if cur %}class='cur' {% endif %}href='{{ obj.url | safe }}'>{{ obj.name | safe }}</a>
         {%- endfor %}
@@ -66,11 +66,7 @@
         <h1{% if page %} class="post-title"{% endif %}>{{ title }}</h1>
         {%- block content -%}{%- endblock -%}
       </article>
-      {%- if not page -%}
-      <div class="display">
-        {% block flexgrid %}{% endblock %}
-      </div>
-      {%- endif -%}
+      {% block flexgrid %}{% endblock %}
     </div>
   </body>
 </html>

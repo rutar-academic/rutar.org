@@ -1,6 +1,4 @@
 {% extends "base.html" %}
-{% block title %}All Tags{% endblock %}
-{% block description %}All posts and tags.{% endblock %}
 {% block content %}
 {%- for term in terms %}
 <h2><a href="/{{ taxonomy.name }}/{{ term.name }}/">{{ term.name | safe }}</a></h2>

@@ -14,7 +14,7 @@ Running
 just
 ```
 from the root of the project generates the folder `public`, which is the static webpage.
-This site is currently prepared for [Zola `v0.21.0`](https://github.com/getzola/zola/releases/tag/v0.21.0).
+This site is currently prepared for [Zola `v0.23.3`](https://github.com/getzola/zola/releases/tag/v0.23.3).
 Note that running `just` yourself on this repository will likely fail since the release files for papers are in private repositories and require permission to access.
 
 It is convenient to validate the output HTML for errors: to do this, I use this [HTML5 validator tool](https://github.com/svenkreiss/html5validator) which I run with the command
@@ -28,7 +28,7 @@ Scripts are written in Python and executed using [`uv`](https://docs.astral.sh/u
 To manually build everything, here are the steps.
 
 1. Download all papers from the repositories specified in `data/papers.json` and `data/notes.json` by running `./scripts/releases.py`.
-   The download location is hard-coded to `rutar-academic/<filename>` where `<filename>.pdf` is the name specified in the `.links.pdf` entry.
+   The download location is hard-coded to `rutar-academic/<filename>` where `<filename>.pdf` is the URL in the `links` entry whose `name` is `pdf`.
    The files are downloaded to `static/papers` and `static/notes`.
 3. Generate PDF data using [pypdf](https://pypi.org/project/pypdf/) from the newly downloaded files in `static/papers` and `static/notes`.
    The generated PDF data is written to `data/generated/pdf_data.json`.

@@ -11,6 +11,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ZOLA_VERSION: 0.23.3
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -59,17 +61,25 @@ jobs:
           root_file: "build/alex_rutar_cv.tex"
           post_compile: mv "build/alex_rutar_cv.pdf" "static/"
 
+      - name: Install Zola
+        shell: bash
+        run: |
+          archive="zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+          curl --fail --location --silent --show-error \
+            --output "${RUNNER_TEMP}/${archive}" \
+            "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/${archive}"
+          tar --extract --gzip --file "${RUNNER_TEMP}/${archive}" --directory "${RUNNER_TEMP}"
+          mkdir -p "${RUNNER_TEMP}/bin"
+          install "${RUNNER_TEMP}/zola" "${RUNNER_TEMP}/bin/zola"
+          echo "${RUNNER_TEMP}/bin" >> "${GITHUB_PATH}"
+          test "$("${RUNNER_TEMP}/bin/zola" --version)" = "zola ${ZOLA_VERSION}"
+
       - name: Build public HTML with drafts
-        uses: shalzz/zola-deploy-action@v0.21.0
+        run: zola build --drafts
         if: github.ref != 'refs/heads/master'
-        env:
-          BUILD_FLAGS: --drafts
-          BUILD_ONLY: true
       - name: Build public HTML
-        uses: shalzz/zola-deploy-action@v0.21.0
+        run: zola build
         if: github.ref == 'refs/heads/master'
-        env:
-          BUILD_ONLY: true
 
       - name: Check HTML and CSS
         run: uvx html5validator --root public/ --also-check-css --show-warnings
