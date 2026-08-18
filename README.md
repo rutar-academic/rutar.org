@@ -17,10 +17,12 @@ from the root of the project generates the folder `public`, which is the static 
 This site is currently prepared for [Zola `v0.23.3`](https://github.com/getzola/zola/releases/tag/v0.23.3).
 Note that running `just` yourself on this repository will likely fail since the release files for papers are in private repositories and require permission to access.
 
-It is convenient to validate the output HTML for errors: to do this, I use this [HTML5 validator tool](https://github.com/svenkreiss/html5validator) which I run with the command
+It is convenient to validate the output HTML and CSS for errors: to do this, I use this [HTML5 validator tool](https://github.com/svenkreiss/html5validator) for HTML and this [CSS validation tool](https://biomejs.dev/).
+They can be run with
 ```sh
-uvx html5validator --root public/ --also-check-css --show-warnings
+just check
 ```
+
 ### Build steps
 The build process is somewhat order dependent, so the entire process is summarized here.
 The strict dependency structure can be found in the [`Justfile`](/Justfile).

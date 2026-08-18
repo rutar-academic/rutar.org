@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ZOLA_VERSION: 0.23.3
+      BIOME_VERSION: 2.5.9
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -74,6 +75,15 @@ jobs:
           echo "${RUNNER_TEMP}/bin" >> "${GITHUB_PATH}"
           test "$("${RUNNER_TEMP}/bin/zola" --version)" = "zola ${ZOLA_VERSION}"
 
+      - name: Install Biome
+        shell: bash
+        run: |
+          curl --fail --location --silent --show-error \
+            --output "${RUNNER_TEMP}/bin/biome" \
+            "https://github.com/biomejs/biome/releases/download/%40biomejs%2Fbiome%40${BIOME_VERSION}/biome-linux-x64"
+          chmod +x "${RUNNER_TEMP}/bin/biome"
+          test "$("${RUNNER_TEMP}/bin/biome" --version)" = "Version: ${BIOME_VERSION}"
+
       - name: Build public HTML with drafts
         run: zola build --drafts
         if: github.ref != 'refs/heads/master'
@@ -82,7 +92,10 @@ jobs:
         if: github.ref == 'refs/heads/master'
 
       - name: Check HTML and CSS
-        run: uvx html5validator --root public/ --also-check-css --show-warnings
+        shell: bash
+        run: |
+          uvx html5validator --root public/ --show-warnings
+          biome lint public/*.css
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@v4

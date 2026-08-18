@@ -8,7 +8,8 @@ build: public
 check: public
     uvx ruff check scripts
     uvx ruff format scripts --check
-    uvx html5validator --root public/ --also-check-css --show-warnings --format gnu -ll
+    uvx html5validator --root public/ --show-warnings --format gnu -ll
+    biome lint public/*.css
 
 releases:
     ./scripts/releases.py
