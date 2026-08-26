@@ -156,11 +156,14 @@
     "with": [
       "kaenmaki.antti"
     ],
-    "status": "submitted",
+    "status": "accepted",
     "links": [
       {"name": "pdf", "url": "papers/self_affine_tangents.pdf"},
       {"name": "arxiv", "url": "2410.19404"}
     ],
+    "ref": {
+      "journal": "ETDS"
+    },
     "tags": ["dimension-theory", "ifs"]
   },
   {
