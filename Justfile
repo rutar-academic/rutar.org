@@ -26,6 +26,9 @@ data: releases
 serve: releases cv data
     zola serve
 
+refresh:
+    gh workflow run publish.yaml
+
 clean:
 	rm -rf public
 	rm -rf build

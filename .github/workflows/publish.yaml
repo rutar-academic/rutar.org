@@ -2,6 +2,7 @@ name: Build Zola Site
 
 on:
   push:
+  workflow_dispatch:
   schedule:
     - cron: '30 10 * * *'
 
