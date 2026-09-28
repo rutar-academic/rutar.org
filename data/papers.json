@@ -1,5 +1,17 @@
 [
   {
+    "title": "Multifractal analysis of Gatzouras–Lalley measures",
+    "type": "research",
+    "with": [
+      "jordan.thomas-m", "kolossvary.istvan-t"
+    ],
+    "status": "submitted",
+    "links": [
+      {"name": "pdf", "url": "papers/gl_multifractal.pdf"}
+    ],
+    "tags": ["dimension-theory", "multifractal-analysis", "ifs"]
+  },
+  {
     "title": "Visibility problem in the plane",
     "type": "research",
     "with": [
