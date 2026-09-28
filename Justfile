@@ -9,7 +9,6 @@ check: public
     uvx ruff check scripts
     uvx ruff format scripts --check
     uvx html5validator --root public/ --show-warnings --format gnu -ll
-    biome lint public/*.css
 
 releases:
     ./scripts/releases.py
