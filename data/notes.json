@@ -1,5 +1,12 @@
 [
   {
+    "title": "Hausdorff dimension of Bedford–McMullen carpets",
+    "short_title": "Hausdorff dimension of Bedford–McMullen carpets",
+    "links": [
+      {"name": "pdf", "url": "notes/bm_hausdorff_dim.pdf"}
+    ]
+  },
+  {
     "title": "Substitutions and cycles",
     "short_title": "Substitutions and cycles",
     "links": [
