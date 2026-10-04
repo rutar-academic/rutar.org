@@ -31,6 +31,10 @@
     "name": "Mittag-Leffler Institute",
     "osm": "way/119490576"
   },
+  "INI": {
+    "name": "Isaac Newton Institute",
+    "osm": "way/12861842"
+  },
   "IMPAN": {
     "name": "IMPAN",
     "osm": "way/97629156"
@@ -80,7 +84,7 @@
     "osm": "way/99060865"
   },
   "UBC": {
-    "name": "University of British Columbia",
+    "name": "The University of British Columbia",
     "osm": "relation/11678160"
   },
   "UBir": {
